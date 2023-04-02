@@ -1,190 +1,6 @@
 _svd: "./rp2040.svd"
 
 DMA:
-  CH0_CTRL_TRIG:
-    _modify:
-      "CHAIN_TO":
-        description: "When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. \\n
-        Reset value is 0, which means for channels 1 and above the default will be to chain to channel 0 - set this field to avoid this behaviour."
-  CH0_AL1_CTRL:
-    _modify:
-      "CHAIN_TO":
-        description: "When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. \\n
-        Reset value is 0, which means for channels 1 and above the default will be to chain to channel 0 - set this field to avoid this behaviour."
-  CH0_AL2_CTRL:
-    _modify:
-      "CHAIN_TO":
-        description: "When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. \\n
-        Reset value is 0, which means for channels 1 and above the default will be to chain to channel 0 - set this field to avoid this behaviour."
-  CH0_AL3_CTRL:
-    _modify:
-      "CHAIN_TO":
-        description: "When this channel completes, it will trigger the channel indicated by CHAIN_TO. Disable by setting CHAIN_TO = _(this channel)_. \\n
-        Reset value is 0, which means for channels 1 and above the default will be to chain to channel 0 - set this field to avoid this behaviour."
-
-  "CH*_CTRL*":
-    "TREQ_SEL":
-      # The original enum only contains the values for the timers here
-      _replace_enum:
-        PIO0_TX0: [0, "Select PIO0's TX FIFO 0 as TREQ"]
-        PIO0_TX1: [1, "Select PIO0's TX FIFO 1 as TREQ"]
-        PIO0_TX2: [2, "Select PIO0's TX FIFO 2 as TREQ"]
-        PIO0_TX3: [3, "Select PIO0's TX FIFO 3 as TREQ"]
-        PIO0_RX0: [4, "Select PIO0's RX FIFO 0 as TREQ"]
-        PIO0_RX1: [5, "Select PIO0's RX FIFO 1 as TREQ"]
-        PIO0_RX2: [6, "Select PIO0's RX FIFO 2 as TREQ"]
-        PIO0_RX3: [7, "Select PIO0's RX FIFO 3 as TREQ"]
-        PIO1_TX0: [8, "Select PIO1's TX FIFO 0 as TREQ"]
-        PIO1_TX1: [9, "Select PIO1's TX FIFO 1 as TREQ"]
-        PIO1_TX2: [10, "Select PIO1's TX FIFO 2 as TREQ"]
-        PIO1_TX3: [11, "Select PIO1's TX FIFO 3 as TREQ"]
-        PIO1_RX0: [12, "Select PIO1's RX FIFO 0 as TREQ"]
-        PIO1_RX1: [13, "Select PIO1's RX FIFO 1 as TREQ"]
-        PIO1_RX2: [14, "Select PIO1's RX FIFO 2 as TREQ"]
-        PIO1_RX3: [15, "Select PIO1's RX FIFO 3 as TREQ"]
-        SPI0_TX: [16, "Select SPI0's TX FIFO as TREQ"]
-        SPI0_RX: [17, "Select SPI0's RX FIFO as TREQ"]
-        SPI1_TX: [18, "Select SPI1's TX FIFO as TREQ"]
-        SPI1_RX: [19, "Select SPI1's RX FIFO as TREQ"]
-        UART0_TX: [20, "Select UART0's TX FIFO as TREQ"]
-        UART0_RX: [21, "Select UART0's RX FIFO as TREQ"]
-        UART1_TX: [22, "Select UART1's TX FIFO as TREQ"]
-        UART1_RX: [23, "Select UART1's RX FIFO as TREQ"]
-        PWM_WRAP0: [24, "Select PWM Counter 0's Wrap Value as TREQ"]
-        PWM_WRAP1: [25, "Select PWM Counter 1's Wrap Value as TREQ"]
-        PWM_WRAP2: [26, "Select PWM Counter 2's Wrap Value as TREQ"]
-        PWM_WRAP3: [27, "Select PWM Counter 3's Wrap Value as TREQ"]
-        PWM_WRAP4: [28, "Select PWM Counter 4's Wrap Value as TREQ"]
-        PWM_WRAP5: [29, "Select PWM Counter 5's Wrap Value as TREQ"]
-        PWM_WRAP6: [30, "Select PWM Counter 6's Wrap Value as TREQ"]
-        PWM_WRAP7: [31, "Select PWM Counter 7's Wrap Value as TREQ"]
-        I2C0_TX: [32, "Select I2C0's TX FIFO as TREQ"]
-        I2C0_RX: [33, "Select I2C0's RX FIFO as TREQ"]
-        I2C1_TX: [34, "Select I2C1's TX FIFO as TREQ"]
-        I2C1_RX: [35, "Select I2C1's RX FIFO as TREQ"]
-        ADC: [36, "Select the ADC as TREQ"]
-        XIP_STREAM: [37, "Select the XIP Streaming FIFO as TREQ"]
-        XIP_SSITX: [38, "Select the XIP SSI TX FIFO as TREQ"]
-        XIP_SSIRX: [39, "Select the XIP SSI RX FIFO as TREQ"]
-        TIMER0: [59, "Select Timer 0 as TREQ"]
-        TIMER1: [60, "Select Timer 1 as TREQ"]
-        TIMER2: [61, "Select Timer 2 as TREQ (Optional)"]
-        TIMER3: [62, "Select Timer 3 as TREQ (Optional)"]
-        PERMANENT: [63, "Permanent request, for unpaced transfers."]
-
-  _delete:
-    "CH*_AL1_CTRL": {}
-    "CH*_AL2_CTRL": {}
-    "CH*_AL3_CTRL": {}
-  _derive:
-    "CH0_AL1_CTRL":
-      _from: "CH0_CTRL_TRIG"
-      addressOffset: 0x10
-    "CH0_AL2_CTRL":
-      _from: "CH0_CTRL_TRIG"
-      addressOffset: 0x20
-    "CH0_AL3_CTRL":
-      _from: "CH0_CTRL_TRIG"
-      addressOffset: 0x30
-    "CH1_AL1_CTRL":
-      _from: "CH1_CTRL_TRIG"
-      addressOffset: 0x50
-    "CH1_AL2_CTRL":
-      _from: "CH1_CTRL_TRIG"
-      addressOffset: 0x60
-    "CH1_AL3_CTRL":
-      _from: "CH1_CTRL_TRIG"
-      addressOffset: 0x70
-    "CH2_AL1_CTRL":
-      _from: "CH2_CTRL_TRIG"
-      addressOffset: 0x90
-    "CH2_AL2_CTRL":
-      _from: "CH2_CTRL_TRIG"
-      addressOffset: 0xa0
-    "CH2_AL3_CTRL":
-      _from: "CH2_CTRL_TRIG"
-      addressOffset: 0xb0
-    "CH3_AL1_CTRL":
-      _from: "CH3_CTRL_TRIG"
-      addressOffset: 0xd0
-    "CH3_AL2_CTRL":
-      _from: "CH3_CTRL_TRIG"
-      addressOffset: 0xe0
-    "CH3_AL3_CTRL":
-      _from: "CH3_CTRL_TRIG"
-      addressOffset: 0xf0
-    "CH4_AL1_CTRL":
-      _from: "CH4_CTRL_TRIG"
-      addressOffset: 0x110
-    "CH4_AL2_CTRL":
-      _from: "CH4_CTRL_TRIG"
-      addressOffset: 0x120
-    "CH4_AL3_CTRL":
-      _from: "CH4_CTRL_TRIG"
-      addressOffset: 0x130
-    "CH5_AL1_CTRL":
-      _from: "CH5_CTRL_TRIG"
-      addressOffset: 0x150
-    "CH5_AL2_CTRL":
-      _from: "CH5_CTRL_TRIG"
-      addressOffset: 0x160
-    "CH5_AL3_CTRL":
-      _from: "CH5_CTRL_TRIG"
-      addressOffset: 0x170
-    "CH6_AL1_CTRL":
-      _from: "CH6_CTRL_TRIG"
-      addressOffset: 0x190
-    "CH6_AL2_CTRL":
-      _from: "CH6_CTRL_TRIG"
-      addressOffset: 0x1a0
-    "CH6_AL3_CTRL":
-      _from: "CH6_CTRL_TRIG"
-      addressOffset: 0x1b0
-    "CH7_AL1_CTRL":
-      _from: "CH7_CTRL_TRIG"
-      addressOffset: 0x1d0
-    "CH7_AL2_CTRL":
-      _from: "CH7_CTRL_TRIG"
-      addressOffset: 0x1e0
-    "CH7_AL3_CTRL":
-      _from: "CH7_CTRL_TRIG"
-      addressOffset: 0x1f0
-    "CH8_AL1_CTRL":
-      _from: "CH8_CTRL_TRIG"
-      addressOffset: 0x210
-    "CH8_AL2_CTRL":
-      _from: "CH8_CTRL_TRIG"
-      addressOffset: 0x220
-    "CH8_AL3_CTRL":
-      _from: "CH8_CTRL_TRIG"
-      addressOffset: 0x230
-    "CH9_AL1_CTRL":
-      _from: "CH9_CTRL_TRIG"
-      addressOffset: 0x250
-    "CH9_AL2_CTRL":
-      _from: "CH9_CTRL_TRIG"
-      addressOffset: 0x260
-    "CH9_AL3_CTRL":
-      _from: "CH9_CTRL_TRIG"
-      addressOffset: 0x270
-    "CH10_AL1_CTRL":
-      _from: "CH10_CTRL_TRIG"
-      addressOffset: 0x290
-    "CH10_AL2_CTRL":
-      _from: "CH10_CTRL_TRIG"
-      addressOffset: 0x2a0
-    "CH10_AL3_CTRL":
-      _from: "CH10_CTRL_TRIG"
-      addressOffset: 0x2b0
-    "CH11_AL1_CTRL":
-      _from: "CH11_CTRL_TRIG"
-      addressOffset: 0x2d0
-    "CH11_AL2_CTRL":
-      _from: "CH11_CTRL_TRIG"
-      addressOffset: 0x2e0
-    "CH11_AL3_CTRL":
-      _from: "CH11_CTRL_TRIG"
-      addressOffset: 0x2f0
   _cluster:
     "CH%s":
       "CH?_READ_ADDR,CH??_READ_ADDR": {}
@@ -645,6 +461,12 @@ PADS_BANK0:
   _array:
     "GPIO*": {}
 
+PADS_QSPI:
+  _derive:
+    "VOLTAGE_SELECT":
+      _from: "PADS_BANK0.VOLTAGE_SELECT"
+      _keep: ["resetValue"]
+
 USBCTRL_REGS:
   SIE_STATUS:
     LINE_STATE:
@@ -654,11 +476,11 @@ USBCTRL_REGS:
       SE1: [3, "SE1"]
 
 ROSC:
-  _delete:
+  _delete: [
     # RP2040-E7: ROSC and XOSC COUNT registers are unreliable
-    "COUNT":
+    "COUNT",
     # RP2040-E10: BADWRITE field in ROSC STATUS register is unreliable
-    "STATUS":
+    "STATUS"]
 
   # RP2040-E10: BADWRITE field in ROSC STATUS register is unreliable
   # We delete and add again to fix this
@@ -685,9 +507,8 @@ ROSC:
           access: "read-only"
 
 XOSC:
-  _delete:
     # RP2040-E7: ROSC and XOSC COUNT registers are unreliable
-    "COUNT":
+  _delete: "COUNT"
 
 SIO:
   _array:

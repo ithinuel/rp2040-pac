@@ -2,15 +2,18 @@
 
 set -ex
 
-cargo install --version 0.21.0 svd2rust
+#cargo install --version 0.21.0 svd2rust
 cargo install --version 0.8.0  form
 rustup component add rustfmt
-pip3 install --upgrade --user "svdtools==0.1.23"
+#pip3 install --upgrade --user "svdtools==0.1.23"
 
 rm -rf src
 mkdir src
 
-svd patch svd/rp2040.yaml
+svdtools patch svd/rp2040.yaml
+mv svd/rp2040.svd.patched svd/rp2040-pass-1.svd
+svdtools patch svd/rp2040-pass-2.yaml
+mv svd/rp2040-pass-1.svd.patched svd/rp2040.svd.patched
 
 svd2rust -i svd/rp2040.svd.patched
 
