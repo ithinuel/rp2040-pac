@@ -48,7 +48,7 @@ impl W {
 
  Writing (any value) releases the lock.  
  If core 0 and core 1 attempt to claim the same lock simultaneously, core 0 wins.  
- The value returned on success is 0x1 << lock number.  
+ The value returned on success is 0x1 &lt;&lt; lock number.  
 
 This register you can [`read`](crate::generic::Reg::read), [`write_with_zero`](crate::generic::Reg::write_with_zero), [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`modify`](crate::generic::Reg::modify). See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
@@ -64,11 +64,10 @@ impl crate::Readable for SPINLOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [spinlock::W](W) writer structure"]
 impl crate::Writable for SPINLOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SPINLOCK%s to value 0"]
 impl crate::Resettable for SPINLOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

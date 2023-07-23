@@ -64,3 +64,11 @@ DMA:
         _from: "CH_CTRL_TRIG"
       "CH_AL3_CTRL":
         _from: "CH_CTRL_TRIG"
+
+PADS_QSPI:
+  _derive:
+    "VOLTAGE_SELECT":
+      _from: "PADS_BANK0.VOLTAGE_SELECT"
+      _keep: ["resetValue"]
+    "GPIO_QSPI_SCLK":
+      _from: "PADS_BANK0.GPIO"
