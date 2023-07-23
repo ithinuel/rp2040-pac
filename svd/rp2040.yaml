@@ -461,12 +461,6 @@ PADS_BANK0:
   _array:
     "GPIO*": {}
 
-PADS_QSPI:
-  _derive:
-    "VOLTAGE_SELECT":
-      _from: "PADS_BANK0.VOLTAGE_SELECT"
-      _keep: ["resetValue"]
-
 USBCTRL_REGS:
   SIE_STATUS:
     LINE_STATE:
