@@ -2,13 +2,13 @@ on: [push, pull_request]
 name: Clippy check
 jobs:
   clippy_check:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.11
     env:
-      RUSTFLAGS: "-D warnings"
+      RUSTFLAGS: "-D warnings -A clippy::empty_docs -A non_camel_case_types"
     steps:
-      - uses: actions/checkout@v3
-      - uses: dtolnay/rust-toolchain@1.64.0
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
         with:
           target: thumbv6m-none-eabi
           components: clippy
-      - run: cargo clippy -- -A clippy::derive_partial_eq_without_eq -A clippy::explicit_auto_deref -D warnings
+      - run: cargo clippy
