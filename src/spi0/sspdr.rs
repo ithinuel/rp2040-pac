@@ -2,7 +2,9 @@
 pub type R = crate::R<SSPDR_SPEC>;
 #[doc = "Register `SSPDR` writer"]
 pub type W = crate::W<SSPDR_SPEC>;
-#[doc = "Field `DATA` reader - Transmit/Receive FIFO: Read Receive FIFO. Write Transmit FIFO. You must right-justify data when the PrimeCell SSP is programmed for a data size that is less than 16 bits. Unused bits at the top are ignored by transmit logic. The receive logic automatically right-justifies."]
+#[doc = "Field `DATA` reader - Transmit/Receive FIFO: Read Receive FIFO. Write Transmit FIFO. You must right-justify data when the PrimeCell SSP is programmed for a data size that is less than 16 bits. Unused bits at the top are ignored by transmit logic. The receive logic automatically right-justifies.  
+
+<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type DATA_R = crate::FieldReader<u16>;
 #[doc = "Field `DATA` writer - Transmit/Receive FIFO: Read Receive FIFO. Write Transmit FIFO. You must right-justify data when the PrimeCell SSP is programmed for a data size that is less than 16 bits. Unused bits at the top are ignored by transmit logic. The receive logic automatically right-justifies."]
 pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
@@ -23,7 +25,7 @@ impl W {
 }
 #[doc = "Data register, SSPDR on page 3-6  
 
-You can [`read`](crate::generic::Reg::read) this register and get [`sspdr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`sspdr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+You can [`read`](crate::Reg::read) this register and get [`sspdr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspdr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct SSPDR_SPEC;
 impl crate::RegisterSpec for SSPDR_SPEC {
     type Ux = u32;

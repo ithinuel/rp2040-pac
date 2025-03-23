@@ -1,19 +1,18 @@
 #[doc = "Register `TIMEHR` reader"]
 pub type R = crate::R<TIMEHR_SPEC>;
-impl core::fmt::Debug for R {
-    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-        write!(f, "{}", self.bits())
-    }
-}
-impl core::fmt::Debug for crate::generic::Reg<TIMEHR_SPEC> {
-    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
-        core::fmt::Debug::fmt(&self.read(), f)
+#[doc = "Field `TIMEHR` reader - "]
+pub type TIMEHR_R = crate::FieldReader<u32>;
+impl R {
+    #[doc = "Bits 0:31"]
+    #[inline(always)]
+    pub fn timehr(&self) -> TIMEHR_R {
+        TIMEHR_R::new(self.bits)
     }
 }
 #[doc = "Read from bits 63:32 of time  
  always read timelr before timehr  
 
-You can [`read`](crate::generic::Reg::read) this register and get [`timehr::R`](R).  See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+You can [`read`](crate::Reg::read) this register and get [`timehr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct TIMEHR_SPEC;
 impl crate::RegisterSpec for TIMEHR_SPEC {
     type Ux = u32;

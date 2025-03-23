@@ -2,7 +2,9 @@
 pub type R = crate::R<UARTDR_SPEC>;
 #[doc = "Register `UARTDR` writer"]
 pub type W = crate::W<UARTDR_SPEC>;
-#[doc = "Field `DATA` reader - Receive (read) data character. Transmit (write) data character."]
+#[doc = "Field `DATA` reader - Receive (read) data character. Transmit (write) data character.  
+
+<div class=\"warning\">The field is <b>modified</b> in some way after a read operation.</div>"]
 pub type DATA_R = crate::FieldReader;
 #[doc = "Field `DATA` writer - Receive (read) data character. Transmit (write) data character."]
 pub type DATA_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
@@ -51,7 +53,7 @@ impl W {
 }
 #[doc = "Data Register, UARTDR  
 
-You can [`read`](crate::generic::Reg::read) this register and get [`uartdr::R`](R).  You can [`reset`](crate::generic::Reg::reset), [`write`](crate::generic::Reg::write), [`write_with_zero`](crate::generic::Reg::write_with_zero) this register using [`uartdr::W`](W). You can also [`modify`](crate::generic::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
+You can [`read`](crate::Reg::read) this register and get [`uartdr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uartdr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct UARTDR_SPEC;
 impl crate::RegisterSpec for UARTDR_SPEC {
     type Ux = u32;

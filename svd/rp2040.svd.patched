@@ -9098,6 +9098,7 @@
               <description>Receive (read) data character. Transmit (write) data character.</description>
               <bitRange>[7:0]</bitRange>
               <access>read-write</access>
+              <readAction>modify</readAction>
             </field>
           </fields>
         </register>
@@ -9972,6 +9973,7 @@
               <description>Transmit/Receive FIFO: Read Receive FIFO. Write Transmit FIFO. You must right-justify data when the PrimeCell SSP is programmed for a data size that is less than 16 bits. Unused bits at the top are ignored by transmit logic. The receive logic automatically right-justifies.</description>
               <bitRange>[15:0]</bitRange>
               <access>read-write</access>
+              <readAction>modify</readAction>
             </field>
           </fields>
         </register>
@@ -10685,7 +10687,7 @@
                 0 - If IC_RESTART_EN is 1, a RESTART is issued only if the transfer direction is changing from the previous command; if IC_RESTART_EN is 0, a STOP followed by a START is issued instead.\n\n
                 Reset value: 0x0</description>
               <bitRange>[10:10]</bitRange>
-              <access>read-write</access>
+              <access>write-only</access>
               <modifiedWriteValues>clear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
@@ -10705,7 +10707,7 @@
               <description>This bit controls whether a STOP is issued after the byte is sent or received.\n\n
                 - 1 - STOP is issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master immediately tries to start a new transfer by issuing a START and arbitrating for the bus. - 0 - STOP is not issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master continues the current transfer by sending/receiving data bytes according to the value of the CMD bit. If the Tx FIFO is empty, the master holds the SCL line low and stalls the bus until a new command is available in the Tx FIFO. Reset value: 0x0</description>
               <bitRange>[9:9]</bitRange>
-              <access>read-write</access>
+              <access>write-only</access>
               <modifiedWriteValues>clear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
@@ -10727,7 +10729,7 @@
                 When programming this bit, you should remember the following: attempting to perform a read operation after a General Call command has been sent results in a TX_ABRT interrupt (bit 6 of the IC_RAW_INTR_STAT register), unless bit 11 (SPECIAL) in the IC_TAR register has been cleared. If a '1' is written to this bit after receiving a RD_REQ interrupt, then a TX_ABRT interrupt occurs.\n\n
                 Reset value: 0x0</description>
               <bitRange>[8:8]</bitRange>
-              <access>read-write</access>
+              <access>write-only</access>
               <modifiedWriteValues>clear</modifiedWriteValues>
               <enumeratedValues>
                 <enumeratedValue>
@@ -13443,7 +13445,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>TIMER</name>
+      <name>TIMER0</name>
       <version>1</version>
       <description>Controls time and alarms\n
         time is a 64 bit value indicating the time in usec since power-on\n
@@ -13486,6 +13488,13 @@
           <addressOffset>0x0</addressOffset>
           <access>write-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMEHW</name>
+              <bitRange>[31:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TIMELW</name>
@@ -13494,6 +13503,13 @@
           <addressOffset>0x4</addressOffset>
           <access>write-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMELW</name>
+              <bitRange>[31:0]</bitRange>
+              <access>write-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TIMEHR</name>
@@ -13502,6 +13518,13 @@
           <addressOffset>0x8</addressOffset>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMEHR</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TIMELR</name>
@@ -13509,6 +13532,14 @@
           <addressOffset>0xC</addressOffset>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMELR</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+              <readAction>modify</readAction>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM0</name>
@@ -13519,6 +13550,13 @@
           <addressOffset>0x10</addressOffset>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ALARM0</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM1</name>
@@ -13529,6 +13567,13 @@
           <addressOffset>0x14</addressOffset>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ALARM1</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM2</name>
@@ -13539,6 +13584,13 @@
           <addressOffset>0x18</addressOffset>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ALARM2</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ALARM3</name>
@@ -13549,6 +13601,13 @@
           <addressOffset>0x1C</addressOffset>
           <access>read-write</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>ALARM3</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-write</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>ARMED</name>
@@ -13573,6 +13632,13 @@
           <addressOffset>0x24</addressOffset>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMERAWH</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>TIMERAWL</name>
@@ -13580,6 +13646,13 @@
           <addressOffset>0x28</addressOffset>
           <access>read-only</access>
           <resetValue>0x00000000</resetValue>
+          <fields>
+            <field>
+              <name>TIMERAWL</name>
+              <bitRange>[31:0]</bitRange>
+              <access>read-only</access>
+            </field>
+          </fields>
         </register>
         <register>
           <name>DBGPAUSE</name>
@@ -14520,7 +14593,7 @@
             </field>
             <field>
               <name>DIV_RUNNING</name>
-              <description>post-divider is running
+              <description>post-divider is running\n
  this resets to 0 but transitions to 1 during chip startup</description>
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
@@ -14528,7 +14601,7 @@
             </field>
             <field>
               <name>ENABLED</name>
-              <description>Oscillator is enabled but not necessarily running and stable
+              <description>Oscillator is enabled but not necessarily running and stable\n
  this resets to 0 but transitions to 1 during chip startup</description>
               <bitOffset>12</bitOffset>
               <bitWidth>1</bitWidth>
