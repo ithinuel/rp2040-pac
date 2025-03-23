@@ -2,7 +2,7 @@
 name = "rp2040-pac"
 version = "0.6.0"
 authors = ["The RP-RS team"]
-edition = "2018"
+edition = "2021"
 homepage = "https://github.com/rp-rs/rp2040-pac"
 description = "A Peripheral Access Crate for the Raspberry Pi RP2040 SoC"
 license = "BSD-3-Clause"
@@ -12,17 +12,17 @@ repository = "https://github.com/rp-rs/rp2040-pac"
 features = ["rt"]
 targets = ["thumbv6m-none-eabi"]
 
+# Keep these sorted by name
 [dependencies]
-cortex-m = "0.7.3"
 vcell = "0.1.3"
 
-[dependencies.cortex-m-rt]
-optional = true
-version = ">=0.6.15,<0.8"
+critical-section = {optional = true, version = "1.0.0"}
 
-[dependencies.critical-section]
-optional = true
-version = "1.0.0"
+cortex-m = "0.7.3"
+cortex-m-rt = {version = ">=0.6.15,<0.8", optional = true}
 
 [features]
-rt = ["cortex-m-rt/device"]
+rt = ["cortex-m-rt", "cortex-m-rt/device"]
+
+[package.metadata.cargo-udeps.ignore]
+normal = ["cortex-m-rt"]

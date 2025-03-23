@@ -1,5 +1,63 @@
 _svd: "./rp2040.svd"
 
+_modify:
+  TIMER:
+    name: "TIMER0"
+
+TIMER0:
+  ALARM0:
+    _add:
+      ALARM0:
+        bitRange: "[31:0]"
+        access: read-write
+  ALARM1:
+    _add:
+      ALARM1:
+        bitRange: "[31:0]"
+        access: read-write
+  ALARM2:
+    _add:
+      ALARM2:
+        bitRange: "[31:0]"
+        access: read-write
+  ALARM3:
+    _add:
+      ALARM3:
+        bitRange: "[31:0]"
+        access: read-write
+  TIMELW:
+    _add:
+      TIMELW:
+        bitRange: "[31:0]"
+        access: "write-only"
+  TIMEHW:
+    _add:
+      TIMEHW:
+        bitRange: "[31:0]"
+        access: "write-only"
+  TIMEHR:
+    _add:
+      TIMEHR:
+        bitRange: "[31:0]"
+        access: "read-only"
+  TIMELR:
+    _add:
+      TIMELR:
+        bitRange: "[31:0]"
+        access: "read-only"
+        readAction: "modify"
+  TIMERAWH:
+    _add:
+      TIMERAWH:
+        bitRange: "[31:0]"
+        access: "read-only"
+  TIMERAWL:
+    _add:
+      TIMERAWL:
+        bitRange: "[31:0]"
+        access: "read-only"
+
+
 DMA:
   CH0_CTRL_TRIG:
     _modify:
@@ -643,6 +701,26 @@ SPI0:
         Motorola: [0, "Motorola SPI frame format"]
         Texas_Instruments: [1, "Texas Instruments synchronous serial frame format"]
         National_Semiconductor_Microwire: [2, "National Semiconductor Microwire frame format"]
+  SSPDR:
+    _modify:
+      DATA:
+        readAction: "modify"
+
+I2C0:
+  IC_DATA_CMD:
+    _modify:
+      CMD:
+        access: "write-only"
+      STOP:
+        access: "write-only"
+      RESTART:
+        access: "write-only"
+
+UART0:
+  UARTDR:
+    _modify:
+      DATA:
+        readAction: "modify"
 
 VREG_AND_CHIP_RESET:
   VREG:

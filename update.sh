@@ -2,10 +2,11 @@
 
 # Path to `svd`/`svdtools`
 SVDTOOLS="${SVDTOOLS:-svdtools}"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-set -ex
+set -exuo pipefail
 
-cargo install --version 0.32.0 svd2rust --locked
+cargo install --version 0.33.4 svd2rust --locked
 cargo install --version 0.12.1 form --locked
 rustup component add rustfmt
 if [ "$SVDTOOLS" == "svdtools" ]; then
@@ -17,18 +18,35 @@ else
 fi
 
 $SVDTOOLS patch svd/rp2040.yaml
+perl -0777 -pi -e 's{(<description>.*?</description>)}{
+    my $x = $1;
+    $x =~ s/\n\n/\\n\\n\n/g; # merge dual newlines in their escaped version
+    $x =~ s/([^\\][^n])\n/\1\\n\n/g; # escape newlines that are not already escaped
+    $x =~ s/\\n\n\\n\n/\\n\\n\n/g;   # merge escaped newline sequences
+    $x;
+}ges' svd/rp2040.svd.patched
 
 if [ "$SVDTOOLS" != "svdtools" ]; then
     deactivate
 fi
 
-rm -rf src
-mkdir src
+generate() {
+    local svd=$1
+    local target=$2
+    svd2rust -i $svd -c ${SCRIPT_DIR}/svd2rust.toml --target $target
+    form -i mod.rs -o src
+}
 
-svd2rust -i svd/rp2040.svd.patched --reexport-core-peripherals --reexport-interrupt --ident-formats-theme legacy
+# Most of the code is from Cortex-M mode
+tmp_dir=$(mktemp -d -t svd2rust-XXXX)
+pushd ${tmp_dir}
+generate ${SCRIPT_DIR}/svd/rp2040.svd.patched cortex-m
 
-form -i lib.rs -o src
-rm lib.rs
+rm -rf ${SCRIPT_DIR}/src
+mv {src,device.x} ${SCRIPT_DIR}
+
+popd
+rm -rf ${tmp_dir}
 
 cargo fmt
 
@@ -43,4 +61,4 @@ else
 fi
 
 # Sort specified fields alphanumerically for easier consumption in docs.rs
-./sortFieldsAlphaNum.sh
+./sortFieldsAlphaNum.sh src/lib.rs
