@@ -46,7 +46,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Receive (read) data character. Transmit (write) data character."]
     #[inline(always)]
-    #[must_use]
     pub fn data(&mut self) -> DATA_W<UARTDR_SPEC> {
         DATA_W::new(self, 0)
     }
@@ -63,10 +62,6 @@ impl crate::Readable for UARTDR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`uartdr::W`](W) writer structure"]
 impl crate::Writable for UARTDR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UARTDR to value 0"]
-impl crate::Resettable for UARTDR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTDR_SPEC {}

@@ -40,7 +40,6 @@ impl W {
 
  It is also valid to ignore this behaviour and just use INTE0/INTS0/IRQ 0."]
     #[inline(always)]
-    #[must_use]
     pub fn intr(&mut self) -> INTR_W<INTR_SPEC> {
         INTR_W::new(self, 0)
     }
@@ -57,10 +56,7 @@ impl crate::Readable for INTR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`intr::W`](W) writer structure"]
 impl crate::Writable for INTR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0xffff;
 }
 #[doc = "`reset()` method sets INTR to value 0"]
-impl crate::Resettable for INTR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTR_SPEC {}

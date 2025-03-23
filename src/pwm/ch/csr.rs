@@ -163,38 +163,32 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable the PWM channel."]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EN_W<CSR_SPEC> {
         EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - 1: Enable phase-correct modulation. 0: Trailing-edge"]
     #[inline(always)]
-    #[must_use]
     pub fn ph_correct(&mut self) -> PH_CORRECT_W<CSR_SPEC> {
         PH_CORRECT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Invert output A"]
     #[inline(always)]
-    #[must_use]
     pub fn a_inv(&mut self) -> A_INV_W<CSR_SPEC> {
         A_INV_W::new(self, 2)
     }
     #[doc = "Bit 3 - Invert output B"]
     #[inline(always)]
-    #[must_use]
     pub fn b_inv(&mut self) -> B_INV_W<CSR_SPEC> {
         B_INV_W::new(self, 3)
     }
     #[doc = "Bits 4:5"]
     #[inline(always)]
-    #[must_use]
     pub fn divmode(&mut self) -> DIVMODE_W<CSR_SPEC> {
         DIVMODE_W::new(self, 4)
     }
     #[doc = "Bit 6 - Retard the phase of the counter by 1 count, while it is running.  
  Self-clearing. Write a 1, and poll until low. Counter must be running."]
     #[inline(always)]
-    #[must_use]
     pub fn ph_ret(&mut self) -> PH_RET_W<CSR_SPEC> {
         PH_RET_W::new(self, 6)
     }
@@ -202,7 +196,6 @@ impl W {
  Self-clearing. Write a 1, and poll until low. Counter must be running  
  at less than full speed (div_int + div_frac / 16 > 1)"]
     #[inline(always)]
-    #[must_use]
     pub fn ph_adv(&mut self) -> PH_ADV_W<CSR_SPEC> {
         PH_ADV_W::new(self, 7)
     }
@@ -219,10 +212,6 @@ impl crate::Readable for CSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`csr::W`](W) writer structure"]
 impl crate::Writable for CSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CSR to value 0"]
-impl crate::Resettable for CSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CSR_SPEC {}

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3_dbg_ctdreq(&mut self) -> CH3_DBG_CTDREQ_W<CH3_DBG_CTDREQ_SPEC> {
         CH3_DBG_CTDREQ_W::new(self, 0)
     }
@@ -33,10 +32,7 @@ impl crate::Readable for CH3_DBG_CTDREQ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ch3_dbg_ctdreq::W`](W) writer structure"]
 impl crate::Writable for CH3_DBG_CTDREQ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x3f;
 }
 #[doc = "`reset()` method sets CH3_DBG_CTDREQ to value 0"]
-impl crate::Resettable for CH3_DBG_CTDREQ_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH3_DBG_CTDREQ_SPEC {}

@@ -27,8 +27,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`chip_id::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@chip_id`]
-module"]
+For information about available fields see [`mod@chip_id`] module"]
 pub type CHIP_ID = crate::Reg<chip_id::CHIP_ID_SPEC>;
 #[doc = "JEDEC JEP-106 compliant chip identifier."]
 pub mod chip_id;
@@ -36,8 +35,7 @@ pub mod chip_id;
 
 You can [`read`](crate::Reg::read) this register and get [`platform::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@platform`]
-module"]
+For information about available fields see [`mod@platform`] module"]
 pub type PLATFORM = crate::Reg<platform::PLATFORM_SPEC>;
 #[doc = "Platform register. Allows software to know what environment it is running in."]
 pub mod platform;
@@ -45,8 +43,7 @@ pub mod platform;
 
 You can [`read`](crate::Reg::read) this register and get [`gitref_rp2040::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@gitref_rp2040`]
-module"]
+For information about available fields see [`mod@gitref_rp2040`] module"]
 pub type GITREF_RP2040 = crate::Reg<gitref_rp2040::GITREF_RP2040_SPEC>;
 #[doc = "Git hash of the chip source. Used to identify chip version."]
 pub mod gitref_rp2040;

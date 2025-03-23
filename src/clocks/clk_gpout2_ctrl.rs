@@ -242,39 +242,33 @@ impl R {
 impl W {
     #[doc = "Bits 5:8 - Selects the auxiliary clock source, will glitch when switching"]
     #[inline(always)]
-    #[must_use]
     pub fn auxsrc(&mut self) -> AUXSRC_W<CLK_GPOUT2_CTRL_SPEC> {
         AUXSRC_W::new(self, 5)
     }
     #[doc = "Bit 10 - Asynchronously kills the clock generator"]
     #[inline(always)]
-    #[must_use]
     pub fn kill(&mut self) -> KILL_W<CLK_GPOUT2_CTRL_SPEC> {
         KILL_W::new(self, 10)
     }
     #[doc = "Bit 11 - Starts and stops the clock generator cleanly"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<CLK_GPOUT2_CTRL_SPEC> {
         ENABLE_W::new(self, 11)
     }
     #[doc = "Bit 12 - Enables duty cycle correction for odd divisors"]
     #[inline(always)]
-    #[must_use]
     pub fn dc50(&mut self) -> DC50_W<CLK_GPOUT2_CTRL_SPEC> {
         DC50_W::new(self, 12)
     }
     #[doc = "Bits 16:17 - This delays the enable signal by up to 3 cycles of the input clock  
  This must be set before the clock is enabled to have any effect"]
     #[inline(always)]
-    #[must_use]
     pub fn phase(&mut self) -> PHASE_W<CLK_GPOUT2_CTRL_SPEC> {
         PHASE_W::new(self, 16)
     }
     #[doc = "Bit 20 - An edge on this signal shifts the phase of the output by 1 cycle of the input clock  
  This can be done at any time"]
     #[inline(always)]
-    #[must_use]
     pub fn nudge(&mut self) -> NUDGE_W<CLK_GPOUT2_CTRL_SPEC> {
         NUDGE_W::new(self, 20)
     }
@@ -291,10 +285,6 @@ impl crate::Readable for CLK_GPOUT2_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clk_gpout2_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLK_GPOUT2_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLK_GPOUT2_CTRL to value 0"]
-impl crate::Resettable for CLK_GPOUT2_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLK_GPOUT2_CTRL_SPEC {}

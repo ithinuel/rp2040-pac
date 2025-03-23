@@ -230,8 +230,7 @@ impl ABRT_GCALL_NOACK_R {
         *self == ABRT_GCALL_NOACK_A::ABRT_GCALL_NOACK_GENERATED
     }
 }
-#[doc = "This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\]
-is set to 1).  
+#[doc = "This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\] is set to 1).  
 
  Reset value: 0x0  
 
@@ -251,8 +250,7 @@ impl From<ABRT_GCALL_READ_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ABRT_GCALL_READ` reader - This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\]
-is set to 1).  
+#[doc = "Field `ABRT_GCALL_READ` reader - This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\] is set to 1).  
 
  Reset value: 0x0  
 
@@ -554,8 +552,7 @@ impl ABRT_MASTER_DIS_R {
         *self == ABRT_MASTER_DIS_A::ABRT_MASTER_DIS_GENERATED
     }
 }
-#[doc = "This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\]
-is also set, then the slave transmitter has lost arbitration.  
+#[doc = "This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\] is also set, then the slave transmitter has lost arbitration.  
 
  Reset value: 0x0  
 
@@ -575,8 +572,7 @@ impl From<ARB_LOST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ARB_LOST` reader - This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\]
-is also set, then the slave transmitter has lost arbitration.  
+#[doc = "Field `ARB_LOST` reader - This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\] is also set, then the slave transmitter has lost arbitration.  
 
  Reset value: 0x0  
 
@@ -648,8 +644,7 @@ impl ABRT_SLVFLUSH_TXFIFO_R {
         *self == ABRT_SLVFLUSH_TXFIFO_A::ABRT_SLVFLUSH_TXFIFO_GENERATED
     }
 }
-#[doc = "This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\]
-is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
+#[doc = "This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\] is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
 
  Reset value: 0x0  
 
@@ -669,8 +664,7 @@ impl From<ABRT_SLV_ARBLOST_A> for bool {
         variant as u8 != 0
     }
 }
-#[doc = "Field `ABRT_SLV_ARBLOST` reader - This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\]
-is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
+#[doc = "Field `ABRT_SLV_ARBLOST` reader - This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\] is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
 
  Reset value: 0x0  
 
@@ -840,8 +834,7 @@ impl R {
     pub fn abrt_gcall_noack(&self) -> ABRT_GCALL_NOACK_R {
         ABRT_GCALL_NOACK_R::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\]
-is set to 1).  
+    #[doc = "Bit 5 - This field indicates that DW_apb_i2c in the master mode has sent a General Call but the user programmed the byte following the General Call to be a read from the bus (IC_DATA_CMD\\[9\\] is set to 1).  
 
  Reset value: 0x0  
 
@@ -904,8 +897,7 @@ is set to 1).
     pub fn abrt_master_dis(&self) -> ABRT_MASTER_DIS_R {
         ABRT_MASTER_DIS_R::new(((self.bits >> 11) & 1) != 0)
     }
-    #[doc = "Bit 12 - This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\]
-is also set, then the slave transmitter has lost arbitration.  
+    #[doc = "Bit 12 - This field specifies that the Master has lost arbitration, or if IC_TX_ABRT_SOURCE\\[14\\] is also set, then the slave transmitter has lost arbitration.  
 
  Reset value: 0x0  
 
@@ -923,8 +915,7 @@ is also set, then the slave transmitter has lost arbitration.
     pub fn abrt_slvflush_txfifo(&self) -> ABRT_SLVFLUSH_TXFIFO_R {
         ABRT_SLVFLUSH_TXFIFO_R::new(((self.bits >> 13) & 1) != 0)
     }
-    #[doc = "Bit 14 - This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\]
-is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
+    #[doc = "Bit 14 - This field indicates that a Slave has lost the bus while transmitting data to a remote master. IC_TX_ABRT_SOURCE\\[12\\] is set at the same time. Note: Even though the slave never 'owns' the bus, something could go wrong on the bus. This is a fail safe check. For instance, during a data transmission at the low-to-high transition of SCL, if what is on the data bus is not what is supposed to be transmitted, then DW_apb_i2c no longer own the bus.  
 
  Reset value: 0x0  
 
@@ -975,6 +966,4 @@ impl crate::RegisterSpec for IC_TX_ABRT_SOURCE_SPEC {
 #[doc = "`read()` method returns [`ic_tx_abrt_source::R`](R) reader structure"]
 impl crate::Readable for IC_TX_ABRT_SOURCE_SPEC {}
 #[doc = "`reset()` method sets IC_TX_ABRT_SOURCE to value 0"]
-impl crate::Resettable for IC_TX_ABRT_SOURCE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_TX_ABRT_SOURCE_SPEC {}

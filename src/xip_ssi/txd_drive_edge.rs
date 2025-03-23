@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - TXD drive edge"]
     #[inline(always)]
-    #[must_use]
     pub fn tde(&mut self) -> TDE_W<TXD_DRIVE_EDGE_SPEC> {
         TDE_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for TXD_DRIVE_EDGE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`txd_drive_edge::W`](W) writer structure"]
 impl crate::Writable for TXD_DRIVE_EDGE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TXD_DRIVE_EDGE to value 0"]
-impl crate::Resettable for TXD_DRIVE_EDGE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TXD_DRIVE_EDGE_SPEC {}

@@ -59,31 +59,26 @@ impl R {
 impl W {
     #[doc = "Bit 24 - Pause the watchdog timer when JTAG is accessing the bus fabric"]
     #[inline(always)]
-    #[must_use]
     pub fn pause_jtag(&mut self) -> PAUSE_JTAG_W<CTRL_SPEC> {
         PAUSE_JTAG_W::new(self, 24)
     }
     #[doc = "Bit 25 - Pause the watchdog timer when processor 0 is in debug mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pause_dbg0(&mut self) -> PAUSE_DBG0_W<CTRL_SPEC> {
         PAUSE_DBG0_W::new(self, 25)
     }
     #[doc = "Bit 26 - Pause the watchdog timer when processor 1 is in debug mode"]
     #[inline(always)]
-    #[must_use]
     pub fn pause_dbg1(&mut self) -> PAUSE_DBG1_W<CTRL_SPEC> {
         PAUSE_DBG1_W::new(self, 26)
     }
     #[doc = "Bit 30 - When not enabled the watchdog timer is paused"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<CTRL_SPEC> {
         ENABLE_W::new(self, 30)
     }
     #[doc = "Bit 31 - Trigger a watchdog reset"]
     #[inline(always)]
-    #[must_use]
     pub fn trigger(&mut self) -> TRIGGER_W<CTRL_SPEC> {
         TRIGGER_W::new(self, 31)
     }
@@ -102,8 +97,6 @@ impl crate::Readable for CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0700_0000"]
 impl crate::Resettable for CTRL_SPEC {

@@ -140,8 +140,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ctrl`]
-module"]
+For information about available fields see [`mod@ctrl`] module"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "PIO control register"]
 pub mod ctrl;
@@ -149,8 +148,7 @@ pub mod ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`fstat::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fstat`]
-module"]
+For information about available fields see [`mod@fstat`] module"]
 pub type FSTAT = crate::Reg<fstat::FSTAT_SPEC>;
 #[doc = "FIFO status register"]
 pub mod fstat;
@@ -158,8 +156,7 @@ pub mod fstat;
 
 You can [`read`](crate::Reg::read) this register and get [`fdebug::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fdebug::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fdebug`]
-module"]
+For information about available fields see [`mod@fdebug`] module"]
 pub type FDEBUG = crate::Reg<fdebug::FDEBUG_SPEC>;
 #[doc = "FIFO debug register"]
 pub mod fdebug;
@@ -167,8 +164,7 @@ pub mod fdebug;
 
 You can [`read`](crate::Reg::read) this register and get [`flevel::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@flevel`]
-module"]
+For information about available fields see [`mod@flevel`] module"]
 pub type FLEVEL = crate::Reg<flevel::FLEVEL_SPEC>;
 #[doc = "FIFO levels"]
 pub mod flevel;
@@ -176,8 +172,7 @@ pub mod flevel;
 
 You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`txf::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@txf`]
-module"]
+For information about available fields see [`mod@txf`] module"]
 pub type TXF = crate::Reg<txf::TXF_SPEC>;
 #[doc = "Direct write access to the TX FIFO for this state machine. Each write pushes one word to the FIFO. Attempting to write to a full FIFO has no effect on the FIFO state or contents, and sets the sticky FDEBUG_TXOVER error flag for this FIFO."]
 pub mod txf;
@@ -185,8 +180,7 @@ pub mod txf;
 
 You can [`read`](crate::Reg::read) this register and get [`rxf::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@rxf`]
-module"]
+For information about available fields see [`mod@rxf`] module"]
 pub type RXF = crate::Reg<rxf::RXF_SPEC>;
 #[doc = "Direct read access to the RX FIFO for this state machine. Each read pops one word from the FIFO. Attempting to read from an empty FIFO has no effect on the FIFO state, and sets the sticky FDEBUG_RXUNDER error flag for this FIFO. The data returned to the system on a read from an empty FIFO is undefined."]
 pub mod rxf;
@@ -196,8 +190,7 @@ pub mod rxf;
 
 You can [`read`](crate::Reg::read) this register and get [`irq::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`irq::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@irq`]
-module"]
+For information about available fields see [`mod@irq`] module"]
 pub type IRQ = crate::Reg<irq::IRQ_SPEC>;
 #[doc = "State machine IRQ flags register. Write 1 to clear. There are 8 state machine IRQ flags, which can be set, cleared, and waited on by the state machines. There's no fixed association between flags and state machines -- any state machine can use any flag.  
 
@@ -207,8 +200,7 @@ pub mod irq;
 
 You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`irq_force::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@irq_force`]
-module"]
+For information about available fields see [`mod@irq_force`] module"]
 pub type IRQ_FORCE = crate::Reg<irq_force::IRQ_FORCE_SPEC>;
 #[doc = "Writing a 1 to each of these bits will forcibly assert the corresponding IRQ. Note this is different to the INTF register: writing here affects PIO internal state. INTF just asserts the processor-facing IRQ signal for testing ISRs, and is not visible to the state machines."]
 pub mod irq_force;
@@ -219,8 +211,7 @@ pub mod irq_force;
 
 You can [`read`](crate::Reg::read) this register and get [`input_sync_bypass::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`input_sync_bypass::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@input_sync_bypass`]
-module"]
+For information about available fields see [`mod@input_sync_bypass`] module"]
 pub type INPUT_SYNC_BYPASS = crate::Reg<input_sync_bypass::INPUT_SYNC_BYPASS_SPEC>;
 #[doc = "There is a 2-flipflop synchronizer on each GPIO input, which protects PIO logic from metastabilities. This increases input delay, and for fast synchronous IO (e.g. SPI) these synchronizers may need to be bypassed. Each bit in this register corresponds to one GPIO.  
  0 -> input is synchronized (default)  
@@ -231,8 +222,7 @@ pub mod input_sync_bypass;
 
 You can [`read`](crate::Reg::read) this register and get [`dbg_padout::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@dbg_padout`]
-module"]
+For information about available fields see [`mod@dbg_padout`] module"]
 pub type DBG_PADOUT = crate::Reg<dbg_padout::DBG_PADOUT_SPEC>;
 #[doc = "Read to sample the pad output values PIO is currently driving to the GPIOs. On RP2040 there are 30 GPIOs, so the two most significant bits are hardwired to 0."]
 pub mod dbg_padout;
@@ -240,8 +230,7 @@ pub mod dbg_padout;
 
 You can [`read`](crate::Reg::read) this register and get [`dbg_padoe::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@dbg_padoe`]
-module"]
+For information about available fields see [`mod@dbg_padoe`] module"]
 pub type DBG_PADOE = crate::Reg<dbg_padoe::DBG_PADOE_SPEC>;
 #[doc = "Read to sample the pad output enables (direction) PIO is currently driving to the GPIOs. On RP2040 there are 30 GPIOs, so the two most significant bits are hardwired to 0."]
 pub mod dbg_padoe;
@@ -250,8 +239,7 @@ pub mod dbg_padoe;
 
 You can [`read`](crate::Reg::read) this register and get [`dbg_cfginfo::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@dbg_cfginfo`]
-module"]
+For information about available fields see [`mod@dbg_cfginfo`] module"]
 pub type DBG_CFGINFO = crate::Reg<dbg_cfginfo::DBG_CFGINFO_SPEC>;
 #[doc = "The PIO hardware has some free parameters that may vary between chip products.  
  These should be provided in the chip datasheet, but are also exposed here."]
@@ -260,8 +248,7 @@ pub mod dbg_cfginfo;
 
 You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`instr_mem::W`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@instr_mem`]
-module"]
+For information about available fields see [`mod@instr_mem`] module"]
 pub type INSTR_MEM = crate::Reg<instr_mem::INSTR_MEM_SPEC>;
 #[doc = "Write-only access to instruction memory location %s"]
 pub mod instr_mem;
@@ -274,8 +261,7 @@ pub mod sm;
 
 You can [`read`](crate::Reg::read) this register and get [`intr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@intr`]
-module"]
+For information about available fields see [`mod@intr`] module"]
 pub type INTR = crate::Reg<intr::INTR_SPEC>;
 #[doc = "Raw Interrupts"]
 pub mod intr;

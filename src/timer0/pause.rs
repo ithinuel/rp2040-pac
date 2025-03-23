@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn pause(&mut self) -> PAUSE_W<PAUSE_SPEC> {
         PAUSE_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for PAUSE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pause::W`](W) writer structure"]
 impl crate::Writable for PAUSE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PAUSE to value 0"]
-impl crate::Resettable for PAUSE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PAUSE_SPEC {}

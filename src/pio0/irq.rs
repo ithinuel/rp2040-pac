@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    #[must_use]
     pub fn irq(&mut self) -> IRQ_W<IRQ_SPEC> {
         IRQ_W::new(self, 0)
     }
@@ -35,10 +34,7 @@ impl crate::Readable for IRQ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`irq::W`](W) writer structure"]
 impl crate::Writable for IRQ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0xff;
 }
 #[doc = "`reset()` method sets IRQ to value 0"]
-impl crate::Resettable for IRQ_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IRQ_SPEC {}

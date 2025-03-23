@@ -160,103 +160,86 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn rosc(&mut self) -> ROSC_W<FRCE_ON_SPEC> {
         ROSC_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn xosc(&mut self) -> XOSC_W<FRCE_ON_SPEC> {
         XOSC_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn clocks(&mut self) -> CLOCKS_W<FRCE_ON_SPEC> {
         CLOCKS_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn resets(&mut self) -> RESETS_W<FRCE_ON_SPEC> {
         RESETS_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn busfabric(&mut self) -> BUSFABRIC_W<FRCE_ON_SPEC> {
         BUSFABRIC_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn rom(&mut self) -> ROM_W<FRCE_ON_SPEC> {
         ROM_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn sram0(&mut self) -> SRAM0_W<FRCE_ON_SPEC> {
         SRAM0_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn sram1(&mut self) -> SRAM1_W<FRCE_ON_SPEC> {
         SRAM1_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn sram2(&mut self) -> SRAM2_W<FRCE_ON_SPEC> {
         SRAM2_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn sram3(&mut self) -> SRAM3_W<FRCE_ON_SPEC> {
         SRAM3_W::new(self, 9)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn sram4(&mut self) -> SRAM4_W<FRCE_ON_SPEC> {
         SRAM4_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn sram5(&mut self) -> SRAM5_W<FRCE_ON_SPEC> {
         SRAM5_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn xip(&mut self) -> XIP_W<FRCE_ON_SPEC> {
         XIP_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn vreg_and_chip_reset(&mut self) -> VREG_AND_CHIP_RESET_W<FRCE_ON_SPEC> {
         VREG_AND_CHIP_RESET_W::new(self, 13)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn sio(&mut self) -> SIO_W<FRCE_ON_SPEC> {
         SIO_W::new(self, 14)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn proc0(&mut self) -> PROC0_W<FRCE_ON_SPEC> {
         PROC0_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    #[must_use]
     pub fn proc1(&mut self) -> PROC1_W<FRCE_ON_SPEC> {
         PROC1_W::new(self, 16)
     }
@@ -273,10 +256,6 @@ impl crate::Readable for FRCE_ON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`frce_on::W`](W) writer structure"]
 impl crate::Writable for FRCE_ON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FRCE_ON to value 0"]
-impl crate::Resettable for FRCE_ON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FRCE_ON_SPEC {}

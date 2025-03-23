@@ -24,7 +24,6 @@ impl W {
  Increments automatically after each flash access.  
  Write the initial access address here before starting a streaming read."]
     #[inline(always)]
-    #[must_use]
     pub fn stream_addr(&mut self) -> STREAM_ADDR_W<STREAM_ADDR_SPEC> {
         STREAM_ADDR_W::new(self, 2)
     }
@@ -41,10 +40,6 @@ impl crate::Readable for STREAM_ADDR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`stream_addr::W`](W) writer structure"]
 impl crate::Writable for STREAM_ADDR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STREAM_ADDR to value 0"]
-impl crate::Resettable for STREAM_ADDR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for STREAM_ADDR_SPEC {}

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bit 15 - Reads as 1 if SVCall is Pending. Write 1 to set pending SVCall, write 0 to clear pending SVCall."]
     #[inline(always)]
-    #[must_use]
     pub fn svcallpended(&mut self) -> SVCALLPENDED_W<SHCSR_SPEC> {
         SVCALLPENDED_W::new(self, 15)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for SHCSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`shcsr::W`](W) writer structure"]
 impl crate::Writable for SHCSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SHCSR to value 0"]
-impl crate::Resettable for SHCSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SHCSR_SPEC {}

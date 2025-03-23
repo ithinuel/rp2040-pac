@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer."]
     #[inline(always)]
-    #[must_use]
     pub fn y(&mut self) -> Y_W<TIMER3_SPEC> {
         Y_W::new(self, 0)
     }
     #[doc = "Bits 16:31 - Pacing Timer Dividend. Specifies the X value for the (X/Y) fractional timer."]
     #[inline(always)]
-    #[must_use]
     pub fn x(&mut self) -> X_W<TIMER3_SPEC> {
         X_W::new(self, 16)
     }
@@ -49,10 +47,6 @@ impl crate::Readable for TIMER3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`timer3::W`](W) writer structure"]
 impl crate::Writable for TIMER3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TIMER3 to value 0"]
-impl crate::Resettable for TIMER3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMER3_SPEC {}

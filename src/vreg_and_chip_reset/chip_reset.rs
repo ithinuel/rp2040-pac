@@ -45,7 +45,6 @@ impl W {
  Its purpose is to branch bootcode to a safe mode when the debugger has issued a psm_restart in order to recover from a boot lock-up.  
  In the safe mode the debugger can repair the boot code, clear this flag then reboot the processor."]
     #[inline(always)]
-    #[must_use]
     pub fn psm_restart_flag(&mut self) -> PSM_RESTART_FLAG_W<CHIP_RESET_SPEC> {
         PSM_RESTART_FLAG_W::new(self, 24)
     }
@@ -62,10 +61,7 @@ impl crate::Readable for CHIP_RESET_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`chip_reset::W`](W) writer structure"]
 impl crate::Writable for CHIP_RESET_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0100_0000;
 }
 #[doc = "`reset()` method sets CHIP_RESET to value 0"]
-impl crate::Resettable for CHIP_RESET_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHIP_RESET_SPEC {}

@@ -61,37 +61,31 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Transmit FIFO empty interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn txeim(&mut self) -> TXEIM_W<IMR_SPEC> {
         TXEIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit FIFO overflow interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn txoim(&mut self) -> TXOIM_W<IMR_SPEC> {
         TXOIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive FIFO underflow interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn rxuim(&mut self) -> RXUIM_W<IMR_SPEC> {
         RXUIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - Receive FIFO overflow interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn rxoim(&mut self) -> RXOIM_W<IMR_SPEC> {
         RXOIM_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive FIFO full interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn rxfim(&mut self) -> RXFIM_W<IMR_SPEC> {
         RXFIM_W::new(self, 4)
     }
     #[doc = "Bit 5 - Multi-master contention interrupt mask"]
     #[inline(always)]
-    #[must_use]
     pub fn mstim(&mut self) -> MSTIM_W<IMR_SPEC> {
         MSTIM_W::new(self, 5)
     }
@@ -108,10 +102,6 @@ impl crate::Readable for IMR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`imr::W`](W) writer structure"]
 impl crate::Writable for IMR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IMR to value 0"]
-impl crate::Resettable for IMR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IMR_SPEC {}

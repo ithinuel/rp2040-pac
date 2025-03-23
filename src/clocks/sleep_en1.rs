@@ -142,91 +142,76 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram4(&mut self) -> CLK_SYS_SRAM4_W<SLEEP_EN1_SPEC> {
         CLK_SYS_SRAM4_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram5(&mut self) -> CLK_SYS_SRAM5_W<SLEEP_EN1_SPEC> {
         CLK_SYS_SRAM5_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_syscfg(&mut self) -> CLK_SYS_SYSCFG_W<SLEEP_EN1_SPEC> {
         CLK_SYS_SYSCFG_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sysinfo(&mut self) -> CLK_SYS_SYSINFO_W<SLEEP_EN1_SPEC> {
         CLK_SYS_SYSINFO_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_tbman(&mut self) -> CLK_SYS_TBMAN_W<SLEEP_EN1_SPEC> {
         CLK_SYS_TBMAN_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_timer(&mut self) -> CLK_SYS_TIMER_W<SLEEP_EN1_SPEC> {
         CLK_SYS_TIMER_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_peri_uart0(&mut self) -> CLK_PERI_UART0_W<SLEEP_EN1_SPEC> {
         CLK_PERI_UART0_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_uart0(&mut self) -> CLK_SYS_UART0_W<SLEEP_EN1_SPEC> {
         CLK_SYS_UART0_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_peri_uart1(&mut self) -> CLK_PERI_UART1_W<SLEEP_EN1_SPEC> {
         CLK_PERI_UART1_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_uart1(&mut self) -> CLK_SYS_UART1_W<SLEEP_EN1_SPEC> {
         CLK_SYS_UART1_W::new(self, 9)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_usbctrl(&mut self) -> CLK_SYS_USBCTRL_W<SLEEP_EN1_SPEC> {
         CLK_SYS_USBCTRL_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_usb_usbctrl(&mut self) -> CLK_USB_USBCTRL_W<SLEEP_EN1_SPEC> {
         CLK_USB_USBCTRL_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_watchdog(&mut self) -> CLK_SYS_WATCHDOG_W<SLEEP_EN1_SPEC> {
         CLK_SYS_WATCHDOG_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_xip(&mut self) -> CLK_SYS_XIP_W<SLEEP_EN1_SPEC> {
         CLK_SYS_XIP_W::new(self, 13)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_xosc(&mut self) -> CLK_SYS_XOSC_W<SLEEP_EN1_SPEC> {
         CLK_SYS_XOSC_W::new(self, 14)
     }
@@ -243,8 +228,6 @@ impl crate::Readable for SLEEP_EN1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sleep_en1::W`](W) writer structure"]
 impl crate::Writable for SLEEP_EN1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SLEEP_EN1 to value 0x7fff"]
 impl crate::Resettable for SLEEP_EN1_SPEC {

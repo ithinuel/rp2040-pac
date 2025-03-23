@@ -38,6 +38,4 @@ impl crate::RegisterSpec for DBG_CFGINFO_SPEC {
 #[doc = "`read()` method returns [`dbg_cfginfo::R`](R) reader structure"]
 impl crate::Readable for DBG_CFGINFO_SPEC {}
 #[doc = "`reset()` method sets DBG_CFGINFO to value 0"]
-impl crate::Resettable for DBG_CFGINFO_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DBG_CFGINFO_SPEC {}

@@ -19,6 +19,4 @@ impl crate::RegisterSpec for CLK_SYS_RESUS_STATUS_SPEC {
 #[doc = "`read()` method returns [`clk_sys_resus_status::R`](R) reader structure"]
 impl crate::Readable for CLK_SYS_RESUS_STATUS_SPEC {}
 #[doc = "`reset()` method sets CLK_SYS_RESUS_STATUS to value 0"]
-impl crate::Resettable for CLK_SYS_RESUS_STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLK_SYS_RESUS_STATUS_SPEC {}

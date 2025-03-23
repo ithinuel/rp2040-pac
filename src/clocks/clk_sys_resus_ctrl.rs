@@ -47,25 +47,21 @@ impl W {
     #[doc = "Bits 0:7 - This is expressed as a number of clk_ref cycles  
  and must be >= 2x clk_ref_freq/min_clk_tst_freq"]
     #[inline(always)]
-    #[must_use]
     pub fn timeout(&mut self) -> TIMEOUT_W<CLK_SYS_RESUS_CTRL_SPEC> {
         TIMEOUT_W::new(self, 0)
     }
     #[doc = "Bit 8 - Enable resus"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<CLK_SYS_RESUS_CTRL_SPEC> {
         ENABLE_W::new(self, 8)
     }
     #[doc = "Bit 12 - Force a resus, for test purposes only"]
     #[inline(always)]
-    #[must_use]
     pub fn frce(&mut self) -> FRCE_W<CLK_SYS_RESUS_CTRL_SPEC> {
         FRCE_W::new(self, 12)
     }
     #[doc = "Bit 16 - For clearing the resus after the fault that triggered it has been corrected"]
     #[inline(always)]
-    #[must_use]
     pub fn clear(&mut self) -> CLEAR_W<CLK_SYS_RESUS_CTRL_SPEC> {
         CLEAR_W::new(self, 16)
     }
@@ -82,8 +78,6 @@ impl crate::Readable for CLK_SYS_RESUS_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clk_sys_resus_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLK_SYS_RESUS_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLK_SYS_RESUS_CTRL to value 0xff"]
 impl crate::Resettable for CLK_SYS_RESUS_CTRL_SPEC {

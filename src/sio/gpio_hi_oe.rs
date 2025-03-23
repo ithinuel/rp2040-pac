@@ -32,7 +32,6 @@ impl W {
  the result is as though the write from core 0 took place first,  
  and the write from core 1 was then applied to that intermediate result."]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_hi_oe(&mut self) -> GPIO_HI_OE_W<GPIO_HI_OE_SPEC> {
         GPIO_HI_OE_W::new(self, 0)
     }
@@ -49,10 +48,6 @@ impl crate::Readable for GPIO_HI_OE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpio_hi_oe::W`](W) writer structure"]
 impl crate::Writable for GPIO_HI_OE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GPIO_HI_OE to value 0"]
-impl crate::Resettable for GPIO_HI_OE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GPIO_HI_OE_SPEC {}

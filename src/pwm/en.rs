@@ -79,49 +79,41 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ch0(&mut self) -> CH0_W<EN_SPEC> {
         CH0_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ch1(&mut self) -> CH1_W<EN_SPEC> {
         CH1_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn ch2(&mut self) -> CH2_W<EN_SPEC> {
         CH2_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn ch3(&mut self) -> CH3_W<EN_SPEC> {
         CH3_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn ch4(&mut self) -> CH4_W<EN_SPEC> {
         CH4_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn ch5(&mut self) -> CH5_W<EN_SPEC> {
         CH5_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn ch6(&mut self) -> CH6_W<EN_SPEC> {
         CH6_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn ch7(&mut self) -> CH7_W<EN_SPEC> {
         CH7_W::new(self, 7)
     }
@@ -142,10 +134,6 @@ impl crate::Readable for EN_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`en::W`](W) writer structure"]
 impl crate::Writable for EN_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EN to value 0"]
-impl crate::Resettable for EN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EN_SPEC {}

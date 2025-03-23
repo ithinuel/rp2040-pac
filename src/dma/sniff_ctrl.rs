@@ -177,19 +177,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable sniffer"]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EN_W<SNIFF_CTRL_SPEC> {
         EN_W::new(self, 0)
     }
     #[doc = "Bits 1:4 - DMA channel for Sniffer to observe"]
     #[inline(always)]
-    #[must_use]
     pub fn dmach(&mut self) -> DMACH_W<SNIFF_CTRL_SPEC> {
         DMACH_W::new(self, 1)
     }
     #[doc = "Bits 5:8"]
     #[inline(always)]
-    #[must_use]
     pub fn calc(&mut self) -> CALC_W<SNIFF_CTRL_SPEC> {
         CALC_W::new(self, 5)
     }
@@ -197,19 +194,16 @@ impl W {
 
  Note that the sniff hardware is downstream of the DMA channel byteswap performed in the read master: if channel CTRL_BSWAP and SNIFF_CTRL_BSWAP are both enabled, their effects cancel from the sniffer's point of view."]
     #[inline(always)]
-    #[must_use]
     pub fn bswap(&mut self) -> BSWAP_W<SNIFF_CTRL_SPEC> {
         BSWAP_W::new(self, 9)
     }
     #[doc = "Bit 10 - If set, the result appears bit-reversed when read. This does not affect the way the checksum is calculated; the result is transformed on-the-fly between the result register and the bus."]
     #[inline(always)]
-    #[must_use]
     pub fn out_rev(&mut self) -> OUT_REV_W<SNIFF_CTRL_SPEC> {
         OUT_REV_W::new(self, 10)
     }
     #[doc = "Bit 11 - If set, the result appears inverted (bitwise complement) when read. This does not affect the way the checksum is calculated; the result is transformed on-the-fly between the result register and the bus."]
     #[inline(always)]
-    #[must_use]
     pub fn out_inv(&mut self) -> OUT_INV_W<SNIFF_CTRL_SPEC> {
         OUT_INV_W::new(self, 11)
     }
@@ -226,10 +220,6 @@ impl crate::Readable for SNIFF_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sniff_ctrl::W`](W) writer structure"]
 impl crate::Writable for SNIFF_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SNIFF_CTRL to value 0"]
-impl crate::Resettable for SNIFF_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SNIFF_CTRL_SPEC {}

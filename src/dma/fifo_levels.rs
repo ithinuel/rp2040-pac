@@ -33,6 +33,4 @@ impl crate::RegisterSpec for FIFO_LEVELS_SPEC {
 #[doc = "`read()` method returns [`fifo_levels::R`](R) reader structure"]
 impl crate::Readable for FIFO_LEVELS_SPEC {}
 #[doc = "`reset()` method sets FIFO_LEVELS to value 0"]
-impl crate::Resettable for FIFO_LEVELS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FIFO_LEVELS_SPEC {}

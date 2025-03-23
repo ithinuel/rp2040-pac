@@ -23,6 +23,4 @@ impl crate::RegisterSpec for IC_CLR_RX_DONE_SPEC {
 #[doc = "`read()` method returns [`ic_clr_rx_done::R`](R) reader structure"]
 impl crate::Readable for IC_CLR_RX_DONE_SPEC {}
 #[doc = "`reset()` method sets IC_CLR_RX_DONE to value 0"]
-impl crate::Resettable for IC_CLR_RX_DONE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_CLR_RX_DONE_SPEC {}

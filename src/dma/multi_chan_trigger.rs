@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Each bit in this register corresponds to a DMA channel. Writing a 1 to the relevant bit is the same as writing to that channel's trigger register; the channel will start if it is currently enabled and not already busy."]
     #[inline(always)]
-    #[must_use]
     pub fn multi_chan_trigger(&mut self) -> MULTI_CHAN_TRIGGER_W<MULTI_CHAN_TRIGGER_SPEC> {
         MULTI_CHAN_TRIGGER_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for MULTI_CHAN_TRIGGER_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`multi_chan_trigger::W`](W) writer structure"]
 impl crate::Writable for MULTI_CHAN_TRIGGER_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MULTI_CHAN_TRIGGER to value 0"]
-impl crate::Resettable for MULTI_CHAN_TRIGGER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MULTI_CHAN_TRIGGER_SPEC {}

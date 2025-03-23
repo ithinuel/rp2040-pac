@@ -106,67 +106,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - nUARTRI modem interrupt clear. Clears the UARTRIINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn rimic(&mut self) -> RIMIC_W<UARTICR_SPEC> {
         RIMIC_W::new(self, 0)
     }
     #[doc = "Bit 1 - nUARTCTS modem interrupt clear. Clears the UARTCTSINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn ctsmic(&mut self) -> CTSMIC_W<UARTICR_SPEC> {
         CTSMIC_W::new(self, 1)
     }
     #[doc = "Bit 2 - nUARTDCD modem interrupt clear. Clears the UARTDCDINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn dcdmic(&mut self) -> DCDMIC_W<UARTICR_SPEC> {
         DCDMIC_W::new(self, 2)
     }
     #[doc = "Bit 3 - nUARTDSR modem interrupt clear. Clears the UARTDSRINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn dsrmic(&mut self) -> DSRMIC_W<UARTICR_SPEC> {
         DSRMIC_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive interrupt clear. Clears the UARTRXINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn rxic(&mut self) -> RXIC_W<UARTICR_SPEC> {
         RXIC_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit interrupt clear. Clears the UARTTXINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn txic(&mut self) -> TXIC_W<UARTICR_SPEC> {
         TXIC_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive timeout interrupt clear. Clears the UARTRTINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn rtic(&mut self) -> RTIC_W<UARTICR_SPEC> {
         RTIC_W::new(self, 6)
     }
     #[doc = "Bit 7 - Framing error interrupt clear. Clears the UARTFEINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn feic(&mut self) -> FEIC_W<UARTICR_SPEC> {
         FEIC_W::new(self, 7)
     }
     #[doc = "Bit 8 - Parity error interrupt clear. Clears the UARTPEINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn peic(&mut self) -> PEIC_W<UARTICR_SPEC> {
         PEIC_W::new(self, 8)
     }
     #[doc = "Bit 9 - Break error interrupt clear. Clears the UARTBEINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn beic(&mut self) -> BEIC_W<UARTICR_SPEC> {
         BEIC_W::new(self, 9)
     }
     #[doc = "Bit 10 - Overrun error interrupt clear. Clears the UARTOEINTR interrupt."]
     #[inline(always)]
-    #[must_use]
     pub fn oeic(&mut self) -> OEIC_W<UARTICR_SPEC> {
         OEIC_W::new(self, 10)
     }
@@ -183,10 +172,7 @@ impl crate::Readable for UARTICR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`uarticr::W`](W) writer structure"]
 impl crate::Writable for UARTICR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x07ff;
 }
 #[doc = "`reset()` method sets UARTICR to value 0"]
-impl crate::Resettable for UARTICR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTICR_SPEC {}

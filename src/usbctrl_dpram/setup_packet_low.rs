@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    #[must_use]
     pub fn bmrequesttype(&mut self) -> BMREQUESTTYPE_W<SETUP_PACKET_LOW_SPEC> {
         BMREQUESTTYPE_W::new(self, 0)
     }
     #[doc = "Bits 8:15"]
     #[inline(always)]
-    #[must_use]
     pub fn brequest(&mut self) -> BREQUEST_W<SETUP_PACKET_LOW_SPEC> {
         BREQUEST_W::new(self, 8)
     }
     #[doc = "Bits 16:31"]
     #[inline(always)]
-    #[must_use]
     pub fn wvalue(&mut self) -> WVALUE_W<SETUP_PACKET_LOW_SPEC> {
         WVALUE_W::new(self, 16)
     }
@@ -63,10 +60,6 @@ impl crate::Readable for SETUP_PACKET_LOW_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`setup_packet_low::W`](W) writer structure"]
 impl crate::Writable for SETUP_PACKET_LOW_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP_PACKET_LOW to value 0"]
-impl crate::Resettable for SETUP_PACKET_LOW_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SETUP_PACKET_LOW_SPEC {}

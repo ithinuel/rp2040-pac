@@ -2,11 +2,9 @@
 pub type R = crate::R<MPU_RBAR_SPEC>;
 #[doc = "Register `MPU_RBAR` writer"]
 pub type W = crate::W<MPU_RBAR_SPEC>;
-#[doc = "Field `REGION` reader - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\]
-of MPU_RNR."]
+#[doc = "Field `REGION` reader - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\] of MPU_RNR."]
 pub type REGION_R = crate::FieldReader;
-#[doc = "Field `REGION` writer - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\]
-of MPU_RNR."]
+#[doc = "Field `REGION` writer - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\] of MPU_RNR."]
 pub type REGION_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Field `VALID` reader - On writes, indicates whether the write must update the base address of the region identified by the REGION field, updating the MPU_RNR to indicate this new region.  
  Write:  
@@ -33,8 +31,7 @@ pub type ADDR_R = crate::FieldReader<u32>;
 #[doc = "Field `ADDR` writer - Base address of the region."]
 pub type ADDR_W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
 impl R {
-    #[doc = "Bits 0:3 - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\]
-of MPU_RNR."]
+    #[doc = "Bits 0:3 - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\] of MPU_RNR."]
     #[inline(always)]
     pub fn region(&self) -> REGION_R {
         REGION_R::new((self.bits & 0x0f) as u8)
@@ -59,10 +56,8 @@ of MPU_RNR."]
     }
 }
 impl W {
-    #[doc = "Bits 0:3 - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\]
-of MPU_RNR."]
+    #[doc = "Bits 0:3 - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\] of MPU_RNR."]
     #[inline(always)]
-    #[must_use]
     pub fn region(&mut self) -> REGION_W<MPU_RBAR_SPEC> {
         REGION_W::new(self, 0)
     }
@@ -76,13 +71,11 @@ of MPU_RNR."]
  Updates the base address for the region specified in the REGION field.  
  Always reads as zero."]
     #[inline(always)]
-    #[must_use]
     pub fn valid(&mut self) -> VALID_W<MPU_RBAR_SPEC> {
         VALID_W::new(self, 4)
     }
     #[doc = "Bits 8:31 - Base address of the region."]
     #[inline(always)]
-    #[must_use]
     pub fn addr(&mut self) -> ADDR_W<MPU_RBAR_SPEC> {
         ADDR_W::new(self, 8)
     }
@@ -99,10 +92,6 @@ impl crate::Readable for MPU_RBAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_rbar::W`](W) writer structure"]
 impl crate::Writable for MPU_RBAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_RBAR to value 0"]
-impl crate::Resettable for MPU_RBAR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MPU_RBAR_SPEC {}

@@ -295,193 +295,161 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_clocks(&mut self) -> CLK_SYS_CLOCKS_W<WAKE_EN0_SPEC> {
         CLK_SYS_CLOCKS_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_adc_adc(&mut self) -> CLK_ADC_ADC_W<WAKE_EN0_SPEC> {
         CLK_ADC_ADC_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_adc(&mut self) -> CLK_SYS_ADC_W<WAKE_EN0_SPEC> {
         CLK_SYS_ADC_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_busctrl(&mut self) -> CLK_SYS_BUSCTRL_W<WAKE_EN0_SPEC> {
         CLK_SYS_BUSCTRL_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_busfabric(&mut self) -> CLK_SYS_BUSFABRIC_W<WAKE_EN0_SPEC> {
         CLK_SYS_BUSFABRIC_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_dma(&mut self) -> CLK_SYS_DMA_W<WAKE_EN0_SPEC> {
         CLK_SYS_DMA_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_i2c0(&mut self) -> CLK_SYS_I2C0_W<WAKE_EN0_SPEC> {
         CLK_SYS_I2C0_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_i2c1(&mut self) -> CLK_SYS_I2C1_W<WAKE_EN0_SPEC> {
         CLK_SYS_I2C1_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_io(&mut self) -> CLK_SYS_IO_W<WAKE_EN0_SPEC> {
         CLK_SYS_IO_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_jtag(&mut self) -> CLK_SYS_JTAG_W<WAKE_EN0_SPEC> {
         CLK_SYS_JTAG_W::new(self, 9)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_vreg_and_chip_reset(&mut self) -> CLK_SYS_VREG_AND_CHIP_RESET_W<WAKE_EN0_SPEC> {
         CLK_SYS_VREG_AND_CHIP_RESET_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pads(&mut self) -> CLK_SYS_PADS_W<WAKE_EN0_SPEC> {
         CLK_SYS_PADS_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pio0(&mut self) -> CLK_SYS_PIO0_W<WAKE_EN0_SPEC> {
         CLK_SYS_PIO0_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pio1(&mut self) -> CLK_SYS_PIO1_W<WAKE_EN0_SPEC> {
         CLK_SYS_PIO1_W::new(self, 13)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pll_sys(&mut self) -> CLK_SYS_PLL_SYS_W<WAKE_EN0_SPEC> {
         CLK_SYS_PLL_SYS_W::new(self, 14)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pll_usb(&mut self) -> CLK_SYS_PLL_USB_W<WAKE_EN0_SPEC> {
         CLK_SYS_PLL_USB_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_psm(&mut self) -> CLK_SYS_PSM_W<WAKE_EN0_SPEC> {
         CLK_SYS_PSM_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_pwm(&mut self) -> CLK_SYS_PWM_W<WAKE_EN0_SPEC> {
         CLK_SYS_PWM_W::new(self, 17)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_resets(&mut self) -> CLK_SYS_RESETS_W<WAKE_EN0_SPEC> {
         CLK_SYS_RESETS_W::new(self, 18)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_rom(&mut self) -> CLK_SYS_ROM_W<WAKE_EN0_SPEC> {
         CLK_SYS_ROM_W::new(self, 19)
     }
     #[doc = "Bit 20"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_rosc(&mut self) -> CLK_SYS_ROSC_W<WAKE_EN0_SPEC> {
         CLK_SYS_ROSC_W::new(self, 20)
     }
     #[doc = "Bit 21"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_rtc_rtc(&mut self) -> CLK_RTC_RTC_W<WAKE_EN0_SPEC> {
         CLK_RTC_RTC_W::new(self, 21)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_rtc(&mut self) -> CLK_SYS_RTC_W<WAKE_EN0_SPEC> {
         CLK_SYS_RTC_W::new(self, 22)
     }
     #[doc = "Bit 23"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sio(&mut self) -> CLK_SYS_SIO_W<WAKE_EN0_SPEC> {
         CLK_SYS_SIO_W::new(self, 23)
     }
     #[doc = "Bit 24"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_peri_spi0(&mut self) -> CLK_PERI_SPI0_W<WAKE_EN0_SPEC> {
         CLK_PERI_SPI0_W::new(self, 24)
     }
     #[doc = "Bit 25"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_spi0(&mut self) -> CLK_SYS_SPI0_W<WAKE_EN0_SPEC> {
         CLK_SYS_SPI0_W::new(self, 25)
     }
     #[doc = "Bit 26"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_peri_spi1(&mut self) -> CLK_PERI_SPI1_W<WAKE_EN0_SPEC> {
         CLK_PERI_SPI1_W::new(self, 26)
     }
     #[doc = "Bit 27"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_spi1(&mut self) -> CLK_SYS_SPI1_W<WAKE_EN0_SPEC> {
         CLK_SYS_SPI1_W::new(self, 27)
     }
     #[doc = "Bit 28"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram0(&mut self) -> CLK_SYS_SRAM0_W<WAKE_EN0_SPEC> {
         CLK_SYS_SRAM0_W::new(self, 28)
     }
     #[doc = "Bit 29"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram1(&mut self) -> CLK_SYS_SRAM1_W<WAKE_EN0_SPEC> {
         CLK_SYS_SRAM1_W::new(self, 29)
     }
     #[doc = "Bit 30"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram2(&mut self) -> CLK_SYS_SRAM2_W<WAKE_EN0_SPEC> {
         CLK_SYS_SRAM2_W::new(self, 30)
     }
     #[doc = "Bit 31"]
     #[inline(always)]
-    #[must_use]
     pub fn clk_sys_sram3(&mut self) -> CLK_SYS_SRAM3_W<WAKE_EN0_SPEC> {
         CLK_SYS_SRAM3_W::new(self, 31)
     }
@@ -498,8 +466,6 @@ impl crate::Readable for WAKE_EN0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wake_en0::W`](W) writer structure"]
 impl crate::Writable for WAKE_EN0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WAKE_EN0 to value 0xffff_ffff"]
 impl crate::Resettable for WAKE_EN0_SPEC {

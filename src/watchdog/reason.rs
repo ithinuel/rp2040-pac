@@ -26,6 +26,4 @@ impl crate::RegisterSpec for REASON_SPEC {
 #[doc = "`read()` method returns [`reason::R`](R) reader structure"]
 impl crate::Readable for REASON_SPEC {}
 #[doc = "`reset()` method sets REASON to value 0"]
-impl crate::Resettable for REASON_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for REASON_SPEC {}

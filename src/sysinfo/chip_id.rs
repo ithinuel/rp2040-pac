@@ -33,6 +33,4 @@ impl crate::RegisterSpec for CHIP_ID_SPEC {
 #[doc = "`read()` method returns [`chip_id::R`](R) reader structure"]
 impl crate::Readable for CHIP_ID_SPEC {}
 #[doc = "`reset()` method sets CHIP_ID to value 0"]
-impl crate::Resettable for CHIP_ID_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHIP_ID_SPEC {}

@@ -172,55 +172,46 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - 64 byte aligned buffer address for this EP (bits 0-5 are ignored). Relative to the start of the DPRAM."]
     #[inline(always)]
-    #[must_use]
     pub fn buffer_address(&mut self) -> BUFFER_ADDRESS_W<EP_CONTROL_SPEC> {
         BUFFER_ADDRESS_W::new(self, 0)
     }
     #[doc = "Bit 16 - Trigger an interrupt if a NAK is sent. Intended for debug only."]
     #[inline(always)]
-    #[must_use]
     pub fn interrupt_on_nak(&mut self) -> INTERRUPT_ON_NAK_W<EP_CONTROL_SPEC> {
         INTERRUPT_ON_NAK_W::new(self, 16)
     }
     #[doc = "Bits 16:25 - The interval the host controller should poll this endpoint. Only applicable for interrupt endpoints. Specified in ms - 1. For example: a value of 9 would poll the endpoint every 10ms."]
     #[inline(always)]
-    #[must_use]
     pub fn host_poll_interval(&mut self) -> HOST_POLL_INTERVAL_W<EP_CONTROL_SPEC> {
         HOST_POLL_INTERVAL_W::new(self, 16)
     }
     #[doc = "Bit 17 - Trigger an interrupt if a STALL is sent. Intended for debug only."]
     #[inline(always)]
-    #[must_use]
     pub fn interrupt_on_stall(&mut self) -> INTERRUPT_ON_STALL_W<EP_CONTROL_SPEC> {
         INTERRUPT_ON_STALL_W::new(self, 17)
     }
     #[doc = "Bits 26:27"]
     #[inline(always)]
-    #[must_use]
     pub fn endpoint_type(&mut self) -> ENDPOINT_TYPE_W<EP_CONTROL_SPEC> {
         ENDPOINT_TYPE_W::new(self, 26)
     }
     #[doc = "Bit 28 - Trigger an interrupt each time both buffers are done. Only valid in double buffered mode."]
     #[inline(always)]
-    #[must_use]
     pub fn interrupt_per_double_buff(&mut self) -> INTERRUPT_PER_DOUBLE_BUFF_W<EP_CONTROL_SPEC> {
         INTERRUPT_PER_DOUBLE_BUFF_W::new(self, 28)
     }
     #[doc = "Bit 29 - Trigger an interrupt each time a buffer is done."]
     #[inline(always)]
-    #[must_use]
     pub fn interrupt_per_buff(&mut self) -> INTERRUPT_PER_BUFF_W<EP_CONTROL_SPEC> {
         INTERRUPT_PER_BUFF_W::new(self, 29)
     }
     #[doc = "Bit 30 - This endpoint is double buffered."]
     #[inline(always)]
-    #[must_use]
     pub fn double_buffered(&mut self) -> DOUBLE_BUFFERED_W<EP_CONTROL_SPEC> {
         DOUBLE_BUFFERED_W::new(self, 30)
     }
     #[doc = "Bit 31 - Enable this endpoint. The device will not reply to any packets for this endpoint if this bit is not set."]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<EP_CONTROL_SPEC> {
         ENABLE_W::new(self, 31)
     }
@@ -237,10 +228,6 @@ impl crate::Readable for EP_CONTROL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ep_control::W`](W) writer structure"]
 impl crate::Writable for EP_CONTROL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EP_CONTROL%s to value 0"]
-impl crate::Resettable for EP_CONTROL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EP_CONTROL_SPEC {}

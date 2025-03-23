@@ -63,7 +63,6 @@ impl W {
  0 = MPU disabled.  
  1 = MPU enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<MPU_CTRL_SPEC> {
         ENABLE_W::new(self, 0)
     }
@@ -72,7 +71,6 @@ impl W {
  0 = MPU is disabled during HardFault and NMI handlers, regardless of the value of the ENABLE bit.  
  1 = the MPU is enabled during HardFault and NMI handlers."]
     #[inline(always)]
-    #[must_use]
     pub fn hfnmiena(&mut self) -> HFNMIENA_W<MPU_CTRL_SPEC> {
         HFNMIENA_W::new(self, 1)
     }
@@ -82,7 +80,6 @@ impl W {
  1 = If the MPU is enabled, enables use of the default memory map as a background region for privileged software accesses.  
  When enabled, the background region acts as if it is region number -1. Any region that is defined and enabled has priority over this default map."]
     #[inline(always)]
-    #[must_use]
     pub fn privdefena(&mut self) -> PRIVDEFENA_W<MPU_CTRL_SPEC> {
         PRIVDEFENA_W::new(self, 2)
     }
@@ -99,10 +96,6 @@ impl crate::Readable for MPU_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_ctrl::W`](W) writer structure"]
 impl crate::Writable for MPU_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_CTRL to value 0"]
-impl crate::Resettable for MPU_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MPU_CTRL_SPEC {}

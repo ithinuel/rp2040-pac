@@ -39,7 +39,6 @@ impl W {
  DP pulldown resistor trim control  
  Experimental data suggests that the reset value will work, but this register allows adjustment if required"]
     #[inline(always)]
-    #[must_use]
     pub fn dp_pulldn_trim(&mut self) -> DP_PULLDN_TRIM_W<USBPHY_TRIM_SPEC> {
         DP_PULLDN_TRIM_W::new(self, 0)
     }
@@ -47,7 +46,6 @@ impl W {
  DM pulldown resistor trim control  
  Experimental data suggests that the reset value will work, but this register allows adjustment if required"]
     #[inline(always)]
-    #[must_use]
     pub fn dm_pulldn_trim(&mut self) -> DM_PULLDN_TRIM_W<USBPHY_TRIM_SPEC> {
         DM_PULLDN_TRIM_W::new(self, 8)
     }
@@ -64,8 +62,6 @@ impl crate::Readable for USBPHY_TRIM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usbphy_trim::W`](W) writer structure"]
 impl crate::Writable for USBPHY_TRIM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USBPHY_TRIM to value 0x1f1f"]
 impl crate::Resettable for USBPHY_TRIM_SPEC {

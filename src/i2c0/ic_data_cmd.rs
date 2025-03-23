@@ -145,12 +145,9 @@ where
 
  1. The user has to perform two APB Reads to IC_DATA_CMD in order to get status on 11 bit.  
 
- 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\]
-(offset 0x10) and then perform the second read \\[15:8\\]
-(offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
+ 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\] (offset 0x10) and then perform the second read \\[15:8\\] (offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
 
- 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\]
-(offset 0x11) if not interested in FIRST_DATA_BYTE status.  
+ 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\] (offset 0x11) if not interested in FIRST_DATA_BYTE status.  
 
 Value on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -174,12 +171,9 @@ impl From<FIRST_DATA_BYTE_A> for bool {
 
  1. The user has to perform two APB Reads to IC_DATA_CMD in order to get status on 11 bit.  
 
- 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\]
-(offset 0x10) and then perform the second read \\[15:8\\]
-(offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
+ 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\] (offset 0x10) and then perform the second read \\[15:8\\] (offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
 
- 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\]
-(offset 0x11) if not interested in FIRST_DATA_BYTE status."]
+ 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\] (offset 0x11) if not interested in FIRST_DATA_BYTE status."]
 pub type FIRST_DATA_BYTE_R = crate::BitReader<FIRST_DATA_BYTE_A>;
 impl FIRST_DATA_BYTE_R {
     #[doc = "Get enumerated values variant"]
@@ -217,12 +211,9 @@ impl R {
 
  1. The user has to perform two APB Reads to IC_DATA_CMD in order to get status on 11 bit.  
 
- 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\]
-(offset 0x10) and then perform the second read \\[15:8\\]
-(offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
+ 2. In order to read the 11 bit, the user has to perform the first data byte read \\[7:0\\] (offset 0x10) and then perform the second read \\[15:8\\] (offset 0x11) in order to know the status of 11 bit (whether the data received in previous read is a first data byte or not).  
 
- 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\]
-(offset 0x11) if not interested in FIRST_DATA_BYTE status."]
+ 3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\] (offset 0x11) if not interested in FIRST_DATA_BYTE status."]
     #[inline(always)]
     pub fn first_data_byte(&self) -> FIRST_DATA_BYTE_R {
         FIRST_DATA_BYTE_R::new(((self.bits >> 11) & 1) != 0)
@@ -233,7 +224,6 @@ impl W {
 
  Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn dat(&mut self) -> DAT_W<IC_DATA_CMD_SPEC> {
         DAT_W::new(self, 0)
     }
@@ -245,7 +235,6 @@ impl W {
 
  Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn cmd(&mut self) -> CMD_W<IC_DATA_CMD_SPEC> {
         CMD_W::new(self, 8)
     }
@@ -253,7 +242,6 @@ impl W {
 
  - 1 - STOP is issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master immediately tries to start a new transfer by issuing a START and arbitrating for the bus. - 0 - STOP is not issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master continues the current transfer by sending/receiving data bytes according to the value of the CMD bit. If the Tx FIFO is empty, the master holds the SCL line low and stalls the bus until a new command is available in the Tx FIFO. Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn stop(&mut self) -> STOP_W<IC_DATA_CMD_SPEC> {
         STOP_W::new(self, 9)
     }
@@ -265,7 +253,6 @@ impl W {
 
  Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn restart(&mut self) -> RESTART_W<IC_DATA_CMD_SPEC> {
         RESTART_W::new(self, 10)
     }
@@ -286,10 +273,6 @@ impl crate::Readable for IC_DATA_CMD_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_data_cmd::W`](W) writer structure"]
 impl crate::Writable for IC_DATA_CMD_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_DATA_CMD to value 0"]
-impl crate::Resettable for IC_DATA_CMD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_DATA_CMD_SPEC {}

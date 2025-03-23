@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Write 1s to force the corresponding bits in INTE0. The interrupt remains asserted until INTF0 is cleared."]
     #[inline(always)]
-    #[must_use]
     pub fn intf0(&mut self) -> INTF0_W<INTF0_SPEC> {
         INTF0_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for INTF0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`intf0::W`](W) writer structure"]
 impl crate::Writable for INTF0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTF0 to value 0"]
-impl crate::Resettable for INTF0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTF0_SPEC {}

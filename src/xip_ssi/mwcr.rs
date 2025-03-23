@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Microwire transfer mode"]
     #[inline(always)]
-    #[must_use]
     pub fn mwmod(&mut self) -> MWMOD_W<MWCR_SPEC> {
         MWMOD_W::new(self, 0)
     }
     #[doc = "Bit 1 - Microwire control"]
     #[inline(always)]
-    #[must_use]
     pub fn mdd(&mut self) -> MDD_W<MWCR_SPEC> {
         MDD_W::new(self, 1)
     }
     #[doc = "Bit 2 - Microwire handshaking"]
     #[inline(always)]
-    #[must_use]
     pub fn mhs(&mut self) -> MHS_W<MWCR_SPEC> {
         MHS_W::new(self, 2)
     }
@@ -63,10 +60,6 @@ impl crate::Readable for MWCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mwcr::W`](W) writer structure"]
 impl crate::Writable for MWCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MWCR to value 0"]
-impl crate::Resettable for MWCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MWCR_SPEC {}

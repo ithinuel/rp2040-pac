@@ -55,7 +55,7 @@ impl RegisterBlock {
     pub const fn intf(&self) -> &INTF {
         &self.intf
     }
-    #[doc = "0x20 - Interrupt status after masking &amp; forcing"]
+    #[doc = "0x20 - Interrupt status after masking & forcing"]
     #[inline(always)]
     pub const fn ints(&self) -> &INTS {
         &self.ints
@@ -65,8 +65,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`cs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@cs`]
-module"]
+For information about available fields see [`mod@cs`] module"]
 pub type CS = crate::Reg<cs::CS_SPEC>;
 #[doc = "ADC Control and Status"]
 pub mod cs;
@@ -74,8 +73,7 @@ pub mod cs;
 
 You can [`read`](crate::Reg::read) this register and get [`result::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@result`]
-module"]
+For information about available fields see [`mod@result`] module"]
 pub type RESULT = crate::Reg<result::RESULT_SPEC>;
 #[doc = "Result of most recent ADC conversion"]
 pub mod result;
@@ -83,8 +81,7 @@ pub mod result;
 
 You can [`read`](crate::Reg::read) this register and get [`fcs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fcs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fcs`]
-module"]
+For information about available fields see [`mod@fcs`] module"]
 pub type FCS = crate::Reg<fcs::FCS_SPEC>;
 #[doc = "FIFO control and status"]
 pub mod fcs;
@@ -92,8 +89,7 @@ pub mod fcs;
 
 You can [`read`](crate::Reg::read) this register and get [`fifo::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fifo`]
-module"]
+For information about available fields see [`mod@fifo`] module"]
 pub type FIFO = crate::Reg<fifo::FIFO_SPEC>;
 #[doc = "Conversion result FIFO"]
 pub mod fifo;
@@ -104,8 +100,7 @@ pub mod fifo;
 
 You can [`read`](crate::Reg::read) this register and get [`div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@div`]
-module"]
+For information about available fields see [`mod@div`] module"]
 pub type DIV = crate::Reg<div::DIV_SPEC>;
 #[doc = "Clock divider. If non-zero, CS_START_MANY will start conversions  
  at regular intervals rather than back-to-back.  
@@ -116,8 +111,7 @@ pub mod div;
 
 You can [`read`](crate::Reg::read) this register and get [`intr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@intr`]
-module"]
+For information about available fields see [`mod@intr`] module"]
 pub type INTR = crate::Reg<intr::INTR_SPEC>;
 #[doc = "Raw Interrupts"]
 pub mod intr;
@@ -125,8 +119,7 @@ pub mod intr;
 
 You can [`read`](crate::Reg::read) this register and get [`inte::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inte::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@inte`]
-module"]
+For information about available fields see [`mod@inte`] module"]
 pub type INTE = crate::Reg<inte::INTE_SPEC>;
 #[doc = "Interrupt Enable"]
 pub mod inte;
@@ -134,17 +127,15 @@ pub mod inte;
 
 You can [`read`](crate::Reg::read) this register and get [`intf::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intf::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@intf`]
-module"]
+For information about available fields see [`mod@intf`] module"]
 pub type INTF = crate::Reg<intf::INTF_SPEC>;
 #[doc = "Interrupt Force"]
 pub mod intf;
-#[doc = "INTS (r) register accessor: Interrupt status after masking &amp; forcing  
+#[doc = "INTS (r) register accessor: Interrupt status after masking & forcing  
 
 You can [`read`](crate::Reg::read) this register and get [`ints::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ints`]
-module"]
+For information about available fields see [`mod@ints`] module"]
 pub type INTS = crate::Reg<ints::INTS_SPEC>;
-#[doc = "Interrupt status after masking &amp; forcing"]
+#[doc = "Interrupt status after masking & forcing"]
 pub mod ints;

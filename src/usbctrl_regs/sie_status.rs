@@ -269,31 +269,26 @@ impl R {
 impl W {
     #[doc = "Bit 4 - Bus in suspended state. Valid for device and host. Host and device will go into suspend if neither Keep Alive / SOF frames are enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn suspended(&mut self) -> SUSPENDED_W<SIE_STATUS_SPEC> {
         SUSPENDED_W::new(self, 4)
     }
     #[doc = "Bits 8:9 - Host: device speed. Disconnected = 00, LS = 01, FS = 10"]
     #[inline(always)]
-    #[must_use]
     pub fn speed(&mut self) -> SPEED_W<SIE_STATUS_SPEC> {
         SPEED_W::new(self, 8)
     }
     #[doc = "Bit 11 - Host: Device has initiated a remote resume. Device: host has initiated a resume."]
     #[inline(always)]
-    #[must_use]
     pub fn resume(&mut self) -> RESUME_W<SIE_STATUS_SPEC> {
         RESUME_W::new(self, 11)
     }
     #[doc = "Bit 16 - Device: connected"]
     #[inline(always)]
-    #[must_use]
     pub fn connected(&mut self) -> CONNECTED_W<SIE_STATUS_SPEC> {
         CONNECTED_W::new(self, 16)
     }
     #[doc = "Bit 17 - Device: Setup packet received"]
     #[inline(always)]
-    #[must_use]
     pub fn setup_rec(&mut self) -> SETUP_REC_W<SIE_STATUS_SPEC> {
         SETUP_REC_W::new(self, 17)
     }
@@ -307,55 +302,46 @@ impl W {
 
  * A setup packet is sent when no data in or data out transaction follows * An IN packet is received and the `LAST_BUFF` bit is set in the buffer control register * An IN packet is received with zero length * An OUT packet is sent and the `LAST_BUFF` bit is set"]
     #[inline(always)]
-    #[must_use]
     pub fn trans_complete(&mut self) -> TRANS_COMPLETE_W<SIE_STATUS_SPEC> {
         TRANS_COMPLETE_W::new(self, 18)
     }
     #[doc = "Bit 19 - Device: bus reset received"]
     #[inline(always)]
-    #[must_use]
     pub fn bus_reset(&mut self) -> BUS_RESET_W<SIE_STATUS_SPEC> {
         BUS_RESET_W::new(self, 19)
     }
     #[doc = "Bit 24 - CRC Error. Raised by the Serial RX engine."]
     #[inline(always)]
-    #[must_use]
     pub fn crc_error(&mut self) -> CRC_ERROR_W<SIE_STATUS_SPEC> {
         CRC_ERROR_W::new(self, 24)
     }
     #[doc = "Bit 25 - Bit Stuff Error. Raised by the Serial RX engine."]
     #[inline(always)]
-    #[must_use]
     pub fn bit_stuff_error(&mut self) -> BIT_STUFF_ERROR_W<SIE_STATUS_SPEC> {
         BIT_STUFF_ERROR_W::new(self, 25)
     }
     #[doc = "Bit 26 - RX overflow is raised by the Serial RX engine if the incoming data is too fast."]
     #[inline(always)]
-    #[must_use]
     pub fn rx_overflow(&mut self) -> RX_OVERFLOW_W<SIE_STATUS_SPEC> {
         RX_OVERFLOW_W::new(self, 26)
     }
     #[doc = "Bit 27 - RX timeout is raised by both the host and device if an ACK is not received in the maximum time specified by the USB spec."]
     #[inline(always)]
-    #[must_use]
     pub fn rx_timeout(&mut self) -> RX_TIMEOUT_W<SIE_STATUS_SPEC> {
         RX_TIMEOUT_W::new(self, 27)
     }
     #[doc = "Bit 28 - Host: NAK received"]
     #[inline(always)]
-    #[must_use]
     pub fn nak_rec(&mut self) -> NAK_REC_W<SIE_STATUS_SPEC> {
         NAK_REC_W::new(self, 28)
     }
     #[doc = "Bit 29 - Host: STALL received"]
     #[inline(always)]
-    #[must_use]
     pub fn stall_rec(&mut self) -> STALL_REC_W<SIE_STATUS_SPEC> {
         STALL_REC_W::new(self, 29)
     }
     #[doc = "Bit 30 - ACK received. Raised by both host and device."]
     #[inline(always)]
-    #[must_use]
     pub fn ack_rec(&mut self) -> ACK_REC_W<SIE_STATUS_SPEC> {
         ACK_REC_W::new(self, 30)
     }
@@ -369,7 +355,6 @@ impl W {
 
  * An IN packet from the device has the wrong data PID"]
     #[inline(always)]
-    #[must_use]
     pub fn data_seq_error(&mut self) -> DATA_SEQ_ERROR_W<SIE_STATUS_SPEC> {
         DATA_SEQ_ERROR_W::new(self, 31)
     }
@@ -386,10 +371,7 @@ impl crate::Readable for SIE_STATUS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sie_status::W`](W) writer structure"]
 impl crate::Writable for SIE_STATUS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0xff0f_0b10;
 }
 #[doc = "`reset()` method sets SIE_STATUS to value 0"]
-impl crate::Resettable for SIE_STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SIE_STATUS_SPEC {}

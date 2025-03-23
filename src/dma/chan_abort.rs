@@ -24,7 +24,6 @@ impl W {
 
  After writing, this register must be polled until it returns all-zero. Until this point, it is unsafe to restart the channel."]
     #[inline(always)]
-    #[must_use]
     pub fn chan_abort(&mut self) -> CHAN_ABORT_W<CHAN_ABORT_SPEC> {
         CHAN_ABORT_W::new(self, 0)
     }
@@ -41,10 +40,6 @@ impl crate::Readable for CHAN_ABORT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`chan_abort::W`](W) writer structure"]
 impl crate::Writable for CHAN_ABORT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CHAN_ABORT to value 0"]
-impl crate::Resettable for CHAN_ABORT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CHAN_ABORT_SPEC {}

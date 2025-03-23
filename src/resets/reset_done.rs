@@ -187,6 +187,4 @@ impl crate::RegisterSpec for RESET_DONE_SPEC {
 #[doc = "`read()` method returns [`reset_done::R`](R) reader structure"]
 impl crate::Readable for RESET_DONE_SPEC {}
 #[doc = "`reset()` method sets RESET_DONE to value 0"]
-impl crate::Resettable for RESET_DONE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RESET_DONE_SPEC {}

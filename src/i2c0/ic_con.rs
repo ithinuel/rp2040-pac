@@ -69,7 +69,7 @@ where
 
  1: standard mode (100 kbit/s)  
 
- 2: fast mode (&lt;=400 kbit/s) or fast mode plus (&lt;=1000Kbit/s)  
+ 2: fast mode (<=400 kbit/s) or fast mode plus (<=1000Kbit/s)  
 
  3: high speed mode (3.4 Mbit/s)  
 
@@ -102,7 +102,7 @@ impl crate::IsEnum for SPEED_A {}
 
  1: standard mode (100 kbit/s)  
 
- 2: fast mode (&lt;=400 kbit/s) or fast mode plus (&lt;=1000Kbit/s)  
+ 2: fast mode (<=400 kbit/s) or fast mode plus (<=1000Kbit/s)  
 
  3: high speed mode (3.4 Mbit/s)  
 
@@ -141,7 +141,7 @@ impl SPEED_R {
 
  1: standard mode (100 kbit/s)  
 
- 2: fast mode (&lt;=400 kbit/s) or fast mode plus (&lt;=1000Kbit/s)  
+ 2: fast mode (<=400 kbit/s) or fast mode plus (<=1000Kbit/s)  
 
  3: high speed mode (3.4 Mbit/s)  
 
@@ -605,7 +605,7 @@ impl R {
 
  1: standard mode (100 kbit/s)  
 
- 2: fast mode (&lt;=400 kbit/s) or fast mode plus (&lt;=1000Kbit/s)  
+ 2: fast mode (<=400 kbit/s) or fast mode plus (<=1000Kbit/s)  
 
  3: high speed mode (3.4 Mbit/s)  
 
@@ -672,7 +672,6 @@ impl W {
 
  NOTE: Software should ensure that if this bit is written with '1' then bit 6 should also be written with a '1'."]
     #[inline(always)]
-    #[must_use]
     pub fn master_mode(&mut self) -> MASTER_MODE_W<IC_CON_SPEC> {
         MASTER_MODE_W::new(self, 0)
     }
@@ -682,25 +681,22 @@ impl W {
 
  1: standard mode (100 kbit/s)  
 
- 2: fast mode (&lt;=400 kbit/s) or fast mode plus (&lt;=1000Kbit/s)  
+ 2: fast mode (<=400 kbit/s) or fast mode plus (<=1000Kbit/s)  
 
  3: high speed mode (3.4 Mbit/s)  
 
  Note: This field is not applicable when IC_ULTRA_FAST_MODE=1"]
     #[inline(always)]
-    #[must_use]
     pub fn speed(&mut self) -> SPEED_W<IC_CON_SPEC> {
         SPEED_W::new(self, 1)
     }
     #[doc = "Bit 3 - When acting as a slave, this bit controls whether the DW_apb_i2c responds to 7- or 10-bit addresses. - 0: 7-bit addressing. The DW_apb_i2c ignores transactions that involve 10-bit addressing; for 7-bit addressing, only the lower 7 bits of the IC_SAR register are compared. - 1: 10-bit addressing. The DW_apb_i2c responds to only 10-bit addressing transfers that match the full 10 bits of the IC_SAR register."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_10bitaddr_slave(&mut self) -> IC_10BITADDR_SLAVE_W<IC_CON_SPEC> {
         IC_10BITADDR_SLAVE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Controls whether the DW_apb_i2c starts its transfers in 7- or 10-bit addressing mode when acting as a master. - 0: 7-bit addressing - 1: 10-bit addressing"]
     #[inline(always)]
-    #[must_use]
     pub fn ic_10bitaddr_master(&mut self) -> IC_10BITADDR_MASTER_W<IC_CON_SPEC> {
         IC_10BITADDR_MASTER_W::new(self, 4)
     }
@@ -708,7 +704,6 @@ impl W {
 
  Reset value: ENABLED"]
     #[inline(always)]
-    #[must_use]
     pub fn ic_restart_en(&mut self) -> IC_RESTART_EN_W<IC_CON_SPEC> {
         IC_RESTART_EN_W::new(self, 5)
     }
@@ -718,7 +713,6 @@ impl W {
 
  NOTE: Software should ensure that if this bit is written with 0, then bit 0 should also be written with a 0."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_slave_disable(&mut self) -> IC_SLAVE_DISABLE_W<IC_CON_SPEC> {
         IC_SLAVE_DISABLE_W::new(self, 6)
     }
@@ -726,7 +720,6 @@ impl W {
 
  NOTE: During a general call address, this slave does not issue the STOP_DET interrupt if STOP_DET_IF_ADDRESSED = 1'b1, even if the slave responds to the general call address by generating ACK. The STOP_DET interrupt is generated only when the transmitted address matches the slave address (SAR)."]
     #[inline(always)]
-    #[must_use]
     pub fn stop_det_ifaddressed(&mut self) -> STOP_DET_IFADDRESSED_W<IC_CON_SPEC> {
         STOP_DET_IFADDRESSED_W::new(self, 7)
     }
@@ -734,7 +727,6 @@ impl W {
 
  Reset value: 0x0."]
     #[inline(always)]
-    #[must_use]
     pub fn tx_empty_ctrl(&mut self) -> TX_EMPTY_CTRL_W<IC_CON_SPEC> {
         TX_EMPTY_CTRL_W::new(self, 8)
     }
@@ -742,13 +734,11 @@ impl W {
 
  Reset value: 0x0."]
     #[inline(always)]
-    #[must_use]
     pub fn rx_fifo_full_hld_ctrl(&mut self) -> RX_FIFO_FULL_HLD_CTRL_W<IC_CON_SPEC> {
         RX_FIFO_FULL_HLD_CTRL_W::new(self, 9)
     }
 }
-#[doc = "I2C Control Register. This register can be written only when the DW_apb_i2c is disabled, which corresponds to the IC_ENABLE\\[0\\]
-register being set to 0. Writes at other times have no effect.  
+#[doc = "I2C Control Register. This register can be written only when the DW_apb_i2c is disabled, which corresponds to the IC_ENABLE\\[0\\] register being set to 0. Writes at other times have no effect.  
 
  Read/Write Access: - bit 10 is read only. - bit 11 is read only - bit 16 is read only - bit 17 is read only - bits 18 and 19 are read only.  
 
@@ -762,8 +752,6 @@ impl crate::Readable for IC_CON_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_con::W`](W) writer structure"]
 impl crate::Writable for IC_CON_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_CON to value 0x65"]
 impl crate::Resettable for IC_CON_SPEC {

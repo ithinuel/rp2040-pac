@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Transmit FIFO threshold"]
     #[inline(always)]
-    #[must_use]
     pub fn tft(&mut self) -> TFT_W<TXFTLR_SPEC> {
         TFT_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for TXFTLR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`txftlr::W`](W) writer structure"]
 impl crate::Writable for TXFTLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TXFTLR to value 0"]
-impl crate::Resettable for TXFTLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TXFTLR_SPEC {}

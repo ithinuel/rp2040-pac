@@ -77,7 +77,6 @@ impl W {
 
  When the register is set to a value of 0, it generates NACK/ACK, depending on normal criteria. - 1: generate NACK after data byte received - 0: generate NACK/ACK normally Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn nack(&mut self) -> NACK_W<IC_SLV_DATA_NACK_ONLY_SPEC> {
         NACK_W::new(self, 0)
     }
@@ -86,10 +85,7 @@ impl W {
 
  The register is used to generate a NACK for the data part of a transfer when DW_apb_i2c is acting as a slave-receiver. This register only exists when the IC_SLV_DATA_NACK_ONLY parameter is set to 1. When this parameter disabled, this register does not exist and writing to the register's address has no effect.  
 
- A write can occur on this register if both of the following conditions are met: - DW_apb_i2c is disabled (IC_ENABLE\\[0\\]
-= 0) - Slave part is inactive (IC_STATUS\\[6\\]
-= 0) Note: The IC_STATUS\\[6\\]
-is a register read-back location for the internal slv_activity signal; the user should poll this before writing the ic_slv_data_nack_only bit.  
+ A write can occur on this register if both of the following conditions are met: - DW_apb_i2c is disabled (IC_ENABLE\\[0\\] = 0) - Slave part is inactive (IC_STATUS\\[6\\] = 0) Note: The IC_STATUS\\[6\\] is a register read-back location for the internal slv_activity signal; the user should poll this before writing the ic_slv_data_nack_only bit.  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_slv_data_nack_only::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ic_slv_data_nack_only::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IC_SLV_DATA_NACK_ONLY_SPEC;
@@ -101,10 +97,6 @@ impl crate::Readable for IC_SLV_DATA_NACK_ONLY_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_slv_data_nack_only::W`](W) writer structure"]
 impl crate::Writable for IC_SLV_DATA_NACK_ONLY_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_SLV_DATA_NACK_ONLY to value 0"]
-impl crate::Resettable for IC_SLV_DATA_NACK_ONLY_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_SLV_DATA_NACK_ONLY_SPEC {}

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:31"]
     #[inline(always)]
-    #[must_use]
     pub fn alarm3(&mut self) -> ALARM3_W<ALARM3_SPEC> {
         ALARM3_W::new(self, 0)
     }
@@ -36,10 +35,6 @@ impl crate::Readable for ALARM3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`alarm3::W`](W) writer structure"]
 impl crate::Writable for ALARM3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ALARM3 to value 0"]
-impl crate::Resettable for ALARM3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ALARM3_SPEC {}

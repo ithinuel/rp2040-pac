@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Clears the SSPRORINTR interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn roric(&mut self) -> RORIC_W<SSPICR_SPEC> {
         RORIC_W::new(self, 0)
     }
     #[doc = "Bit 1 - Clears the SSPRTINTR interrupt"]
     #[inline(always)]
-    #[must_use]
     pub fn rtic(&mut self) -> RTIC_W<SSPICR_SPEC> {
         RTIC_W::new(self, 1)
     }
@@ -48,10 +46,7 @@ impl crate::Readable for SSPICR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sspicr::W`](W) writer structure"]
 impl crate::Writable for SSPICR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x03;
 }
 #[doc = "`reset()` method sets SSPICR to value 0"]
-impl crate::Resettable for SSPICR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SSPICR_SPEC {}

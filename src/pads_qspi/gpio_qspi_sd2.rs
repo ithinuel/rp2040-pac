@@ -154,43 +154,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Slew rate control. 1 = Fast, 0 = Slow"]
     #[inline(always)]
-    #[must_use]
     pub fn slewfast(&mut self) -> SLEWFAST_W<GPIO_QSPI_SD2_SPEC> {
         SLEWFAST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable schmitt trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn schmitt(&mut self) -> SCHMITT_W<GPIO_QSPI_SD2_SPEC> {
         SCHMITT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Pull down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pde(&mut self) -> PDE_W<GPIO_QSPI_SD2_SPEC> {
         PDE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Pull up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pue(&mut self) -> PUE_W<GPIO_QSPI_SD2_SPEC> {
         PUE_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Drive strength."]
     #[inline(always)]
-    #[must_use]
     pub fn drive(&mut self) -> DRIVE_W<GPIO_QSPI_SD2_SPEC> {
         DRIVE_W::new(self, 4)
     }
     #[doc = "Bit 6 - Input enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ie(&mut self) -> IE_W<GPIO_QSPI_SD2_SPEC> {
         IE_W::new(self, 6)
     }
     #[doc = "Bit 7 - Output disable. Has priority over output enable from peripherals"]
     #[inline(always)]
-    #[must_use]
     pub fn od(&mut self) -> OD_W<GPIO_QSPI_SD2_SPEC> {
         OD_W::new(self, 7)
     }
@@ -207,8 +200,6 @@ impl crate::Readable for GPIO_QSPI_SD2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpio_qspi_sd2::W`](W) writer structure"]
 impl crate::Writable for GPIO_QSPI_SD2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GPIO_QSPI_SD2 to value 0x52"]
 impl crate::Resettable for GPIO_QSPI_SD2_SPEC {

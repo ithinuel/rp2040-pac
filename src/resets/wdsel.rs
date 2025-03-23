@@ -232,151 +232,126 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn adc(&mut self) -> ADC_W<WDSEL_SPEC> {
         ADC_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn busctrl(&mut self) -> BUSCTRL_W<WDSEL_SPEC> {
         BUSCTRL_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn dma(&mut self) -> DMA_W<WDSEL_SPEC> {
         DMA_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c0(&mut self) -> I2C0_W<WDSEL_SPEC> {
         I2C0_W::new(self, 3)
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn i2c1(&mut self) -> I2C1_W<WDSEL_SPEC> {
         I2C1_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn io_bank0(&mut self) -> IO_BANK0_W<WDSEL_SPEC> {
         IO_BANK0_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn io_qspi(&mut self) -> IO_QSPI_W<WDSEL_SPEC> {
         IO_QSPI_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn jtag(&mut self) -> JTAG_W<WDSEL_SPEC> {
         JTAG_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn pads_bank0(&mut self) -> PADS_BANK0_W<WDSEL_SPEC> {
         PADS_BANK0_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn pads_qspi(&mut self) -> PADS_QSPI_W<WDSEL_SPEC> {
         PADS_QSPI_W::new(self, 9)
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn pio0(&mut self) -> PIO0_W<WDSEL_SPEC> {
         PIO0_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn pio1(&mut self) -> PIO1_W<WDSEL_SPEC> {
         PIO1_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn pll_sys(&mut self) -> PLL_SYS_W<WDSEL_SPEC> {
         PLL_SYS_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn pll_usb(&mut self) -> PLL_USB_W<WDSEL_SPEC> {
         PLL_USB_W::new(self, 13)
     }
     #[doc = "Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn pwm(&mut self) -> PWM_W<WDSEL_SPEC> {
         PWM_W::new(self, 14)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn rtc(&mut self) -> RTC_W<WDSEL_SPEC> {
         RTC_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    #[must_use]
     pub fn spi0(&mut self) -> SPI0_W<WDSEL_SPEC> {
         SPI0_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
-    #[must_use]
     pub fn spi1(&mut self) -> SPI1_W<WDSEL_SPEC> {
         SPI1_W::new(self, 17)
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    #[must_use]
     pub fn syscfg(&mut self) -> SYSCFG_W<WDSEL_SPEC> {
         SYSCFG_W::new(self, 18)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
-    #[must_use]
     pub fn sysinfo(&mut self) -> SYSINFO_W<WDSEL_SPEC> {
         SYSINFO_W::new(self, 19)
     }
     #[doc = "Bit 20"]
     #[inline(always)]
-    #[must_use]
     pub fn tbman(&mut self) -> TBMAN_W<WDSEL_SPEC> {
         TBMAN_W::new(self, 20)
     }
     #[doc = "Bit 21"]
     #[inline(always)]
-    #[must_use]
     pub fn timer(&mut self) -> TIMER_W<WDSEL_SPEC> {
         TIMER_W::new(self, 21)
     }
     #[doc = "Bit 22"]
     #[inline(always)]
-    #[must_use]
     pub fn uart0(&mut self) -> UART0_W<WDSEL_SPEC> {
         UART0_W::new(self, 22)
     }
     #[doc = "Bit 23"]
     #[inline(always)]
-    #[must_use]
     pub fn uart1(&mut self) -> UART1_W<WDSEL_SPEC> {
         UART1_W::new(self, 23)
     }
     #[doc = "Bit 24"]
     #[inline(always)]
-    #[must_use]
     pub fn usbctrl(&mut self) -> USBCTRL_W<WDSEL_SPEC> {
         USBCTRL_W::new(self, 24)
     }
@@ -393,10 +368,6 @@ impl crate::Readable for WDSEL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`wdsel::W`](W) writer structure"]
 impl crate::Writable for WDSEL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets WDSEL to value 0"]
-impl crate::Resettable for WDSEL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for WDSEL_SPEC {}

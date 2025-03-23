@@ -21,6 +21,4 @@ impl crate::RegisterSpec for TIMELR_SPEC {
 #[doc = "`read()` method returns [`timelr::R`](R) reader structure"]
 impl crate::Readable for TIMELR_SPEC {}
 #[doc = "`reset()` method sets TIMELR to value 0"]
-impl crate::Resettable for TIMELR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMELR_SPEC {}

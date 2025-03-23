@@ -101,32 +101,27 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Stage 4 drive strength"]
     #[inline(always)]
-    #[must_use]
     pub fn ds4(&mut self) -> DS4_W<FREQB_SPEC> {
         DS4_W::new(self, 0)
     }
     #[doc = "Bits 4:6 - Stage 5 drive strength"]
     #[inline(always)]
-    #[must_use]
     pub fn ds5(&mut self) -> DS5_W<FREQB_SPEC> {
         DS5_W::new(self, 4)
     }
     #[doc = "Bits 8:10 - Stage 6 drive strength"]
     #[inline(always)]
-    #[must_use]
     pub fn ds6(&mut self) -> DS6_W<FREQB_SPEC> {
         DS6_W::new(self, 8)
     }
     #[doc = "Bits 12:14 - Stage 7 drive strength"]
     #[inline(always)]
-    #[must_use]
     pub fn ds7(&mut self) -> DS7_W<FREQB_SPEC> {
         DS7_W::new(self, 12)
     }
     #[doc = "Bits 16:31 - Set to 0x9696 to apply the settings  
  Any other value in this field will set all drive strengths to 0"]
     #[inline(always)]
-    #[must_use]
     pub fn passwd(&mut self) -> PASSWD_W<FREQB_SPEC> {
         PASSWD_W::new(self, 16)
     }
@@ -143,10 +138,6 @@ impl crate::Readable for FREQB_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`freqb::W`](W) writer structure"]
 impl crate::Writable for FREQB_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FREQB to value 0"]
-impl crate::Resettable for FREQB_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FREQB_SPEC {}

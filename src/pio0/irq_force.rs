@@ -5,7 +5,6 @@ pub type IRQ_FORCE_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]
-    #[must_use]
     pub fn irq_force(&mut self) -> IRQ_FORCE_W<IRQ_FORCE_SPEC> {
         IRQ_FORCE_W::new(self, 0)
     }
@@ -20,10 +19,6 @@ impl crate::RegisterSpec for IRQ_FORCE_SPEC {
 #[doc = "`write(|w| ..)` method takes [`irq_force::W`](W) writer structure"]
 impl crate::Writable for IRQ_FORCE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IRQ_FORCE to value 0"]
-impl crate::Resettable for IRQ_FORCE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IRQ_FORCE_SPEC {}

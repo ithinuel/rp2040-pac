@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 12:14 - divide by 1-7"]
     #[inline(always)]
-    #[must_use]
     pub fn postdiv2(&mut self) -> POSTDIV2_W<PRIM_SPEC> {
         POSTDIV2_W::new(self, 12)
     }
     #[doc = "Bits 16:18 - divide by 1-7"]
     #[inline(always)]
-    #[must_use]
     pub fn postdiv1(&mut self) -> POSTDIV1_W<PRIM_SPEC> {
         POSTDIV1_W::new(self, 16)
     }
@@ -50,8 +48,6 @@ impl crate::Readable for PRIM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`prim::W`](W) writer structure"]
 impl crate::Writable for PRIM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PRIM to value 0x0007_7000"]
 impl crate::Resettable for PRIM_SPEC {

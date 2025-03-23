@@ -82,7 +82,6 @@ impl W {
  If the cache is enabled, cache-as-SRAM accesses have no effect on the  
  cache data RAM, and will produce a bus error response."]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EN_W<CTRL_SPEC> {
         EN_W::new(self, 0)
     }
@@ -91,7 +90,6 @@ impl W {
  In either case, writes to the 0x0 alias will deallocate on tag match,  
  as usual."]
     #[inline(always)]
-    #[must_use]
     pub fn err_badwrite(&mut self) -> ERR_BADWRITE_W<CTRL_SPEC> {
         ERR_BADWRITE_W::new(self, 1)
     }
@@ -102,7 +100,6 @@ impl W {
  Cache-as-SRAM accesses will produce a bus error response when  
  the cache is powered down."]
     #[inline(always)]
-    #[must_use]
     pub fn power_down(&mut self) -> POWER_DOWN_W<CTRL_SPEC> {
         POWER_DOWN_W::new(self, 3)
     }
@@ -119,8 +116,6 @@ impl crate::Readable for CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x03"]
 impl crate::Resettable for CTRL_SPEC {

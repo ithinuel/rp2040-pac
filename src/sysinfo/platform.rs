@@ -26,6 +26,4 @@ impl crate::RegisterSpec for PLATFORM_SPEC {
 #[doc = "`read()` method returns [`platform::R`](R) reader structure"]
 impl crate::Readable for PLATFORM_SPEC {}
 #[doc = "`reset()` method sets PLATFORM to value 0"]
-impl crate::Resettable for PLATFORM_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PLATFORM_SPEC {}

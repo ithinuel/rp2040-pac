@@ -68,8 +68,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`bus_priority::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bus_priority::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@bus_priority`]
-module"]
+For information about available fields see [`mod@bus_priority`] module"]
 pub type BUS_PRIORITY = crate::Reg<bus_priority::BUS_PRIORITY_SPEC>;
 #[doc = "Set the priority of each master for bus arbitration."]
 pub mod bus_priority;
@@ -77,8 +76,7 @@ pub mod bus_priority;
 
 You can [`read`](crate::Reg::read) this register and get [`bus_priority_ack::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@bus_priority_ack`]
-module"]
+For information about available fields see [`mod@bus_priority_ack`] module"]
 pub type BUS_PRIORITY_ACK = crate::Reg<bus_priority_ack::BUS_PRIORITY_ACK_SPEC>;
 #[doc = "Bus priority acknowledge"]
 pub mod bus_priority_ack;
@@ -86,8 +84,7 @@ pub mod bus_priority_ack;
 
 You can [`read`](crate::Reg::read) this register and get [`perfctr0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfctr0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfctr0`]
-module"]
+For information about available fields see [`mod@perfctr0`] module"]
 pub type PERFCTR0 = crate::Reg<perfctr0::PERFCTR0_SPEC>;
 #[doc = "Bus fabric performance counter 0"]
 pub mod perfctr0;
@@ -95,8 +92,7 @@ pub mod perfctr0;
 
 You can [`read`](crate::Reg::read) this register and get [`perfsel0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfsel0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfsel0`]
-module"]
+For information about available fields see [`mod@perfsel0`] module"]
 pub type PERFSEL0 = crate::Reg<perfsel0::PERFSEL0_SPEC>;
 #[doc = "Bus fabric performance event select for PERFCTR0"]
 pub mod perfsel0;
@@ -104,8 +100,7 @@ pub mod perfsel0;
 
 You can [`read`](crate::Reg::read) this register and get [`perfctr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfctr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfctr1`]
-module"]
+For information about available fields see [`mod@perfctr1`] module"]
 pub type PERFCTR1 = crate::Reg<perfctr1::PERFCTR1_SPEC>;
 #[doc = "Bus fabric performance counter 1"]
 pub mod perfctr1;
@@ -113,8 +108,7 @@ pub mod perfctr1;
 
 You can [`read`](crate::Reg::read) this register and get [`perfsel1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfsel1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfsel1`]
-module"]
+For information about available fields see [`mod@perfsel1`] module"]
 pub type PERFSEL1 = crate::Reg<perfsel1::PERFSEL1_SPEC>;
 #[doc = "Bus fabric performance event select for PERFCTR1"]
 pub mod perfsel1;
@@ -122,8 +116,7 @@ pub mod perfsel1;
 
 You can [`read`](crate::Reg::read) this register and get [`perfctr2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfctr2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfctr2`]
-module"]
+For information about available fields see [`mod@perfctr2`] module"]
 pub type PERFCTR2 = crate::Reg<perfctr2::PERFCTR2_SPEC>;
 #[doc = "Bus fabric performance counter 2"]
 pub mod perfctr2;
@@ -131,8 +124,7 @@ pub mod perfctr2;
 
 You can [`read`](crate::Reg::read) this register and get [`perfsel2::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfsel2::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfsel2`]
-module"]
+For information about available fields see [`mod@perfsel2`] module"]
 pub type PERFSEL2 = crate::Reg<perfsel2::PERFSEL2_SPEC>;
 #[doc = "Bus fabric performance event select for PERFCTR2"]
 pub mod perfsel2;
@@ -140,8 +132,7 @@ pub mod perfsel2;
 
 You can [`read`](crate::Reg::read) this register and get [`perfctr3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfctr3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfctr3`]
-module"]
+For information about available fields see [`mod@perfctr3`] module"]
 pub type PERFCTR3 = crate::Reg<perfctr3::PERFCTR3_SPEC>;
 #[doc = "Bus fabric performance counter 3"]
 pub mod perfctr3;
@@ -149,8 +140,7 @@ pub mod perfctr3;
 
 You can [`read`](crate::Reg::read) this register and get [`perfsel3::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`perfsel3::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@perfsel3`]
-module"]
+For information about available fields see [`mod@perfsel3`] module"]
 pub type PERFSEL3 = crate::Reg<perfsel3::PERFSEL3_SPEC>;
 #[doc = "Bus fabric performance event select for PERFCTR3"]
 pub mod perfsel3;

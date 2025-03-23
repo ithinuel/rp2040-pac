@@ -14,8 +14,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`platform::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@platform`]
-module"]
+For information about available fields see [`mod@platform`] module"]
 pub type PLATFORM = crate::Reg<platform::PLATFORM_SPEC>;
 #[doc = "Indicates the type of platform in use"]
 pub mod platform;

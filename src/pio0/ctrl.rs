@@ -58,7 +58,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Enable/disable each of the four state machines by writing 1/0 to each of these four bits. When disabled, a state machine will cease executing instructions, except those written directly to SMx_INSTR by the system. Multiple bits can be set/cleared at once to run/halt multiple state machines simultaneously."]
     #[inline(always)]
-    #[must_use]
     pub fn sm_enable(&mut self) -> SM_ENABLE_W<CTRL_SPEC> {
         SM_ENABLE_W::new(self, 0)
     }
@@ -68,7 +67,6 @@ impl W {
 
  The program counter, the contents of the output shift register and the X/Y scratch registers are not affected."]
     #[inline(always)]
-    #[must_use]
     pub fn sm_restart(&mut self) -> SM_RESTART_W<CTRL_SPEC> {
         SM_RESTART_W::new(self, 4)
     }
@@ -78,7 +76,6 @@ impl W {
 
  Note also that CLKDIV_RESTART can be written to whilst the state machine is running, and this is useful to resynchronise clock dividers after the divisors (SMx_CLKDIV) have been changed on-the-fly."]
     #[inline(always)]
-    #[must_use]
     pub fn clkdiv_restart(&mut self) -> CLKDIV_RESTART_W<CTRL_SPEC> {
         CLKDIV_RESTART_W::new(self, 8)
     }
@@ -95,10 +92,6 @@ impl crate::Readable for CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
-impl crate::Resettable for CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRL_SPEC {}

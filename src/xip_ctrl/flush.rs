@@ -32,7 +32,6 @@ impl W {
  Reading will hold the bus (stall the processor) until the flush  
  completes. Alternatively STAT can be polled until completion."]
     #[inline(always)]
-    #[must_use]
     pub fn flush(&mut self) -> FLUSH_W<FLUSH_SPEC> {
         FLUSH_W::new(self, 0)
     }
@@ -49,10 +48,6 @@ impl crate::Readable for FLUSH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`flush::W`](W) writer structure"]
 impl crate::Writable for FLUSH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FLUSH to value 0"]
-impl crate::Resettable for FLUSH_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FLUSH_SPEC {}

@@ -54,6 +54,4 @@ impl crate::RegisterSpec for RISR_SPEC {
 #[doc = "`read()` method returns [`risr::R`](R) reader structure"]
 impl crate::Readable for RISR_SPEC {}
 #[doc = "`reset()` method sets RISR to value 0"]
-impl crate::Resettable for RISR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RISR_SPEC {}

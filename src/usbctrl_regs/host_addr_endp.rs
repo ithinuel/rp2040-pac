@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - Device address"]
     #[inline(always)]
-    #[must_use]
     pub fn address(&mut self) -> ADDRESS_W<HOST_ADDR_ENDP_SPEC> {
         ADDRESS_W::new(self, 0)
     }
     #[doc = "Bits 16:19 - Endpoint number of the interrupt endpoint"]
     #[inline(always)]
-    #[must_use]
     pub fn endpoint(&mut self) -> ENDPOINT_W<HOST_ADDR_ENDP_SPEC> {
         ENDPOINT_W::new(self, 16)
     }
     #[doc = "Bit 25 - Direction of the interrupt endpoint. In=0, Out=1"]
     #[inline(always)]
-    #[must_use]
     pub fn intep_dir(&mut self) -> INTEP_DIR_W<HOST_ADDR_ENDP_SPEC> {
         INTEP_DIR_W::new(self, 25)
     }
     #[doc = "Bit 26 - Interrupt EP requires preamble (is a low speed device on a full speed hub)"]
     #[inline(always)]
-    #[must_use]
     pub fn intep_preamble(&mut self) -> INTEP_PREAMBLE_W<HOST_ADDR_ENDP_SPEC> {
         INTEP_PREAMBLE_W::new(self, 26)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for HOST_ADDR_ENDP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`host_addr_endp::W`](W) writer structure"]
 impl crate::Writable for HOST_ADDR_ENDP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets HOST_ADDR_ENDP%s to value 0"]
-impl crate::Resettable for HOST_ADDR_ENDP_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for HOST_ADDR_ENDP_SPEC {}

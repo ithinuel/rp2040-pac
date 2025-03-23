@@ -19,6 +19,4 @@ impl crate::RegisterSpec for MSTICR_SPEC {
 #[doc = "`read()` method returns [`msticr::R`](R) reader structure"]
 impl crate::Readable for MSTICR_SPEC {}
 #[doc = "`reset()` method sets MSTICR to value 0"]
-impl crate::Resettable for MSTICR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MSTICR_SPEC {}

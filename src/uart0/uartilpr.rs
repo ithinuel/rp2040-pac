@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - 8-bit low-power divisor value. These bits are cleared to 0 at reset."]
     #[inline(always)]
-    #[must_use]
     pub fn ilpdvsr(&mut self) -> ILPDVSR_W<UARTILPR_SPEC> {
         ILPDVSR_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for UARTILPR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`uartilpr::W`](W) writer structure"]
 impl crate::Writable for UARTILPR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UARTILPR to value 0"]
-impl crate::Resettable for UARTILPR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTILPR_SPEC {}

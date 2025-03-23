@@ -99,37 +99,31 @@ impl W {
     #[doc = "Bit 0 - Power on ADC and enable its clock.  
  1 - enabled. 0 - disabled."]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EN_W<CS_SPEC> {
         EN_W::new(self, 0)
     }
     #[doc = "Bit 1 - Power on temperature sensor. 1 - enabled. 0 - disabled."]
     #[inline(always)]
-    #[must_use]
     pub fn ts_en(&mut self) -> TS_EN_W<CS_SPEC> {
         TS_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - Start a single conversion. Self-clearing. Ignored if start_many is asserted."]
     #[inline(always)]
-    #[must_use]
     pub fn start_once(&mut self) -> START_ONCE_W<CS_SPEC> {
         START_ONCE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Continuously perform conversions whilst this bit is 1. A new conversion will start immediately after the previous finishes."]
     #[inline(always)]
-    #[must_use]
     pub fn start_many(&mut self) -> START_MANY_W<CS_SPEC> {
         START_MANY_W::new(self, 3)
     }
     #[doc = "Bit 10 - Some past ADC conversion encountered an error. Write 1 to clear."]
     #[inline(always)]
-    #[must_use]
     pub fn err_sticky(&mut self) -> ERR_STICKY_W<CS_SPEC> {
         ERR_STICKY_W::new(self, 10)
     }
     #[doc = "Bits 12:14 - Select analog mux input. Updated automatically in round-robin mode."]
     #[inline(always)]
-    #[must_use]
     pub fn ainsel(&mut self) -> AINSEL_W<CS_SPEC> {
         AINSEL_W::new(self, 12)
     }
@@ -138,7 +132,6 @@ impl W {
  The first channel to be sampled will be the one currently indicated by AINSEL.  
  AINSEL will be updated after each conversion with the newly-selected channel."]
     #[inline(always)]
-    #[must_use]
     pub fn rrobin(&mut self) -> RROBIN_W<CS_SPEC> {
         RROBIN_W::new(self, 16)
     }
@@ -155,10 +148,7 @@ impl crate::Readable for CS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cs::W`](W) writer structure"]
 impl crate::Writable for CS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0400;
 }
 #[doc = "`reset()` method sets CS to value 0"]
-impl crate::Resettable for CS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CS_SPEC {}

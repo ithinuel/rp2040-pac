@@ -79,49 +79,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Seconds"]
     #[inline(always)]
-    #[must_use]
     pub fn sec(&mut self) -> SEC_W<IRQ_SETUP_1_SPEC> {
         SEC_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Minutes"]
     #[inline(always)]
-    #[must_use]
     pub fn min(&mut self) -> MIN_W<IRQ_SETUP_1_SPEC> {
         MIN_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Hours"]
     #[inline(always)]
-    #[must_use]
     pub fn hour(&mut self) -> HOUR_W<IRQ_SETUP_1_SPEC> {
         HOUR_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Day of the week"]
     #[inline(always)]
-    #[must_use]
     pub fn dotw(&mut self) -> DOTW_W<IRQ_SETUP_1_SPEC> {
         DOTW_W::new(self, 24)
     }
     #[doc = "Bit 28 - Enable second matching"]
     #[inline(always)]
-    #[must_use]
     pub fn sec_ena(&mut self) -> SEC_ENA_W<IRQ_SETUP_1_SPEC> {
         SEC_ENA_W::new(self, 28)
     }
     #[doc = "Bit 29 - Enable minute matching"]
     #[inline(always)]
-    #[must_use]
     pub fn min_ena(&mut self) -> MIN_ENA_W<IRQ_SETUP_1_SPEC> {
         MIN_ENA_W::new(self, 29)
     }
     #[doc = "Bit 30 - Enable hour matching"]
     #[inline(always)]
-    #[must_use]
     pub fn hour_ena(&mut self) -> HOUR_ENA_W<IRQ_SETUP_1_SPEC> {
         HOUR_ENA_W::new(self, 30)
     }
     #[doc = "Bit 31 - Enable day of the week matching"]
     #[inline(always)]
-    #[must_use]
     pub fn dotw_ena(&mut self) -> DOTW_ENA_W<IRQ_SETUP_1_SPEC> {
         DOTW_ENA_W::new(self, 31)
     }
@@ -138,10 +130,6 @@ impl crate::Readable for IRQ_SETUP_1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`irq_setup_1::W`](W) writer structure"]
 impl crate::Writable for IRQ_SETUP_1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IRQ_SETUP_1 to value 0"]
-impl crate::Resettable for IRQ_SETUP_1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IRQ_SETUP_1_SPEC {}

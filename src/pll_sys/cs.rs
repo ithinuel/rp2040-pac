@@ -40,13 +40,11 @@ impl W {
  Behaviour is undefined for div=0.  
  PLL output will be unpredictable during refdiv changes, wait for lock=1 before using it."]
     #[inline(always)]
-    #[must_use]
     pub fn refdiv(&mut self) -> REFDIV_W<CS_SPEC> {
         REFDIV_W::new(self, 0)
     }
     #[doc = "Bit 8 - Passes the reference clock to the output instead of the divided VCO. The VCO continues to run so the user can switch between the reference clock and the divided VCO but the output will glitch when doing so."]
     #[inline(always)]
-    #[must_use]
     pub fn bypass(&mut self) -> BYPASS_W<CS_SPEC> {
         BYPASS_W::new(self, 8)
     }
@@ -67,8 +65,6 @@ impl crate::Readable for CS_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`cs::W`](W) writer structure"]
 impl crate::Writable for CS_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CS to value 0x01"]
 impl crate::Resettable for CS_SPEC {

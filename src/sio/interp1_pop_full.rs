@@ -15,6 +15,4 @@ impl crate::RegisterSpec for INTERP1_POP_FULL_SPEC {
 #[doc = "`read()` method returns [`interp1_pop_full::R`](R) reader structure"]
 impl crate::Readable for INTERP1_POP_FULL_SPEC {}
 #[doc = "`reset()` method sets INTERP1_POP_FULL to value 0"]
-impl crate::Resettable for INTERP1_POP_FULL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTERP1_POP_FULL_SPEC {}

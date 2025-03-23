@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - NAK polling interval for a low speed device"]
     #[inline(always)]
-    #[must_use]
     pub fn delay_ls(&mut self) -> DELAY_LS_W<NAK_POLL_SPEC> {
         DELAY_LS_W::new(self, 0)
     }
     #[doc = "Bits 16:25 - NAK polling interval for a full speed device"]
     #[inline(always)]
-    #[must_use]
     pub fn delay_fs(&mut self) -> DELAY_FS_W<NAK_POLL_SPEC> {
         DELAY_FS_W::new(self, 16)
     }
@@ -48,8 +46,6 @@ impl crate::Readable for NAK_POLL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nak_poll::W`](W) writer structure"]
 impl crate::Writable for NAK_POLL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NAK_POLL to value 0x0010_0010"]
 impl crate::Resettable for NAK_POLL_SPEC {

@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive overrun interrupt mask: 0 Receive FIFO written to while full condition interrupt is masked. 1 Receive FIFO written to while full condition interrupt is not masked."]
     #[inline(always)]
-    #[must_use]
     pub fn rorim(&mut self) -> RORIM_W<SSPIMSC_SPEC> {
         RORIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Receive timeout interrupt mask: 0 Receive FIFO not empty and no read prior to timeout period interrupt is masked. 1 Receive FIFO not empty and no read prior to timeout period interrupt is not masked."]
     #[inline(always)]
-    #[must_use]
     pub fn rtim(&mut self) -> RTIM_W<SSPIMSC_SPEC> {
         RTIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - Receive FIFO interrupt mask: 0 Receive FIFO half full or less condition interrupt is masked. 1 Receive FIFO half full or less condition interrupt is not masked."]
     #[inline(always)]
-    #[must_use]
     pub fn rxim(&mut self) -> RXIM_W<SSPIMSC_SPEC> {
         RXIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - Transmit FIFO interrupt mask: 0 Transmit FIFO half empty or less condition interrupt is masked. 1 Transmit FIFO half empty or less condition interrupt is not masked."]
     #[inline(always)]
-    #[must_use]
     pub fn txim(&mut self) -> TXIM_W<SSPIMSC_SPEC> {
         TXIM_W::new(self, 3)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for SSPIMSC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sspimsc::W`](W) writer structure"]
 impl crate::Writable for SSPIMSC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SSPIMSC to value 0"]
-impl crate::Resettable for SSPIMSC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SSPIMSC_SPEC {}

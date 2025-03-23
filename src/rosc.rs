@@ -16,7 +16,7 @@ impl RegisterBlock {
     pub const fn ctrl(&self) -> &CTRL {
         &self.ctrl
     }
-    #[doc = "0x04 - The FREQA &amp; FREQB registers control the frequency by controlling the drive strength of each stage  
+    #[doc = "0x04 - The FREQA & FREQB registers control the frequency by controlling the drive strength of each stage  
  The drive strength has 4 levels determined by the number of bits set  
  Increasing the number of bits set increases the drive strength and increases the oscillation frequency  
  0 bits set is the default drive strength  
@@ -66,12 +66,11 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ctrl`]
-module"]
+For information about available fields see [`mod@ctrl`] module"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Ring Oscillator control"]
 pub mod ctrl;
-#[doc = "FREQA (rw) register accessor: The FREQA &amp; FREQB registers control the frequency by controlling the drive strength of each stage  
+#[doc = "FREQA (rw) register accessor: The FREQA & FREQB registers control the frequency by controlling the drive strength of each stage  
  The drive strength has 4 levels determined by the number of bits set  
  Increasing the number of bits set increases the drive strength and increases the oscillation frequency  
  0 bits set is the default drive strength  
@@ -81,10 +80,9 @@ pub mod ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`freqa::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`freqa::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@freqa`]
-module"]
+For information about available fields see [`mod@freqa`] module"]
 pub type FREQA = crate::Reg<freqa::FREQA_SPEC>;
-#[doc = "The FREQA &amp; FREQB registers control the frequency by controlling the drive strength of each stage  
+#[doc = "The FREQA & FREQB registers control the frequency by controlling the drive strength of each stage  
  The drive strength has 4 levels determined by the number of bits set  
  Increasing the number of bits set increases the drive strength and increases the oscillation frequency  
  0 bits set is the default drive strength  
@@ -96,8 +94,7 @@ pub mod freqa;
 
 You can [`read`](crate::Reg::read) this register and get [`freqb::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`freqb::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@freqb`]
-module"]
+For information about available fields see [`mod@freqb`] module"]
 pub type FREQB = crate::Reg<freqb::FREQB_SPEC>;
 #[doc = "For a detailed description see freqa register"]
 pub mod freqb;
@@ -109,8 +106,7 @@ pub mod freqb;
 
 You can [`read`](crate::Reg::read) this register and get [`dormant::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dormant::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@dormant`]
-module"]
+For information about available fields see [`mod@dormant`] module"]
 pub type DORMANT = crate::Reg<dormant::DORMANT_SPEC>;
 #[doc = "Ring Oscillator pause control  
  This is used to save power by pausing the ROSC  
@@ -122,8 +118,7 @@ pub mod dormant;
 
 You can [`read`](crate::Reg::read) this register and get [`div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@div`]
-module"]
+For information about available fields see [`mod@div`] module"]
 pub type DIV = crate::Reg<div::DIV_SPEC>;
 #[doc = "Controls the output divider"]
 pub mod div;
@@ -131,8 +126,7 @@ pub mod div;
 
 You can [`read`](crate::Reg::read) this register and get [`phase::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`phase::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@phase`]
-module"]
+For information about available fields see [`mod@phase`] module"]
 pub type PHASE = crate::Reg<phase::PHASE_SPEC>;
 #[doc = "Controls the phase shifted output"]
 pub mod phase;
@@ -140,8 +134,7 @@ pub mod phase;
 
 You can [`read`](crate::Reg::read) this register and get [`randombit::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@randombit`]
-module"]
+For information about available fields see [`mod@randombit`] module"]
 pub type RANDOMBIT = crate::Reg<randombit::RANDOMBIT_SPEC>;
 #[doc = "This just reads the state of the oscillator output so randomness is compromised if the ring oscillator is stopped or run at a harmonic of the bus frequency"]
 pub mod randombit;
@@ -149,8 +142,7 @@ pub mod randombit;
 
 You can [`read`](crate::Reg::read) this register and get [`status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@status`]
-module"]
+For information about available fields see [`mod@status`] module"]
 pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Ring Oscillator Status"]
 pub mod status;

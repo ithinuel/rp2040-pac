@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Seconds"]
     #[inline(always)]
-    #[must_use]
     pub fn sec(&mut self) -> SEC_W<SETUP_1_SPEC> {
         SEC_W::new(self, 0)
     }
     #[doc = "Bits 8:13 - Minutes"]
     #[inline(always)]
-    #[must_use]
     pub fn min(&mut self) -> MIN_W<SETUP_1_SPEC> {
         MIN_W::new(self, 8)
     }
     #[doc = "Bits 16:20 - Hours"]
     #[inline(always)]
-    #[must_use]
     pub fn hour(&mut self) -> HOUR_W<SETUP_1_SPEC> {
         HOUR_W::new(self, 16)
     }
     #[doc = "Bits 24:26 - Day of the week: 1-Monday...0-Sunday ISO 8601 mod 7"]
     #[inline(always)]
-    #[must_use]
     pub fn dotw(&mut self) -> DOTW_W<SETUP_1_SPEC> {
         DOTW_W::new(self, 24)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for SETUP_1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`setup_1::W`](W) writer structure"]
 impl crate::Writable for SETUP_1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP_1 to value 0"]
-impl crate::Resettable for SETUP_1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SETUP_1_SPEC {}

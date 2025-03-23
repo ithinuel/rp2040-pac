@@ -167,13 +167,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Selects the clock source glitchlessly, can be changed on-the-fly"]
     #[inline(always)]
-    #[must_use]
     pub fn src(&mut self) -> SRC_W<CLK_REF_CTRL_SPEC> {
         SRC_W::new(self, 0)
     }
     #[doc = "Bits 5:6 - Selects the auxiliary clock source, will glitch when switching"]
     #[inline(always)]
-    #[must_use]
     pub fn auxsrc(&mut self) -> AUXSRC_W<CLK_REF_CTRL_SPEC> {
         AUXSRC_W::new(self, 5)
     }
@@ -190,10 +188,6 @@ impl crate::Readable for CLK_REF_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clk_ref_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLK_REF_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLK_REF_CTRL to value 0"]
-impl crate::Resettable for CLK_REF_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLK_REF_CTRL_SPEC {}

@@ -144,27 +144,23 @@ impl W {
 
  If the IC_TAR and IC_SAR are the same, loopback exists but the FIFOs are shared between master and slave, so full loopback is not feasible. Only one direction loopback mode is supported (simplex), not duplex. A master cannot transmit to itself; it can transmit to only a slave."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_tar(&mut self) -> IC_TAR_W<IC_TAR_SPEC> {
         IC_TAR_W::new(self, 0)
     }
     #[doc = "Bit 10 - If bit 11 (SPECIAL) is set to 1 and bit 13(Device-ID) is set to 0, then this bit indicates whether a General Call or START byte command is to be performed by the DW_apb_i2c. - 0: General Call Address - after issuing a General Call, only writes may be performed. Attempting to issue a read command results in setting bit 6 (TX_ABRT) of the IC_RAW_INTR_STAT register. The DW_apb_i2c remains in General Call mode until the SPECIAL bit value (bit 11) is cleared. - 1: START BYTE Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn gc_or_start(&mut self) -> GC_OR_START_W<IC_TAR_SPEC> {
         GC_OR_START_W::new(self, 10)
     }
     #[doc = "Bit 11 - This bit indicates whether software performs a Device-ID or General Call or START BYTE command. - 0: ignore bit 10 GC_OR_START and use IC_TAR normally - 1: perform special I2C command as specified in Device_ID or GC_OR_START bit Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn special(&mut self) -> SPECIAL_W<IC_TAR_SPEC> {
         SPECIAL_W::new(self, 11)
     }
 }
 #[doc = "I2C Target Address Register  
 
- This register is 12 bits wide, and bits 31:12 are reserved. This register can be written to only when IC_ENABLE\\[0\\]
-is set to 0.  
+ This register is 12 bits wide, and bits 31:12 are reserved. This register can be written to only when IC_ENABLE\\[0\\] is set to 0.  
 
  Note: If the software or application is aware that the DW_apb_i2c is not using the TAR address for the pending commands in the Tx FIFO, then it is possible to update the TAR address even while the Tx FIFO has entries (IC_STATUS\\[2\\]= 0). - It is not necessary to perform any write to this register if DW_apb_i2c is enabled as an I2C slave only.  
 
@@ -178,8 +174,6 @@ impl crate::Readable for IC_TAR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_tar::W`](W) writer structure"]
 impl crate::Writable for IC_TAR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_TAR to value 0x55"]
 impl crate::Resettable for IC_TAR_SPEC {

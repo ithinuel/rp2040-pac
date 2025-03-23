@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]
-    #[must_use]
     pub fn fc0_delay(&mut self) -> FC0_DELAY_W<FC0_DELAY_SPEC> {
         FC0_DELAY_W::new(self, 0)
     }
@@ -34,8 +33,6 @@ impl crate::Readable for FC0_DELAY_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fc0_delay::W`](W) writer structure"]
 impl crate::Writable for FC0_DELAY_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FC0_DELAY to value 0x01"]
 impl crate::Resettable for FC0_DELAY_SPEC {

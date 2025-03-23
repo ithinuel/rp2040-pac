@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    #[must_use]
     pub fn windex(&mut self) -> WINDEX_W<SETUP_PACKET_HIGH_SPEC> {
         WINDEX_W::new(self, 0)
     }
     #[doc = "Bits 16:31"]
     #[inline(always)]
-    #[must_use]
     pub fn wlength(&mut self) -> WLENGTH_W<SETUP_PACKET_HIGH_SPEC> {
         WLENGTH_W::new(self, 16)
     }
@@ -48,10 +46,6 @@ impl crate::Readable for SETUP_PACKET_HIGH_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`setup_packet_high::W`](W) writer structure"]
 impl crate::Writable for SETUP_PACKET_HIGH_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP_PACKET_HIGH to value 0"]
-impl crate::Resettable for SETUP_PACKET_HIGH_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SETUP_PACKET_HIGH_SPEC {}

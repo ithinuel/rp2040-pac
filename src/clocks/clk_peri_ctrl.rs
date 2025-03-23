@@ -157,19 +157,16 @@ impl R {
 impl W {
     #[doc = "Bits 5:7 - Selects the auxiliary clock source, will glitch when switching"]
     #[inline(always)]
-    #[must_use]
     pub fn auxsrc(&mut self) -> AUXSRC_W<CLK_PERI_CTRL_SPEC> {
         AUXSRC_W::new(self, 5)
     }
     #[doc = "Bit 10 - Asynchronously kills the clock generator"]
     #[inline(always)]
-    #[must_use]
     pub fn kill(&mut self) -> KILL_W<CLK_PERI_CTRL_SPEC> {
         KILL_W::new(self, 10)
     }
     #[doc = "Bit 11 - Starts and stops the clock generator cleanly"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<CLK_PERI_CTRL_SPEC> {
         ENABLE_W::new(self, 11)
     }
@@ -186,10 +183,6 @@ impl crate::Readable for CLK_PERI_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`clk_peri_ctrl::W`](W) writer structure"]
 impl crate::Writable for CLK_PERI_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CLK_PERI_CTRL to value 0"]
-impl crate::Resettable for CLK_PERI_CTRL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CLK_PERI_CTRL_SPEC {}

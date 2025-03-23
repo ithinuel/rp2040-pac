@@ -56,28 +56,24 @@ impl W {
     #[doc = "Bit 0 - PLL powerdown  
  To save power set high when PLL output not required."]
     #[inline(always)]
-    #[must_use]
     pub fn pd(&mut self) -> PD_W<PWR_SPEC> {
         PD_W::new(self, 0)
     }
     #[doc = "Bit 2 - PLL DSM powerdown  
  Nothing is achieved by setting this low."]
     #[inline(always)]
-    #[must_use]
     pub fn dsmpd(&mut self) -> DSMPD_W<PWR_SPEC> {
         DSMPD_W::new(self, 2)
     }
     #[doc = "Bit 3 - PLL post divider powerdown  
  To save power set high when PLL output not required or bypass=1."]
     #[inline(always)]
-    #[must_use]
     pub fn postdivpd(&mut self) -> POSTDIVPD_W<PWR_SPEC> {
         POSTDIVPD_W::new(self, 3)
     }
     #[doc = "Bit 5 - PLL VCO powerdown  
  To save power set high when PLL output not required or bypass=1."]
     #[inline(always)]
-    #[must_use]
     pub fn vcopd(&mut self) -> VCOPD_W<PWR_SPEC> {
         VCOPD_W::new(self, 5)
     }
@@ -94,8 +90,6 @@ impl crate::Readable for PWR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`pwr::W`](W) writer structure"]
 impl crate::Writable for PWR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PWR to value 0x2d"]
 impl crate::Resettable for PWR_SPEC {

@@ -39,13 +39,11 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Sticky flag indicating the TX FIFO was written when full. This write was ignored by the FIFO."]
     #[inline(always)]
-    #[must_use]
     pub fn wof(&mut self) -> WOF_W<FIFO_ST_SPEC> {
         WOF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Sticky flag indicating the RX FIFO was read when empty. This read was ignored by the FIFO."]
     #[inline(always)]
-    #[must_use]
     pub fn roe(&mut self) -> ROE_W<FIFO_ST_SPEC> {
         ROE_W::new(self, 3)
     }
@@ -66,7 +64,6 @@ impl crate::Readable for FIFO_ST_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fifo_st::W`](W) writer structure"]
 impl crate::Writable for FIFO_ST_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0c;
 }
 #[doc = "`reset()` method sets FIFO_ST to value 0x02"]

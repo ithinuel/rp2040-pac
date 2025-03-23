@@ -200,91 +200,77 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable the second DP pull up resistor. 0 - Pull = Rpu2; 1 - Pull = Rpu1 + Rpu2"]
     #[inline(always)]
-    #[must_use]
     pub fn dp_pullup_hisel(&mut self) -> DP_PULLUP_HISEL_W<USBPHY_DIRECT_SPEC> {
         DP_PULLUP_HISEL_W::new(self, 0)
     }
     #[doc = "Bit 1 - DP pull up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dp_pullup_en(&mut self) -> DP_PULLUP_EN_W<USBPHY_DIRECT_SPEC> {
         DP_PULLUP_EN_W::new(self, 1)
     }
     #[doc = "Bit 2 - DP pull down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dp_pulldn_en(&mut self) -> DP_PULLDN_EN_W<USBPHY_DIRECT_SPEC> {
         DP_PULLDN_EN_W::new(self, 2)
     }
     #[doc = "Bit 4 - Enable the second DM pull up resistor. 0 - Pull = Rpu2; 1 - Pull = Rpu1 + Rpu2"]
     #[inline(always)]
-    #[must_use]
     pub fn dm_pullup_hisel(&mut self) -> DM_PULLUP_HISEL_W<USBPHY_DIRECT_SPEC> {
         DM_PULLUP_HISEL_W::new(self, 4)
     }
     #[doc = "Bit 5 - DM pull up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dm_pullup_en(&mut self) -> DM_PULLUP_EN_W<USBPHY_DIRECT_SPEC> {
         DM_PULLUP_EN_W::new(self, 5)
     }
     #[doc = "Bit 6 - DM pull down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn dm_pulldn_en(&mut self) -> DM_PULLDN_EN_W<USBPHY_DIRECT_SPEC> {
         DM_PULLDN_EN_W::new(self, 6)
     }
     #[doc = "Bit 8 - Output enable. If TX_DIFFMODE=1, OE for DPP/DPM diff pair. 0 - DPP/DPM in Hi-Z state; 1 - DPP/DPM driving  
  If TX_DIFFMODE=0, OE for DPP only. 0 - DPP in Hi-Z state; 1 - DPP driving"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_dp_oe(&mut self) -> TX_DP_OE_W<USBPHY_DIRECT_SPEC> {
         TX_DP_OE_W::new(self, 8)
     }
     #[doc = "Bit 9 - Output enable. If TX_DIFFMODE=1, Ignored.  
  If TX_DIFFMODE=0, OE for DPM only. 0 - DPM in Hi-Z state; 1 - DPM driving"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_dm_oe(&mut self) -> TX_DM_OE_W<USBPHY_DIRECT_SPEC> {
         TX_DM_OE_W::new(self, 9)
     }
     #[doc = "Bit 10 - Output data. If TX_DIFFMODE=1, Drives DPP/DPM diff pair. TX_DP_OE=1 to enable drive. DPP=TX_DP, DPM=~TX_DP  
  If TX_DIFFMODE=0, Drives DPP only. TX_DP_OE=1 to enable drive. DPP=TX_DP"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_dp(&mut self) -> TX_DP_W<USBPHY_DIRECT_SPEC> {
         TX_DP_W::new(self, 10)
     }
     #[doc = "Bit 11 - Output data. TX_DIFFMODE=1, Ignored  
  TX_DIFFMODE=0, Drives DPM only. TX_DM_OE=1 to enable drive. DPM=TX_DM"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_dm(&mut self) -> TX_DM_W<USBPHY_DIRECT_SPEC> {
         TX_DM_W::new(self, 11)
     }
     #[doc = "Bit 12 - RX power down override (if override enable is set). 1 = powered down."]
     #[inline(always)]
-    #[must_use]
     pub fn rx_pd(&mut self) -> RX_PD_W<USBPHY_DIRECT_SPEC> {
         RX_PD_W::new(self, 12)
     }
     #[doc = "Bit 13 - TX power down override (if override enable is set). 1 = powered down."]
     #[inline(always)]
-    #[must_use]
     pub fn tx_pd(&mut self) -> TX_PD_W<USBPHY_DIRECT_SPEC> {
         TX_PD_W::new(self, 13)
     }
     #[doc = "Bit 14 - TX_FSSLEW=0: Low speed slew rate  
  TX_FSSLEW=1: Full speed slew rate"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_fsslew(&mut self) -> TX_FSSLEW_W<USBPHY_DIRECT_SPEC> {
         TX_FSSLEW_W::new(self, 14)
     }
     #[doc = "Bit 15 - TX_DIFFMODE=0: Single ended mode  
  TX_DIFFMODE=1: Differential drive mode (TX_DM, TX_DM_OE ignored)"]
     #[inline(always)]
-    #[must_use]
     pub fn tx_diffmode(&mut self) -> TX_DIFFMODE_W<USBPHY_DIRECT_SPEC> {
         TX_DIFFMODE_W::new(self, 15)
     }
@@ -301,10 +287,6 @@ impl crate::Readable for USBPHY_DIRECT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usbphy_direct::W`](W) writer structure"]
 impl crate::Writable for USBPHY_DIRECT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USBPHY_DIRECT to value 0"]
-impl crate::Resettable for USBPHY_DIRECT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for USBPHY_DIRECT_SPEC {}

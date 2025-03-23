@@ -70,43 +70,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. The data written to this pin will always be the least-significant bit of the OUT or MOV data."]
     #[inline(always)]
-    #[must_use]
     pub fn out_base(&mut self) -> OUT_BASE_W<SM_PINCTRL_SPEC> {
         OUT_BASE_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - The lowest-numbered pin that will be affected by a SET PINS or SET PINDIRS instruction. The data written to this pin is the least-significant bit of the SET data."]
     #[inline(always)]
-    #[must_use]
     pub fn set_base(&mut self) -> SET_BASE_W<SM_PINCTRL_SPEC> {
         SET_BASE_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - The lowest-numbered pin that will be affected by a side-set operation. The MSBs of an instruction's side-set/delay field (up to 5, determined by SIDESET_COUNT) are used for side-set data, with the remaining LSBs used for delay. The least-significant bit of the side-set portion is the bit written to this pin, with more-significant bits written to higher-numbered pins."]
     #[inline(always)]
-    #[must_use]
     pub fn sideset_base(&mut self) -> SIDESET_BASE_W<SM_PINCTRL_SPEC> {
         SIDESET_BASE_W::new(self, 10)
     }
     #[doc = "Bits 15:19 - The pin which is mapped to the least-significant bit of a state machine's IN data bus. Higher-numbered pins are mapped to consecutively more-significant data bits, with a modulo of 32 applied to pin number."]
     #[inline(always)]
-    #[must_use]
     pub fn in_base(&mut self) -> IN_BASE_W<SM_PINCTRL_SPEC> {
         IN_BASE_W::new(self, 15)
     }
     #[doc = "Bits 20:25 - The number of pins asserted by an OUT PINS, OUT PINDIRS or MOV PINS instruction. In the range 0 to 32 inclusive."]
     #[inline(always)]
-    #[must_use]
     pub fn out_count(&mut self) -> OUT_COUNT_W<SM_PINCTRL_SPEC> {
         OUT_COUNT_W::new(self, 20)
     }
     #[doc = "Bits 26:28 - The number of pins asserted by a SET. In the range 0 to 5 inclusive."]
     #[inline(always)]
-    #[must_use]
     pub fn set_count(&mut self) -> SET_COUNT_W<SM_PINCTRL_SPEC> {
         SET_COUNT_W::new(self, 26)
     }
     #[doc = "Bits 29:31 - The number of MSBs of the Delay/Side-set instruction field which are used for side-set. Inclusive of the enable bit, if present. Minimum of 0 (all delay bits, no side-set) and maximum of 5 (all side-set, no delay)."]
     #[inline(always)]
-    #[must_use]
     pub fn sideset_count(&mut self) -> SIDESET_COUNT_W<SM_PINCTRL_SPEC> {
         SIDESET_COUNT_W::new(self, 29)
     }
@@ -123,8 +116,6 @@ impl crate::Readable for SM_PINCTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sm_pinctrl::W`](W) writer structure"]
 impl crate::Writable for SM_PINCTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SM_PINCTRL to value 0x1400_0000"]
 impl crate::Resettable for SM_PINCTRL_SPEC {

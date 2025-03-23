@@ -11,10 +11,10 @@ pub type MASK_LSB_R = crate::FieldReader;
 #[doc = "Field `MASK_LSB` writer - The least-significant bit allowed to pass by the mask (inclusive)"]
 pub type MASK_LSB_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `MASK_MSB` reader - The most-significant bit allowed to pass by the mask (inclusive)  
- Setting MSB &lt; LSB may cause chip to turn inside-out"]
+ Setting MSB < LSB may cause chip to turn inside-out"]
 pub type MASK_MSB_R = crate::FieldReader;
 #[doc = "Field `MASK_MSB` writer - The most-significant bit allowed to pass by the mask (inclusive)  
- Setting MSB &lt; LSB may cause chip to turn inside-out"]
+ Setting MSB < LSB may cause chip to turn inside-out"]
 pub type MASK_MSB_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "Field `SIGNED` reader - If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits  
  before adding to BASE0, and LANE0 PEEK/POP appear extended to 32 bits when read by processor."]
@@ -72,7 +72,7 @@ impl R {
         MASK_LSB_R::new(((self.bits >> 5) & 0x1f) as u8)
     }
     #[doc = "Bits 10:14 - The most-significant bit allowed to pass by the mask (inclusive)  
- Setting MSB &lt; LSB may cause chip to turn inside-out"]
+ Setting MSB < LSB may cause chip to turn inside-out"]
     #[inline(always)]
     pub fn mask_msb(&self) -> MASK_MSB_R {
         MASK_MSB_R::new(((self.bits >> 10) & 0x1f) as u8)
@@ -133,46 +133,39 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Logical right-shift applied to accumulator before masking"]
     #[inline(always)]
-    #[must_use]
     pub fn shift(&mut self) -> SHIFT_W<INTERP1_CTRL_LANE0_SPEC> {
         SHIFT_W::new(self, 0)
     }
     #[doc = "Bits 5:9 - The least-significant bit allowed to pass by the mask (inclusive)"]
     #[inline(always)]
-    #[must_use]
     pub fn mask_lsb(&mut self) -> MASK_LSB_W<INTERP1_CTRL_LANE0_SPEC> {
         MASK_LSB_W::new(self, 5)
     }
     #[doc = "Bits 10:14 - The most-significant bit allowed to pass by the mask (inclusive)  
- Setting MSB &lt; LSB may cause chip to turn inside-out"]
+ Setting MSB < LSB may cause chip to turn inside-out"]
     #[inline(always)]
-    #[must_use]
     pub fn mask_msb(&mut self) -> MASK_MSB_W<INTERP1_CTRL_LANE0_SPEC> {
         MASK_MSB_W::new(self, 10)
     }
     #[doc = "Bit 15 - If SIGNED is set, the shifted and masked accumulator value is sign-extended to 32 bits  
  before adding to BASE0, and LANE0 PEEK/POP appear extended to 32 bits when read by processor."]
     #[inline(always)]
-    #[must_use]
     pub fn signed(&mut self) -> SIGNED_W<INTERP1_CTRL_LANE0_SPEC> {
         SIGNED_W::new(self, 15)
     }
     #[doc = "Bit 16 - If 1, feed the opposite lane's accumulator into this lane's shift + mask hardware.  
  Takes effect even if ADD_RAW is set (the CROSS_INPUT mux is before the shift+mask bypass)"]
     #[inline(always)]
-    #[must_use]
     pub fn cross_input(&mut self) -> CROSS_INPUT_W<INTERP1_CTRL_LANE0_SPEC> {
         CROSS_INPUT_W::new(self, 16)
     }
     #[doc = "Bit 17 - If 1, feed the opposite lane's result into this lane's accumulator on POP."]
     #[inline(always)]
-    #[must_use]
     pub fn cross_result(&mut self) -> CROSS_RESULT_W<INTERP1_CTRL_LANE0_SPEC> {
         CROSS_RESULT_W::new(self, 17)
     }
     #[doc = "Bit 18 - If 1, mask + shift is bypassed for LANE0 result. This does not affect FULL result."]
     #[inline(always)]
-    #[must_use]
     pub fn add_raw(&mut self) -> ADD_RAW_W<INTERP1_CTRL_LANE0_SPEC> {
         ADD_RAW_W::new(self, 18)
     }
@@ -180,7 +173,6 @@ impl W {
  No effect on the internal 32-bit datapath. Handy for using a lane to generate sequence  
  of pointers into flash or SRAM."]
     #[inline(always)]
-    #[must_use]
     pub fn force_msb(&mut self) -> FORCE_MSB_W<INTERP1_CTRL_LANE0_SPEC> {
         FORCE_MSB_W::new(self, 19)
     }
@@ -189,7 +181,6 @@ impl W {
  BASE0 and an upper bound of BASE1.  
  - Signedness of these comparisons is determined by LANE0_CTRL_SIGNED"]
     #[inline(always)]
-    #[must_use]
     pub fn clamp(&mut self) -> CLAMP_W<INTERP1_CTRL_LANE0_SPEC> {
         CLAMP_W::new(self, 22)
     }
@@ -206,10 +197,6 @@ impl crate::Readable for INTERP1_CTRL_LANE0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`interp1_ctrl_lane0::W`](W) writer structure"]
 impl crate::Writable for INTERP1_CTRL_LANE0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTERP1_CTRL_LANE0 to value 0"]
-impl crate::Resettable for INTERP1_CTRL_LANE0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTERP1_CTRL_LANE0_SPEC {}

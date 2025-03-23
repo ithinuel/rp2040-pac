@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Fractional part of clock divisor. First-order delta-sigma."]
     #[inline(always)]
-    #[must_use]
     pub fn frac(&mut self) -> FRAC_W<DIV_SPEC> {
         FRAC_W::new(self, 0)
     }
     #[doc = "Bits 8:23 - Integer part of clock divisor."]
     #[inline(always)]
-    #[must_use]
     pub fn int(&mut self) -> INT_W<DIV_SPEC> {
         INT_W::new(self, 8)
     }
@@ -51,10 +49,6 @@ impl crate::Readable for DIV_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`div::W`](W) writer structure"]
 impl crate::Writable for DIV_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIV to value 0"]
-impl crate::Resettable for DIV_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DIV_SPEC {}

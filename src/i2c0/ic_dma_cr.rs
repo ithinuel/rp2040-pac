@@ -127,13 +127,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive DMA Enable. This bit enables/disables the receive FIFO DMA channel. Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn rdmae(&mut self) -> RDMAE_W<IC_DMA_CR_SPEC> {
         RDMAE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit DMA Enable. This bit enables/disables the transmit FIFO DMA channel. Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn tdmae(&mut self) -> TDMAE_W<IC_DMA_CR_SPEC> {
         TDMAE_W::new(self, 1)
     }
@@ -152,10 +150,6 @@ impl crate::Readable for IC_DMA_CR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_dma_cr::W`](W) writer structure"]
 impl crate::Writable for IC_DMA_CR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_DMA_CR to value 0"]
-impl crate::Resettable for IC_DMA_CR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_DMA_CR_SPEC {}

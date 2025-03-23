@@ -187,121 +187,101 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Host: raised when a device is connected or disconnected (i.e. when SIE_STATUS.SPEED changes). Cleared by writing to SIE_STATUS.SPEED"]
     #[inline(always)]
-    #[must_use]
     pub fn host_conn_dis(&mut self) -> HOST_CONN_DIS_W<INTF_SPEC> {
         HOST_CONN_DIS_W::new(self, 0)
     }
     #[doc = "Bit 1 - Host: raised when a device wakes up the host. Cleared by writing to SIE_STATUS.RESUME"]
     #[inline(always)]
-    #[must_use]
     pub fn host_resume(&mut self) -> HOST_RESUME_W<INTF_SPEC> {
         HOST_RESUME_W::new(self, 1)
     }
     #[doc = "Bit 2 - Host: raised every time the host sends a SOF (Start of Frame). Cleared by reading SOF_RD"]
     #[inline(always)]
-    #[must_use]
     pub fn host_sof(&mut self) -> HOST_SOF_W<INTF_SPEC> {
         HOST_SOF_W::new(self, 2)
     }
     #[doc = "Bit 3 - Raised every time SIE_STATUS.TRANS_COMPLETE is set. Clear by writing to this bit."]
     #[inline(always)]
-    #[must_use]
     pub fn trans_complete(&mut self) -> TRANS_COMPLETE_W<INTF_SPEC> {
         TRANS_COMPLETE_W::new(self, 3)
     }
     #[doc = "Bit 4 - Raised when any bit in BUFF_STATUS is set. Clear by clearing all bits in BUFF_STATUS."]
     #[inline(always)]
-    #[must_use]
     pub fn buff_status(&mut self) -> BUFF_STATUS_W<INTF_SPEC> {
         BUFF_STATUS_W::new(self, 4)
     }
     #[doc = "Bit 5 - Source: SIE_STATUS.DATA_SEQ_ERROR"]
     #[inline(always)]
-    #[must_use]
     pub fn error_data_seq(&mut self) -> ERROR_DATA_SEQ_W<INTF_SPEC> {
         ERROR_DATA_SEQ_W::new(self, 5)
     }
     #[doc = "Bit 6 - Source: SIE_STATUS.RX_TIMEOUT"]
     #[inline(always)]
-    #[must_use]
     pub fn error_rx_timeout(&mut self) -> ERROR_RX_TIMEOUT_W<INTF_SPEC> {
         ERROR_RX_TIMEOUT_W::new(self, 6)
     }
     #[doc = "Bit 7 - Source: SIE_STATUS.RX_OVERFLOW"]
     #[inline(always)]
-    #[must_use]
     pub fn error_rx_overflow(&mut self) -> ERROR_RX_OVERFLOW_W<INTF_SPEC> {
         ERROR_RX_OVERFLOW_W::new(self, 7)
     }
     #[doc = "Bit 8 - Source: SIE_STATUS.BIT_STUFF_ERROR"]
     #[inline(always)]
-    #[must_use]
     pub fn error_bit_stuff(&mut self) -> ERROR_BIT_STUFF_W<INTF_SPEC> {
         ERROR_BIT_STUFF_W::new(self, 8)
     }
     #[doc = "Bit 9 - Source: SIE_STATUS.CRC_ERROR"]
     #[inline(always)]
-    #[must_use]
     pub fn error_crc(&mut self) -> ERROR_CRC_W<INTF_SPEC> {
         ERROR_CRC_W::new(self, 9)
     }
     #[doc = "Bit 10 - Source: SIE_STATUS.STALL_REC"]
     #[inline(always)]
-    #[must_use]
     pub fn stall(&mut self) -> STALL_W<INTF_SPEC> {
         STALL_W::new(self, 10)
     }
     #[doc = "Bit 11 - Source: SIE_STATUS.VBUS_DETECTED"]
     #[inline(always)]
-    #[must_use]
     pub fn vbus_detect(&mut self) -> VBUS_DETECT_W<INTF_SPEC> {
         VBUS_DETECT_W::new(self, 11)
     }
     #[doc = "Bit 12 - Source: SIE_STATUS.BUS_RESET"]
     #[inline(always)]
-    #[must_use]
     pub fn bus_reset(&mut self) -> BUS_RESET_W<INTF_SPEC> {
         BUS_RESET_W::new(self, 12)
     }
     #[doc = "Bit 13 - Set when the device connection state changes. Cleared by writing to SIE_STATUS.CONNECTED"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_conn_dis(&mut self) -> DEV_CONN_DIS_W<INTF_SPEC> {
         DEV_CONN_DIS_W::new(self, 13)
     }
     #[doc = "Bit 14 - Set when the device suspend state changes. Cleared by writing to SIE_STATUS.SUSPENDED"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_suspend(&mut self) -> DEV_SUSPEND_W<INTF_SPEC> {
         DEV_SUSPEND_W::new(self, 14)
     }
     #[doc = "Bit 15 - Set when the device receives a resume from the host. Cleared by writing to SIE_STATUS.RESUME"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_resume_from_host(&mut self) -> DEV_RESUME_FROM_HOST_W<INTF_SPEC> {
         DEV_RESUME_FROM_HOST_W::new(self, 15)
     }
     #[doc = "Bit 16 - Device. Source: SIE_STATUS.SETUP_REC"]
     #[inline(always)]
-    #[must_use]
     pub fn setup_req(&mut self) -> SETUP_REQ_W<INTF_SPEC> {
         SETUP_REQ_W::new(self, 16)
     }
     #[doc = "Bit 17 - Set every time the device receives a SOF (Start of Frame) packet. Cleared by reading SOF_RD"]
     #[inline(always)]
-    #[must_use]
     pub fn dev_sof(&mut self) -> DEV_SOF_W<INTF_SPEC> {
         DEV_SOF_W::new(self, 17)
     }
     #[doc = "Bit 18 - Raised when any bit in ABORT_DONE is set. Clear by clearing all bits in ABORT_DONE."]
     #[inline(always)]
-    #[must_use]
     pub fn abort_done(&mut self) -> ABORT_DONE_W<INTF_SPEC> {
         ABORT_DONE_W::new(self, 18)
     }
     #[doc = "Bit 19 - Raised when any bit in EP_STATUS_STALL_NAK is set. Clear by clearing all bits in EP_STATUS_STALL_NAK."]
     #[inline(always)]
-    #[must_use]
     pub fn ep_stall_nak(&mut self) -> EP_STALL_NAK_W<INTF_SPEC> {
         EP_STALL_NAK_W::new(self, 19)
     }
@@ -318,10 +298,6 @@ impl crate::Readable for INTF_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`intf::W`](W) writer structure"]
 impl crate::Writable for INTF_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTF to value 0"]
-impl crate::Resettable for INTF_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTF_SPEC {}

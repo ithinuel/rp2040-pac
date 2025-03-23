@@ -15,6 +15,4 @@ impl crate::RegisterSpec for GITREF_RP2040_SPEC {
 #[doc = "`read()` method returns [`gitref_rp2040::R`](R) reader structure"]
 impl crate::Readable for GITREF_RP2040_SPEC {}
 #[doc = "`reset()` method sets GITREF_RP2040 to value 0"]
-impl crate::Resettable for GITREF_RP2040_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GITREF_RP2040_SPEC {}

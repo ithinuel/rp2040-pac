@@ -117,8 +117,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`sspcr0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspcr0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspcr0`]
-module"]
+For information about available fields see [`mod@sspcr0`] module"]
 pub type SSPCR0 = crate::Reg<sspcr0::SSPCR0_SPEC>;
 #[doc = "Control register 0, SSPCR0 on page 3-4"]
 pub mod sspcr0;
@@ -126,8 +125,7 @@ pub mod sspcr0;
 
 You can [`read`](crate::Reg::read) this register and get [`sspcr1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspcr1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspcr1`]
-module"]
+For information about available fields see [`mod@sspcr1`] module"]
 pub type SSPCR1 = crate::Reg<sspcr1::SSPCR1_SPEC>;
 #[doc = "Control register 1, SSPCR1 on page 3-5"]
 pub mod sspcr1;
@@ -135,8 +133,7 @@ pub mod sspcr1;
 
 You can [`read`](crate::Reg::read) this register and get [`sspdr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspdr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspdr`]
-module"]
+For information about available fields see [`mod@sspdr`] module"]
 pub type SSPDR = crate::Reg<sspdr::SSPDR_SPEC>;
 #[doc = "Data register, SSPDR on page 3-6"]
 pub mod sspdr;
@@ -144,8 +141,7 @@ pub mod sspdr;
 
 You can [`read`](crate::Reg::read) this register and get [`sspsr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspsr`]
-module"]
+For information about available fields see [`mod@sspsr`] module"]
 pub type SSPSR = crate::Reg<sspsr::SSPSR_SPEC>;
 #[doc = "Status register, SSPSR on page 3-7"]
 pub mod sspsr;
@@ -153,8 +149,7 @@ pub mod sspsr;
 
 You can [`read`](crate::Reg::read) this register and get [`sspcpsr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspcpsr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspcpsr`]
-module"]
+For information about available fields see [`mod@sspcpsr`] module"]
 pub type SSPCPSR = crate::Reg<sspcpsr::SSPCPSR_SPEC>;
 #[doc = "Clock prescale register, SSPCPSR on page 3-8"]
 pub mod sspcpsr;
@@ -162,8 +157,7 @@ pub mod sspcpsr;
 
 You can [`read`](crate::Reg::read) this register and get [`sspimsc::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspimsc::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspimsc`]
-module"]
+For information about available fields see [`mod@sspimsc`] module"]
 pub type SSPIMSC = crate::Reg<sspimsc::SSPIMSC_SPEC>;
 #[doc = "Interrupt mask set or clear register, SSPIMSC on page 3-9"]
 pub mod sspimsc;
@@ -171,8 +165,7 @@ pub mod sspimsc;
 
 You can [`read`](crate::Reg::read) this register and get [`sspris::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspris`]
-module"]
+For information about available fields see [`mod@sspris`] module"]
 pub type SSPRIS = crate::Reg<sspris::SSPRIS_SPEC>;
 #[doc = "Raw interrupt status register, SSPRIS on page 3-10"]
 pub mod sspris;
@@ -180,8 +173,7 @@ pub mod sspris;
 
 You can [`read`](crate::Reg::read) this register and get [`sspmis::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspmis`]
-module"]
+For information about available fields see [`mod@sspmis`] module"]
 pub type SSPMIS = crate::Reg<sspmis::SSPMIS_SPEC>;
 #[doc = "Masked interrupt status register, SSPMIS on page 3-11"]
 pub mod sspmis;
@@ -189,8 +181,7 @@ pub mod sspmis;
 
 You can [`read`](crate::Reg::read) this register and get [`sspicr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspicr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspicr`]
-module"]
+For information about available fields see [`mod@sspicr`] module"]
 pub type SSPICR = crate::Reg<sspicr::SSPICR_SPEC>;
 #[doc = "Interrupt clear register, SSPICR on page 3-11"]
 pub mod sspicr;
@@ -198,8 +189,7 @@ pub mod sspicr;
 
 You can [`read`](crate::Reg::read) this register and get [`sspdmacr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sspdmacr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspdmacr`]
-module"]
+For information about available fields see [`mod@sspdmacr`] module"]
 pub type SSPDMACR = crate::Reg<sspdmacr::SSPDMACR_SPEC>;
 #[doc = "DMA control register, SSPDMACR on page 3-12"]
 pub mod sspdmacr;
@@ -207,8 +197,7 @@ pub mod sspdmacr;
 
 You can [`read`](crate::Reg::read) this register and get [`sspperiphid0::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspperiphid0`]
-module"]
+For information about available fields see [`mod@sspperiphid0`] module"]
 pub type SSPPERIPHID0 = crate::Reg<sspperiphid0::SSPPERIPHID0_SPEC>;
 #[doc = "Peripheral identification registers, SSPPeriphID0-3 on page 3-13"]
 pub mod sspperiphid0;
@@ -216,8 +205,7 @@ pub mod sspperiphid0;
 
 You can [`read`](crate::Reg::read) this register and get [`sspperiphid1::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspperiphid1`]
-module"]
+For information about available fields see [`mod@sspperiphid1`] module"]
 pub type SSPPERIPHID1 = crate::Reg<sspperiphid1::SSPPERIPHID1_SPEC>;
 #[doc = "Peripheral identification registers, SSPPeriphID0-3 on page 3-13"]
 pub mod sspperiphid1;
@@ -225,8 +213,7 @@ pub mod sspperiphid1;
 
 You can [`read`](crate::Reg::read) this register and get [`sspperiphid2::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspperiphid2`]
-module"]
+For information about available fields see [`mod@sspperiphid2`] module"]
 pub type SSPPERIPHID2 = crate::Reg<sspperiphid2::SSPPERIPHID2_SPEC>;
 #[doc = "Peripheral identification registers, SSPPeriphID0-3 on page 3-13"]
 pub mod sspperiphid2;
@@ -234,8 +221,7 @@ pub mod sspperiphid2;
 
 You can [`read`](crate::Reg::read) this register and get [`sspperiphid3::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sspperiphid3`]
-module"]
+For information about available fields see [`mod@sspperiphid3`] module"]
 pub type SSPPERIPHID3 = crate::Reg<sspperiphid3::SSPPERIPHID3_SPEC>;
 #[doc = "Peripheral identification registers, SSPPeriphID0-3 on page 3-13"]
 pub mod sspperiphid3;
@@ -243,8 +229,7 @@ pub mod sspperiphid3;
 
 You can [`read`](crate::Reg::read) this register and get [`ssppcellid0::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ssppcellid0`]
-module"]
+For information about available fields see [`mod@ssppcellid0`] module"]
 pub type SSPPCELLID0 = crate::Reg<ssppcellid0::SSPPCELLID0_SPEC>;
 #[doc = "PrimeCell identification registers, SSPPCellID0-3 on page 3-16"]
 pub mod ssppcellid0;
@@ -252,8 +237,7 @@ pub mod ssppcellid0;
 
 You can [`read`](crate::Reg::read) this register and get [`ssppcellid1::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ssppcellid1`]
-module"]
+For information about available fields see [`mod@ssppcellid1`] module"]
 pub type SSPPCELLID1 = crate::Reg<ssppcellid1::SSPPCELLID1_SPEC>;
 #[doc = "PrimeCell identification registers, SSPPCellID0-3 on page 3-16"]
 pub mod ssppcellid1;
@@ -261,8 +245,7 @@ pub mod ssppcellid1;
 
 You can [`read`](crate::Reg::read) this register and get [`ssppcellid2::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ssppcellid2`]
-module"]
+For information about available fields see [`mod@ssppcellid2`] module"]
 pub type SSPPCELLID2 = crate::Reg<ssppcellid2::SSPPCELLID2_SPEC>;
 #[doc = "PrimeCell identification registers, SSPPCellID0-3 on page 3-16"]
 pub mod ssppcellid2;
@@ -270,8 +253,7 @@ pub mod ssppcellid2;
 
 You can [`read`](crate::Reg::read) this register and get [`ssppcellid3::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ssppcellid3`]
-module"]
+For information about available fields see [`mod@ssppcellid3`] module"]
 pub type SSPPCELLID3 = crate::Reg<ssppcellid3::SSPPCELLID3_SPEC>;
 #[doc = "PrimeCell identification registers, SSPPCellID0-3 on page 3-16"]
 pub mod ssppcellid3;

@@ -26,8 +26,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`reset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`reset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@reset`]
-module"]
+For information about available fields see [`mod@reset`] module"]
 pub type RESET = crate::Reg<reset::RESET_SPEC>;
 #[doc = "Reset control. If a bit is set it means the peripheral is in reset. 0 means the peripheral's reset is deasserted."]
 pub mod reset;
@@ -35,8 +34,7 @@ pub mod reset;
 
 You can [`read`](crate::Reg::read) this register and get [`wdsel::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wdsel::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@wdsel`]
-module"]
+For information about available fields see [`mod@wdsel`] module"]
 pub type WDSEL = crate::Reg<wdsel::WDSEL_SPEC>;
 #[doc = "Watchdog select. If a bit is set then the watchdog will reset this peripheral when the watchdog fires."]
 pub mod wdsel;
@@ -44,8 +42,7 @@ pub mod wdsel;
 
 You can [`read`](crate::Reg::read) this register and get [`reset_done::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@reset_done`]
-module"]
+For information about available fields see [`mod@reset_done`] module"]
 pub type RESET_DONE = crate::Reg<reset_done::RESET_DONE_SPEC>;
 #[doc = "Reset done. If a bit is set then a reset done signal has been returned by the peripheral. This indicates that the peripheral's registers are ready to be accessed."]
 pub mod reset_done;

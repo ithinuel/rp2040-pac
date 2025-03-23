@@ -39,13 +39,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Total number of clk_tick cycles before the next tick."]
     #[inline(always)]
-    #[must_use]
     pub fn cycles(&mut self) -> CYCLES_W<TICK_SPEC> {
         CYCLES_W::new(self, 0)
     }
     #[doc = "Bit 9 - start / stop tick generation"]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<TICK_SPEC> {
         ENABLE_W::new(self, 9)
     }
@@ -62,8 +60,6 @@ impl crate::Readable for TICK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`tick::W`](W) writer structure"]
 impl crate::Writable for TICK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TICK to value 0x0200"]
 impl crate::Resettable for TICK_SPEC {

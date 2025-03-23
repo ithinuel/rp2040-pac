@@ -19,6 +19,4 @@ impl crate::RegisterSpec for TIMERAWH_SPEC {
 #[doc = "`read()` method returns [`timerawh::R`](R) reader structure"]
 impl crate::Readable for TIMERAWH_SPEC {}
 #[doc = "`reset()` method sets TIMERAWH to value 0"]
-impl crate::Resettable for TIMERAWH_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for TIMERAWH_SPEC {}

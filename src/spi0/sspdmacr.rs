@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive DMA Enable. If this bit is set to 1, DMA for the receive FIFO is enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn rxdmae(&mut self) -> RXDMAE_W<SSPDMACR_SPEC> {
         RXDMAE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit DMA Enable. If this bit is set to 1, DMA for the transmit FIFO is enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn txdmae(&mut self) -> TXDMAE_W<SSPDMACR_SPEC> {
         TXDMAE_W::new(self, 1)
     }
@@ -48,10 +46,6 @@ impl crate::Readable for SSPDMACR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sspdmacr::W`](W) writer structure"]
 impl crate::Writable for SSPDMACR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SSPDMACR to value 0"]
-impl crate::Resettable for SSPDMACR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SSPDMACR_SPEC {}

@@ -34,19 +34,16 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Day of the month (1..31)"]
     #[inline(always)]
-    #[must_use]
     pub fn day(&mut self) -> DAY_W<SETUP_0_SPEC> {
         DAY_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Month (1..12)"]
     #[inline(always)]
-    #[must_use]
     pub fn month(&mut self) -> MONTH_W<SETUP_0_SPEC> {
         MONTH_W::new(self, 8)
     }
     #[doc = "Bits 12:23 - Year"]
     #[inline(always)]
-    #[must_use]
     pub fn year(&mut self) -> YEAR_W<SETUP_0_SPEC> {
         YEAR_W::new(self, 12)
     }
@@ -63,10 +60,6 @@ impl crate::Readable for SETUP_0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`setup_0::W`](W) writer structure"]
 impl crate::Writable for SETUP_0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SETUP_0 to value 0"]
-impl crate::Resettable for SETUP_0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SETUP_0_SPEC {}

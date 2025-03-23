@@ -67,7 +67,6 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ACK General Call. When set to 1, DW_apb_i2c responds with a ACK (by asserting ic_data_oe) when it receives a General Call. Otherwise, DW_apb_i2c responds with a NACK (by negating ic_data_oe)."]
     #[inline(always)]
-    #[must_use]
     pub fn ack_gen_call(&mut self) -> ACK_GEN_CALL_W<IC_ACK_GENERAL_CALL_SPEC> {
         ACK_GEN_CALL_W::new(self, 0)
     }
@@ -88,8 +87,6 @@ impl crate::Readable for IC_ACK_GENERAL_CALL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_ack_general_call::W`](W) writer structure"]
 impl crate::Writable for IC_ACK_GENERAL_CALL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_ACK_GENERAL_CALL to value 0x01"]
 impl crate::Resettable for IC_ACK_GENERAL_CALL_SPEC {

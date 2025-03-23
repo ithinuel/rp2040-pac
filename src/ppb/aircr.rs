@@ -49,13 +49,11 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Clears all active state information for fixed and configurable exceptions. This bit: is self-clearing, can only be set by the DAP when the core is halted. When set: clears all active exception status of the processor, forces a return to Thread mode, forces an IPSR of 0. A debugger must re-initialize the stack."]
     #[inline(always)]
-    #[must_use]
     pub fn vectclractive(&mut self) -> VECTCLRACTIVE_W<AIRCR_SPEC> {
         VECTCLRACTIVE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Writing 1 to this bit causes the SYSRESETREQ signal to the outer system to be asserted to request a reset. The intention is to force a large system reset of all major components except for debug. The C_HALT bit in the DHCSR is cleared as a result of the system reset requested. The debugger does not lose contact with the device."]
     #[inline(always)]
-    #[must_use]
     pub fn sysresetreq(&mut self) -> SYSRESETREQ_W<AIRCR_SPEC> {
         SYSRESETREQ_W::new(self, 2)
     }
@@ -63,7 +61,6 @@ impl W {
  Reads as Unknown  
  On writes, write 0x05FA to VECTKEY, otherwise the write is ignored."]
     #[inline(always)]
-    #[must_use]
     pub fn vectkey(&mut self) -> VECTKEY_W<AIRCR_SPEC> {
         VECTKEY_W::new(self, 16)
     }
@@ -80,10 +77,6 @@ impl crate::Readable for AIRCR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`aircr::W`](W) writer structure"]
 impl crate::Writable for AIRCR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets AIRCR to value 0"]
-impl crate::Resettable for AIRCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for AIRCR_SPEC {}

@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - 0 - low priority, 1 - high priority"]
     #[inline(always)]
-    #[must_use]
     pub fn proc0(&mut self) -> PROC0_W<BUS_PRIORITY_SPEC> {
         PROC0_W::new(self, 0)
     }
     #[doc = "Bit 4 - 0 - low priority, 1 - high priority"]
     #[inline(always)]
-    #[must_use]
     pub fn proc1(&mut self) -> PROC1_W<BUS_PRIORITY_SPEC> {
         PROC1_W::new(self, 4)
     }
     #[doc = "Bit 8 - 0 - low priority, 1 - high priority"]
     #[inline(always)]
-    #[must_use]
     pub fn dma_r(&mut self) -> DMA_R_W<BUS_PRIORITY_SPEC> {
         DMA_R_W::new(self, 8)
     }
     #[doc = "Bit 12 - 0 - low priority, 1 - high priority"]
     #[inline(always)]
-    #[must_use]
     pub fn dma_w(&mut self) -> DMA_W_W<BUS_PRIORITY_SPEC> {
         DMA_W_W::new(self, 12)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for BUS_PRIORITY_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bus_priority::W`](W) writer structure"]
 impl crate::Writable for BUS_PRIORITY_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BUS_PRIORITY to value 0"]
-impl crate::Resettable for BUS_PRIORITY_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BUS_PRIORITY_SPEC {}

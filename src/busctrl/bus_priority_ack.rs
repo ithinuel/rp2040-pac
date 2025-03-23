@@ -23,6 +23,4 @@ impl crate::RegisterSpec for BUS_PRIORITY_ACK_SPEC {
 #[doc = "`read()` method returns [`bus_priority_ack::R`](R) reader structure"]
 impl crate::Readable for BUS_PRIORITY_ACK_SPEC {}
 #[doc = "`reset()` method sets BUS_PRIORITY_ACK to value 0"]
-impl crate::Resettable for BUS_PRIORITY_ACK_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BUS_PRIORITY_ACK_SPEC {}

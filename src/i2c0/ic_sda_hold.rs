@@ -39,7 +39,6 @@ impl W {
 
  Reset value: IC_DEFAULT_SDA_HOLD\\[15:0\\]."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_sda_tx_hold(&mut self) -> IC_SDA_TX_HOLD_W<IC_SDA_HOLD_SPEC> {
         IC_SDA_TX_HOLD_W::new(self, 0)
     }
@@ -47,18 +46,15 @@ impl W {
 
  Reset value: IC_DEFAULT_SDA_HOLD\\[23:16\\]."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_sda_rx_hold(&mut self) -> IC_SDA_RX_HOLD_W<IC_SDA_HOLD_SPEC> {
         IC_SDA_RX_HOLD_W::new(self, 16)
     }
 }
 #[doc = "I2C SDA Hold Time Length Register  
 
- The bits \\[15:0\\]
-of this register are used to control the hold time of SDA during transmit in both slave and master mode (after SCL goes from HIGH to LOW).  
+ The bits \\[15:0\\] of this register are used to control the hold time of SDA during transmit in both slave and master mode (after SCL goes from HIGH to LOW).  
 
- The bits \\[23:16\\]
-of this register are used to extend the SDA transition (if any) whenever SCL is HIGH in the receiver in either master or slave mode.  
+ The bits \\[23:16\\] of this register are used to extend the SDA transition (if any) whenever SCL is HIGH in the receiver in either master or slave mode.  
 
  Writes to this register succeed only when IC_ENABLE\\[0\\]=0.  
 
@@ -76,8 +72,6 @@ impl crate::Readable for IC_SDA_HOLD_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_sda_hold::W`](W) writer structure"]
 impl crate::Writable for IC_SDA_HOLD_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_SDA_HOLD to value 0x01"]
 impl crate::Resettable for IC_SDA_HOLD_SPEC {

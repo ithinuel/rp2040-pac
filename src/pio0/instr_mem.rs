@@ -5,7 +5,6 @@ pub type INSTR_MEM0_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    #[must_use]
     pub fn instr_mem0(&mut self) -> INSTR_MEM0_W<INSTR_MEM_SPEC> {
         INSTR_MEM0_W::new(self, 0)
     }
@@ -20,10 +19,6 @@ impl crate::RegisterSpec for INSTR_MEM_SPEC {
 #[doc = "`write(|w| ..)` method takes [`instr_mem::W`](W) writer structure"]
 impl crate::Writable for INSTR_MEM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INSTR_MEM%s to value 0"]
-impl crate::Resettable for INSTR_MEM_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INSTR_MEM_SPEC {}

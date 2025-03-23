@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn to_phy(&mut self) -> TO_PHY_W<USB_MUXING_SPEC> {
         TO_PHY_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn to_extphy(&mut self) -> TO_EXTPHY_W<USB_MUXING_SPEC> {
         TO_EXTPHY_W::new(self, 1)
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn to_digital_pad(&mut self) -> TO_DIGITAL_PAD_W<USB_MUXING_SPEC> {
         TO_DIGITAL_PAD_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn softcon(&mut self) -> SOFTCON_W<USB_MUXING_SPEC> {
         SOFTCON_W::new(self, 3)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for USB_MUXING_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`usb_muxing::W`](W) writer structure"]
 impl crate::Writable for USB_MUXING_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets USB_MUXING to value 0"]
-impl crate::Resettable for USB_MUXING_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for USB_MUXING_SPEC {}

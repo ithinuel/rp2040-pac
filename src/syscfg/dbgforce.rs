@@ -75,37 +75,31 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Directly drive processor 0 SWDIO input, if PROC0_ATTACH is set"]
     #[inline(always)]
-    #[must_use]
     pub fn proc0_swdi(&mut self) -> PROC0_SWDI_W<DBGFORCE_SPEC> {
         PROC0_SWDI_W::new(self, 1)
     }
     #[doc = "Bit 2 - Directly drive processor 0 SWCLK, if PROC0_ATTACH is set"]
     #[inline(always)]
-    #[must_use]
     pub fn proc0_swclk(&mut self) -> PROC0_SWCLK_W<DBGFORCE_SPEC> {
         PROC0_SWCLK_W::new(self, 2)
     }
     #[doc = "Bit 3 - Attach processor 0 debug port to syscfg controls, and disconnect it from external SWD pads."]
     #[inline(always)]
-    #[must_use]
     pub fn proc0_attach(&mut self) -> PROC0_ATTACH_W<DBGFORCE_SPEC> {
         PROC0_ATTACH_W::new(self, 3)
     }
     #[doc = "Bit 5 - Directly drive processor 1 SWDIO input, if PROC1_ATTACH is set"]
     #[inline(always)]
-    #[must_use]
     pub fn proc1_swdi(&mut self) -> PROC1_SWDI_W<DBGFORCE_SPEC> {
         PROC1_SWDI_W::new(self, 5)
     }
     #[doc = "Bit 6 - Directly drive processor 1 SWCLK, if PROC1_ATTACH is set"]
     #[inline(always)]
-    #[must_use]
     pub fn proc1_swclk(&mut self) -> PROC1_SWCLK_W<DBGFORCE_SPEC> {
         PROC1_SWCLK_W::new(self, 6)
     }
     #[doc = "Bit 7 - Attach processor 1 debug port to syscfg controls, and disconnect it from external SWD pads."]
     #[inline(always)]
-    #[must_use]
     pub fn proc1_attach(&mut self) -> PROC1_ATTACH_W<DBGFORCE_SPEC> {
         PROC1_ATTACH_W::new(self, 7)
     }
@@ -122,8 +116,6 @@ impl crate::Readable for DBGFORCE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dbgforce::W`](W) writer structure"]
 impl crate::Writable for DBGFORCE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DBGFORCE to value 0x66"]
 impl crate::Resettable for DBGFORCE_SPEC {

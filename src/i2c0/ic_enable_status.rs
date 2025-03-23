@@ -52,8 +52,7 @@ impl IC_EN_R {
 
  When read as 1, DW_apb_i2c is deemed to have forced a NACK during any part of an I2C transfer, irrespective of whether the I2C address matches the slave address set in DW_apb_i2c (IC_SAR register) OR if the transfer is completed before IC_ENABLE is set to 0 but has not taken effect.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit will also be set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit will also be set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled when there is master activity, or when the I2C bus is idle.  
 
@@ -85,8 +84,7 @@ impl From<SLV_DISABLED_WHILE_BUSY_A> for bool {
 
  When read as 1, DW_apb_i2c is deemed to have forced a NACK during any part of an I2C transfer, irrespective of whether the I2C address matches the slave address set in DW_apb_i2c (IC_SAR register) OR if the transfer is completed before IC_ENABLE is set to 0 but has not taken effect.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit will also be set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit will also be set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled when there is master activity, or when the I2C bus is idle.  
 
@@ -116,8 +114,7 @@ impl SLV_DISABLED_WHILE_BUSY_R {
 }
 #[doc = "Slave Received Data Lost. This bit indicates if a Slave-Receiver operation has been aborted with at least one data byte received from an I2C transfer due to the setting bit 0 of IC_ENABLE from 1 to 0. When read as 1, DW_apb_i2c is deemed to have been actively engaged in an aborted I2C transfer (with matching address) and the data phase of the I2C transfer has been entered, even though a data byte has been responded with a NACK.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit is also set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit is also set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled without being actively involved in the data phase of a Slave-Receiver transfer.  
 
@@ -141,8 +138,7 @@ impl From<SLV_RX_DATA_LOST_A> for bool {
 }
 #[doc = "Field `SLV_RX_DATA_LOST` reader - Slave Received Data Lost. This bit indicates if a Slave-Receiver operation has been aborted with at least one data byte received from an I2C transfer due to the setting bit 0 of IC_ENABLE from 1 to 0. When read as 1, DW_apb_i2c is deemed to have been actively engaged in an aborted I2C transfer (with matching address) and the data phase of the I2C transfer has been entered, even though a data byte has been responded with a NACK.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit is also set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit is also set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled without being actively involved in the data phase of a Slave-Receiver transfer.  
 
@@ -188,8 +184,7 @@ impl R {
 
  When read as 1, DW_apb_i2c is deemed to have forced a NACK during any part of an I2C transfer, irrespective of whether the I2C address matches the slave address set in DW_apb_i2c (IC_SAR register) OR if the transfer is completed before IC_ENABLE is set to 0 but has not taken effect.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit will also be set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit will also be set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled when there is master activity, or when the I2C bus is idle.  
 
@@ -202,8 +197,7 @@ has been set to 0, then this bit will also be set to 1.
     }
     #[doc = "Bit 2 - Slave Received Data Lost. This bit indicates if a Slave-Receiver operation has been aborted with at least one data byte received from an I2C transfer due to the setting bit 0 of IC_ENABLE from 1 to 0. When read as 1, DW_apb_i2c is deemed to have been actively engaged in an aborted I2C transfer (with matching address) and the data phase of the I2C transfer has been entered, even though a data byte has been responded with a NACK.  
 
- Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\]
-has been set to 0, then this bit is also set to 1.  
+ Note: If the remote I2C master terminates the transfer with a STOP condition before the DW_apb_i2c has a chance to NACK a transfer, and IC_ENABLE\\[0\\] has been set to 0, then this bit is also set to 1.  
 
  When read as 0, DW_apb_i2c is deemed to have been disabled without being actively involved in the data phase of a Slave-Receiver transfer.  
 
@@ -217,17 +211,13 @@ has been set to 0, then this bit is also set to 1.
 }
 #[doc = "I2C Enable Status Register  
 
- The register is used to report the DW_apb_i2c hardware status when the IC_ENABLE\\[0\\]
-register is set from 1 to 0; that is, when DW_apb_i2c is disabled.  
+ The register is used to report the DW_apb_i2c hardware status when the IC_ENABLE\\[0\\] register is set from 1 to 0; that is, when DW_apb_i2c is disabled.  
 
- If IC_ENABLE\\[0\\]
-has been set to 1, bits 2:1 are forced to 0, and bit 0 is forced to 1.  
+ If IC_ENABLE\\[0\\] has been set to 1, bits 2:1 are forced to 0, and bit 0 is forced to 1.  
 
- If IC_ENABLE\\[0\\]
-has been set to 0, bits 2:1 is only be valid as soon as bit 0 is read as '0'.  
+ If IC_ENABLE\\[0\\] has been set to 0, bits 2:1 is only be valid as soon as bit 0 is read as '0'.  
 
- Note: When IC_ENABLE\\[0\\]
-has been set to 0, a delay occurs for bit 0 to be read as 0 because disabling the DW_apb_i2c depends on I2C bus activities.  
+ Note: When IC_ENABLE\\[0\\] has been set to 0, a delay occurs for bit 0 to be read as 0 because disabling the DW_apb_i2c depends on I2C bus activities.  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_enable_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IC_ENABLE_STATUS_SPEC;
@@ -237,6 +227,4 @@ impl crate::RegisterSpec for IC_ENABLE_STATUS_SPEC {
 #[doc = "`read()` method returns [`ic_enable_status::R`](R) reader structure"]
 impl crate::Readable for IC_ENABLE_STATUS_SPEC {}
 #[doc = "`reset()` method sets IC_ENABLE_STATUS to value 0"]
-impl crate::Resettable for IC_ENABLE_STATUS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_ENABLE_STATUS_SPEC {}

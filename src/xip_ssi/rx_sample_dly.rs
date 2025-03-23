@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - RXD sample delay (in SCLK cycles)"]
     #[inline(always)]
-    #[must_use]
     pub fn rsd(&mut self) -> RSD_W<RX_SAMPLE_DLY_SPEC> {
         RSD_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for RX_SAMPLE_DLY_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`rx_sample_dly::W`](W) writer structure"]
 impl crate::Writable for RX_SAMPLE_DLY_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets RX_SAMPLE_DLY to value 0"]
-impl crate::Resettable for RX_SAMPLE_DLY_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RX_SAMPLE_DLY_SPEC {}

@@ -23,6 +23,4 @@ impl crate::RegisterSpec for IC_CLR_TX_ABRT_SPEC {
 #[doc = "`read()` method returns [`ic_clr_tx_abrt::R`](R) reader structure"]
 impl crate::Readable for IC_CLR_TX_ABRT_SPEC {}
 #[doc = "`reset()` method sets IC_CLR_TX_ABRT to value 0"]
-impl crate::Resettable for IC_CLR_TX_ABRT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_CLR_TX_ABRT_SPEC {}

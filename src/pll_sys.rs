@@ -43,8 +43,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`cs::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`cs::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@cs`]
-module"]
+For information about available fields see [`mod@cs`] module"]
 pub type CS = crate::Reg<cs::CS_SPEC>;
 #[doc = "Control and Status  
  GENERAL CONSTRAINTS:  
@@ -56,8 +55,7 @@ pub mod cs;
 
 You can [`read`](crate::Reg::read) this register and get [`pwr::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`pwr::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@pwr`]
-module"]
+For information about available fields see [`mod@pwr`] module"]
 pub type PWR = crate::Reg<pwr::PWR_SPEC>;
 #[doc = "Controls the PLL power modes."]
 pub mod pwr;
@@ -66,8 +64,7 @@ pub mod pwr;
 
 You can [`read`](crate::Reg::read) this register and get [`fbdiv_int::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fbdiv_int::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fbdiv_int`]
-module"]
+For information about available fields see [`mod@fbdiv_int`] module"]
 pub type FBDIV_INT = crate::Reg<fbdiv_int::FBDIV_INT_SPEC>;
 #[doc = "Feedback divisor  
  (note: this PLL does not support fractional division)"]
@@ -78,8 +75,7 @@ pub mod fbdiv_int;
 
 You can [`read`](crate::Reg::read) this register and get [`prim::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`prim::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@prim`]
-module"]
+For information about available fields see [`mod@prim`] module"]
 pub type PRIM = crate::Reg<prim::PRIM_SPEC>;
 #[doc = "Controls the PLL post dividers for the primary output  
  (note: this PLL does not have a secondary output)  

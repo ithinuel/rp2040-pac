@@ -106,67 +106,56 @@ impl R {
 impl W {
     #[doc = "Bit 0 - nUARTRI modem interrupt mask. A read returns the current mask for the UARTRIINTR interrupt. On a write of 1, the mask of the UARTRIINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn rimim(&mut self) -> RIMIM_W<UARTIMSC_SPEC> {
         RIMIM_W::new(self, 0)
     }
     #[doc = "Bit 1 - nUARTCTS modem interrupt mask. A read returns the current mask for the UARTCTSINTR interrupt. On a write of 1, the mask of the UARTCTSINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn ctsmim(&mut self) -> CTSMIM_W<UARTIMSC_SPEC> {
         CTSMIM_W::new(self, 1)
     }
     #[doc = "Bit 2 - nUARTDCD modem interrupt mask. A read returns the current mask for the UARTDCDINTR interrupt. On a write of 1, the mask of the UARTDCDINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn dcdmim(&mut self) -> DCDMIM_W<UARTIMSC_SPEC> {
         DCDMIM_W::new(self, 2)
     }
     #[doc = "Bit 3 - nUARTDSR modem interrupt mask. A read returns the current mask for the UARTDSRINTR interrupt. On a write of 1, the mask of the UARTDSRINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn dsrmim(&mut self) -> DSRMIM_W<UARTIMSC_SPEC> {
         DSRMIM_W::new(self, 3)
     }
     #[doc = "Bit 4 - Receive interrupt mask. A read returns the current mask for the UARTRXINTR interrupt. On a write of 1, the mask of the UARTRXINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn rxim(&mut self) -> RXIM_W<UARTIMSC_SPEC> {
         RXIM_W::new(self, 4)
     }
     #[doc = "Bit 5 - Transmit interrupt mask. A read returns the current mask for the UARTTXINTR interrupt. On a write of 1, the mask of the UARTTXINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn txim(&mut self) -> TXIM_W<UARTIMSC_SPEC> {
         TXIM_W::new(self, 5)
     }
     #[doc = "Bit 6 - Receive timeout interrupt mask. A read returns the current mask for the UARTRTINTR interrupt. On a write of 1, the mask of the UARTRTINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn rtim(&mut self) -> RTIM_W<UARTIMSC_SPEC> {
         RTIM_W::new(self, 6)
     }
     #[doc = "Bit 7 - Framing error interrupt mask. A read returns the current mask for the UARTFEINTR interrupt. On a write of 1, the mask of the UARTFEINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn feim(&mut self) -> FEIM_W<UARTIMSC_SPEC> {
         FEIM_W::new(self, 7)
     }
     #[doc = "Bit 8 - Parity error interrupt mask. A read returns the current mask for the UARTPEINTR interrupt. On a write of 1, the mask of the UARTPEINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn peim(&mut self) -> PEIM_W<UARTIMSC_SPEC> {
         PEIM_W::new(self, 8)
     }
     #[doc = "Bit 9 - Break error interrupt mask. A read returns the current mask for the UARTBEINTR interrupt. On a write of 1, the mask of the UARTBEINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn beim(&mut self) -> BEIM_W<UARTIMSC_SPEC> {
         BEIM_W::new(self, 9)
     }
     #[doc = "Bit 10 - Overrun error interrupt mask. A read returns the current mask for the UARTOEINTR interrupt. On a write of 1, the mask of the UARTOEINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]
-    #[must_use]
     pub fn oeim(&mut self) -> OEIM_W<UARTIMSC_SPEC> {
         OEIM_W::new(self, 10)
     }
@@ -183,10 +172,6 @@ impl crate::Readable for UARTIMSC_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`uartimsc::W`](W) writer structure"]
 impl crate::Writable for UARTIMSC_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UARTIMSC to value 0"]
-impl crate::Resettable for UARTIMSC_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTIMSC_SPEC {}

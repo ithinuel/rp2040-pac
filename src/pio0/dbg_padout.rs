@@ -15,6 +15,4 @@ impl crate::RegisterSpec for DBG_PADOUT_SPEC {
 #[doc = "`read()` method returns [`dbg_padout::R`](R) reader structure"]
 impl crate::Readable for DBG_PADOUT_SPEC {}
 #[doc = "`reset()` method sets DBG_PADOUT to value 0"]
-impl crate::Resettable for DBG_PADOUT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DBG_PADOUT_SPEC {}

@@ -26,8 +26,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`vreg::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`vreg::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@vreg`]
-module"]
+For information about available fields see [`mod@vreg`] module"]
 pub type VREG = crate::Reg<vreg::VREG_SPEC>;
 #[doc = "Voltage regulator control and status"]
 pub mod vreg;
@@ -35,8 +34,7 @@ pub mod vreg;
 
 You can [`read`](crate::Reg::read) this register and get [`bod::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`bod::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@bod`]
-module"]
+For information about available fields see [`mod@bod`] module"]
 pub type BOD = crate::Reg<bod::BOD_SPEC>;
 #[doc = "brown-out detection control"]
 pub mod bod;
@@ -44,8 +42,7 @@ pub mod bod;
 
 You can [`read`](crate::Reg::read) this register and get [`chip_reset::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`chip_reset::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@chip_reset`]
-module"]
+For information about available fields see [`mod@chip_reset`] module"]
 pub type CHIP_RESET = crate::Reg<chip_reset::CHIP_RESET_SPEC>;
 #[doc = "Chip reset control and status"]
 pub mod chip_reset;

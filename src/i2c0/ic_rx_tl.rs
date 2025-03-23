@@ -24,7 +24,6 @@ impl W {
 
  Controls the level of entries (or above) that triggers the RX_FULL interrupt (bit 2 in IC_RAW_INTR_STAT register). The valid range is 0-255, with the additional restriction that hardware does not allow this value to be set to a value larger than the depth of the buffer. If an attempt is made to do that, the actual value set will be the maximum depth of the buffer. A value of 0 sets the threshold for 1 entry, and a value of 255 sets the threshold for 256 entries."]
     #[inline(always)]
-    #[must_use]
     pub fn rx_tl(&mut self) -> RX_TL_W<IC_RX_TL_SPEC> {
         RX_TL_W::new(self, 0)
     }
@@ -41,10 +40,6 @@ impl crate::Readable for IC_RX_TL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_rx_tl::W`](W) writer structure"]
 impl crate::Writable for IC_RX_TL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_RX_TL to value 0"]
-impl crate::Resettable for IC_RX_TL_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_RX_TL_SPEC {}

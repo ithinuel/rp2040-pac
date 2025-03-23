@@ -77,43 +77,36 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Day of the month (1..31)"]
     #[inline(always)]
-    #[must_use]
     pub fn day(&mut self) -> DAY_W<IRQ_SETUP_0_SPEC> {
         DAY_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - Month (1..12)"]
     #[inline(always)]
-    #[must_use]
     pub fn month(&mut self) -> MONTH_W<IRQ_SETUP_0_SPEC> {
         MONTH_W::new(self, 8)
     }
     #[doc = "Bits 12:23 - Year"]
     #[inline(always)]
-    #[must_use]
     pub fn year(&mut self) -> YEAR_W<IRQ_SETUP_0_SPEC> {
         YEAR_W::new(self, 12)
     }
     #[doc = "Bit 24 - Enable day matching"]
     #[inline(always)]
-    #[must_use]
     pub fn day_ena(&mut self) -> DAY_ENA_W<IRQ_SETUP_0_SPEC> {
         DAY_ENA_W::new(self, 24)
     }
     #[doc = "Bit 25 - Enable month matching"]
     #[inline(always)]
-    #[must_use]
     pub fn month_ena(&mut self) -> MONTH_ENA_W<IRQ_SETUP_0_SPEC> {
         MONTH_ENA_W::new(self, 25)
     }
     #[doc = "Bit 26 - Enable year matching"]
     #[inline(always)]
-    #[must_use]
     pub fn year_ena(&mut self) -> YEAR_ENA_W<IRQ_SETUP_0_SPEC> {
         YEAR_ENA_W::new(self, 26)
     }
     #[doc = "Bit 28 - Global match enable. Don't change any other value while this one is enabled"]
     #[inline(always)]
-    #[must_use]
     pub fn match_ena(&mut self) -> MATCH_ENA_W<IRQ_SETUP_0_SPEC> {
         MATCH_ENA_W::new(self, 28)
     }
@@ -130,10 +123,6 @@ impl crate::Readable for IRQ_SETUP_0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`irq_setup_0::W`](W) writer structure"]
 impl crate::Writable for IRQ_SETUP_0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IRQ_SETUP_0 to value 0"]
-impl crate::Resettable for IRQ_SETUP_0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IRQ_SETUP_0_SPEC {}

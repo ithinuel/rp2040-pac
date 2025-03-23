@@ -223,7 +223,6 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sclk_level_low(
         &mut self,
     ) -> GPIO_QSPI_SCLK_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
@@ -231,7 +230,6 @@ impl W {
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sclk_level_high(
         &mut self,
     ) -> GPIO_QSPI_SCLK_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -239,13 +237,11 @@ impl W {
     }
     #[doc = "Bit 2"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sclk_edge_low(&mut self) -> GPIO_QSPI_SCLK_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SCLK_EDGE_LOW_W::new(self, 2)
     }
     #[doc = "Bit 3"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sclk_edge_high(
         &mut self,
     ) -> GPIO_QSPI_SCLK_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -253,37 +249,31 @@ impl W {
     }
     #[doc = "Bit 4"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_ss_level_low(&mut self) -> GPIO_QSPI_SS_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SS_LEVEL_LOW_W::new(self, 4)
     }
     #[doc = "Bit 5"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_ss_level_high(&mut self) -> GPIO_QSPI_SS_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SS_LEVEL_HIGH_W::new(self, 5)
     }
     #[doc = "Bit 6"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_ss_edge_low(&mut self) -> GPIO_QSPI_SS_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SS_EDGE_LOW_W::new(self, 6)
     }
     #[doc = "Bit 7"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_ss_edge_high(&mut self) -> GPIO_QSPI_SS_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SS_EDGE_HIGH_W::new(self, 7)
     }
     #[doc = "Bit 8"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd0_level_low(&mut self) -> GPIO_QSPI_SD0_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD0_LEVEL_LOW_W::new(self, 8)
     }
     #[doc = "Bit 9"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd0_level_high(
         &mut self,
     ) -> GPIO_QSPI_SD0_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -291,25 +281,21 @@ impl W {
     }
     #[doc = "Bit 10"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd0_edge_low(&mut self) -> GPIO_QSPI_SD0_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD0_EDGE_LOW_W::new(self, 10)
     }
     #[doc = "Bit 11"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd0_edge_high(&mut self) -> GPIO_QSPI_SD0_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD0_EDGE_HIGH_W::new(self, 11)
     }
     #[doc = "Bit 12"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd1_level_low(&mut self) -> GPIO_QSPI_SD1_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD1_LEVEL_LOW_W::new(self, 12)
     }
     #[doc = "Bit 13"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd1_level_high(
         &mut self,
     ) -> GPIO_QSPI_SD1_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -317,25 +303,21 @@ impl W {
     }
     #[doc = "Bit 14"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd1_edge_low(&mut self) -> GPIO_QSPI_SD1_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD1_EDGE_LOW_W::new(self, 14)
     }
     #[doc = "Bit 15"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd1_edge_high(&mut self) -> GPIO_QSPI_SD1_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD1_EDGE_HIGH_W::new(self, 15)
     }
     #[doc = "Bit 16"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd2_level_low(&mut self) -> GPIO_QSPI_SD2_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD2_LEVEL_LOW_W::new(self, 16)
     }
     #[doc = "Bit 17"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd2_level_high(
         &mut self,
     ) -> GPIO_QSPI_SD2_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -343,25 +325,21 @@ impl W {
     }
     #[doc = "Bit 18"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd2_edge_low(&mut self) -> GPIO_QSPI_SD2_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD2_EDGE_LOW_W::new(self, 18)
     }
     #[doc = "Bit 19"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd2_edge_high(&mut self) -> GPIO_QSPI_SD2_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD2_EDGE_HIGH_W::new(self, 19)
     }
     #[doc = "Bit 20"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd3_level_low(&mut self) -> GPIO_QSPI_SD3_LEVEL_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD3_LEVEL_LOW_W::new(self, 20)
     }
     #[doc = "Bit 21"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd3_level_high(
         &mut self,
     ) -> GPIO_QSPI_SD3_LEVEL_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
@@ -369,13 +347,11 @@ impl W {
     }
     #[doc = "Bit 22"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd3_edge_low(&mut self) -> GPIO_QSPI_SD3_EDGE_LOW_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD3_EDGE_LOW_W::new(self, 22)
     }
     #[doc = "Bit 23"]
     #[inline(always)]
-    #[must_use]
     pub fn gpio_qspi_sd3_edge_high(&mut self) -> GPIO_QSPI_SD3_EDGE_HIGH_W<DORMANT_WAKE_INTE_SPEC> {
         GPIO_QSPI_SD3_EDGE_HIGH_W::new(self, 23)
     }
@@ -392,10 +368,6 @@ impl crate::Readable for DORMANT_WAKE_INTE_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dormant_wake_inte::W`](W) writer structure"]
 impl crate::Writable for DORMANT_WAKE_INTE_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DORMANT_WAKE_INTE to value 0"]
-impl crate::Resettable for DORMANT_WAKE_INTE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DORMANT_WAKE_INTE_SPEC {}

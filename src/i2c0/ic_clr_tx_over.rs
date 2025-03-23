@@ -23,6 +23,4 @@ impl crate::RegisterSpec for IC_CLR_TX_OVER_SPEC {
 #[doc = "`read()` method returns [`ic_clr_tx_over::R`](R) reader structure"]
 impl crate::Readable for IC_CLR_TX_OVER_SPEC {}
 #[doc = "`reset()` method sets IC_CLR_TX_OVER to value 0"]
-impl crate::Resettable for IC_CLR_TX_OVER_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_CLR_TX_OVER_SPEC {}

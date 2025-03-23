@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:5"]
     #[inline(always)]
-    #[must_use]
     pub fn proc_in_sync_bypass_hi(
         &mut self,
     ) -> PROC_IN_SYNC_BYPASS_HI_W<PROC_IN_SYNC_BYPASS_HI_SPEC> {
@@ -39,10 +38,6 @@ impl crate::Readable for PROC_IN_SYNC_BYPASS_HI_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`proc_in_sync_bypass_hi::W`](W) writer structure"]
 impl crate::Writable for PROC_IN_SYNC_BYPASS_HI_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PROC_IN_SYNC_BYPASS_HI to value 0"]
-impl crate::Resettable for PROC_IN_SYNC_BYPASS_HI_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PROC_IN_SYNC_BYPASS_HI_SPEC {}

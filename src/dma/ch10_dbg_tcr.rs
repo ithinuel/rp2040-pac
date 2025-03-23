@@ -15,6 +15,4 @@ impl crate::RegisterSpec for CH10_DBG_TCR_SPEC {
 #[doc = "`read()` method returns [`ch10_dbg_tcr::R`](R) reader structure"]
 impl crate::Readable for CH10_DBG_TCR_SPEC {}
 #[doc = "`reset()` method sets CH10_DBG_TCR to value 0"]
-impl crate::Resettable for CH10_DBG_TCR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH10_DBG_TCR_SPEC {}

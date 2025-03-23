@@ -23,6 +23,4 @@ impl crate::RegisterSpec for IC_CLR_ACTIVITY_SPEC {
 #[doc = "`read()` method returns [`ic_clr_activity::R`](R) reader structure"]
 impl crate::Readable for IC_CLR_ACTIVITY_SPEC {}
 #[doc = "`reset()` method sets IC_CLR_ACTIVITY to value 0"]
-impl crate::Resettable for IC_CLR_ACTIVITY_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_CLR_ACTIVITY_SPEC {}

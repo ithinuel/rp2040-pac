@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - The fractional baud rate divisor. These bits are cleared to 0 on reset."]
     #[inline(always)]
-    #[must_use]
     pub fn baud_divfrac(&mut self) -> BAUD_DIVFRAC_W<UARTFBRD_SPEC> {
         BAUD_DIVFRAC_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for UARTFBRD_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`uartfbrd::W`](W) writer structure"]
 impl crate::Writable for UARTFBRD_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets UARTFBRD to value 0"]
-impl crate::Resettable for UARTFBRD_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTFBRD_SPEC {}

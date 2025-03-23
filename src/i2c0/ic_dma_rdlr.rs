@@ -24,7 +24,6 @@ impl W {
 
  Reset value: 0x0"]
     #[inline(always)]
-    #[must_use]
     pub fn dmardl(&mut self) -> DMARDL_W<IC_DMA_RDLR_SPEC> {
         DMARDL_W::new(self, 0)
     }
@@ -41,10 +40,6 @@ impl crate::Readable for IC_DMA_RDLR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_dma_rdlr::W`](W) writer structure"]
 impl crate::Writable for IC_DMA_RDLR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_DMA_RDLR to value 0"]
-impl crate::Resettable for IC_DMA_RDLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_DMA_RDLR_SPEC {}

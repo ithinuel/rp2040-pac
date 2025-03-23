@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 6:7 - Priority of interrupt 12"]
     #[inline(always)]
-    #[must_use]
     pub fn ip_12(&mut self) -> IP_12_W<NVIC_IPR3_SPEC> {
         IP_12_W::new(self, 6)
     }
     #[doc = "Bits 14:15 - Priority of interrupt 13"]
     #[inline(always)]
-    #[must_use]
     pub fn ip_13(&mut self) -> IP_13_W<NVIC_IPR3_SPEC> {
         IP_13_W::new(self, 14)
     }
     #[doc = "Bits 22:23 - Priority of interrupt 14"]
     #[inline(always)]
-    #[must_use]
     pub fn ip_14(&mut self) -> IP_14_W<NVIC_IPR3_SPEC> {
         IP_14_W::new(self, 22)
     }
     #[doc = "Bits 30:31 - Priority of interrupt 15"]
     #[inline(always)]
-    #[must_use]
     pub fn ip_15(&mut self) -> IP_15_W<NVIC_IPR3_SPEC> {
         IP_15_W::new(self, 30)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for NVIC_IPR3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`nvic_ipr3::W`](W) writer structure"]
 impl crate::Writable for NVIC_IPR3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets NVIC_IPR3 to value 0"]
-impl crate::Resettable for NVIC_IPR3_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for NVIC_IPR3_SPEC {}

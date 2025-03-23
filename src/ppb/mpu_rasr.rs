@@ -64,19 +64,16 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enables the region."]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<MPU_RASR_SPEC> {
         ENABLE_W::new(self, 0)
     }
     #[doc = "Bits 1:5 - Indicates the region size. Region size in bytes = 2^(SIZE+1). The minimum permitted value is 7 (b00111) = 256Bytes"]
     #[inline(always)]
-    #[must_use]
     pub fn size(&mut self) -> SIZE_W<MPU_RASR_SPEC> {
         SIZE_W::new(self, 1)
     }
     #[doc = "Bits 8:15 - Subregion Disable. For regions of 256 bytes or larger, each bit of this field controls whether one of the eight equal subregions is enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn srd(&mut self) -> SRD_W<MPU_RASR_SPEC> {
         SRD_W::new(self, 8)
     }
@@ -89,7 +86,6 @@ impl W {
  17 = C: Cacheable bit  
  16 = B: Bufferable bit"]
     #[inline(always)]
-    #[must_use]
     pub fn attrs(&mut self) -> ATTRS_W<MPU_RASR_SPEC> {
         ATTRS_W::new(self, 16)
     }
@@ -106,10 +102,6 @@ impl crate::Readable for MPU_RASR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`mpu_rasr::W`](W) writer structure"]
 impl crate::Writable for MPU_RASR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets MPU_RASR to value 0"]
-impl crate::Resettable for MPU_RASR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for MPU_RASR_SPEC {}

@@ -20,7 +20,6 @@ impl W {
     #[doc = "Bits 0:15 - Indicates active channel interrupt requests which are currently causing IRQ 1 to be asserted.  
  Channel interrupts can be cleared by writing a bit mask here."]
     #[inline(always)]
-    #[must_use]
     pub fn ints1(&mut self) -> INTS1_W<INTS1_SPEC> {
         INTS1_W::new(self, 0)
     }
@@ -37,10 +36,7 @@ impl crate::Readable for INTS1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ints1::W`](W) writer structure"]
 impl crate::Writable for INTS1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0xffff;
 }
 #[doc = "`reset()` method sets INTS1 to value 0"]
-impl crate::Resettable for INTS1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTS1_SPEC {}

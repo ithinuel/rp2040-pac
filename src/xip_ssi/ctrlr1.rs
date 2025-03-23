@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Number of data frames"]
     #[inline(always)]
-    #[must_use]
     pub fn ndf(&mut self) -> NDF_W<CTRLR1_SPEC> {
         NDF_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for CTRLR1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrlr1::W`](W) writer structure"]
 impl crate::Writable for CTRLR1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRLR1 to value 0"]
-impl crate::Resettable for CTRLR1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLR1_SPEC {}

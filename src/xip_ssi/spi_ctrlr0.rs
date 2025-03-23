@@ -234,49 +234,41 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Address and instruction transfer format"]
     #[inline(always)]
-    #[must_use]
     pub fn trans_type(&mut self) -> TRANS_TYPE_W<SPI_CTRLR0_SPEC> {
         TRANS_TYPE_W::new(self, 0)
     }
     #[doc = "Bits 2:5 - Address length (0b-60b in 4b increments)"]
     #[inline(always)]
-    #[must_use]
     pub fn addr_l(&mut self) -> ADDR_L_W<SPI_CTRLR0_SPEC> {
         ADDR_L_W::new(self, 2)
     }
     #[doc = "Bits 8:9 - Instruction length (0/4/8/16b)"]
     #[inline(always)]
-    #[must_use]
     pub fn inst_l(&mut self) -> INST_L_W<SPI_CTRLR0_SPEC> {
         INST_L_W::new(self, 8)
     }
     #[doc = "Bits 11:15 - Wait cycles between control frame transmit and data reception (in SCLK cycles)"]
     #[inline(always)]
-    #[must_use]
     pub fn wait_cycles(&mut self) -> WAIT_CYCLES_W<SPI_CTRLR0_SPEC> {
         WAIT_CYCLES_W::new(self, 11)
     }
     #[doc = "Bit 16 - SPI DDR transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn spi_ddr_en(&mut self) -> SPI_DDR_EN_W<SPI_CTRLR0_SPEC> {
         SPI_DDR_EN_W::new(self, 16)
     }
     #[doc = "Bit 17 - Instruction DDR transfer enable"]
     #[inline(always)]
-    #[must_use]
     pub fn inst_ddr_en(&mut self) -> INST_DDR_EN_W<SPI_CTRLR0_SPEC> {
         INST_DDR_EN_W::new(self, 17)
     }
     #[doc = "Bit 18 - Read data strobe enable"]
     #[inline(always)]
-    #[must_use]
     pub fn spi_rxds_en(&mut self) -> SPI_RXDS_EN_W<SPI_CTRLR0_SPEC> {
         SPI_RXDS_EN_W::new(self, 18)
     }
     #[doc = "Bits 24:31 - SPI Command to send in XIP mode (INST_L = 8-bit) or to append to Address (INST_L = 0-bit)"]
     #[inline(always)]
-    #[must_use]
     pub fn xip_cmd(&mut self) -> XIP_CMD_W<SPI_CTRLR0_SPEC> {
         XIP_CMD_W::new(self, 24)
     }
@@ -293,8 +285,6 @@ impl crate::Readable for SPI_CTRLR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`spi_ctrlr0::W`](W) writer structure"]
 impl crate::Writable for SPI_CTRLR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SPI_CTRLR0 to value 0x0300_0000"]
 impl crate::Resettable for SPI_CTRLR0_SPEC {

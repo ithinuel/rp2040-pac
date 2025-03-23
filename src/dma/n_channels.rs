@@ -19,6 +19,4 @@ impl crate::RegisterSpec for N_CHANNELS_SPEC {
 #[doc = "`read()` method returns [`n_channels::R`](R) reader structure"]
 impl crate::Readable for N_CHANNELS_SPEC {}
 #[doc = "`reset()` method sets N_CHANNELS to value 0"]
-impl crate::Resettable for N_CHANNELS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for N_CHANNELS_SPEC {}

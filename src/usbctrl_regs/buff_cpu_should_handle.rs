@@ -236,6 +236,4 @@ impl crate::RegisterSpec for BUFF_CPU_SHOULD_HANDLE_SPEC {
 #[doc = "`read()` method returns [`buff_cpu_should_handle::R`](R) reader structure"]
 impl crate::Readable for BUFF_CPU_SHOULD_HANDLE_SPEC {}
 #[doc = "`reset()` method sets BUFF_CPU_SHOULD_HANDLE to value 0"]
-impl crate::Resettable for BUFF_CPU_SHOULD_HANDLE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for BUFF_CPU_SHOULD_HANDLE_SPEC {}

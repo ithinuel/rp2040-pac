@@ -19,6 +19,4 @@ impl crate::RegisterSpec for RXFLR_SPEC {
 #[doc = "`read()` method returns [`rxflr::R`](R) reader structure"]
 impl crate::Readable for RXFLR_SPEC {}
 #[doc = "`reset()` method sets RXFLR to value 0"]
-impl crate::Resettable for RXFLR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXFLR_SPEC {}

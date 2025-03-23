@@ -23,6 +23,4 @@ impl crate::RegisterSpec for IC_CLR_RD_REQ_SPEC {
 #[doc = "`read()` method returns [`ic_clr_rd_req::R`](R) reader structure"]
 impl crate::Readable for IC_CLR_RD_REQ_SPEC {}
 #[doc = "`reset()` method sets IC_CLR_RD_REQ to value 0"]
-impl crate::Resettable for IC_CLR_RD_REQ_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for IC_CLR_RD_REQ_SPEC {}

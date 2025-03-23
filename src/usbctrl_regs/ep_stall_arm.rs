@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
-    #[must_use]
     pub fn ep0_in(&mut self) -> EP0_IN_W<EP_STALL_ARM_SPEC> {
         EP0_IN_W::new(self, 0)
     }
     #[doc = "Bit 1"]
     #[inline(always)]
-    #[must_use]
     pub fn ep0_out(&mut self) -> EP0_OUT_W<EP_STALL_ARM_SPEC> {
         EP0_OUT_W::new(self, 1)
     }
@@ -48,10 +46,6 @@ impl crate::Readable for EP_STALL_ARM_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ep_stall_arm::W`](W) writer structure"]
 impl crate::Writable for EP_STALL_ARM_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets EP_STALL_ARM to value 0"]
-impl crate::Resettable for EP_STALL_ARM_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for EP_STALL_ARM_SPEC {}

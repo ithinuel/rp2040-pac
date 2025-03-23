@@ -24,10 +24,6 @@ impl crate::Readable for DIV_UDIVISOR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`div_udivisor::W`](W) writer structure"]
 impl crate::Writable for DIV_UDIVISOR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DIV_UDIVISOR to value 0"]
-impl crate::Resettable for DIV_UDIVISOR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DIV_UDIVISOR_SPEC {}

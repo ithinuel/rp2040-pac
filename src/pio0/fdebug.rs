@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - State machine has stalled on full RX FIFO during a blocking PUSH, or an IN with autopush enabled. This flag is also set when a nonblocking PUSH to a full FIFO took place, in which case the state machine has dropped data. Write 1 to clear."]
     #[inline(always)]
-    #[must_use]
     pub fn rxstall(&mut self) -> RXSTALL_W<FDEBUG_SPEC> {
         RXSTALL_W::new(self, 0)
     }
     #[doc = "Bits 8:11 - RX FIFO underflow (i.e. read-on-empty by the system) has occurred. Write 1 to clear. Note that read-on-empty does not perturb the state of the FIFO in any way, but the data returned by reading from an empty FIFO is undefined, so this flag generally only becomes set due to some kind of software error."]
     #[inline(always)]
-    #[must_use]
     pub fn rxunder(&mut self) -> RXUNDER_W<FDEBUG_SPEC> {
         RXUNDER_W::new(self, 8)
     }
     #[doc = "Bits 16:19 - TX FIFO overflow (i.e. write-on-full by the system) has occurred. Write 1 to clear. Note that write-on-full does not alter the state or contents of the FIFO in any way, but the data that the system attempted to write is dropped, so if this flag is set, your software has quite likely dropped some data on the floor."]
     #[inline(always)]
-    #[must_use]
     pub fn txover(&mut self) -> TXOVER_W<FDEBUG_SPEC> {
         TXOVER_W::new(self, 16)
     }
     #[doc = "Bits 24:27 - State machine has stalled on empty TX FIFO during a blocking PULL, or an OUT with autopull enabled. Write 1 to clear."]
     #[inline(always)]
-    #[must_use]
     pub fn txstall(&mut self) -> TXSTALL_W<FDEBUG_SPEC> {
         TXSTALL_W::new(self, 24)
     }
@@ -78,10 +74,7 @@ impl crate::Readable for FDEBUG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fdebug::W`](W) writer structure"]
 impl crate::Writable for FDEBUG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x0f0f_0f0f;
 }
 #[doc = "`reset()` method sets FDEBUG to value 0"]
-impl crate::Resettable for FDEBUG_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for FDEBUG_SPEC {}

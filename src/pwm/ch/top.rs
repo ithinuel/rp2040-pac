@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]
-    #[must_use]
     pub fn top(&mut self) -> TOP_W<TOP_SPEC> {
         TOP_W::new(self, 0)
     }
@@ -33,8 +32,6 @@ impl crate::Readable for TOP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`top::W`](W) writer structure"]
 impl crate::Writable for TOP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets TOP to value 0xffff"]
 impl crate::Resettable for TOP_SPEC {

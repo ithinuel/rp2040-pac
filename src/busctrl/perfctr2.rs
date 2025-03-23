@@ -24,7 +24,6 @@ impl W {
  Count some event signal from the busfabric arbiters.  
  Write any value to clear. Select an event to count using PERFSEL2"]
     #[inline(always)]
-    #[must_use]
     pub fn perfctr2(&mut self) -> PERFCTR2_W<PERFCTR2_SPEC> {
         PERFCTR2_W::new(self, 0)
     }
@@ -41,10 +40,7 @@ impl crate::Readable for PERFCTR2_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`perfctr2::W`](W) writer structure"]
 impl crate::Writable for PERFCTR2_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
     const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0x00ff_ffff;
 }
 #[doc = "`reset()` method sets PERFCTR2 to value 0"]
-impl crate::Resettable for PERFCTR2_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PERFCTR2_SPEC {}

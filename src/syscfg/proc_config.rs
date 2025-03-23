@@ -53,7 +53,6 @@ impl W {
  Recommend that this is NOT changed until you require debug access in multi-chip environment  
  WARNING: do not set to 15 as this is reserved for RescueDP"]
     #[inline(always)]
-    #[must_use]
     pub fn proc0_dap_instid(&mut self) -> PROC0_DAP_INSTID_W<PROC_CONFIG_SPEC> {
         PROC0_DAP_INSTID_W::new(self, 24)
     }
@@ -61,7 +60,6 @@ impl W {
  Recommend that this is NOT changed until you require debug access in multi-chip environment  
  WARNING: do not set to 15 as this is reserved for RescueDP"]
     #[inline(always)]
-    #[must_use]
     pub fn proc1_dap_instid(&mut self) -> PROC1_DAP_INSTID_W<PROC_CONFIG_SPEC> {
         PROC1_DAP_INSTID_W::new(self, 28)
     }
@@ -78,8 +76,6 @@ impl crate::Readable for PROC_CONFIG_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`proc_config::W`](W) writer structure"]
 impl crate::Writable for PROC_CONFIG_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PROC_CONFIG to value 0x1000_0000"]
 impl crate::Resettable for PROC_CONFIG_SPEC {

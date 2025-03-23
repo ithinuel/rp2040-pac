@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - in multiples of 256*xtal_period. The reset value of 0xc4 corresponds to approx 50 000 cycles."]
     #[inline(always)]
-    #[must_use]
     pub fn delay(&mut self) -> DELAY_W<STARTUP_SPEC> {
         DELAY_W::new(self, 0)
     }
     #[doc = "Bit 20 - Multiplies the startup_delay by 4. This is of little value to the user given that the delay can be programmed directly."]
     #[inline(always)]
-    #[must_use]
     pub fn x4(&mut self) -> X4_W<STARTUP_SPEC> {
         X4_W::new(self, 20)
     }
@@ -48,8 +46,6 @@ impl crate::Readable for STARTUP_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`startup::W`](W) writer structure"]
 impl crate::Writable for STARTUP_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets STARTUP to value 0xc4"]
 impl crate::Resettable for STARTUP_SPEC {

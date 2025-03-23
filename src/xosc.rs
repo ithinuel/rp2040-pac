@@ -37,8 +37,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ctrl`]
-module"]
+For information about available fields see [`mod@ctrl`] module"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Crystal Oscillator Control"]
 pub mod ctrl;
@@ -46,8 +45,7 @@ pub mod ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`status::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`status::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@status`]
-module"]
+For information about available fields see [`mod@status`] module"]
 pub type STATUS = crate::Reg<status::STATUS_SPEC>;
 #[doc = "Crystal Oscillator Status"]
 pub mod status;
@@ -60,8 +58,7 @@ pub mod status;
 
 You can [`read`](crate::Reg::read) this register and get [`dormant::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`dormant::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@dormant`]
-module"]
+For information about available fields see [`mod@dormant`] module"]
 pub type DORMANT = crate::Reg<dormant::DORMANT_SPEC>;
 #[doc = "Crystal Oscillator pause control  
  This is used to save power by pausing the XOSC  
@@ -74,8 +71,7 @@ pub mod dormant;
 
 You can [`read`](crate::Reg::read) this register and get [`startup::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`startup::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@startup`]
-module"]
+For information about available fields see [`mod@startup`] module"]
 pub type STARTUP = crate::Reg<startup::STARTUP_SPEC>;
 #[doc = "Controls the startup delay"]
 pub mod startup;

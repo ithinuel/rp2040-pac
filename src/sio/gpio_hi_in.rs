@@ -19,6 +19,4 @@ impl crate::RegisterSpec for GPIO_HI_IN_SPEC {
 #[doc = "`read()` method returns [`gpio_hi_in::R`](R) reader structure"]
 impl crate::Readable for GPIO_HI_IN_SPEC {}
 #[doc = "`reset()` method sets GPIO_HI_IN to value 0"]
-impl crate::Resettable for GPIO_HI_IN_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for GPIO_HI_IN_SPEC {}

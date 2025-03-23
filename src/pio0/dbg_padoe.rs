@@ -15,6 +15,4 @@ impl crate::RegisterSpec for DBG_PADOE_SPEC {
 #[doc = "`read()` method returns [`dbg_padoe::R`](R) reader structure"]
 impl crate::Readable for DBG_PADOE_SPEC {}
 #[doc = "`reset()` method sets DBG_PADOE to value 0"]
-impl crate::Resettable for DBG_PADOE_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DBG_PADOE_SPEC {}

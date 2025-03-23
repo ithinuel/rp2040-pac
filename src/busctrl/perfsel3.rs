@@ -308,7 +308,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Select an event for PERFCTR3. Count either contested accesses, or all accesses, on a downstream port of the main crossbar."]
     #[inline(always)]
-    #[must_use]
     pub fn perfsel3(&mut self) -> PERFSEL3_W<PERFSEL3_SPEC> {
         PERFSEL3_W::new(self, 0)
     }
@@ -325,8 +324,6 @@ impl crate::Readable for PERFSEL3_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`perfsel3::W`](W) writer structure"]
 impl crate::Writable for PERFSEL3_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets PERFSEL3 to value 0x1f"]
 impl crate::Resettable for PERFSEL3_SPEC {

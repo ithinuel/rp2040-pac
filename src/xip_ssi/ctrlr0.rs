@@ -267,69 +267,58 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data frame size"]
     #[inline(always)]
-    #[must_use]
     pub fn dfs(&mut self) -> DFS_W<CTRLR0_SPEC> {
         DFS_W::new(self, 0)
     }
     #[doc = "Bits 4:5 - Frame format"]
     #[inline(always)]
-    #[must_use]
     pub fn frf(&mut self) -> FRF_W<CTRLR0_SPEC> {
         FRF_W::new(self, 4)
     }
     #[doc = "Bit 6 - Serial clock phase"]
     #[inline(always)]
-    #[must_use]
     pub fn scph(&mut self) -> SCPH_W<CTRLR0_SPEC> {
         SCPH_W::new(self, 6)
     }
     #[doc = "Bit 7 - Serial clock polarity"]
     #[inline(always)]
-    #[must_use]
     pub fn scpol(&mut self) -> SCPOL_W<CTRLR0_SPEC> {
         SCPOL_W::new(self, 7)
     }
     #[doc = "Bits 8:9 - Transfer mode"]
     #[inline(always)]
-    #[must_use]
     pub fn tmod(&mut self) -> TMOD_W<CTRLR0_SPEC> {
         TMOD_W::new(self, 8)
     }
     #[doc = "Bit 10 - Slave output enable"]
     #[inline(always)]
-    #[must_use]
     pub fn slv_oe(&mut self) -> SLV_OE_W<CTRLR0_SPEC> {
         SLV_OE_W::new(self, 10)
     }
     #[doc = "Bit 11 - Shift register loop (test mode)"]
     #[inline(always)]
-    #[must_use]
     pub fn srl(&mut self) -> SRL_W<CTRLR0_SPEC> {
         SRL_W::new(self, 11)
     }
     #[doc = "Bits 12:15 - Control frame size  
  Value of n -> n+1 clocks per frame."]
     #[inline(always)]
-    #[must_use]
     pub fn cfs(&mut self) -> CFS_W<CTRLR0_SPEC> {
         CFS_W::new(self, 12)
     }
     #[doc = "Bits 16:20 - Data frame size in 32b transfer mode  
  Value of n -> n+1 clocks per frame."]
     #[inline(always)]
-    #[must_use]
     pub fn dfs_32(&mut self) -> DFS_32_W<CTRLR0_SPEC> {
         DFS_32_W::new(self, 16)
     }
     #[doc = "Bits 21:22 - SPI frame format"]
     #[inline(always)]
-    #[must_use]
     pub fn spi_frf(&mut self) -> SPI_FRF_W<CTRLR0_SPEC> {
         SPI_FRF_W::new(self, 21)
     }
     #[doc = "Bit 24 - Slave select toggle enable"]
     #[inline(always)]
-    #[must_use]
     pub fn sste(&mut self) -> SSTE_W<CTRLR0_SPEC> {
         SSTE_W::new(self, 24)
     }
@@ -346,10 +335,6 @@ impl crate::Readable for CTRLR0_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrlr0::W`](W) writer structure"]
 impl crate::Writable for CTRLR0_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRLR0 to value 0"]
-impl crate::Resettable for CTRLR0_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CTRLR0_SPEC {}

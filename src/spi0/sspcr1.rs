@@ -43,25 +43,21 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Loop back mode: 0 Normal serial port operation enabled. 1 Output of transmit serial shifter is connected to input of receive serial shifter internally."]
     #[inline(always)]
-    #[must_use]
     pub fn lbm(&mut self) -> LBM_W<SSPCR1_SPEC> {
         LBM_W::new(self, 0)
     }
     #[doc = "Bit 1 - Synchronous serial port enable: 0 SSP operation disabled. 1 SSP operation enabled."]
     #[inline(always)]
-    #[must_use]
     pub fn sse(&mut self) -> SSE_W<SSPCR1_SPEC> {
         SSE_W::new(self, 1)
     }
     #[doc = "Bit 2 - Master or slave mode select. This bit can be modified only when the PrimeCell SSP is disabled, SSE=0: 0 Device configured as master, default. 1 Device configured as slave."]
     #[inline(always)]
-    #[must_use]
     pub fn ms(&mut self) -> MS_W<SSPCR1_SPEC> {
         MS_W::new(self, 2)
     }
     #[doc = "Bit 3 - Slave-mode output disable. This bit is relevant only in the slave mode, MS=1. In multiple-slave systems, it is possible for an PrimeCell SSP master to broadcast a message to all slaves in the system while ensuring that only one slave drives data onto its serial output line. In such systems the RXD lines from multiple slaves could be tied together. To operate in such systems, the SOD bit can be set if the PrimeCell SSP slave is not supposed to drive the SSPTXD line: 0 SSP can drive the SSPTXD output in slave mode. 1 SSP must not drive the SSPTXD output in slave mode."]
     #[inline(always)]
-    #[must_use]
     pub fn sod(&mut self) -> SOD_W<SSPCR1_SPEC> {
         SOD_W::new(self, 3)
     }
@@ -78,10 +74,6 @@ impl crate::Readable for SSPCR1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`sspcr1::W`](W) writer structure"]
 impl crate::Writable for SSPCR1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SSPCR1 to value 0"]
-impl crate::Resettable for SSPCR1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for SSPCR1_SPEC {}

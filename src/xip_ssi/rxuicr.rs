@@ -19,6 +19,4 @@ impl crate::RegisterSpec for RXUICR_SPEC {
 #[doc = "`read()` method returns [`rxuicr::R`](R) reader structure"]
 impl crate::Readable for RXUICR_SPEC {}
 #[doc = "`reset()` method sets RXUICR to value 0"]
-impl crate::Resettable for RXUICR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for RXUICR_SPEC {}

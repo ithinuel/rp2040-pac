@@ -25,13 +25,11 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Receive DMA enable"]
     #[inline(always)]
-    #[must_use]
     pub fn rdmae(&mut self) -> RDMAE_W<DMACR_SPEC> {
         RDMAE_W::new(self, 0)
     }
     #[doc = "Bit 1 - Transmit DMA enable"]
     #[inline(always)]
-    #[must_use]
     pub fn tdmae(&mut self) -> TDMAE_W<DMACR_SPEC> {
         TDMAE_W::new(self, 1)
     }
@@ -48,10 +46,6 @@ impl crate::Readable for DMACR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`dmacr::W`](W) writer structure"]
 impl crate::Writable for DMACR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets DMACR to value 0"]
-impl crate::Resettable for DMACR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for DMACR_SPEC {}

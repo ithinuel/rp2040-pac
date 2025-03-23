@@ -226,7 +226,7 @@ impl R {
         GPIO7_EDGE_HIGH_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
-#[doc = "Interrupt status after masking &amp; forcing for proc1  
+#[doc = "Interrupt status after masking & forcing for proc1  
 
 You can [`read`](crate::Reg::read) this register and get [`proc1_ints::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct PROC1_INTS_SPEC;
@@ -236,6 +236,4 @@ impl crate::RegisterSpec for PROC1_INTS_SPEC {
 #[doc = "`read()` method returns [`proc1_ints::R`](R) reader structure"]
 impl crate::Readable for PROC1_INTS_SPEC {}
 #[doc = "`reset()` method sets PROC1_INTS%s to value 0"]
-impl crate::Resettable for PROC1_INTS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for PROC1_INTS_SPEC {}

@@ -177,7 +177,6 @@ impl W {
  1 = Removes the pending state from the SysTick exception.  
  This bit is WO. On a register read its value is Unknown."]
     #[inline(always)]
-    #[must_use]
     pub fn pendstclr(&mut self) -> PENDSTCLR_W<ICSR_SPEC> {
         PENDSTCLR_W::new(self, 25)
     }
@@ -189,7 +188,6 @@ impl W {
  0 = SysTick exception is not pending.  
  1 = SysTick exception is pending."]
     #[inline(always)]
-    #[must_use]
     pub fn pendstset(&mut self) -> PENDSTSET_W<ICSR_SPEC> {
         PENDSTSET_W::new(self, 26)
     }
@@ -198,7 +196,6 @@ impl W {
  0 = No effect.  
  1 = Removes the pending state from the PendSV exception."]
     #[inline(always)]
-    #[must_use]
     pub fn pendsvclr(&mut self) -> PENDSVCLR_W<ICSR_SPEC> {
         PENDSVCLR_W::new(self, 27)
     }
@@ -211,7 +208,6 @@ impl W {
  1 = PendSV exception is pending.  
  Writing 1 to this bit is the only way to set the PendSV exception state to pending."]
     #[inline(always)]
-    #[must_use]
     pub fn pendsvset(&mut self) -> PENDSVSET_W<ICSR_SPEC> {
         PENDSVSET_W::new(self, 28)
     }
@@ -228,7 +224,6 @@ impl W {
  this bit to 0. This means a read of this bit by the NMI exception handler returns 1 only if the  
  NMI signal is reasserted while the processor is executing that handler."]
     #[inline(always)]
-    #[must_use]
     pub fn nmipendset(&mut self) -> NMIPENDSET_W<ICSR_SPEC> {
         NMIPENDSET_W::new(self, 31)
     }
@@ -245,10 +240,6 @@ impl crate::Readable for ICSR_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`icsr::W`](W) writer structure"]
 impl crate::Writable for ICSR_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets ICSR to value 0"]
-impl crate::Resettable for ICSR_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for ICSR_SPEC {}

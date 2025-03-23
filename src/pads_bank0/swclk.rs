@@ -154,43 +154,36 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Slew rate control. 1 = Fast, 0 = Slow"]
     #[inline(always)]
-    #[must_use]
     pub fn slewfast(&mut self) -> SLEWFAST_W<SWCLK_SPEC> {
         SLEWFAST_W::new(self, 0)
     }
     #[doc = "Bit 1 - Enable schmitt trigger"]
     #[inline(always)]
-    #[must_use]
     pub fn schmitt(&mut self) -> SCHMITT_W<SWCLK_SPEC> {
         SCHMITT_W::new(self, 1)
     }
     #[doc = "Bit 2 - Pull down enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pde(&mut self) -> PDE_W<SWCLK_SPEC> {
         PDE_W::new(self, 2)
     }
     #[doc = "Bit 3 - Pull up enable"]
     #[inline(always)]
-    #[must_use]
     pub fn pue(&mut self) -> PUE_W<SWCLK_SPEC> {
         PUE_W::new(self, 3)
     }
     #[doc = "Bits 4:5 - Drive strength."]
     #[inline(always)]
-    #[must_use]
     pub fn drive(&mut self) -> DRIVE_W<SWCLK_SPEC> {
         DRIVE_W::new(self, 4)
     }
     #[doc = "Bit 6 - Input enable"]
     #[inline(always)]
-    #[must_use]
     pub fn ie(&mut self) -> IE_W<SWCLK_SPEC> {
         IE_W::new(self, 6)
     }
     #[doc = "Bit 7 - Output disable. Has priority over output enable from peripherals"]
     #[inline(always)]
-    #[must_use]
     pub fn od(&mut self) -> OD_W<SWCLK_SPEC> {
         OD_W::new(self, 7)
     }
@@ -207,8 +200,6 @@ impl crate::Readable for SWCLK_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`swclk::W`](W) writer structure"]
 impl crate::Writable for SWCLK_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets SWCLK to value 0xda"]
 impl crate::Resettable for SWCLK_SPEC {

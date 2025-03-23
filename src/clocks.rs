@@ -306,7 +306,7 @@ impl RegisterBlock {
     pub const fn intf(&self) -> &INTF {
         &self.intf
     }
-    #[doc = "0xc4 - Interrupt status after masking &amp; forcing"]
+    #[doc = "0xc4 - Interrupt status after masking & forcing"]
     #[inline(always)]
     pub const fn ints(&self) -> &INTS {
         &self.ints
@@ -316,8 +316,7 @@ impl RegisterBlock {
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout0_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout0_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout0_ctrl`]
-module"]
+For information about available fields see [`mod@clk_gpout0_ctrl`] module"]
 pub type CLK_GPOUT0_CTRL = crate::Reg<clk_gpout0_ctrl::CLK_GPOUT0_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_gpout0_ctrl;
@@ -325,8 +324,7 @@ pub mod clk_gpout0_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout0_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout0_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout0_div`]
-module"]
+For information about available fields see [`mod@clk_gpout0_div`] module"]
 pub type CLK_GPOUT0_DIV = crate::Reg<clk_gpout0_div::CLK_GPOUT0_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_gpout0_div;
@@ -335,8 +333,7 @@ pub mod clk_gpout0_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout0_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout0_selected`]
-module"]
+For information about available fields see [`mod@clk_gpout0_selected`] module"]
 pub type CLK_GPOUT0_SELECTED = crate::Reg<clk_gpout0_selected::CLK_GPOUT0_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -345,8 +342,7 @@ pub mod clk_gpout0_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout1_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout1_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout1_ctrl`]
-module"]
+For information about available fields see [`mod@clk_gpout1_ctrl`] module"]
 pub type CLK_GPOUT1_CTRL = crate::Reg<clk_gpout1_ctrl::CLK_GPOUT1_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_gpout1_ctrl;
@@ -354,8 +350,7 @@ pub mod clk_gpout1_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout1_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout1_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout1_div`]
-module"]
+For information about available fields see [`mod@clk_gpout1_div`] module"]
 pub type CLK_GPOUT1_DIV = crate::Reg<clk_gpout1_div::CLK_GPOUT1_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_gpout1_div;
@@ -364,8 +359,7 @@ pub mod clk_gpout1_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout1_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout1_selected`]
-module"]
+For information about available fields see [`mod@clk_gpout1_selected`] module"]
 pub type CLK_GPOUT1_SELECTED = crate::Reg<clk_gpout1_selected::CLK_GPOUT1_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -374,8 +368,7 @@ pub mod clk_gpout1_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout2_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout2_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout2_ctrl`]
-module"]
+For information about available fields see [`mod@clk_gpout2_ctrl`] module"]
 pub type CLK_GPOUT2_CTRL = crate::Reg<clk_gpout2_ctrl::CLK_GPOUT2_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_gpout2_ctrl;
@@ -383,8 +376,7 @@ pub mod clk_gpout2_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout2_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout2_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout2_div`]
-module"]
+For information about available fields see [`mod@clk_gpout2_div`] module"]
 pub type CLK_GPOUT2_DIV = crate::Reg<clk_gpout2_div::CLK_GPOUT2_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_gpout2_div;
@@ -393,8 +385,7 @@ pub mod clk_gpout2_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout2_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout2_selected`]
-module"]
+For information about available fields see [`mod@clk_gpout2_selected`] module"]
 pub type CLK_GPOUT2_SELECTED = crate::Reg<clk_gpout2_selected::CLK_GPOUT2_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -403,8 +394,7 @@ pub mod clk_gpout2_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout3_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout3_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout3_ctrl`]
-module"]
+For information about available fields see [`mod@clk_gpout3_ctrl`] module"]
 pub type CLK_GPOUT3_CTRL = crate::Reg<clk_gpout3_ctrl::CLK_GPOUT3_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_gpout3_ctrl;
@@ -412,8 +402,7 @@ pub mod clk_gpout3_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout3_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_gpout3_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout3_div`]
-module"]
+For information about available fields see [`mod@clk_gpout3_div`] module"]
 pub type CLK_GPOUT3_DIV = crate::Reg<clk_gpout3_div::CLK_GPOUT3_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_gpout3_div;
@@ -422,8 +411,7 @@ pub mod clk_gpout3_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_gpout3_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_gpout3_selected`]
-module"]
+For information about available fields see [`mod@clk_gpout3_selected`] module"]
 pub type CLK_GPOUT3_SELECTED = crate::Reg<clk_gpout3_selected::CLK_GPOUT3_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -432,8 +420,7 @@ pub mod clk_gpout3_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_ref_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_ref_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_ref_ctrl`]
-module"]
+For information about available fields see [`mod@clk_ref_ctrl`] module"]
 pub type CLK_REF_CTRL = crate::Reg<clk_ref_ctrl::CLK_REF_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_ref_ctrl;
@@ -441,8 +428,7 @@ pub mod clk_ref_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_ref_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_ref_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_ref_div`]
-module"]
+For information about available fields see [`mod@clk_ref_div`] module"]
 pub type CLK_REF_DIV = crate::Reg<clk_ref_div::CLK_REF_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_ref_div;
@@ -451,8 +437,7 @@ pub mod clk_ref_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_ref_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_ref_selected`]
-module"]
+For information about available fields see [`mod@clk_ref_selected`] module"]
 pub type CLK_REF_SELECTED = crate::Reg<clk_ref_selected::CLK_REF_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  The glitchless multiplexer does not switch instantaneously (to avoid glitches), so software should poll this register to wait for the switch to complete. This register contains one decoded bit for each of the clock sources enumerated in the CTRL SRC field. At most one of these bits will be set at any time, indicating that clock is currently present at the output of the glitchless mux. Whilst switching is in progress, this register may briefly show all-0s."]
@@ -461,8 +446,7 @@ pub mod clk_ref_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_sys_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_sys_ctrl`]
-module"]
+For information about available fields see [`mod@clk_sys_ctrl`] module"]
 pub type CLK_SYS_CTRL = crate::Reg<clk_sys_ctrl::CLK_SYS_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_sys_ctrl;
@@ -470,8 +454,7 @@ pub mod clk_sys_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_sys_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_sys_div`]
-module"]
+For information about available fields see [`mod@clk_sys_div`] module"]
 pub type CLK_SYS_DIV = crate::Reg<clk_sys_div::CLK_SYS_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_sys_div;
@@ -480,8 +463,7 @@ pub mod clk_sys_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_sys_selected`]
-module"]
+For information about available fields see [`mod@clk_sys_selected`] module"]
 pub type CLK_SYS_SELECTED = crate::Reg<clk_sys_selected::CLK_SYS_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  The glitchless multiplexer does not switch instantaneously (to avoid glitches), so software should poll this register to wait for the switch to complete. This register contains one decoded bit for each of the clock sources enumerated in the CTRL SRC field. At most one of these bits will be set at any time, indicating that clock is currently present at the output of the glitchless mux. Whilst switching is in progress, this register may briefly show all-0s."]
@@ -490,8 +472,7 @@ pub mod clk_sys_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_peri_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_peri_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_peri_ctrl`]
-module"]
+For information about available fields see [`mod@clk_peri_ctrl`] module"]
 pub type CLK_PERI_CTRL = crate::Reg<clk_peri_ctrl::CLK_PERI_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_peri_ctrl;
@@ -500,8 +481,7 @@ pub mod clk_peri_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_peri_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_peri_selected`]
-module"]
+For information about available fields see [`mod@clk_peri_selected`] module"]
 pub type CLK_PERI_SELECTED = crate::Reg<clk_peri_selected::CLK_PERI_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -510,8 +490,7 @@ pub mod clk_peri_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_usb_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_usb_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_usb_ctrl`]
-module"]
+For information about available fields see [`mod@clk_usb_ctrl`] module"]
 pub type CLK_USB_CTRL = crate::Reg<clk_usb_ctrl::CLK_USB_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_usb_ctrl;
@@ -519,8 +498,7 @@ pub mod clk_usb_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_usb_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_usb_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_usb_div`]
-module"]
+For information about available fields see [`mod@clk_usb_div`] module"]
 pub type CLK_USB_DIV = crate::Reg<clk_usb_div::CLK_USB_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_usb_div;
@@ -529,8 +507,7 @@ pub mod clk_usb_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_usb_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_usb_selected`]
-module"]
+For information about available fields see [`mod@clk_usb_selected`] module"]
 pub type CLK_USB_SELECTED = crate::Reg<clk_usb_selected::CLK_USB_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -539,8 +516,7 @@ pub mod clk_usb_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_adc_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_adc_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_adc_ctrl`]
-module"]
+For information about available fields see [`mod@clk_adc_ctrl`] module"]
 pub type CLK_ADC_CTRL = crate::Reg<clk_adc_ctrl::CLK_ADC_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_adc_ctrl;
@@ -548,8 +524,7 @@ pub mod clk_adc_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_adc_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_adc_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_adc_div`]
-module"]
+For information about available fields see [`mod@clk_adc_div`] module"]
 pub type CLK_ADC_DIV = crate::Reg<clk_adc_div::CLK_ADC_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_adc_div;
@@ -558,8 +533,7 @@ pub mod clk_adc_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_adc_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_adc_selected`]
-module"]
+For information about available fields see [`mod@clk_adc_selected`] module"]
 pub type CLK_ADC_SELECTED = crate::Reg<clk_adc_selected::CLK_ADC_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -568,8 +542,7 @@ pub mod clk_adc_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_rtc_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_rtc_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_rtc_ctrl`]
-module"]
+For information about available fields see [`mod@clk_rtc_ctrl`] module"]
 pub type CLK_RTC_CTRL = crate::Reg<clk_rtc_ctrl::CLK_RTC_CTRL_SPEC>;
 #[doc = "Clock control, can be changed on-the-fly (except for auxsrc)"]
 pub mod clk_rtc_ctrl;
@@ -577,8 +550,7 @@ pub mod clk_rtc_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_rtc_div::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_rtc_div::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_rtc_div`]
-module"]
+For information about available fields see [`mod@clk_rtc_div`] module"]
 pub type CLK_RTC_DIV = crate::Reg<clk_rtc_div::CLK_RTC_DIV_SPEC>;
 #[doc = "Clock divisor, can be changed on-the-fly"]
 pub mod clk_rtc_div;
@@ -587,8 +559,7 @@ pub mod clk_rtc_div;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_rtc_selected::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_rtc_selected`]
-module"]
+For information about available fields see [`mod@clk_rtc_selected`] module"]
 pub type CLK_RTC_SELECTED = crate::Reg<clk_rtc_selected::CLK_RTC_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
@@ -597,8 +568,7 @@ pub mod clk_rtc_selected;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_sys_resus_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_sys_resus_ctrl`]
-module"]
+For information about available fields see [`mod@clk_sys_resus_ctrl`] module"]
 pub type CLK_SYS_RESUS_CTRL = crate::Reg<clk_sys_resus_ctrl::CLK_SYS_RESUS_CTRL_SPEC>;
 #[doc = ""]
 pub mod clk_sys_resus_ctrl;
@@ -606,8 +576,7 @@ pub mod clk_sys_resus_ctrl;
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@clk_sys_resus_status`]
-module"]
+For information about available fields see [`mod@clk_sys_resus_status`] module"]
 pub type CLK_SYS_RESUS_STATUS = crate::Reg<clk_sys_resus_status::CLK_SYS_RESUS_STATUS_SPEC>;
 #[doc = ""]
 pub mod clk_sys_resus_status;
@@ -615,8 +584,7 @@ pub mod clk_sys_resus_status;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_ref_khz::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_ref_khz::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_ref_khz`]
-module"]
+For information about available fields see [`mod@fc0_ref_khz`] module"]
 pub type FC0_REF_KHZ = crate::Reg<fc0_ref_khz::FC0_REF_KHZ_SPEC>;
 #[doc = "Reference clock frequency in kHz"]
 pub mod fc0_ref_khz;
@@ -624,8 +592,7 @@ pub mod fc0_ref_khz;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_min_khz::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_min_khz::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_min_khz`]
-module"]
+For information about available fields see [`mod@fc0_min_khz`] module"]
 pub type FC0_MIN_KHZ = crate::Reg<fc0_min_khz::FC0_MIN_KHZ_SPEC>;
 #[doc = "Minimum pass frequency in kHz. This is optional. Set to 0 if you are not using the pass/fail flags"]
 pub mod fc0_min_khz;
@@ -633,8 +600,7 @@ pub mod fc0_min_khz;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_max_khz::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_max_khz::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_max_khz`]
-module"]
+For information about available fields see [`mod@fc0_max_khz`] module"]
 pub type FC0_MAX_KHZ = crate::Reg<fc0_max_khz::FC0_MAX_KHZ_SPEC>;
 #[doc = "Maximum pass frequency in kHz. This is optional. Set to 0x1ffffff if you are not using the pass/fail flags"]
 pub mod fc0_max_khz;
@@ -643,8 +609,7 @@ pub mod fc0_max_khz;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_delay::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_delay::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_delay`]
-module"]
+For information about available fields see [`mod@fc0_delay`] module"]
 pub type FC0_DELAY = crate::Reg<fc0_delay::FC0_DELAY_SPEC>;
 #[doc = "Delays the start of frequency counting to allow the mux to settle  
  Delay is measured in multiples of the reference clock period"]
@@ -654,8 +619,7 @@ pub mod fc0_delay;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_interval::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_interval::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_interval`]
-module"]
+For information about available fields see [`mod@fc0_interval`] module"]
 pub type FC0_INTERVAL = crate::Reg<fc0_interval::FC0_INTERVAL_SPEC>;
 #[doc = "The test interval is 0.98us * 2**interval, but let's call it 1us * 2**interval  
  The default gives a test interval of 250us"]
@@ -665,8 +629,7 @@ pub mod fc0_interval;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_src::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`fc0_src::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_src`]
-module"]
+For information about available fields see [`mod@fc0_src`] module"]
 pub type FC0_SRC = crate::Reg<fc0_src::FC0_SRC_SPEC>;
 #[doc = "Clock sent to frequency counter, set to 0 when not required  
  Writing to this register initiates the frequency count"]
@@ -675,8 +638,7 @@ pub mod fc0_src;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_status`]
-module"]
+For information about available fields see [`mod@fc0_status`] module"]
 pub type FC0_STATUS = crate::Reg<fc0_status::FC0_STATUS_SPEC>;
 #[doc = "Frequency counter status"]
 pub mod fc0_status;
@@ -684,8 +646,7 @@ pub mod fc0_status;
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_result::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@fc0_result`]
-module"]
+For information about available fields see [`mod@fc0_result`] module"]
 pub type FC0_RESULT = crate::Reg<fc0_result::FC0_RESULT_SPEC>;
 #[doc = "Result of frequency measurement, only valid when status_done=1"]
 pub mod fc0_result;
@@ -693,8 +654,7 @@ pub mod fc0_result;
 
 You can [`read`](crate::Reg::read) this register and get [`wake_en0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wake_en0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@wake_en0`]
-module"]
+For information about available fields see [`mod@wake_en0`] module"]
 pub type WAKE_EN0 = crate::Reg<wake_en0::WAKE_EN0_SPEC>;
 #[doc = "enable clock in wake mode"]
 pub mod wake_en0;
@@ -702,8 +662,7 @@ pub mod wake_en0;
 
 You can [`read`](crate::Reg::read) this register and get [`wake_en1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`wake_en1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@wake_en1`]
-module"]
+For information about available fields see [`mod@wake_en1`] module"]
 pub type WAKE_EN1 = crate::Reg<wake_en1::WAKE_EN1_SPEC>;
 #[doc = "enable clock in wake mode"]
 pub mod wake_en1;
@@ -711,8 +670,7 @@ pub mod wake_en1;
 
 You can [`read`](crate::Reg::read) this register and get [`sleep_en0::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sleep_en0::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sleep_en0`]
-module"]
+For information about available fields see [`mod@sleep_en0`] module"]
 pub type SLEEP_EN0 = crate::Reg<sleep_en0::SLEEP_EN0_SPEC>;
 #[doc = "enable clock in sleep mode"]
 pub mod sleep_en0;
@@ -720,8 +678,7 @@ pub mod sleep_en0;
 
 You can [`read`](crate::Reg::read) this register and get [`sleep_en1::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`sleep_en1::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@sleep_en1`]
-module"]
+For information about available fields see [`mod@sleep_en1`] module"]
 pub type SLEEP_EN1 = crate::Reg<sleep_en1::SLEEP_EN1_SPEC>;
 #[doc = "enable clock in sleep mode"]
 pub mod sleep_en1;
@@ -729,8 +686,7 @@ pub mod sleep_en1;
 
 You can [`read`](crate::Reg::read) this register and get [`enabled0::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@enabled0`]
-module"]
+For information about available fields see [`mod@enabled0`] module"]
 pub type ENABLED0 = crate::Reg<enabled0::ENABLED0_SPEC>;
 #[doc = "indicates the state of the clock enable"]
 pub mod enabled0;
@@ -738,8 +694,7 @@ pub mod enabled0;
 
 You can [`read`](crate::Reg::read) this register and get [`enabled1::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@enabled1`]
-module"]
+For information about available fields see [`mod@enabled1`] module"]
 pub type ENABLED1 = crate::Reg<enabled1::ENABLED1_SPEC>;
 #[doc = "indicates the state of the clock enable"]
 pub mod enabled1;
@@ -747,8 +702,7 @@ pub mod enabled1;
 
 You can [`read`](crate::Reg::read) this register and get [`intr::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@intr`]
-module"]
+For information about available fields see [`mod@intr`] module"]
 pub type INTR = crate::Reg<intr::INTR_SPEC>;
 #[doc = "Raw Interrupts"]
 pub mod intr;
@@ -756,8 +710,7 @@ pub mod intr;
 
 You can [`read`](crate::Reg::read) this register and get [`inte::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`inte::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@inte`]
-module"]
+For information about available fields see [`mod@inte`] module"]
 pub type INTE = crate::Reg<inte::INTE_SPEC>;
 #[doc = "Interrupt Enable"]
 pub mod inte;
@@ -765,17 +718,15 @@ pub mod inte;
 
 You can [`read`](crate::Reg::read) this register and get [`intf::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`intf::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@intf`]
-module"]
+For information about available fields see [`mod@intf`] module"]
 pub type INTF = crate::Reg<intf::INTF_SPEC>;
 #[doc = "Interrupt Force"]
 pub mod intf;
-#[doc = "INTS (r) register accessor: Interrupt status after masking &amp; forcing  
+#[doc = "INTS (r) register accessor: Interrupt status after masking & forcing  
 
 You can [`read`](crate::Reg::read) this register and get [`ints::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
-For information about available fields see [`mod@ints`]
-module"]
+For information about available fields see [`mod@ints`] module"]
 pub type INTS = crate::Reg<ints::INTS_SPEC>;
-#[doc = "Interrupt status after masking &amp; forcing"]
+#[doc = "Interrupt status after masking & forcing"]
 pub mod ints;

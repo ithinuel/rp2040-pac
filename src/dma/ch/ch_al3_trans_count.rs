@@ -20,10 +20,6 @@ impl crate::Readable for CH_AL3_TRANS_COUNT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ch_al3_trans_count::W`](W) writer structure"]
 impl crate::Writable for CH_AL3_TRANS_COUNT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CH_AL3_TRANS_COUNT to value 0"]
-impl crate::Resettable for CH_AL3_TRANS_COUNT_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for CH_AL3_TRANS_COUNT_SPEC {}

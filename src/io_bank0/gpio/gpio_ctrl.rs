@@ -563,31 +563,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - 0-31 -> selects pin function according to the GPIO table. Not all options are valid for all GPIO pins."]
     #[inline(always)]
-    #[must_use]
     pub fn funcsel(&mut self) -> FUNCSEL_W<GPIO_CTRL_SPEC> {
         FUNCSEL_W::new(self, 0)
     }
     #[doc = "Bits 8:9"]
     #[inline(always)]
-    #[must_use]
     pub fn outover(&mut self) -> OUTOVER_W<GPIO_CTRL_SPEC> {
         OUTOVER_W::new(self, 8)
     }
     #[doc = "Bits 12:13"]
     #[inline(always)]
-    #[must_use]
     pub fn oeover(&mut self) -> OEOVER_W<GPIO_CTRL_SPEC> {
         OEOVER_W::new(self, 12)
     }
     #[doc = "Bits 16:17"]
     #[inline(always)]
-    #[must_use]
     pub fn inover(&mut self) -> INOVER_W<GPIO_CTRL_SPEC> {
         INOVER_W::new(self, 16)
     }
     #[doc = "Bits 28:29"]
     #[inline(always)]
-    #[must_use]
     pub fn irqover(&mut self) -> IRQOVER_W<GPIO_CTRL_SPEC> {
         IRQOVER_W::new(self, 28)
     }
@@ -604,8 +599,6 @@ impl crate::Readable for GPIO_CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`gpio_ctrl::W`](W) writer structure"]
 impl crate::Writable for GPIO_CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets GPIO_CTRL to value 0x1f"]
 impl crate::Resettable for GPIO_CTRL_SPEC {

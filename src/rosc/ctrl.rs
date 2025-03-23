@@ -210,7 +210,6 @@ impl W {
  The clock output will glitch when changing the range down  
  Note: the values here are gray coded which is why HIGH comes before TOOHIGH"]
     #[inline(always)]
-    #[must_use]
     pub fn freq_range(&mut self) -> FREQ_RANGE_W<CTRL_SPEC> {
         FREQ_RANGE_W::new(self, 0)
     }
@@ -218,7 +217,6 @@ impl W {
  The system clock must be switched to another source before setting this field to DISABLE otherwise the chip will lock up  
  The 12-bit code is intended to give some protection against accidental writes. An invalid setting will enable the oscillator."]
     #[inline(always)]
-    #[must_use]
     pub fn enable(&mut self) -> ENABLE_W<CTRL_SPEC> {
         ENABLE_W::new(self, 12)
     }
@@ -235,8 +233,6 @@ impl crate::Readable for CTRL_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ctrl::W`](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0aa0"]
 impl crate::Resettable for CTRL_SPEC {

@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Set bit n to pass interrupts from channel n to DMA IRQ 1."]
     #[inline(always)]
-    #[must_use]
     pub fn inte1(&mut self) -> INTE1_W<INTE1_SPEC> {
         INTE1_W::new(self, 0)
     }
@@ -33,10 +32,6 @@ impl crate::Readable for INTE1_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`inte1::W`](W) writer structure"]
 impl crate::Writable for INTE1_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets INTE1 to value 0"]
-impl crate::Resettable for INTE1_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for INTE1_SPEC {}

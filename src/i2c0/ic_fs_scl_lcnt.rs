@@ -6,8 +6,7 @@ pub type W = crate::W<IC_FS_SCL_LCNT_SPEC>;
 
  This register goes away and becomes read-only returning 0s if IC_MAX_SPEED_MODE = standard.  
 
- This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\]
-register being set to 0. Writes at other times have no effect.  
+ This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\] register being set to 0. Writes at other times have no effect.  
 
  The minimum valid value is 8; hardware prevents values less than this being written, and if attempted results in 8 being set. For designs with APB_DATA_WIDTH = 8 the order of programming is important to ensure the correct operation of the DW_apb_i2c. The lower byte must be programmed first. Then the upper byte is programmed. If the value is less than 8 then the count value gets changed to 8."]
 pub type IC_FS_SCL_LCNT_R = crate::FieldReader<u16>;
@@ -15,8 +14,7 @@ pub type IC_FS_SCL_LCNT_R = crate::FieldReader<u16>;
 
  This register goes away and becomes read-only returning 0s if IC_MAX_SPEED_MODE = standard.  
 
- This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\]
-register being set to 0. Writes at other times have no effect.  
+ This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\] register being set to 0. Writes at other times have no effect.  
 
  The minimum valid value is 8; hardware prevents values less than this being written, and if attempted results in 8 being set. For designs with APB_DATA_WIDTH = 8 the order of programming is important to ensure the correct operation of the DW_apb_i2c. The lower byte must be programmed first. Then the upper byte is programmed. If the value is less than 8 then the count value gets changed to 8."]
 pub type IC_FS_SCL_LCNT_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
@@ -25,8 +23,7 @@ impl R {
 
  This register goes away and becomes read-only returning 0s if IC_MAX_SPEED_MODE = standard.  
 
- This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\]
-register being set to 0. Writes at other times have no effect.  
+ This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\] register being set to 0. Writes at other times have no effect.  
 
  The minimum valid value is 8; hardware prevents values less than this being written, and if attempted results in 8 being set. For designs with APB_DATA_WIDTH = 8 the order of programming is important to ensure the correct operation of the DW_apb_i2c. The lower byte must be programmed first. Then the upper byte is programmed. If the value is less than 8 then the count value gets changed to 8."]
     #[inline(always)]
@@ -39,12 +36,10 @@ impl W {
 
  This register goes away and becomes read-only returning 0s if IC_MAX_SPEED_MODE = standard.  
 
- This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\]
-register being set to 0. Writes at other times have no effect.  
+ This register can be written only when the I2C interface is disabled, which corresponds to the IC_ENABLE\\[0\\] register being set to 0. Writes at other times have no effect.  
 
  The minimum valid value is 8; hardware prevents values less than this being written, and if attempted results in 8 being set. For designs with APB_DATA_WIDTH = 8 the order of programming is important to ensure the correct operation of the DW_apb_i2c. The lower byte must be programmed first. Then the upper byte is programmed. If the value is less than 8 then the count value gets changed to 8."]
     #[inline(always)]
-    #[must_use]
     pub fn ic_fs_scl_lcnt(&mut self) -> IC_FS_SCL_LCNT_W<IC_FS_SCL_LCNT_SPEC> {
         IC_FS_SCL_LCNT_W::new(self, 0)
     }
@@ -61,8 +56,6 @@ impl crate::Readable for IC_FS_SCL_LCNT_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`ic_fs_scl_lcnt::W`](W) writer structure"]
 impl crate::Writable for IC_FS_SCL_LCNT_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets IC_FS_SCL_LCNT to value 0x0d"]
 impl crate::Resettable for IC_FS_SCL_LCNT_SPEC {

@@ -77,7 +77,6 @@ impl W {
     #[doc = "Bit 0 - enable  
  0=not enabled, 1=enabled"]
     #[inline(always)]
-    #[must_use]
     pub fn en(&mut self) -> EN_W<BOD_SPEC> {
         EN_W::new(self, 0)
     }
@@ -99,7 +98,6 @@ impl W {
  1110 - 1.075V  
  1111 - 1.118V"]
     #[inline(always)]
-    #[must_use]
     pub fn vsel(&mut self) -> VSEL_W<BOD_SPEC> {
         VSEL_W::new(self, 4)
     }
@@ -116,8 +114,6 @@ impl crate::Readable for BOD_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`bod::W`](W) writer structure"]
 impl crate::Writable for BOD_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets BOD to value 0x91"]
 impl crate::Resettable for BOD_SPEC {

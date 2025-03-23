@@ -89,6 +89,4 @@ impl crate::RegisterSpec for UARTMIS_SPEC {
 #[doc = "`read()` method returns [`uartmis::R`](R) reader structure"]
 impl crate::Readable for UARTMIS_SPEC {}
 #[doc = "`reset()` method sets UARTMIS to value 0"]
-impl crate::Resettable for UARTMIS_SPEC {
-    const RESET_VALUE: u32 = 0;
-}
+impl crate::Resettable for UARTMIS_SPEC {}

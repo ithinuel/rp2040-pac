@@ -16,7 +16,6 @@ impl R {
 impl W {
     #[doc = "Bits 0:24"]
     #[inline(always)]
-    #[must_use]
     pub fn fc0_max_khz(&mut self) -> FC0_MAX_KHZ_W<FC0_MAX_KHZ_SPEC> {
         FC0_MAX_KHZ_W::new(self, 0)
     }
@@ -33,8 +32,6 @@ impl crate::Readable for FC0_MAX_KHZ_SPEC {}
 #[doc = "`write(|w| ..)` method takes [`fc0_max_khz::W`](W) writer structure"]
 impl crate::Writable for FC0_MAX_KHZ_SPEC {
     type Safety = crate::Unsafe;
-    const ZERO_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
-    const ONE_TO_MODIFY_FIELDS_BITMAP: u32 = 0;
 }
 #[doc = "`reset()` method sets FC0_MAX_KHZ to value 0x01ff_ffff"]
 impl crate::Resettable for FC0_MAX_KHZ_SPEC {
