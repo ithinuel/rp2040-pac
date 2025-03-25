@@ -9,6 +9,11 @@ impl R {
         ICR_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ICR").field("icr", &self.icr()).finish()
+    }
+}
 #[doc = "Interrupt clear  
 
 You can [`read`](crate::Reg::read) this register and get [`icr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

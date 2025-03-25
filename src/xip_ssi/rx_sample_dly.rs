@@ -13,6 +13,13 @@ impl R {
         RSD_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RX_SAMPLE_DLY")
+            .field("rsd", &self.rsd())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - RXD sample delay (in SCLK cycles)"]
     #[inline(always)]

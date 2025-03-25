@@ -40,6 +40,16 @@ impl R {
         SOD_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPCR1")
+            .field("sod", &self.sod())
+            .field("ms", &self.ms())
+            .field("sse", &self.sse())
+            .field("lbm", &self.lbm())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Loop back mode: 0 Normal serial port operation enabled. 1 Output of transmit serial shifter is connected to input of receive serial shifter internally."]
     #[inline(always)]

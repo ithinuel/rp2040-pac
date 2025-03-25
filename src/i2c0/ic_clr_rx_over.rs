@@ -13,6 +13,13 @@ impl R {
         CLR_RX_OVER_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CLR_RX_OVER")
+            .field("clr_rx_over", &self.clr_rx_over())
+            .finish()
+    }
+}
 #[doc = "Clear RX_OVER Interrupt Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_clr_rx_over::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

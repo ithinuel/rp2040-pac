@@ -42,6 +42,7 @@ pub type AVAILABLE_1_W<'a, REG> = crate::BitWriter<'a, REG>;
  For a non Isochronous endpoint the offset is always 64 bytes.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DOUBLE_BUFFER_ISO_OFFSET_A {
@@ -208,6 +209,25 @@ impl R {
     #[inline(always)]
     pub fn full_1(&self) -> FULL_1_R {
         FULL_1_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EP_BUFFER_CONTROL")
+            .field("full_1", &self.full_1())
+            .field("last_1", &self.last_1())
+            .field("pid_1", &self.pid_1())
+            .field("double_buffer_iso_offset", &self.double_buffer_iso_offset())
+            .field("available_1", &self.available_1())
+            .field("length_1", &self.length_1())
+            .field("full_0", &self.full_0())
+            .field("last_0", &self.last_0())
+            .field("pid_0", &self.pid_0())
+            .field("reset", &self.reset())
+            .field("stall", &self.stall())
+            .field("available_0", &self.available_0())
+            .field("length_0", &self.length_0())
+            .finish()
     }
 }
 impl W {

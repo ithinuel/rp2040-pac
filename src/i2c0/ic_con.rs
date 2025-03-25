@@ -7,6 +7,7 @@ pub type W = crate::W<IC_CON_SPEC>;
  NOTE: Software should ensure that if this bit is written with '1' then bit 6 should also be written with a '1'.  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MASTER_MODE_A {
     #[doc = "0: Master mode is disabled"]
@@ -76,6 +77,7 @@ where
  Note: This field is not applicable when IC_ULTRA_FAST_MODE=1  
 
 Value on reset: 2"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPEED_A {
@@ -171,6 +173,7 @@ where
 #[doc = "When acting as a slave, this bit controls whether the DW_apb_i2c responds to 7- or 10-bit addresses. - 0: 7-bit addressing. The DW_apb_i2c ignores transactions that involve 10-bit addressing; for 7-bit addressing, only the lower 7 bits of the IC_SAR register are compared. - 1: 10-bit addressing. The DW_apb_i2c responds to only 10-bit addressing transfers that match the full 10 bits of the IC_SAR register.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IC_10BITADDR_SLAVE_A {
     #[doc = "0: Slave 7Bit addressing"]
@@ -226,6 +229,7 @@ where
 #[doc = "Controls whether the DW_apb_i2c starts its transfers in 7- or 10-bit addressing mode when acting as a master. - 0: 7-bit addressing - 1: 10-bit addressing  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IC_10BITADDR_MASTER_A {
     #[doc = "0: Master 7Bit addressing mode"]
@@ -283,6 +287,7 @@ where
  Reset value: ENABLED  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IC_RESTART_EN_A {
     #[doc = "0: Master restart disabled"]
@@ -346,6 +351,7 @@ where
  NOTE: Software should ensure that if this bit is written with 0, then bit 0 should also be written with a 0.  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IC_SLAVE_DISABLE_A {
     #[doc = "0: Slave mode is enabled"]
@@ -411,6 +417,7 @@ where
  NOTE: During a general call address, this slave does not issue the STOP_DET interrupt if STOP_DET_IF_ADDRESSED = 1'b1, even if the slave responds to the general call address by generating ACK. The STOP_DET interrupt is generated only when the transmitted address matches the slave address (SAR).  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_DET_IFADDRESSED_A {
     #[doc = "0: slave issues STOP_DET intr always"]
@@ -472,6 +479,7 @@ where
  Reset value: 0x0.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EMPTY_CTRL_A {
     #[doc = "0: Default behaviour of TX_EMPTY interrupt"]
@@ -533,6 +541,7 @@ where
  Reset value: 0x0.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FIFO_FULL_HLD_CTRL_A {
     #[doc = "0: Overflow when RX_FIFO is full"]
@@ -665,6 +674,25 @@ impl R {
     #[inline(always)]
     pub fn stop_det_if_master_active(&self) -> STOP_DET_IF_MASTER_ACTIVE_R {
         STOP_DET_IF_MASTER_ACTIVE_R::new(((self.bits >> 10) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CON")
+            .field(
+                "stop_det_if_master_active",
+                &self.stop_det_if_master_active(),
+            )
+            .field("rx_fifo_full_hld_ctrl", &self.rx_fifo_full_hld_ctrl())
+            .field("tx_empty_ctrl", &self.tx_empty_ctrl())
+            .field("stop_det_ifaddressed", &self.stop_det_ifaddressed())
+            .field("ic_slave_disable", &self.ic_slave_disable())
+            .field("ic_restart_en", &self.ic_restart_en())
+            .field("ic_10bitaddr_master", &self.ic_10bitaddr_master())
+            .field("ic_10bitaddr_slave", &self.ic_10bitaddr_slave())
+            .field("speed", &self.speed())
+            .field("master_mode", &self.master_mode())
+            .finish()
     }
 }
 impl W {

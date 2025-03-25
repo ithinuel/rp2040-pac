@@ -11,6 +11,11 @@ impl R {
         TIMELR_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMELR").finish()
+    }
+}
 #[doc = "Read from bits 31:0 of time  
 
 You can [`read`](crate::Reg::read) this register and get [`timelr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

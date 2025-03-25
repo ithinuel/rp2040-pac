@@ -23,6 +23,15 @@ impl R {
         RAF_LVL_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFO_LEVELS")
+            .field("raf_lvl", &self.raf_lvl())
+            .field("waf_lvl", &self.waf_lvl())
+            .field("tdf_lvl", &self.tdf_lvl())
+            .finish()
+    }
+}
 #[doc = "Debug RAF, WAF, TDF levels  
 
 You can [`read`](crate::Reg::read) this register and get [`fifo_levels::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

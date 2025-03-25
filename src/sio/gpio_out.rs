@@ -25,6 +25,13 @@ impl R {
         GPIO_OUT_R::new(self.bits & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_OUT")
+            .field("gpio_out", &self.gpio_out())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:29 - Set output level (1/0 -> high/low) for GPIO0...29.  
  Reading back gives the last value written, NOT the input value from the pins.  

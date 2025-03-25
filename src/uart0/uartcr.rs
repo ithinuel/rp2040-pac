@@ -112,6 +112,24 @@ impl R {
         CTSEN_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTCR")
+            .field("ctsen", &self.ctsen())
+            .field("rtsen", &self.rtsen())
+            .field("out2", &self.out2())
+            .field("out1", &self.out1())
+            .field("rts", &self.rts())
+            .field("dtr", &self.dtr())
+            .field("rxe", &self.rxe())
+            .field("txe", &self.txe())
+            .field("lbe", &self.lbe())
+            .field("sirlp", &self.sirlp())
+            .field("siren", &self.siren())
+            .field("uarten", &self.uarten())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - UART enable: 0 = UART is disabled. If the UART is disabled in the middle of transmission or reception, it completes the current character before stopping. 1 = the UART is enabled. Data transmission and reception occurs for either UART signals or SIR signals depending on the setting of the SIREN bit."]
     #[inline(always)]

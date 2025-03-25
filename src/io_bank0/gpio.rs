@@ -1,4 +1,5 @@
 #[repr(C)]
+#[derive(Debug)]
 #[doc = "Cluster GPIO%s, containing GPIO*_STATUS, GPIO*_CTRL"]
 pub struct GPIO {
     gpio_status: GPIO_STATUS,

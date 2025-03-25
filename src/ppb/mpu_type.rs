@@ -23,6 +23,15 @@ impl R {
         IREGION_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MPU_TYPE")
+            .field("iregion", &self.iregion())
+            .field("dregion", &self.dregion())
+            .field("separate", &self.separate())
+            .finish()
+    }
+}
 #[doc = "Read the MPU Type Register to determine if the processor implements an MPU, and how many regions the MPU supports.  
 
 You can [`read`](crate::Reg::read) this register and get [`mpu_type::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

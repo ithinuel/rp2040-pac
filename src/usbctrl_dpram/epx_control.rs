@@ -17,6 +17,7 @@ pub type INTERRUPT_ON_STALL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ENDPOINT_TYPE_A {
@@ -158,6 +159,23 @@ impl R {
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
         ENABLE_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("EPX_CONTROL")
+            .field("enable", &self.enable())
+            .field("double_buffered", &self.double_buffered())
+            .field("interrupt_per_buff", &self.interrupt_per_buff())
+            .field(
+                "interrupt_per_double_buff",
+                &self.interrupt_per_double_buff(),
+            )
+            .field("endpoint_type", &self.endpoint_type())
+            .field("interrupt_on_stall", &self.interrupt_on_stall())
+            .field("interrupt_on_nak", &self.interrupt_on_nak())
+            .field("buffer_address", &self.buffer_address())
+            .finish()
     }
 }
 impl W {

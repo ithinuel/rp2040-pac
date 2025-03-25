@@ -16,6 +16,13 @@ impl R {
         INTS0_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTS0")
+            .field("ints0", &self.ints0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Indicates active channel interrupt requests which are currently causing IRQ 0 to be asserted.  
  Channel interrupts can be cleared by writing a bit mask here."]

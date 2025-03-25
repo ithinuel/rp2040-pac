@@ -13,6 +13,13 @@ impl R {
         FC0_INTERVAL_R::new((self.bits & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_INTERVAL")
+            .field("fc0_interval", &self.fc0_interval())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

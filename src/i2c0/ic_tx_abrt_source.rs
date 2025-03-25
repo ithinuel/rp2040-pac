@@ -7,6 +7,7 @@ pub type R = crate::R<IC_TX_ABRT_SOURCE_SPEC>;
  Role of DW_apb_i2c: Master-Transmitter or Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_7B_ADDR_NOACK_A {
     #[doc = "0: This abort is not generated"]
@@ -53,6 +54,7 @@ impl ABRT_7B_ADDR_NOACK_R {
  Role of DW_apb_i2c: Master-Transmitter or Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_10ADDR1_NOACK_A {
     #[doc = "0: This abort is not generated"]
@@ -99,6 +101,7 @@ impl ABRT_10ADDR1_NOACK_R {
  Role of DW_apb_i2c: Master-Transmitter or Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_10ADDR2_NOACK_A {
     #[doc = "0: This abort is not generated"]
@@ -145,6 +148,7 @@ impl ABRT_10ADDR2_NOACK_R {
  Role of DW_apb_i2c: Master-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_TXDATA_NOACK_A {
     #[doc = "0: Transmitted data non-ACKed by addressed slave-scenario not present"]
@@ -191,6 +195,7 @@ impl ABRT_TXDATA_NOACK_R {
  Role of DW_apb_i2c: Master-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_GCALL_NOACK_A {
     #[doc = "0: GCALL not ACKed by any slave-scenario not present"]
@@ -237,6 +242,7 @@ impl ABRT_GCALL_NOACK_R {
  Role of DW_apb_i2c: Master-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_GCALL_READ_A {
     #[doc = "0: GCALL is followed by read from bus-scenario not present"]
@@ -283,6 +289,7 @@ impl ABRT_GCALL_READ_R {
  Role of DW_apb_i2c: Master  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_HS_ACKDET_A {
     #[doc = "0: HS Master code ACKed in HS Mode- scenario not present"]
@@ -329,6 +336,7 @@ impl ABRT_HS_ACKDET_R {
  Role of DW_apb_i2c: Master  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_SBYTE_ACKDET_A {
     #[doc = "0: ACK detected for START byte- scenario not present"]
@@ -375,6 +383,7 @@ impl ABRT_SBYTE_ACKDET_R {
  Role of DW_apb_i2c: Master-Transmitter or Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_HS_NORSTRT_A {
     #[doc = "0: User trying to switch Master to HS mode when RESTART disabled- scenario not present"]
@@ -421,6 +430,7 @@ impl ABRT_HS_NORSTRT_R {
  Role of DW_apb_i2c: Master  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_SBYTE_NORSTRT_A {
     #[doc = "0: User trying to send START byte when RESTART disabled- scenario not present"]
@@ -467,6 +477,7 @@ impl ABRT_SBYTE_NORSTRT_R {
  Role of DW_apb_i2c: Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_10B_RD_NORSTRT_A {
     #[doc = "0: Master not trying to read in 10Bit addressing mode when RESTART disabled"]
@@ -513,6 +524,7 @@ impl ABRT_10B_RD_NORSTRT_R {
  Role of DW_apb_i2c: Master-Transmitter or Master-Receiver  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_MASTER_DIS_A {
     #[doc = "0: User initiating master operation when MASTER disabled- scenario not present"]
@@ -559,6 +571,7 @@ impl ABRT_MASTER_DIS_R {
  Role of DW_apb_i2c: Master-Transmitter or Slave-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ARB_LOST_A {
     #[doc = "0: Master or Slave-Transmitter lost arbitration- scenario not present"]
@@ -605,6 +618,7 @@ impl ARB_LOST_R {
  Role of DW_apb_i2c: Slave-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_SLVFLUSH_TXFIFO_A {
     #[doc = "0: Slave flushes existing data in TX-FIFO upon getting read command- scenario not present"]
@@ -651,6 +665,7 @@ impl ABRT_SLVFLUSH_TXFIFO_R {
  Role of DW_apb_i2c: Slave-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_SLV_ARBLOST_A {
     #[doc = "0: Slave lost arbitration to remote master- scenario not present"]
@@ -697,6 +712,7 @@ impl ABRT_SLV_ARBLOST_R {
  Role of DW_apb_i2c: Slave-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_SLVRD_INTX_A {
     #[doc = "0: Slave trying to transmit to remote master in read mode- scenario not present"]
@@ -743,6 +759,7 @@ impl ABRT_SLVRD_INTX_R {
  Role of DW_apb_i2c: Master-Transmitter  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABRT_USER_ABRT_A {
     #[doc = "0: Transfer abort detected by master- scenario not present"]
@@ -950,6 +967,30 @@ impl R {
     #[inline(always)]
     pub fn tx_flush_cnt(&self) -> TX_FLUSH_CNT_R {
         TX_FLUSH_CNT_R::new(((self.bits >> 23) & 0x01ff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_TX_ABRT_SOURCE")
+            .field("tx_flush_cnt", &self.tx_flush_cnt())
+            .field("abrt_user_abrt", &self.abrt_user_abrt())
+            .field("abrt_slvrd_intx", &self.abrt_slvrd_intx())
+            .field("abrt_slv_arblost", &self.abrt_slv_arblost())
+            .field("abrt_slvflush_txfifo", &self.abrt_slvflush_txfifo())
+            .field("arb_lost", &self.arb_lost())
+            .field("abrt_master_dis", &self.abrt_master_dis())
+            .field("abrt_10b_rd_norstrt", &self.abrt_10b_rd_norstrt())
+            .field("abrt_sbyte_norstrt", &self.abrt_sbyte_norstrt())
+            .field("abrt_hs_norstrt", &self.abrt_hs_norstrt())
+            .field("abrt_sbyte_ackdet", &self.abrt_sbyte_ackdet())
+            .field("abrt_hs_ackdet", &self.abrt_hs_ackdet())
+            .field("abrt_gcall_read", &self.abrt_gcall_read())
+            .field("abrt_gcall_noack", &self.abrt_gcall_noack())
+            .field("abrt_txdata_noack", &self.abrt_txdata_noack())
+            .field("abrt_10addr2_noack", &self.abrt_10addr2_noack())
+            .field("abrt_10addr1_noack", &self.abrt_10addr1_noack())
+            .field("abrt_7b_addr_noack", &self.abrt_7b_addr_noack())
+            .finish()
     }
 }
 #[doc = "I2C Transmit Abort Source Register  

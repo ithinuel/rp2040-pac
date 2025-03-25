@@ -9,6 +9,13 @@ impl R {
         SSPPCELLID0_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPPCELLID0")
+            .field("ssppcellid0", &self.ssppcellid0())
+            .finish()
+    }
+}
 #[doc = "PrimeCell identification registers, SSPPCellID0-3 on page 3-16  
 
 You can [`read`](crate::Reg::read) this register and get [`ssppcellid0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

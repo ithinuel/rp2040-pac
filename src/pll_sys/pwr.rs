@@ -52,6 +52,16 @@ impl R {
         VCOPD_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWR")
+            .field("vcopd", &self.vcopd())
+            .field("postdivpd", &self.postdivpd())
+            .field("dsmpd", &self.dsmpd())
+            .field("pd", &self.pd())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - PLL powerdown  
  To save power set high when PLL output not required."]

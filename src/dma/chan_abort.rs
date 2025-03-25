@@ -19,6 +19,13 @@ impl R {
         CHAN_ABORT_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CHAN_ABORT")
+            .field("chan_abort", &self.chan_abort())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Each bit corresponds to a channel. Writing a 1 aborts whatever transfer sequence is in progress on that channel. The bit will remain high until any in-flight transfers have been flushed through the address and data FIFOs.  
 

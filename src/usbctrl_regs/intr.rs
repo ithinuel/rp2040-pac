@@ -142,6 +142,32 @@ impl R {
         EP_STALL_NAK_R::new(((self.bits >> 19) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTR")
+            .field("ep_stall_nak", &self.ep_stall_nak())
+            .field("abort_done", &self.abort_done())
+            .field("dev_sof", &self.dev_sof())
+            .field("setup_req", &self.setup_req())
+            .field("dev_resume_from_host", &self.dev_resume_from_host())
+            .field("dev_suspend", &self.dev_suspend())
+            .field("dev_conn_dis", &self.dev_conn_dis())
+            .field("bus_reset", &self.bus_reset())
+            .field("vbus_detect", &self.vbus_detect())
+            .field("stall", &self.stall())
+            .field("error_crc", &self.error_crc())
+            .field("error_bit_stuff", &self.error_bit_stuff())
+            .field("error_rx_overflow", &self.error_rx_overflow())
+            .field("error_rx_timeout", &self.error_rx_timeout())
+            .field("error_data_seq", &self.error_data_seq())
+            .field("buff_status", &self.buff_status())
+            .field("trans_complete", &self.trans_complete())
+            .field("host_sof", &self.host_sof())
+            .field("host_resume", &self.host_resume())
+            .field("host_conn_dis", &self.host_conn_dis())
+            .finish()
+    }
+}
 #[doc = "Raw Interrupts  
 
 You can [`read`](crate::Reg::read) this register and get [`intr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

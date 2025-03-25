@@ -43,6 +43,17 @@ impl R {
         IMPLEMENTER_R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CPUID")
+            .field("implementer", &self.implementer())
+            .field("variant", &self.variant())
+            .field("architecture", &self.architecture())
+            .field("partno", &self.partno())
+            .field("revision", &self.revision())
+            .finish()
+    }
+}
 #[doc = "Read the CPU ID Base Register to determine: the ID number of the processor core, the version number of the processor core, the implementation details of the processor core.  
 
 You can [`read`](crate::Reg::read) this register and get [`cpuid::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

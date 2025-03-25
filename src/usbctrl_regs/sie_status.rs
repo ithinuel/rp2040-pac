@@ -7,6 +7,7 @@ pub type VBUS_DETECTED_R = crate::BitReader;
 #[doc = "USB bus line state  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LINE_STATE_A {
@@ -264,6 +265,30 @@ impl R {
     #[inline(always)]
     pub fn data_seq_error(&self) -> DATA_SEQ_ERROR_R {
         DATA_SEQ_ERROR_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SIE_STATUS")
+            .field("data_seq_error", &self.data_seq_error())
+            .field("ack_rec", &self.ack_rec())
+            .field("stall_rec", &self.stall_rec())
+            .field("nak_rec", &self.nak_rec())
+            .field("rx_timeout", &self.rx_timeout())
+            .field("rx_overflow", &self.rx_overflow())
+            .field("bit_stuff_error", &self.bit_stuff_error())
+            .field("crc_error", &self.crc_error())
+            .field("bus_reset", &self.bus_reset())
+            .field("trans_complete", &self.trans_complete())
+            .field("setup_rec", &self.setup_rec())
+            .field("connected", &self.connected())
+            .field("resume", &self.resume())
+            .field("vbus_over_curr", &self.vbus_over_curr())
+            .field("speed", &self.speed())
+            .field("suspended", &self.suspended())
+            .field("line_state", &self.line_state())
+            .field("vbus_detected", &self.vbus_detected())
+            .finish()
     }
 }
 impl W {

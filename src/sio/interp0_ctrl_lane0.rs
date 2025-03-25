@@ -139,6 +139,24 @@ impl R {
         OVERF_R::new(((self.bits >> 25) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTERP0_CTRL_LANE0")
+            .field("overf", &self.overf())
+            .field("overf1", &self.overf1())
+            .field("overf0", &self.overf0())
+            .field("blend", &self.blend())
+            .field("force_msb", &self.force_msb())
+            .field("add_raw", &self.add_raw())
+            .field("cross_result", &self.cross_result())
+            .field("cross_input", &self.cross_input())
+            .field("signed", &self.signed())
+            .field("mask_msb", &self.mask_msb())
+            .field("mask_lsb", &self.mask_lsb())
+            .field("shift", &self.shift())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Logical right-shift applied to accumulator before masking"]
     #[inline(always)]

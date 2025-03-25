@@ -19,6 +19,13 @@ impl R {
         STREAM_ADDR_R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STREAM_ADDR")
+            .field("stream_addr", &self.stream_addr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 2:31 - The address of the next word to be streamed from flash to the streaming FIFO.  
  Increments automatically after each flash access.  

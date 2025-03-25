@@ -36,6 +36,16 @@ impl R {
         ROE_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFO_ST")
+            .field("roe", &self.roe())
+            .field("wof", &self.wof())
+            .field("rdy", &self.rdy())
+            .field("vld", &self.vld())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 2 - Sticky flag indicating the TX FIFO was written when full. This write was ignored by the FIFO."]
     #[inline(always)]

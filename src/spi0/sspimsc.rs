@@ -40,6 +40,16 @@ impl R {
         TXIM_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPIMSC")
+            .field("txim", &self.txim())
+            .field("rxim", &self.rxim())
+            .field("rtim", &self.rtim())
+            .field("rorim", &self.rorim())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Receive overrun interrupt mask: 0 Receive FIFO written to while full condition interrupt is masked. 1 Receive FIFO written to while full condition interrupt is not masked."]
     #[inline(always)]

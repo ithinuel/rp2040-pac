@@ -31,6 +31,15 @@ impl R {
         SIM_TIMING_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MAIN_CTRL")
+            .field("sim_timing", &self.sim_timing())
+            .field("host_ndevice", &self.host_ndevice())
+            .field("controller_en", &self.controller_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable controller"]
     #[inline(always)]

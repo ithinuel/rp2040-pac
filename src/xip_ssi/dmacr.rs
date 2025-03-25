@@ -22,6 +22,14 @@ impl R {
         TDMAE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DMACR")
+            .field("tdmae", &self.tdmae())
+            .field("rdmae", &self.rdmae())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Receive DMA enable"]
     #[inline(always)]

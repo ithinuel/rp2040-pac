@@ -170,6 +170,21 @@ impl R {
         NMIPENDSET_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ICSR")
+            .field("nmipendset", &self.nmipendset())
+            .field("pendsvset", &self.pendsvset())
+            .field("pendsvclr", &self.pendsvclr())
+            .field("pendstset", &self.pendstset())
+            .field("pendstclr", &self.pendstclr())
+            .field("isrpreempt", &self.isrpreempt())
+            .field("isrpending", &self.isrpending())
+            .field("vectpending", &self.vectpending())
+            .field("vectactive", &self.vectactive())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 25 - SysTick exception clear-pending bit.  
  Write:  

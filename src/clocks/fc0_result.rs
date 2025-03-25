@@ -16,6 +16,14 @@ impl R {
         KHZ_R::new((self.bits >> 5) & 0x01ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_RESULT")
+            .field("khz", &self.khz())
+            .field("frac", &self.frac())
+            .finish()
+    }
+}
 #[doc = "Result of frequency measurement, only valid when status_done=1  
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_result::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

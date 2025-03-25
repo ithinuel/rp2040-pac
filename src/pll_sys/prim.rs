@@ -22,6 +22,14 @@ impl R {
         POSTDIV1_R::new(((self.bits >> 16) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PRIM")
+            .field("postdiv1", &self.postdiv1())
+            .field("postdiv2", &self.postdiv2())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 12:14 - divide by 1-7"]
     #[inline(always)]

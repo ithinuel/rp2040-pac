@@ -13,6 +13,13 @@ impl R {
         INT_R::new(((self.bits >> 8) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_ADC_DIV")
+            .field("int", &self.int())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:9 - Integer component of the divisor, 0 -> divide by 2^16"]
     #[inline(always)]

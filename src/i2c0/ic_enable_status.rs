@@ -5,6 +5,7 @@ pub type R = crate::R<IC_ENABLE_STATUS_SPEC>;
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum IC_EN_A {
     #[doc = "0: I2C disabled"]
@@ -61,6 +62,7 @@ impl IC_EN_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLV_DISABLED_WHILE_BUSY_A {
     #[doc = "0: Slave is disabled when it is idle"]
@@ -123,6 +125,7 @@ impl SLV_DISABLED_WHILE_BUSY_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLV_RX_DATA_LOST_A {
     #[doc = "0: Slave RX Data is not lost"]
@@ -207,6 +210,15 @@ impl R {
     #[inline(always)]
     pub fn slv_rx_data_lost(&self) -> SLV_RX_DATA_LOST_R {
         SLV_RX_DATA_LOST_R::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_ENABLE_STATUS")
+            .field("slv_rx_data_lost", &self.slv_rx_data_lost())
+            .field("slv_disabled_while_busy", &self.slv_disabled_while_busy())
+            .field("ic_en", &self.ic_en())
+            .finish()
     }
 }
 #[doc = "I2C Enable Status Register  

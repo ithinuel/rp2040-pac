@@ -79,6 +79,23 @@ impl R {
         OEMIS_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTMIS")
+            .field("oemis", &self.oemis())
+            .field("bemis", &self.bemis())
+            .field("pemis", &self.pemis())
+            .field("femis", &self.femis())
+            .field("rtmis", &self.rtmis())
+            .field("txmis", &self.txmis())
+            .field("rxmis", &self.rxmis())
+            .field("dsrmmis", &self.dsrmmis())
+            .field("dcdmmis", &self.dcdmmis())
+            .field("ctsmmis", &self.ctsmmis())
+            .field("rimmis", &self.rimmis())
+            .finish()
+    }
+}
 #[doc = "Masked Interrupt Status Register, UARTMIS  
 
 You can [`read`](crate::Reg::read) this register and get [`uartmis::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

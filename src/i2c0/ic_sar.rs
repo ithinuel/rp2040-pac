@@ -25,6 +25,13 @@ impl R {
         IC_SAR_R::new((self.bits & 0x03ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_SAR")
+            .field("ic_sar", &self.ic_sar())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - The IC_SAR holds the slave address when the I2C is operating as a slave. For 7-bit addressing, only IC_SAR\\[6:0\\] is used.  
 

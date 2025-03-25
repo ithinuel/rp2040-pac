@@ -13,6 +13,13 @@ impl R {
         INTE0_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTE0")
+            .field("inte0", &self.inte0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Set bit n to pass interrupts from channel n to DMA IRQ 0."]
     #[inline(always)]

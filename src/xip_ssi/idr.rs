@@ -9,6 +9,13 @@ impl R {
         IDCODE_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IDR")
+            .field("idcode", &self.idcode())
+            .finish()
+    }
+}
 #[doc = "Identification register  
 
 You can [`read`](crate::Reg::read) this register and get [`idr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -130,6 +130,32 @@ impl R {
         TX_DIFFMODE_OVERRIDE_EN_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBPHY_DIRECT_OVERRIDE")
+            .field("tx_diffmode_override_en", &self.tx_diffmode_override_en())
+            .field("dm_pullup_override_en", &self.dm_pullup_override_en())
+            .field("tx_fsslew_override_en", &self.tx_fsslew_override_en())
+            .field("tx_pd_override_en", &self.tx_pd_override_en())
+            .field("rx_pd_override_en", &self.rx_pd_override_en())
+            .field("tx_dm_override_en", &self.tx_dm_override_en())
+            .field("tx_dp_override_en", &self.tx_dp_override_en())
+            .field("tx_dm_oe_override_en", &self.tx_dm_oe_override_en())
+            .field("tx_dp_oe_override_en", &self.tx_dp_oe_override_en())
+            .field("dm_pulldn_en_override_en", &self.dm_pulldn_en_override_en())
+            .field("dp_pulldn_en_override_en", &self.dp_pulldn_en_override_en())
+            .field("dp_pullup_en_override_en", &self.dp_pullup_en_override_en())
+            .field(
+                "dm_pullup_hisel_override_en",
+                &self.dm_pullup_hisel_override_en(),
+            )
+            .field(
+                "dp_pullup_hisel_override_en",
+                &self.dp_pullup_hisel_override_en(),
+            )
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

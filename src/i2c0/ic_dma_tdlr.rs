@@ -19,6 +19,13 @@ impl R {
         DMATDL_R::new((self.bits & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_DMA_TDLR")
+            .field("dmatdl", &self.dmatdl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Transmit Data Level. This bit field controls the level at which a DMA request is made by the transmit logic. It is equal to the watermark level; that is, the dma_tx_req signal is generated when the number of valid data entries in the transmit FIFO is equal to or below this field value, and TDMAE = 1.  
 

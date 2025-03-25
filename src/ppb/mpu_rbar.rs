@@ -55,6 +55,15 @@ impl R {
         ADDR_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MPU_RBAR")
+            .field("addr", &self.addr())
+            .field("valid", &self.valid())
+            .field("region", &self.region())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - On writes, specifies the number of the region whose base address to update provided VALID is set written as 1. On reads, returns bits \\[3:0\\] of MPU_RNR."]
     #[inline(always)]

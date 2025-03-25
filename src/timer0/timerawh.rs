@@ -9,6 +9,13 @@ impl R {
         TIMERAWH_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMERAWH")
+            .field("timerawh", &self.timerawh())
+            .finish()
+    }
+}
 #[doc = "Raw read from bits 63:32 of time (no side effects)  
 
 You can [`read`](crate::Reg::read) this register and get [`timerawh::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

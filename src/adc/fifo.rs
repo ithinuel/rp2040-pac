@@ -16,6 +16,14 @@ impl R {
         ERR_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FIFO")
+            .field("err", &self.err())
+            .field("val", &self.val())
+            .finish()
+    }
+}
 #[doc = "Conversion result FIFO  
 
 You can [`read`](crate::Reg::read) this register and get [`fifo::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

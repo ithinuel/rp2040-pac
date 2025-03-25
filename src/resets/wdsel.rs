@@ -229,6 +229,37 @@ impl R {
         USBCTRL_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("WDSEL")
+            .field("usbctrl", &self.usbctrl())
+            .field("uart1", &self.uart1())
+            .field("uart0", &self.uart0())
+            .field("timer", &self.timer())
+            .field("tbman", &self.tbman())
+            .field("sysinfo", &self.sysinfo())
+            .field("syscfg", &self.syscfg())
+            .field("spi1", &self.spi1())
+            .field("spi0", &self.spi0())
+            .field("rtc", &self.rtc())
+            .field("pwm", &self.pwm())
+            .field("pll_usb", &self.pll_usb())
+            .field("pll_sys", &self.pll_sys())
+            .field("pio1", &self.pio1())
+            .field("pio0", &self.pio0())
+            .field("pads_qspi", &self.pads_qspi())
+            .field("pads_bank0", &self.pads_bank0())
+            .field("jtag", &self.jtag())
+            .field("io_qspi", &self.io_qspi())
+            .field("io_bank0", &self.io_bank0())
+            .field("i2c1", &self.i2c1())
+            .field("i2c0", &self.i2c0())
+            .field("dma", &self.dma())
+            .field("busctrl", &self.busctrl())
+            .field("adc", &self.adc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

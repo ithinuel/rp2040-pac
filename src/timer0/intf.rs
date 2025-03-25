@@ -40,6 +40,16 @@ impl R {
         ALARM_3_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTF")
+            .field("alarm_3", &self.alarm_3())
+            .field("alarm_2", &self.alarm_2())
+            .field("alarm_1", &self.alarm_1())
+            .field("alarm_0", &self.alarm_0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

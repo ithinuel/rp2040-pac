@@ -30,6 +30,16 @@ impl R {
         TXRIS_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPRIS")
+            .field("txris", &self.txris())
+            .field("rxris", &self.rxris())
+            .field("rtris", &self.rtris())
+            .field("rorris", &self.rorris())
+            .finish()
+    }
+}
 #[doc = "Raw interrupt status register, SSPRIS on page 3-10  
 
 You can [`read`](crate::Reg::read) this register and get [`sspris::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

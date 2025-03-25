@@ -21,6 +21,7 @@ pub type SCPOL_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Transfer mode  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TMOD_A {
@@ -129,6 +130,7 @@ pub type DFS_32_W<'a, REG> = crate::FieldWriter<'a, REG, 5>;
 #[doc = "SPI frame format  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SPI_FRF_A {
@@ -262,6 +264,23 @@ impl R {
     #[inline(always)]
     pub fn sste(&self) -> SSTE_R {
         SSTE_R::new(((self.bits >> 24) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRLR0")
+            .field("sste", &self.sste())
+            .field("spi_frf", &self.spi_frf())
+            .field("dfs_32", &self.dfs_32())
+            .field("cfs", &self.cfs())
+            .field("srl", &self.srl())
+            .field("slv_oe", &self.slv_oe())
+            .field("tmod", &self.tmod())
+            .field("scpol", &self.scpol())
+            .field("scph", &self.scph())
+            .field("frf", &self.frf())
+            .field("dfs", &self.dfs())
+            .finish()
     }
 }
 impl W {

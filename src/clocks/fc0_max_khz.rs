@@ -13,6 +13,13 @@ impl R {
         FC0_MAX_KHZ_R::new(self.bits & 0x01ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_MAX_KHZ")
+            .field("fc0_max_khz", &self.fc0_max_khz())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:24"]
     #[inline(always)]

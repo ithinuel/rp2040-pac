@@ -13,6 +13,13 @@ impl R {
         RELOAD_R::new(self.bits & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYST_RVR")
+            .field("reload", &self.reload())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23 - Value to load into the SysTick Current Value Register when the counter reaches 0."]
     #[inline(always)]

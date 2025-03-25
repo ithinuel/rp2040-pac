@@ -22,6 +22,14 @@ impl R {
         RTIC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPICR")
+            .field("rtic", &self.rtic())
+            .field("roric", &self.roric())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Clears the SSPRORINTR interrupt"]
     #[inline(always)]

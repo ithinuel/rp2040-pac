@@ -56,6 +56,18 @@ impl R {
         TRIGGER_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("trigger", &self.trigger())
+            .field("enable", &self.enable())
+            .field("pause_dbg1", &self.pause_dbg1())
+            .field("pause_dbg0", &self.pause_dbg0())
+            .field("pause_jtag", &self.pause_jtag())
+            .field("time", &self.time())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 24 - Pause the watchdog timer when JTAG is accessing the bus fabric"]
     #[inline(always)]

@@ -31,6 +31,13 @@ impl R {
         IC_SS_SCL_HCNT_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_SS_SCL_HCNT")
+            .field("ic_ss_scl_hcnt", &self.ic_ss_scl_hcnt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - This register must be set before any I2C bus transaction can take place to ensure proper I/O timing. This register sets the SCL clock high-period count for standard speed. For more information, refer to 'IC_CLK Frequency Configuration'.  
 

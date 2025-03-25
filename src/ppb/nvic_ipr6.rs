@@ -40,6 +40,16 @@ impl R {
         IP_27_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("NVIC_IPR6")
+            .field("ip_27", &self.ip_27())
+            .field("ip_26", &self.ip_26())
+            .field("ip_25", &self.ip_25())
+            .field("ip_24", &self.ip_24())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 6:7 - Priority of interrupt 24"]
     #[inline(always)]

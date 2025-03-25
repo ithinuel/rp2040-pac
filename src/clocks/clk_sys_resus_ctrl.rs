@@ -43,6 +43,16 @@ impl R {
         CLEAR_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_SYS_RESUS_CTRL")
+            .field("clear", &self.clear())
+            .field("frce", &self.frce())
+            .field("enable", &self.enable())
+            .field("timeout", &self.timeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - This is expressed as a number of clk_ref cycles  
  and must be >= 2x clk_ref_freq/min_clk_tst_freq"]

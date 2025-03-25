@@ -48,6 +48,16 @@ impl R {
         PROC1_DAP_INSTID_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PROC_CONFIG")
+            .field("proc1_dap_instid", &self.proc1_dap_instid())
+            .field("proc0_dap_instid", &self.proc0_dap_instid())
+            .field("proc1_halted", &self.proc1_halted())
+            .field("proc0_halted", &self.proc0_halted())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 24:27 - Configure proc0 DAP instance ID.  
  Recommend that this is NOT changed until you require debug access in multi-chip environment  

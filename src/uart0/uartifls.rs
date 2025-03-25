@@ -22,6 +22,14 @@ impl R {
         RXIFLSEL_R::new(((self.bits >> 3) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTIFLS")
+            .field("rxiflsel", &self.rxiflsel())
+            .field("txiflsel", &self.txiflsel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2 - Transmit interrupt FIFO level select. The trigger points for the transmit interrupt are as follows: b000 = Transmit FIFO becomes <= 1 / 8 full b001 = Transmit FIFO becomes <= 1 / 4 full b010 = Transmit FIFO becomes <= 1 / 2 full b011 = Transmit FIFO becomes <= 3 / 4 full b100 = Transmit FIFO becomes <= 7 / 8 full b101-b111 = reserved."]
     #[inline(always)]

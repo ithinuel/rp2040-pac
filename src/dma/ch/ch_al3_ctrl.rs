@@ -19,6 +19,7 @@ pub type HIGH_PRIORITY_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Set the size of each bus transfer (byte/halfword/word). READ_ADDR and WRITE_ADDR advance by this amount (1/2/4 bytes) with each transfer.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATA_SIZE_A {
@@ -112,6 +113,7 @@ pub type INCR_WRITE_W<'a, REG> = crate::BitWriter<'a, REG>;
  Ring sizes between 2 and 32768 bytes are possible. This can apply to either read or write addresses, based on value of RING_SEL.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RING_SIZE_A {
@@ -179,6 +181,7 @@ pub type CHAIN_TO_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
  0x0 to 0x3a -> select DREQ n as TREQ  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TREQ_SEL_A {
@@ -943,6 +946,28 @@ impl R {
     #[inline(always)]
     pub fn ahb_error(&self) -> AHB_ERROR_R {
         AHB_ERROR_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CH_AL3_CTRL")
+            .field("ahb_error", &self.ahb_error())
+            .field("read_error", &self.read_error())
+            .field("write_error", &self.write_error())
+            .field("busy", &self.busy())
+            .field("sniff_en", &self.sniff_en())
+            .field("bswap", &self.bswap())
+            .field("irq_quiet", &self.irq_quiet())
+            .field("treq_sel", &self.treq_sel())
+            .field("chain_to", &self.chain_to())
+            .field("ring_sel", &self.ring_sel())
+            .field("ring_size", &self.ring_size())
+            .field("incr_write", &self.incr_write())
+            .field("incr_read", &self.incr_read())
+            .field("data_size", &self.data_size())
+            .field("high_priority", &self.high_priority())
+            .field("en", &self.en())
+            .finish()
     }
 }
 impl W {

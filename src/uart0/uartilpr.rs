@@ -13,6 +13,13 @@ impl R {
         ILPDVSR_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTILPR")
+            .field("ilpdvsr", &self.ilpdvsr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - 8-bit low-power divisor value. These bits are cleared to 0 at reset."]
     #[inline(always)]

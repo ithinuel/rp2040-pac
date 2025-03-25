@@ -13,6 +13,13 @@ impl R {
         INTERP0_ACCUM1_ADD_R::new(self.bits & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTERP0_ACCUM1_ADD")
+            .field("interp0_accum1_add", &self.interp0_accum1_add())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23"]
     #[inline(always)]

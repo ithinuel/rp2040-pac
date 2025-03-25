@@ -11,6 +11,7 @@ pub type W = crate::W<IC_ENABLE_SPEC>;
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ENABLE_A {
     #[doc = "0: I2C is disabled"]
@@ -82,6 +83,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ABORT_A {
     #[doc = "0: ABORT operation not in progress"]
@@ -145,6 +147,7 @@ where
 #[doc = "In Master mode: - 1'b1: Blocks the transmission of data on I2C bus even if Tx FIFO has data to transmit. - 1'b0: The transmission of data starts on I2C bus automatically, as soon as the first data is available in the Tx FIFO. Note: To block the execution of Master commands, set the TX_CMD_BLOCK bit only when Tx FIFO is empty (IC_STATUS\\[2\\]==1) and Master is in Idle state (IC_STATUS\\[5\\] == 0). Any further commands put in the Tx FIFO are not executed until TX_CMD_BLOCK bit is unset. Reset value: IC_TX_CMD_BLOCK_DEFAULT  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_CMD_BLOCK_A {
     #[doc = "0: Tx Command execution not blocked"]
@@ -222,6 +225,15 @@ impl R {
     #[inline(always)]
     pub fn tx_cmd_block(&self) -> TX_CMD_BLOCK_R {
         TX_CMD_BLOCK_R::new(((self.bits >> 2) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_ENABLE")
+            .field("tx_cmd_block", &self.tx_cmd_block())
+            .field("abort", &self.abort())
+            .field("enable", &self.enable())
+            .finish()
     }
 }
 impl W {

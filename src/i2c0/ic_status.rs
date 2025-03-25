@@ -3,6 +3,7 @@ pub type R = crate::R<IC_STATUS_SPEC>;
 #[doc = "I2C Activity Status. Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACTIVITY_A {
     #[doc = "0: I2C is idle"]
@@ -41,6 +42,7 @@ impl ACTIVITY_R {
 #[doc = "Transmit FIFO Not Full. Set when the transmit FIFO contains one or more empty locations, and is cleared when the FIFO is full. - 0: Transmit FIFO is full - 1: Transmit FIFO is not full Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TFNF_A {
     #[doc = "0: Tx FIFO is full"]
@@ -79,6 +81,7 @@ impl TFNF_R {
 #[doc = "Transmit FIFO Completely Empty. When the transmit FIFO is completely empty, this bit is set. When it contains one or more valid entries, this bit is cleared. This bit field does not request an interrupt. - 0: Transmit FIFO is not empty - 1: Transmit FIFO is empty Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TFE_A {
     #[doc = "0: Tx FIFO not empty"]
@@ -117,6 +120,7 @@ impl TFE_R {
 #[doc = "Receive FIFO Not Empty. This bit is set when the receive FIFO contains one or more entries; it is cleared when the receive FIFO is empty. - 0: Receive FIFO is empty - 1: Receive FIFO is not empty Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RFNE_A {
     #[doc = "0: Rx FIFO is empty"]
@@ -155,6 +159,7 @@ impl RFNE_R {
 #[doc = "Receive FIFO Completely Full. When the receive FIFO is completely full, this bit is set. When the receive FIFO contains one or more empty location, this bit is cleared. - 0: Receive FIFO is not full - 1: Receive FIFO is full Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RFF_A {
     #[doc = "0: Rx FIFO not full"]
@@ -195,6 +200,7 @@ impl RFF_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum MST_ACTIVITY_A {
     #[doc = "0: Master is idle"]
@@ -235,6 +241,7 @@ impl MST_ACTIVITY_R {
 #[doc = "Slave FSM Activity Status. When the Slave Finite State Machine (FSM) is not in the IDLE state, this bit is set. - 0: Slave FSM is in IDLE state so the Slave part of DW_apb_i2c is not Active - 1: Slave FSM is not in IDLE state so the Slave part of DW_apb_i2c is Active Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SLV_ACTIVITY_A {
     #[doc = "0: Slave is idle"]
@@ -307,6 +314,19 @@ impl R {
     #[inline(always)]
     pub fn slv_activity(&self) -> SLV_ACTIVITY_R {
         SLV_ACTIVITY_R::new(((self.bits >> 6) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_STATUS")
+            .field("slv_activity", &self.slv_activity())
+            .field("mst_activity", &self.mst_activity())
+            .field("rff", &self.rff())
+            .field("rfne", &self.rfne())
+            .field("tfe", &self.tfe())
+            .field("tfnf", &self.tfnf())
+            .field("activity", &self.activity())
+            .finish()
     }
 }
 #[doc = "I2C Status Register  

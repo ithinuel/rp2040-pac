@@ -13,6 +13,13 @@ impl R {
         FC0_DELAY_R::new((self.bits & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_DELAY")
+            .field("fc0_delay", &self.fc0_delay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

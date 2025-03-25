@@ -13,6 +13,13 @@ impl R {
         CURRENT_R::new(self.bits & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYST_CVR")
+            .field("current", &self.current())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23 - Reads return the current value of the SysTick counter. This register is write-clear. Writing to it with any value clears the register to 0. Clearing this register also clears the COUNTFLAG bit of the SysTick Control and Status Register."]
     #[inline(always)]

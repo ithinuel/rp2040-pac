@@ -21,6 +21,7 @@ pub type PUE_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Drive strength.  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DRIVE_A {
@@ -149,6 +150,19 @@ impl R {
     #[inline(always)]
     pub fn od(&self) -> OD_R {
         OD_R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_QSPI_SCLK")
+            .field("od", &self.od())
+            .field("ie", &self.ie())
+            .field("drive", &self.drive())
+            .field("pue", &self.pue())
+            .field("pde", &self.pde())
+            .field("schmitt", &self.schmitt())
+            .field("slewfast", &self.slewfast())
+            .finish()
     }
 }
 impl W {

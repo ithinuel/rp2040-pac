@@ -34,6 +34,14 @@ impl R {
         DM_PULLDN_TRIM_R::new(((self.bits >> 8) & 0x1f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBPHY_TRIM")
+            .field("dm_pulldn_trim", &self.dm_pulldn_trim())
+            .field("dp_pulldn_trim", &self.dp_pulldn_trim())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Value to drive to USB PHY  
  DP pulldown resistor trim control  

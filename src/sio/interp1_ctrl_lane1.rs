@@ -91,6 +91,20 @@ impl R {
         FORCE_MSB_R::new(((self.bits >> 19) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTERP1_CTRL_LANE1")
+            .field("force_msb", &self.force_msb())
+            .field("add_raw", &self.add_raw())
+            .field("cross_result", &self.cross_result())
+            .field("cross_input", &self.cross_input())
+            .field("signed", &self.signed())
+            .field("mask_msb", &self.mask_msb())
+            .field("mask_lsb", &self.mask_lsb())
+            .field("shift", &self.shift())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Logical right-shift applied to accumulator before masking"]
     #[inline(always)]

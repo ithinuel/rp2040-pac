@@ -13,6 +13,13 @@ impl R {
         CLR_ACTIVITY_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CLR_ACTIVITY")
+            .field("clr_activity", &self.clr_activity())
+            .finish()
+    }
+}
 #[doc = "Clear ACTIVITY Interrupt Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_clr_activity::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

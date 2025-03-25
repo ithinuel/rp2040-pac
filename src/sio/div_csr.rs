@@ -30,6 +30,14 @@ impl R {
         DIRTY_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIV_CSR")
+            .field("dirty", &self.dirty())
+            .field("ready", &self.ready())
+            .finish()
+    }
+}
 #[doc = "Control and status register for divider.  
 
 You can [`read`](crate::Reg::read) this register and get [`div_csr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -34,6 +34,14 @@ impl R {
         IC_SDA_RX_HOLD_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_SDA_HOLD")
+            .field("ic_sda_rx_hold", &self.ic_sda_rx_hold())
+            .field("ic_sda_tx_hold", &self.ic_sda_tx_hold())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Sets the required SDA hold time in units of ic_clk period, when DW_apb_i2c acts as a transmitter.  
 

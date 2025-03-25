@@ -13,6 +13,13 @@ impl R {
         CLR_TX_OVER_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CLR_TX_OVER")
+            .field("clr_tx_over", &self.clr_tx_over())
+            .finish()
+    }
+}
 #[doc = "Clear TX_OVER Interrupt Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_clr_tx_over::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

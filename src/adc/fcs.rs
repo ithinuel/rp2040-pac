@@ -88,6 +88,22 @@ impl R {
         THRESH_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FCS")
+            .field("thresh", &self.thresh())
+            .field("level", &self.level())
+            .field("over", &self.over())
+            .field("under", &self.under())
+            .field("full", &self.full())
+            .field("empty", &self.empty())
+            .field("dreq_en", &self.dreq_en())
+            .field("err", &self.err())
+            .field("shift", &self.shift())
+            .field("en", &self.en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - If 1: write result to the FIFO after each conversion."]
     #[inline(always)]

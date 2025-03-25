@@ -58,6 +58,15 @@ impl R {
         PRIVDEFENA_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MPU_CTRL")
+            .field("privdefena", &self.privdefena())
+            .field("hfnmiena", &self.hfnmiena())
+            .field("enable", &self.enable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enables the MPU. If the MPU is disabled, privileged and unprivileged accesses use the default memory map.  
  0 = MPU disabled.  

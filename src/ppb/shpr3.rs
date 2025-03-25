@@ -22,6 +22,14 @@ impl R {
         PRI_15_R::new(((self.bits >> 30) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SHPR3")
+            .field("pri_15", &self.pri_15())
+            .field("pri_14", &self.pri_14())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 22:23 - Priority of system handler 14, PendSV"]
     #[inline(always)]

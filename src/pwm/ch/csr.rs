@@ -21,6 +21,7 @@ pub type B_INV_W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DIVMODE_A {
@@ -158,6 +159,19 @@ impl R {
     #[inline(always)]
     pub fn ph_adv(&self) -> PH_ADV_R {
         PH_ADV_R::new(((self.bits >> 7) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CSR")
+            .field("ph_adv", &self.ph_adv())
+            .field("ph_ret", &self.ph_ret())
+            .field("divmode", &self.divmode())
+            .field("b_inv", &self.b_inv())
+            .field("a_inv", &self.a_inv())
+            .field("ph_correct", &self.ph_correct())
+            .field("en", &self.en())
+            .finish()
     }
 }
 impl W {

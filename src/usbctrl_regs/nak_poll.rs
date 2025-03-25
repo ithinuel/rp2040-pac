@@ -22,6 +22,14 @@ impl R {
         DELAY_FS_R::new(((self.bits >> 16) & 0x03ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("NAK_POLL")
+            .field("delay_fs", &self.delay_fs())
+            .field("delay_ls", &self.delay_ls())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:9 - NAK polling interval for a low speed device"]
     #[inline(always)]

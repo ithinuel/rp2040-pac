@@ -41,6 +41,16 @@ impl R {
         FORCE_NOTLEAPYEAR_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("force_notleapyear", &self.force_notleapyear())
+            .field("load", &self.load())
+            .field("rtc_active", &self.rtc_active())
+            .field("rtc_enable", &self.rtc_enable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable RTC"]
     #[inline(always)]

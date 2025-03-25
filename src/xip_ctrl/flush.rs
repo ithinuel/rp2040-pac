@@ -25,6 +25,13 @@ impl R {
         FLUSH_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLUSH")
+            .field("flush", &self.flush())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Write 1 to flush the cache. This clears the tag memory, but  
  the data memory retains its contents. (This means cache-as-SRAM  

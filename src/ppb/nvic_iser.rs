@@ -31,6 +31,13 @@ impl R {
         SETENA_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("NVIC_ISER")
+            .field("setena", &self.setena())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-enable bits.  
  Write:  

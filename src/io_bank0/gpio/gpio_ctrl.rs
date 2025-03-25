@@ -5,6 +5,7 @@ pub type W = crate::W<GPIO_CTRL_SPEC>;
 #[doc = "0-31 -> selects pin function according to the GPIO table. Not all options are valid for all GPIO pins.  
 
 Value on reset: 31"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FUNCSEL_A {
@@ -184,6 +185,7 @@ where
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUTOVER_A {
@@ -272,6 +274,7 @@ where
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OEOVER_A {
@@ -360,6 +363,7 @@ where
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INOVER_A {
@@ -448,6 +452,7 @@ where
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum IRQOVER_A {
@@ -558,6 +563,17 @@ impl R {
     #[inline(always)]
     pub fn irqover(&self) -> IRQOVER_R {
         IRQOVER_R::new(((self.bits >> 28) & 3) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_CTRL")
+            .field("irqover", &self.irqover())
+            .field("inover", &self.inover())
+            .field("oeover", &self.oeover())
+            .field("outover", &self.outover())
+            .field("funcsel", &self.funcsel())
+            .finish()
     }
 }
 impl W {

@@ -22,6 +22,14 @@ impl R {
         INT_R::new(((self.bits >> 4) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIV")
+            .field("int", &self.int())
+            .field("frac", &self.frac())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

@@ -1,4 +1,5 @@
 #[repr(C)]
+#[derive(Debug)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
     clk_gpout0_ctrl: CLK_GPOUT0_CTRL,

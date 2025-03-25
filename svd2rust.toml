@@ -1,5 +1,7 @@
 atomics = false
-make_mod = true
-reexport_core_peripherals = false
+make_mod = false
+reexport_core_peripherals = true
 reexport_interrupt = true
 ident_formats_theme = "legacy"
+impl_defmt = "defmt"
+impl_debug = true

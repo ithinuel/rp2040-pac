@@ -65,6 +65,21 @@ impl R {
         RI_R::new(((self.bits >> 8) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTFR")
+            .field("ri", &self.ri())
+            .field("txfe", &self.txfe())
+            .field("rxff", &self.rxff())
+            .field("txff", &self.txff())
+            .field("rxfe", &self.rxfe())
+            .field("busy", &self.busy())
+            .field("dcd", &self.dcd())
+            .field("dsr", &self.dsr())
+            .field("cts", &self.cts())
+            .finish()
+    }
+}
 #[doc = "Flag Register, UARTFR  
 
 You can [`read`](crate::Reg::read) this register and get [`uartfr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

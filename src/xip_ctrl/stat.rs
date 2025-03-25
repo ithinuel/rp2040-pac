@@ -31,6 +31,15 @@ impl R {
         FIFO_FULL_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STAT")
+            .field("fifo_full", &self.fifo_full())
+            .field("fifo_empty", &self.fifo_empty())
+            .field("flush_ready", &self.flush_ready())
+            .finish()
+    }
+}
 #[doc = "Cache Status  
 
 You can [`read`](crate::Reg::read) this register and get [`stat::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

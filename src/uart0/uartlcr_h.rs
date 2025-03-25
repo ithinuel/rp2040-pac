@@ -67,6 +67,19 @@ impl R {
         SPS_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTLCR_H")
+            .field("sps", &self.sps())
+            .field("wlen", &self.wlen())
+            .field("fen", &self.fen())
+            .field("stp2", &self.stp2())
+            .field("eps", &self.eps())
+            .field("pen", &self.pen())
+            .field("brk", &self.brk())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Send break. If this bit is set to 1, a low-level is continually output on the UARTTXD output, after completing transmission of the current character. For the proper execution of the break command, the software must set this bit for at least two complete frames. For normal use, this bit must be cleared to 0."]
     #[inline(always)]

@@ -292,6 +292,44 @@ impl R {
         EP15_OUT_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BUFF_STATUS")
+            .field("ep15_out", &self.ep15_out())
+            .field("ep15_in", &self.ep15_in())
+            .field("ep14_out", &self.ep14_out())
+            .field("ep14_in", &self.ep14_in())
+            .field("ep13_out", &self.ep13_out())
+            .field("ep13_in", &self.ep13_in())
+            .field("ep12_out", &self.ep12_out())
+            .field("ep12_in", &self.ep12_in())
+            .field("ep11_out", &self.ep11_out())
+            .field("ep11_in", &self.ep11_in())
+            .field("ep10_out", &self.ep10_out())
+            .field("ep10_in", &self.ep10_in())
+            .field("ep9_out", &self.ep9_out())
+            .field("ep9_in", &self.ep9_in())
+            .field("ep8_out", &self.ep8_out())
+            .field("ep8_in", &self.ep8_in())
+            .field("ep7_out", &self.ep7_out())
+            .field("ep7_in", &self.ep7_in())
+            .field("ep6_out", &self.ep6_out())
+            .field("ep6_in", &self.ep6_in())
+            .field("ep5_out", &self.ep5_out())
+            .field("ep5_in", &self.ep5_in())
+            .field("ep4_out", &self.ep4_out())
+            .field("ep4_in", &self.ep4_in())
+            .field("ep3_out", &self.ep3_out())
+            .field("ep3_in", &self.ep3_in())
+            .field("ep2_out", &self.ep2_out())
+            .field("ep2_in", &self.ep2_in())
+            .field("ep1_out", &self.ep1_out())
+            .field("ep1_in", &self.ep1_in())
+            .field("ep0_out", &self.ep0_out())
+            .field("ep0_in", &self.ep0_in())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

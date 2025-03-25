@@ -5,6 +5,7 @@ pub type W = crate::W<CLK_GPOUT1_CTRL_SPEC>;
 #[doc = "Selects the auxiliary clock source, will glitch when switching  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AUXSRC_A {
@@ -237,6 +238,18 @@ impl R {
     #[inline(always)]
     pub fn nudge(&self) -> NUDGE_R {
         NUDGE_R::new(((self.bits >> 20) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_GPOUT1_CTRL")
+            .field("nudge", &self.nudge())
+            .field("phase", &self.phase())
+            .field("dc50", &self.dc50())
+            .field("enable", &self.enable())
+            .field("kill", &self.kill())
+            .field("auxsrc", &self.auxsrc())
+            .finish()
     }
 }
 impl W {

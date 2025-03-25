@@ -73,6 +73,15 @@ impl R {
         POWER_DOWN_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("power_down", &self.power_down())
+            .field("err_badwrite", &self.err_badwrite())
+            .field("en", &self.en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - When 1, enable the cache. When the cache is disabled, all XIP accesses  
  will go straight to the flash, without querying the cache. When enabled,  

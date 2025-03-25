@@ -40,6 +40,16 @@ impl R {
         TXSTALL_R::new(((self.bits >> 24) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FDEBUG")
+            .field("txstall", &self.txstall())
+            .field("txover", &self.txover())
+            .field("rxunder", &self.rxunder())
+            .field("rxstall", &self.rxstall())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - State machine has stalled on full RX FIFO during a blocking PUSH, or an IN with autopush enabled. This flag is also set when a nonblocking PUSH to a full FIFO took place, in which case the state machine has dropped data. Write 1 to clear."]
     #[inline(always)]

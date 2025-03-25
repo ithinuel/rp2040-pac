@@ -13,6 +13,13 @@ impl R {
         TBLOFF_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VTOR")
+            .field("tbloff", &self.tbloff())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:31 - Bits \\[31:8\\] of the indicate the vector table offset address."]
     #[inline(always)]

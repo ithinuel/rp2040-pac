@@ -27,6 +27,15 @@ impl R {
         IMEM_SIZE_R::new(((self.bits >> 16) & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBG_CFGINFO")
+            .field("imem_size", &self.imem_size())
+            .field("sm_count", &self.sm_count())
+            .field("fifo_depth", &self.fifo_depth())
+            .finish()
+    }
+}
 #[doc = "The PIO hardware has some free parameters that may vary between chip products.  
  These should be provided in the chip datasheet, but are also exposed here.  
 

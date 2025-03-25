@@ -76,6 +76,20 @@ impl R {
         CH7_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTR")
+            .field("ch7", &self.ch7())
+            .field("ch6", &self.ch6())
+            .field("ch5", &self.ch5())
+            .field("ch4", &self.ch4())
+            .field("ch3", &self.ch3())
+            .field("ch2", &self.ch2())
+            .field("ch1", &self.ch1())
+            .field("ch0", &self.ch0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

@@ -95,6 +95,21 @@ impl R {
         RROBIN_R::new(((self.bits >> 16) & 0x1f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CS")
+            .field("rrobin", &self.rrobin())
+            .field("ainsel", &self.ainsel())
+            .field("err_sticky", &self.err_sticky())
+            .field("err", &self.err())
+            .field("ready", &self.ready())
+            .field("start_many", &self.start_many())
+            .field("start_once", &self.start_once())
+            .field("ts_en", &self.ts_en())
+            .field("en", &self.en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Power on ADC and enable its clock.  
  1 - enabled. 0 - disabled."]

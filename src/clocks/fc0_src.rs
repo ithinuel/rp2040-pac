@@ -5,6 +5,7 @@ pub type W = crate::W<FC0_SRC_SPEC>;
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FC0_SRC_A {
@@ -225,6 +226,13 @@ impl R {
     #[inline(always)]
     pub fn fc0_src(&self) -> FC0_SRC_R {
         FC0_SRC_R::new((self.bits & 0xff) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_SRC")
+            .field("fc0_src", &self.fc0_src())
+            .finish()
     }
 }
 impl W {

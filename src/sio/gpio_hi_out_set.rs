@@ -2,6 +2,11 @@
 pub type W = crate::W<GPIO_HI_OUT_SET_SPEC>;
 #[doc = "Field `GPIO_HI_OUT_SET` writer - Perform an atomic bit-set on GPIO_HI_OUT, i.e. `GPIO_HI_OUT |= wdata`"]
 pub type GPIO_HI_OUT_SET_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+impl core::fmt::Debug for crate::generic::Reg<GPIO_HI_OUT_SET_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Perform an atomic bit-set on GPIO_HI_OUT, i.e. `GPIO_HI_OUT |= wdata`"]
     #[inline(always)]

@@ -197,6 +197,33 @@ impl R {
         DM_OVV_R::new(((self.bits >> 22) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USBPHY_DIRECT")
+            .field("dm_ovv", &self.dm_ovv())
+            .field("dp_ovv", &self.dp_ovv())
+            .field("dm_ovcn", &self.dm_ovcn())
+            .field("dp_ovcn", &self.dp_ovcn())
+            .field("rx_dm", &self.rx_dm())
+            .field("rx_dp", &self.rx_dp())
+            .field("rx_dd", &self.rx_dd())
+            .field("tx_diffmode", &self.tx_diffmode())
+            .field("tx_fsslew", &self.tx_fsslew())
+            .field("tx_pd", &self.tx_pd())
+            .field("rx_pd", &self.rx_pd())
+            .field("tx_dm", &self.tx_dm())
+            .field("tx_dp", &self.tx_dp())
+            .field("tx_dm_oe", &self.tx_dm_oe())
+            .field("tx_dp_oe", &self.tx_dp_oe())
+            .field("dm_pulldn_en", &self.dm_pulldn_en())
+            .field("dm_pullup_en", &self.dm_pullup_en())
+            .field("dm_pullup_hisel", &self.dm_pullup_hisel())
+            .field("dp_pulldn_en", &self.dp_pulldn_en())
+            .field("dp_pullup_en", &self.dp_pullup_en())
+            .field("dp_pullup_hisel", &self.dp_pullup_hisel())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Enable the second DP pull up resistor. 0 - Pull = Rpu2; 1 - Pull = Rpu1 + Rpu2"]
     #[inline(always)]

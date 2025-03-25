@@ -58,6 +58,20 @@ impl R {
         TX_BUFFER_DEPTH_R::new(((self.bits >> 16) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_COMP_PARAM_1")
+            .field("tx_buffer_depth", &self.tx_buffer_depth())
+            .field("rx_buffer_depth", &self.rx_buffer_depth())
+            .field("add_encoded_params", &self.add_encoded_params())
+            .field("has_dma", &self.has_dma())
+            .field("intr_io", &self.intr_io())
+            .field("hc_count_values", &self.hc_count_values())
+            .field("max_speed_mode", &self.max_speed_mode())
+            .field("apb_data_width", &self.apb_data_width())
+            .finish()
+    }
+}
 #[doc = "Component Parameter Register 1  
 
  Note This register is not implemented and therefore reads as 0. If it was implemented it would be a constant read-only register that contains encoded information about the component's parameter settings. Fields shown below are the settings for those parameters  

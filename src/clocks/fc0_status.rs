@@ -58,6 +58,20 @@ impl R {
         DIED_R::new(((self.bits >> 28) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FC0_STATUS")
+            .field("died", &self.died())
+            .field("fast", &self.fast())
+            .field("slow", &self.slow())
+            .field("fail", &self.fail())
+            .field("waiting", &self.waiting())
+            .field("running", &self.running())
+            .field("done", &self.done())
+            .field("pass", &self.pass())
+            .finish()
+    }
+}
 #[doc = "Frequency counter status  
 
 You can [`read`](crate::Reg::read) this register and get [`fc0_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

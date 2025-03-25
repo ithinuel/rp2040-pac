@@ -13,6 +13,13 @@ impl R {
         CLR_TX_ABRT_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CLR_TX_ABRT")
+            .field("clr_tx_abrt", &self.clr_tx_abrt())
+            .finish()
+    }
+}
 #[doc = "Clear TX_ABRT Interrupt Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_clr_tx_abrt::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

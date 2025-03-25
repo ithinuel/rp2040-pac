@@ -36,6 +36,16 @@ impl R {
         COUNT_R::new(((self.bits >> 11) & 0x01ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TICK")
+            .field("count", &self.count())
+            .field("running", &self.running())
+            .field("enable", &self.enable())
+            .field("cycles", &self.cycles())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:8 - Total number of clk_tick cycles before the next tick."]
     #[inline(always)]

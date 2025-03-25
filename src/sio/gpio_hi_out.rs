@@ -25,6 +25,13 @@ impl R {
         GPIO_HI_OUT_R::new((self.bits & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_HI_OUT")
+            .field("gpio_hi_out", &self.gpio_hi_out())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Set output level (1/0 -> high/low) for QSPI IO0...5.  
  Reading back gives the last value written, NOT the input value from the pins.  

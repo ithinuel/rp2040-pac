@@ -19,6 +19,11 @@ impl R {
         SER_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SER").field("ser", &self.ser()).finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - For each bit:  
  0 -> slave not selected  

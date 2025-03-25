@@ -9,6 +9,13 @@ impl R {
         IC_COMP_TYPE_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_COMP_TYPE")
+            .field("ic_comp_type", &self.ic_comp_type())
+            .finish()
+    }
+}
 #[doc = "I2C Component Type Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_comp_type::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

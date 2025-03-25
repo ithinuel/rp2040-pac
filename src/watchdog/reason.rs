@@ -16,6 +16,14 @@ impl R {
         FORCE_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("REASON")
+            .field("force", &self.force())
+            .field("timer", &self.timer())
+            .finish()
+    }
+}
 #[doc = "Logs the reason for the last reset. Both bits are zero for the case of a hardware reset.  
 
 You can [`read`](crate::Reg::read) this register and get [`reason::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

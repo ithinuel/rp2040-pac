@@ -23,6 +23,15 @@ impl R {
         NOREF_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SYST_CALIB")
+            .field("noref", &self.noref())
+            .field("skew", &self.skew())
+            .field("tenms", &self.tenms())
+            .finish()
+    }
+}
 #[doc = "Use the SysTick Calibration Value Register to enable software to scale to any required speed using divide and multiply.  
 
 You can [`read`](crate::Reg::read) this register and get [`syst_calib::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

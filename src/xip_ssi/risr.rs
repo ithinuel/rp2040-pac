@@ -44,6 +44,18 @@ impl R {
         MSTIR_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RISR")
+            .field("mstir", &self.mstir())
+            .field("rxfir", &self.rxfir())
+            .field("rxoir", &self.rxoir())
+            .field("rxuir", &self.rxuir())
+            .field("txoir", &self.txoir())
+            .field("txeir", &self.txeir())
+            .finish()
+    }
+}
 #[doc = "Raw interrupt status  
 
 You can [`read`](crate::Reg::read) this register and get [`risr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

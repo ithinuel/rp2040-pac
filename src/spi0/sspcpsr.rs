@@ -13,6 +13,13 @@ impl R {
         CPSDVSR_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPCPSR")
+            .field("cpsdvsr", &self.cpsdvsr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Clock prescale divisor. Must be an even number from 2-254, depending on the frequency of SSPCLK. The least significant bit always returns zero on reads."]
     #[inline(always)]

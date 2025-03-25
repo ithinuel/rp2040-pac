@@ -9,6 +9,7 @@ pub type DSS_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Frame format.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FRF_A {
@@ -118,6 +119,17 @@ impl R {
     #[inline(always)]
     pub fn scr(&self) -> SCR_R {
         SCR_R::new(((self.bits >> 8) & 0xff) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPCR0")
+            .field("scr", &self.scr())
+            .field("sph", &self.sph())
+            .field("spo", &self.spo())
+            .field("frf", &self.frf())
+            .field("dss", &self.dss())
+            .finish()
     }
 }
 impl W {
