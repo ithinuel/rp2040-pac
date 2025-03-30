@@ -9,6 +9,13 @@ impl R {
         IC_COMP_VERSION_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_COMP_VERSION")
+            .field("ic_comp_version", &self.ic_comp_version())
+            .finish()
+    }
+}
 #[doc = "I2C Component Version Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_comp_version::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

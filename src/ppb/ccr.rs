@@ -16,6 +16,14 @@ impl R {
         STKALIGN_R::new(((self.bits >> 9) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCR")
+            .field("stkalign", &self.stkalign())
+            .field("unalign_trp", &self.unalign_trp())
+            .finish()
+    }
+}
 #[doc = "The Configuration and Control Register permanently enables stack alignment and causes unaligned accesses to result in a Hard Fault.  
 
 You can [`read`](crate::Reg::read) this register and get [`ccr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

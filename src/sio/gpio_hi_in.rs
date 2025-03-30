@@ -9,6 +9,13 @@ impl R {
         GPIO_HI_IN_R::new((self.bits & 0x3f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_HI_IN")
+            .field("gpio_hi_in", &self.gpio_hi_in())
+            .finish()
+    }
+}
 #[doc = "Input value for QSPI pins  
 
 You can [`read`](crate::Reg::read) this register and get [`gpio_hi_in::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

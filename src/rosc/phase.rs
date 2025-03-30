@@ -55,6 +55,16 @@ impl R {
         PASSWD_R::new(((self.bits >> 4) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PHASE")
+            .field("passwd", &self.passwd())
+            .field("enable", &self.enable())
+            .field("flip", &self.flip())
+            .field("shift", &self.shift())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1 - phase shift the phase-shifted output by SHIFT input clocks  
  this can be changed on-the-fly  

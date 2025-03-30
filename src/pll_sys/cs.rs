@@ -35,6 +35,15 @@ impl R {
         LOCK_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CS")
+            .field("lock", &self.lock())
+            .field("bypass", &self.bypass())
+            .field("refdiv", &self.refdiv())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Divides the PLL input reference clock.  
  Behaviour is undefined for div=0.  

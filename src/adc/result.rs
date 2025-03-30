@@ -9,6 +9,13 @@ impl R {
         RESULT_R::new((self.bits & 0x0fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RESULT")
+            .field("result", &self.result())
+            .finish()
+    }
+}
 #[doc = "Result of most recent ADC conversion  
 
 You can [`read`](crate::Reg::read) this register and get [`result::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -51,6 +51,19 @@ impl R {
         DCOL_R::new(((self.bits >> 6) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SR")
+            .field("dcol", &self.dcol())
+            .field("txe", &self.txe())
+            .field("rff", &self.rff())
+            .field("rfne", &self.rfne())
+            .field("tfe", &self.tfe())
+            .field("tfnf", &self.tfnf())
+            .field("busy", &self.busy())
+            .finish()
+    }
+}
 #[doc = "Status register  
 
 You can [`read`](crate::Reg::read) this register and get [`sr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

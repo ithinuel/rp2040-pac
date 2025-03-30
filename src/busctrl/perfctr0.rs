@@ -19,6 +19,13 @@ impl R {
         PERFCTR0_R::new(self.bits & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PERFCTR0")
+            .field("perfctr0", &self.perfctr0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:23 - Busfabric saturating performance counter 0  
  Count some event signal from the busfabric arbiters.  

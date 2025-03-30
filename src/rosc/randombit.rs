@@ -9,6 +9,13 @@ impl R {
         RANDOMBIT_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RANDOMBIT")
+            .field("randombit", &self.randombit())
+            .finish()
+    }
+}
 #[doc = "This just reads the state of the oscillator output so randomness is compromised if the ring oscillator is stopped or run at a harmonic of the bus frequency  
 
 You can [`read`](crate::Reg::read) this register and get [`randombit::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

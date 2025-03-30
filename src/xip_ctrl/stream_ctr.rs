@@ -34,6 +34,13 @@ impl R {
         STREAM_CTR_R::new(self.bits & 0x003f_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STREAM_CTR")
+            .field("stream_ctr", &self.stream_ctr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:21 - Write a nonzero value to start a streaming read. This will then  
  progress in the background, using flash idle cycles to transfer  

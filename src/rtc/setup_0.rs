@@ -31,6 +31,15 @@ impl R {
         YEAR_R::new(((self.bits >> 12) & 0x0fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SETUP_0")
+            .field("year", &self.year())
+            .field("month", &self.month())
+            .field("day", &self.day())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Day of the month (1..31)"]
     #[inline(always)]

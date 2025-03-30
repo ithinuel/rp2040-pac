@@ -5,6 +5,7 @@ pub type R = crate::R<IC_INTR_STAT_SPEC>;
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RX_UNDER_A {
     #[doc = "0: RX_UNDER interrupt is inactive"]
@@ -47,6 +48,7 @@ impl R_RX_UNDER_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RX_OVER_A {
     #[doc = "0: R_RX_OVER interrupt is inactive"]
@@ -89,6 +91,7 @@ impl R_RX_OVER_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RX_FULL_A {
     #[doc = "0: R_RX_FULL interrupt is inactive"]
@@ -131,6 +134,7 @@ impl R_RX_FULL_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_TX_OVER_A {
     #[doc = "0: R_TX_OVER interrupt is inactive"]
@@ -173,6 +177,7 @@ impl R_TX_OVER_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_TX_EMPTY_A {
     #[doc = "0: R_TX_EMPTY interrupt is inactive"]
@@ -215,6 +220,7 @@ impl R_TX_EMPTY_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RD_REQ_A {
     #[doc = "0: R_RD_REQ interrupt is inactive"]
@@ -257,6 +263,7 @@ impl R_RD_REQ_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_TX_ABRT_A {
     #[doc = "0: R_TX_ABRT interrupt is inactive"]
@@ -299,6 +306,7 @@ impl R_TX_ABRT_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RX_DONE_A {
     #[doc = "0: R_RX_DONE interrupt is inactive"]
@@ -341,6 +349,7 @@ impl R_RX_DONE_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_ACTIVITY_A {
     #[doc = "0: R_ACTIVITY interrupt is inactive"]
@@ -383,6 +392,7 @@ impl R_ACTIVITY_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_STOP_DET_A {
     #[doc = "0: R_STOP_DET interrupt is inactive"]
@@ -425,6 +435,7 @@ impl R_STOP_DET_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_START_DET_A {
     #[doc = "0: R_START_DET interrupt is inactive"]
@@ -467,6 +478,7 @@ impl R_START_DET_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_GEN_CALL_A {
     #[doc = "0: R_GEN_CALL interrupt is inactive"]
@@ -509,6 +521,7 @@ impl R_GEN_CALL_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum R_RESTART_DET_A {
     #[doc = "0: R_RESTART_DET interrupt is inactive"]
@@ -637,6 +650,25 @@ impl R {
     #[inline(always)]
     pub fn r_restart_det(&self) -> R_RESTART_DET_R {
         R_RESTART_DET_R::new(((self.bits >> 12) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_INTR_STAT")
+            .field("r_restart_det", &self.r_restart_det())
+            .field("r_gen_call", &self.r_gen_call())
+            .field("r_start_det", &self.r_start_det())
+            .field("r_stop_det", &self.r_stop_det())
+            .field("r_activity", &self.r_activity())
+            .field("r_rx_done", &self.r_rx_done())
+            .field("r_tx_abrt", &self.r_tx_abrt())
+            .field("r_rd_req", &self.r_rd_req())
+            .field("r_tx_empty", &self.r_tx_empty())
+            .field("r_tx_over", &self.r_tx_over())
+            .field("r_rx_full", &self.r_rx_full())
+            .field("r_rx_over", &self.r_rx_over())
+            .field("r_rx_under", &self.r_rx_under())
+            .finish()
     }
 }
 #[doc = "I2C Interrupt Status Register  

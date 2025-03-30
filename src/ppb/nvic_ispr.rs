@@ -40,6 +40,13 @@ impl R {
         SETPEND_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("NVIC_ISPR")
+            .field("setpend", &self.setpend())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:31 - Interrupt set-pending bits.  
  Write:  

@@ -226,6 +226,44 @@ impl R {
         GPIO7_EDGE_HIGH_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PROC1_INTS")
+            .field("gpio7_edge_high", &self.gpio7_edge_high())
+            .field("gpio7_edge_low", &self.gpio7_edge_low())
+            .field("gpio7_level_high", &self.gpio7_level_high())
+            .field("gpio7_level_low", &self.gpio7_level_low())
+            .field("gpio6_edge_high", &self.gpio6_edge_high())
+            .field("gpio6_edge_low", &self.gpio6_edge_low())
+            .field("gpio6_level_high", &self.gpio6_level_high())
+            .field("gpio6_level_low", &self.gpio6_level_low())
+            .field("gpio5_edge_high", &self.gpio5_edge_high())
+            .field("gpio5_edge_low", &self.gpio5_edge_low())
+            .field("gpio5_level_high", &self.gpio5_level_high())
+            .field("gpio5_level_low", &self.gpio5_level_low())
+            .field("gpio4_edge_high", &self.gpio4_edge_high())
+            .field("gpio4_edge_low", &self.gpio4_edge_low())
+            .field("gpio4_level_high", &self.gpio4_level_high())
+            .field("gpio4_level_low", &self.gpio4_level_low())
+            .field("gpio3_edge_high", &self.gpio3_edge_high())
+            .field("gpio3_edge_low", &self.gpio3_edge_low())
+            .field("gpio3_level_high", &self.gpio3_level_high())
+            .field("gpio3_level_low", &self.gpio3_level_low())
+            .field("gpio2_edge_high", &self.gpio2_edge_high())
+            .field("gpio2_edge_low", &self.gpio2_edge_low())
+            .field("gpio2_level_high", &self.gpio2_level_high())
+            .field("gpio2_level_low", &self.gpio2_level_low())
+            .field("gpio1_edge_high", &self.gpio1_edge_high())
+            .field("gpio1_edge_low", &self.gpio1_edge_low())
+            .field("gpio1_level_high", &self.gpio1_level_high())
+            .field("gpio1_level_low", &self.gpio1_level_low())
+            .field("gpio0_edge_high", &self.gpio0_edge_high())
+            .field("gpio0_edge_low", &self.gpio0_edge_low())
+            .field("gpio0_level_high", &self.gpio0_level_high())
+            .field("gpio0_level_low", &self.gpio0_level_low())
+            .finish()
+    }
+}
 #[doc = "Interrupt status after masking & forcing for proc1  
 
 You can [`read`](crate::Reg::read) this register and get [`proc1_ints::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

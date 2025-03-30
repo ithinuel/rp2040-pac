@@ -13,6 +13,13 @@ impl R {
         CLR_STOP_DET_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_CLR_STOP_DET")
+            .field("clr_stop_det", &self.clr_stop_det())
+            .finish()
+    }
+}
 #[doc = "Clear STOP_DET Interrupt Register  
 
 You can [`read`](crate::Reg::read) this register and get [`ic_clr_stop_det::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

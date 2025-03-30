@@ -1,10 +1,13 @@
 _svd: "./rp2040.svd"
 
-_modify:
-  TIMER:
-    name: "TIMER0"
+CLOCKS:
+  _modify:
+    CLK_SYS_RESUS_CTRL:
+      description: "Control for the system clock resuscitator."
+    CLK_SYS_RESUS_STATUS:
+      description: "Status for the system clock resuscitator."
 
-TIMER0:
+TIMER:
   ALARM0:
     _add:
       ALARM0:

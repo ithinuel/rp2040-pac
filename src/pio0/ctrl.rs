@@ -55,6 +55,15 @@ impl R {
         CLKDIV_RESTART_R::new(((self.bits >> 8) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("clkdiv_restart", &self.clkdiv_restart())
+            .field("sm_restart", &self.sm_restart())
+            .field("sm_enable", &self.sm_enable())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3 - Enable/disable each of the four state machines by writing 1/0 to each of these four bits. When disabled, a state machine will cease executing instructions, except those written directly to SMx_INSTR by the system. Multiple bits can be set/cleared at once to run/halt multiple state machines simultaneously."]
     #[inline(always)]

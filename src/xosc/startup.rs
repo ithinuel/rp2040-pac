@@ -22,6 +22,14 @@ impl R {
         X4_R::new(((self.bits >> 20) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STARTUP")
+            .field("x4", &self.x4())
+            .field("delay", &self.delay())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:13 - in multiples of 256*xtal_period. The reset value of 0xc4 corresponds to approx 50 000 cycles."]
     #[inline(always)]

@@ -9,6 +9,13 @@ impl R {
         TIMEHR_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMEHR")
+            .field("timehr", &self.timehr())
+            .finish()
+    }
+}
 #[doc = "Read from bits 63:32 of time  
  always read timelr before timehr  
 

@@ -40,6 +40,16 @@ impl R {
         OE_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTRSR")
+            .field("oe", &self.oe())
+            .field("be", &self.be())
+            .field("pe", &self.pe())
+            .field("fe", &self.fe())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Framing error. When set to 1, it indicates that the received character did not have a valid stop bit (a valid stop bit is 1). This bit is cleared to 0 by a write to UARTECR. In FIFO mode, this error is associated with the character at the top of the FIFO."]
     #[inline(always)]

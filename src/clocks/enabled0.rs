@@ -226,6 +226,47 @@ impl R {
         CLK_SYS_SRAM3_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ENABLED0")
+            .field("clk_sys_sram3", &self.clk_sys_sram3())
+            .field("clk_sys_sram2", &self.clk_sys_sram2())
+            .field("clk_sys_sram1", &self.clk_sys_sram1())
+            .field("clk_sys_sram0", &self.clk_sys_sram0())
+            .field("clk_sys_spi1", &self.clk_sys_spi1())
+            .field("clk_peri_spi1", &self.clk_peri_spi1())
+            .field("clk_sys_spi0", &self.clk_sys_spi0())
+            .field("clk_peri_spi0", &self.clk_peri_spi0())
+            .field("clk_sys_sio", &self.clk_sys_sio())
+            .field("clk_sys_rtc", &self.clk_sys_rtc())
+            .field("clk_rtc_rtc", &self.clk_rtc_rtc())
+            .field("clk_sys_rosc", &self.clk_sys_rosc())
+            .field("clk_sys_rom", &self.clk_sys_rom())
+            .field("clk_sys_resets", &self.clk_sys_resets())
+            .field("clk_sys_pwm", &self.clk_sys_pwm())
+            .field("clk_sys_psm", &self.clk_sys_psm())
+            .field("clk_sys_pll_usb", &self.clk_sys_pll_usb())
+            .field("clk_sys_pll_sys", &self.clk_sys_pll_sys())
+            .field("clk_sys_pio1", &self.clk_sys_pio1())
+            .field("clk_sys_pio0", &self.clk_sys_pio0())
+            .field("clk_sys_pads", &self.clk_sys_pads())
+            .field(
+                "clk_sys_vreg_and_chip_reset",
+                &self.clk_sys_vreg_and_chip_reset(),
+            )
+            .field("clk_sys_jtag", &self.clk_sys_jtag())
+            .field("clk_sys_io", &self.clk_sys_io())
+            .field("clk_sys_i2c1", &self.clk_sys_i2c1())
+            .field("clk_sys_i2c0", &self.clk_sys_i2c0())
+            .field("clk_sys_dma", &self.clk_sys_dma())
+            .field("clk_sys_busfabric", &self.clk_sys_busfabric())
+            .field("clk_sys_busctrl", &self.clk_sys_busctrl())
+            .field("clk_sys_adc", &self.clk_sys_adc())
+            .field("clk_adc_adc", &self.clk_adc_adc())
+            .field("clk_sys_clocks", &self.clk_sys_clocks())
+            .finish()
+    }
+}
 #[doc = "indicates the state of the clock enable  
 
 You can [`read`](crate::Reg::read) this register and get [`enabled0::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

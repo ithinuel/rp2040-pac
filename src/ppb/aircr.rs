@@ -46,6 +46,16 @@ impl R {
         VECTKEY_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AIRCR")
+            .field("vectkey", &self.vectkey())
+            .field("endianess", &self.endianess())
+            .field("sysresetreq", &self.sysresetreq())
+            .field("vectclractive", &self.vectclractive())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Clears all active state information for fixed and configurable exceptions. This bit: is self-clearing, can only be set by the DAP when the core is halted. When set: clears all active exception status of the processor, forces a return to Thread mode, forces an IPSR of 0. A debugger must re-initialize the stack."]
     #[inline(always)]

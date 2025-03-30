@@ -103,6 +103,23 @@ impl R {
         OEIM_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTIMSC")
+            .field("oeim", &self.oeim())
+            .field("beim", &self.beim())
+            .field("peim", &self.peim())
+            .field("feim", &self.feim())
+            .field("rtim", &self.rtim())
+            .field("txim", &self.txim())
+            .field("rxim", &self.rxim())
+            .field("dsrmim", &self.dsrmim())
+            .field("dcdmim", &self.dcdmim())
+            .field("ctsmim", &self.ctsmim())
+            .field("rimim", &self.rimim())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - nUARTRI modem interrupt mask. A read returns the current mask for the UARTRIINTR interrupt. On a write of 1, the mask of the UARTRIINTR interrupt is set. A write of 0 clears the mask."]
     #[inline(always)]

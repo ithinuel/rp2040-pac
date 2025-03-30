@@ -220,6 +220,36 @@ impl R {
         EP0_INT_STALL_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SIE_CTRL")
+            .field("ep0_int_stall", &self.ep0_int_stall())
+            .field("ep0_double_buf", &self.ep0_double_buf())
+            .field("ep0_int_1buf", &self.ep0_int_1buf())
+            .field("ep0_int_2buf", &self.ep0_int_2buf())
+            .field("ep0_int_nak", &self.ep0_int_nak())
+            .field("direct_en", &self.direct_en())
+            .field("direct_dp", &self.direct_dp())
+            .field("direct_dm", &self.direct_dm())
+            .field("transceiver_pd", &self.transceiver_pd())
+            .field("rpu_opt", &self.rpu_opt())
+            .field("pullup_en", &self.pullup_en())
+            .field("pulldown_en", &self.pulldown_en())
+            .field("reset_bus", &self.reset_bus())
+            .field("resume", &self.resume())
+            .field("vbus_en", &self.vbus_en())
+            .field("keep_alive_en", &self.keep_alive_en())
+            .field("sof_en", &self.sof_en())
+            .field("sof_sync", &self.sof_sync())
+            .field("preamble_en", &self.preamble_en())
+            .field("stop_trans", &self.stop_trans())
+            .field("receive_data", &self.receive_data())
+            .field("send_data", &self.send_data())
+            .field("send_setup", &self.send_setup())
+            .field("start_trans", &self.start_trans())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Host: Start transaction"]
     #[inline(always)]

@@ -13,6 +13,13 @@ impl R {
         INT_EP_ACTIVE_R::new(((self.bits >> 1) & 0x7fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INT_EP_CTRL")
+            .field("int_ep_active", &self.int_ep_active())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 1:15 - Host: Enable interrupt endpoint 1 -> 15"]
     #[inline(always)]

@@ -103,6 +103,23 @@ impl R {
         OEIC_R::new(((self.bits >> 10) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTICR")
+            .field("oeic", &self.oeic())
+            .field("beic", &self.beic())
+            .field("peic", &self.peic())
+            .field("feic", &self.feic())
+            .field("rtic", &self.rtic())
+            .field("txic", &self.txic())
+            .field("rxic", &self.rxic())
+            .field("dsrmic", &self.dsrmic())
+            .field("dcdmic", &self.dcdmic())
+            .field("ctsmic", &self.ctsmic())
+            .field("rimic", &self.rimic())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - nUARTRI modem interrupt clear. Clears the UARTRIINTR interrupt."]
     #[inline(always)]

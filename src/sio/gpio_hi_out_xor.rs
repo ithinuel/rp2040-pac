@@ -2,6 +2,11 @@
 pub type W = crate::W<GPIO_HI_OUT_XOR_SPEC>;
 #[doc = "Field `GPIO_HI_OUT_XOR` writer - Perform an atomic bitwise XOR on GPIO_HI_OUT, i.e. `GPIO_HI_OUT ^= wdata`"]
 pub type GPIO_HI_OUT_XOR_W<'a, REG> = crate::FieldWriter<'a, REG, 6>;
+impl core::fmt::Debug for crate::generic::Reg<GPIO_HI_OUT_XOR_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:5 - Perform an atomic bitwise XOR on GPIO_HI_OUT, i.e. `GPIO_HI_OUT ^= wdata`"]
     #[inline(always)]

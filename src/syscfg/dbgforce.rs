@@ -72,6 +72,20 @@ impl R {
         PROC1_ATTACH_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBGFORCE")
+            .field("proc1_attach", &self.proc1_attach())
+            .field("proc1_swclk", &self.proc1_swclk())
+            .field("proc1_swdi", &self.proc1_swdi())
+            .field("proc1_swdo", &self.proc1_swdo())
+            .field("proc0_attach", &self.proc0_attach())
+            .field("proc0_swclk", &self.proc0_swclk())
+            .field("proc0_swdi", &self.proc0_swdi())
+            .field("proc0_swdo", &self.proc0_swdo())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Directly drive processor 0 SWDIO input, if PROC0_ATTACH is set"]
     #[inline(always)]

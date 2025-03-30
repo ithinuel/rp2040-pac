@@ -9,6 +9,7 @@ pub type STATUS_N_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Comparison used for the MOV x, STATUS instruction.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STATUS_SEL_A {
     #[doc = "0: All-ones if TX FIFO level < N, otherwise all-zeroes"]
@@ -162,6 +163,23 @@ impl R {
     #[inline(always)]
     pub fn exec_stalled(&self) -> EXEC_STALLED_R {
         EXEC_STALLED_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SM_EXECCTRL")
+            .field("exec_stalled", &self.exec_stalled())
+            .field("side_en", &self.side_en())
+            .field("side_pindir", &self.side_pindir())
+            .field("jmp_pin", &self.jmp_pin())
+            .field("out_en_sel", &self.out_en_sel())
+            .field("inline_out_en", &self.inline_out_en())
+            .field("out_sticky", &self.out_sticky())
+            .field("wrap_top", &self.wrap_top())
+            .field("wrap_bottom", &self.wrap_bottom())
+            .field("status_sel", &self.status_sel())
+            .field("status_n", &self.status_n())
+            .finish()
     }
 }
 impl W {

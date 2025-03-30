@@ -43,6 +43,16 @@ impl R {
         OE_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTDR")
+            .field("oe", &self.oe())
+            .field("be", &self.be())
+            .field("pe", &self.pe())
+            .field("fe", &self.fe())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Receive (read) data character. Transmit (write) data character."]
     #[inline(always)]

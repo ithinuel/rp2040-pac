@@ -5,6 +5,7 @@ pub type W = crate::W<CLK_REF_CTRL_SPEC>;
 #[doc = "Selects the clock source glitchlessly, can be changed on-the-fly  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SRC_A {
@@ -80,6 +81,7 @@ where
 #[doc = "Selects the auxiliary clock source, will glitch when switching  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AUXSRC_A {
@@ -162,6 +164,14 @@ impl R {
     #[inline(always)]
     pub fn auxsrc(&self) -> AUXSRC_R {
         AUXSRC_R::new(((self.bits >> 5) & 3) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_REF_CTRL")
+            .field("auxsrc", &self.auxsrc())
+            .field("src", &self.src())
+            .finish()
     }
 }
 impl W {

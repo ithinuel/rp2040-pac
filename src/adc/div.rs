@@ -22,6 +22,14 @@ impl R {
         INT_R::new(((self.bits >> 8) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIV")
+            .field("int", &self.int())
+            .field("frac", &self.frac())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Fractional part of clock divisor. First-order delta-sigma."]
     #[inline(always)]

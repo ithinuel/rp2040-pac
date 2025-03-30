@@ -2217,6 +2217,7 @@
         </register>
         <register>
           <name>CLK_SYS_RESUS_CTRL</name>
+          <description>Control for the system clock resuscitator.</description>
           <addressOffset>0x78</addressOffset>
           <resetValue>0x000000FF</resetValue>
           <fields>
@@ -2249,6 +2250,7 @@
         </register>
         <register>
           <name>CLK_SYS_RESUS_STATUS</name>
+          <description>Status for the system clock resuscitator.</description>
           <addressOffset>0x7C</addressOffset>
           <resetValue>0x00000000</resetValue>
           <fields>
@@ -13445,7 +13447,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>TIMER0</name>
+      <name>TIMER</name>
       <version>1</version>
       <description>Controls time and alarms\n
         time is a 64 bit value indicating the time in usec since power-on\n

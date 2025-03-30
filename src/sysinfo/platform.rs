@@ -16,6 +16,14 @@ impl R {
         ASIC_R::new(((self.bits >> 1) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PLATFORM")
+            .field("asic", &self.asic())
+            .field("fpga", &self.fpga())
+            .finish()
+    }
+}
 #[doc = "Platform register. Allows software to know what environment it is running in.  
 
 You can [`read`](crate::Reg::read) this register and get [`platform::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

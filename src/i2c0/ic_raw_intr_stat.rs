@@ -5,6 +5,7 @@ pub type R = crate::R<IC_RAW_INTR_STAT_SPEC>;
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_UNDER_A {
     #[doc = "0: RX_UNDER interrupt is inactive"]
@@ -49,6 +50,7 @@ impl RX_UNDER_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_OVER_A {
     #[doc = "0: RX_OVER interrupt is inactive"]
@@ -93,6 +95,7 @@ impl RX_OVER_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_FULL_A {
     #[doc = "0: RX_FULL interrupt is inactive"]
@@ -135,6 +138,7 @@ impl RX_FULL_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_OVER_A {
     #[doc = "0: TX_OVER interrupt is inactive"]
@@ -177,6 +181,7 @@ impl TX_OVER_R {
  Reset value: 0x0.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_EMPTY_A {
     #[doc = "0: TX_EMPTY interrupt is inactive"]
@@ -219,6 +224,7 @@ impl TX_EMPTY_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RD_REQ_A {
     #[doc = "0: RD_REQ interrupt is inactive"]
@@ -263,6 +269,7 @@ impl RD_REQ_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum TX_ABRT_A {
     #[doc = "0: TX_ABRT interrupt is inactive"]
@@ -307,6 +314,7 @@ impl TX_ABRT_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RX_DONE_A {
     #[doc = "0: RX_DONE interrupt is inactive"]
@@ -349,6 +357,7 @@ impl RX_DONE_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACTIVITY_A {
     #[doc = "0: RAW_INTR_ACTIVITY interrupt is inactive"]
@@ -391,6 +400,7 @@ impl ACTIVITY_R {
  In Slave Mode: - If IC_CON\\[7\\]=1'b1 (STOP_DET_IFADDRESSED), the STOP_DET interrupt will be issued only if slave is addressed. Note: During a general call address, this slave does not issue a STOP_DET interrupt if STOP_DET_IF_ADDRESSED=1'b1, even if the slave responds to the general call address by generating ACK. The STOP_DET interrupt is generated only when the transmitted address matches the slave address (SAR). - If IC_CON\\[7\\]=1'b0 (STOP_DET_IFADDRESSED), the STOP_DET interrupt is issued irrespective of whether it is being addressed. In Master Mode: - If IC_CON\\[10\\]=1'b1 (STOP_DET_IF_MASTER_ACTIVE),the STOP_DET interrupt will be issued only if Master is active. - If IC_CON\\[10\\]=1'b0 (STOP_DET_IFADDRESSED),the STOP_DET interrupt will be issued irrespective of whether master is active or not. Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_DET_A {
     #[doc = "0: STOP_DET interrupt is inactive"]
@@ -433,6 +443,7 @@ impl STOP_DET_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum START_DET_A {
     #[doc = "0: START_DET interrupt is inactive"]
@@ -475,6 +486,7 @@ impl START_DET_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GEN_CALL_A {
     #[doc = "0: GEN_CALL interrupt is inactive"]
@@ -519,6 +531,7 @@ impl GEN_CALL_R {
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESTART_DET_A {
     #[doc = "0: RESTART_DET interrupt is inactive"]
@@ -655,6 +668,25 @@ impl R {
     #[inline(always)]
     pub fn restart_det(&self) -> RESTART_DET_R {
         RESTART_DET_R::new(((self.bits >> 12) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_RAW_INTR_STAT")
+            .field("restart_det", &self.restart_det())
+            .field("gen_call", &self.gen_call())
+            .field("start_det", &self.start_det())
+            .field("stop_det", &self.stop_det())
+            .field("activity", &self.activity())
+            .field("rx_done", &self.rx_done())
+            .field("tx_abrt", &self.tx_abrt())
+            .field("rd_req", &self.rd_req())
+            .field("tx_empty", &self.tx_empty())
+            .field("tx_over", &self.tx_over())
+            .field("rx_full", &self.rx_full())
+            .field("rx_over", &self.rx_over())
+            .field("rx_under", &self.rx_under())
+            .finish()
     }
 }
 #[doc = "I2C Raw Interrupt Status Register  

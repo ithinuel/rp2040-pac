@@ -107,6 +107,27 @@ impl R {
         CLK_SYS_XOSC_R::new(((self.bits >> 14) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ENABLED1")
+            .field("clk_sys_xosc", &self.clk_sys_xosc())
+            .field("clk_sys_xip", &self.clk_sys_xip())
+            .field("clk_sys_watchdog", &self.clk_sys_watchdog())
+            .field("clk_usb_usbctrl", &self.clk_usb_usbctrl())
+            .field("clk_sys_usbctrl", &self.clk_sys_usbctrl())
+            .field("clk_sys_uart1", &self.clk_sys_uart1())
+            .field("clk_peri_uart1", &self.clk_peri_uart1())
+            .field("clk_sys_uart0", &self.clk_sys_uart0())
+            .field("clk_peri_uart0", &self.clk_peri_uart0())
+            .field("clk_sys_timer", &self.clk_sys_timer())
+            .field("clk_sys_tbman", &self.clk_sys_tbman())
+            .field("clk_sys_sysinfo", &self.clk_sys_sysinfo())
+            .field("clk_sys_syscfg", &self.clk_sys_syscfg())
+            .field("clk_sys_sram5", &self.clk_sys_sram5())
+            .field("clk_sys_sram4", &self.clk_sys_sram4())
+            .finish()
+    }
+}
 #[doc = "indicates the state of the clock enable  
 
 You can [`read`](crate::Reg::read) this register and get [`enabled1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

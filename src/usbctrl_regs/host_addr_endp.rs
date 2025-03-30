@@ -40,6 +40,16 @@ impl R {
         INTEP_PREAMBLE_R::new(((self.bits >> 26) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HOST_ADDR_ENDP")
+            .field("intep_preamble", &self.intep_preamble())
+            .field("intep_dir", &self.intep_dir())
+            .field("endpoint", &self.endpoint())
+            .field("address", &self.address())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - Device address"]
     #[inline(always)]

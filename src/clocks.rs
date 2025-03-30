@@ -1,4 +1,5 @@
 #[repr(C)]
+#[derive(Debug)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
     clk_gpout0_ctrl: CLK_GPOUT0_CTRL,
@@ -208,12 +209,12 @@ impl RegisterBlock {
     pub const fn clk_rtc_selected(&self) -> &CLK_RTC_SELECTED {
         &self.clk_rtc_selected
     }
-    #[doc = "0x78 - "]
+    #[doc = "0x78 - Control for the system clock resuscitator."]
     #[inline(always)]
     pub const fn clk_sys_resus_ctrl(&self) -> &CLK_SYS_RESUS_CTRL {
         &self.clk_sys_resus_ctrl
     }
-    #[doc = "0x7c - "]
+    #[doc = "0x7c - Status for the system clock resuscitator."]
     #[inline(always)]
     pub const fn clk_sys_resus_status(&self) -> &CLK_SYS_RESUS_STATUS {
         &self.clk_sys_resus_status
@@ -564,21 +565,21 @@ pub type CLK_RTC_SELECTED = crate::Reg<clk_rtc_selected::CLK_RTC_SELECTED_SPEC>;
 #[doc = "Indicates which SRC is currently selected by the glitchless mux (one-hot).  
  This slice does not have a glitchless mux (only the AUX_SRC field is present, not SRC) so this register is hardwired to 0x1."]
 pub mod clk_rtc_selected;
-#[doc = "CLK_SYS_RESUS_CTRL (rw) register accessor:   
+#[doc = "CLK_SYS_RESUS_CTRL (rw) register accessor: Control for the system clock resuscitator.  
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_ctrl::R`]. You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_sys_resus_ctrl::W`]. You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
 For information about available fields see [`mod@clk_sys_resus_ctrl`] module"]
 pub type CLK_SYS_RESUS_CTRL = crate::Reg<clk_sys_resus_ctrl::CLK_SYS_RESUS_CTRL_SPEC>;
-#[doc = ""]
+#[doc = "Control for the system clock resuscitator."]
 pub mod clk_sys_resus_ctrl;
-#[doc = "CLK_SYS_RESUS_STATUS (r) register accessor:   
+#[doc = "CLK_SYS_RESUS_STATUS (r) register accessor: Status for the system clock resuscitator.  
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_status::R`]. See [API](https://docs.rs/svd2rust/#read--modify--write-api).  
 
 For information about available fields see [`mod@clk_sys_resus_status`] module"]
 pub type CLK_SYS_RESUS_STATUS = crate::Reg<clk_sys_resus_status::CLK_SYS_RESUS_STATUS_SPEC>;
-#[doc = ""]
+#[doc = "Status for the system clock resuscitator."]
 pub mod clk_sys_resus_status;
 #[doc = "FC0_REF_KHZ (rw) register accessor: Reference clock frequency in kHz  
 

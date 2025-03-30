@@ -9,6 +9,7 @@ pub type W = crate::W<DIV_SPEC>;
  this register resets to div=16  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum DIV_A {
@@ -72,6 +73,11 @@ impl R {
     #[inline(always)]
     pub fn div(&self) -> DIV_R {
         DIV_R::new((self.bits & 0x0fff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIV").field("div", &self.div()).finish()
     }
 }
 impl W {

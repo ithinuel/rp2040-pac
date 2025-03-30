@@ -13,6 +13,13 @@ impl R {
         FBDIV_INT_R::new((self.bits & 0x0fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FBDIV_INT")
+            .field("fbdiv_int", &self.fbdiv_int())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:11 - see ctrl reg description for constraints"]
     #[inline(always)]

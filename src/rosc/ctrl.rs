@@ -12,6 +12,7 @@ pub type W = crate::W<CTRL_SPEC>;
  Note: the values here are gray coded which is why HIGH comes before TOOHIGH  
 
 Value on reset: 2720"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum FREQ_RANGE_A {
@@ -116,6 +117,7 @@ where
  The 12-bit code is intended to give some protection against accidental writes. An invalid setting will enable the oscillator.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum ENABLE_A {
@@ -198,6 +200,14 @@ impl R {
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
         ENABLE_R::new(((self.bits >> 12) & 0x0fff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRL")
+            .field("enable", &self.enable())
+            .field("freq_range", &self.freq_range())
+            .finish()
     }
 }
 impl W {

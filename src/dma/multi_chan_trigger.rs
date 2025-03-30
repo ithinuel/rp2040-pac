@@ -13,6 +13,13 @@ impl R {
         MULTI_CHAN_TRIGGER_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MULTI_CHAN_TRIGGER")
+            .field("multi_chan_trigger", &self.multi_chan_trigger())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Each bit in this register corresponds to a DMA channel. Writing a 1 to the relevant bit is the same as writing to that channel's trigger register; the channel will start if it is currently enabled and not already busy."]
     #[inline(always)]

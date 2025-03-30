@@ -30,6 +30,16 @@ impl R {
         TXMIS_R::new(((self.bits >> 3) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPMIS")
+            .field("txmis", &self.txmis())
+            .field("rxmis", &self.rxmis())
+            .field("rtmis", &self.rtmis())
+            .field("rormis", &self.rormis())
+            .finish()
+    }
+}
 #[doc = "Masked interrupt status register, SSPMIS on page 3-11  
 
 You can [`read`](crate::Reg::read) this register and get [`sspmis::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

@@ -94,6 +94,20 @@ impl R {
         FJOIN_RX_R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SM_SHIFTCTRL")
+            .field("fjoin_rx", &self.fjoin_rx())
+            .field("fjoin_tx", &self.fjoin_tx())
+            .field("pull_thresh", &self.pull_thresh())
+            .field("push_thresh", &self.push_thresh())
+            .field("out_shiftdir", &self.out_shiftdir())
+            .field("in_shiftdir", &self.in_shiftdir())
+            .field("autopull", &self.autopull())
+            .field("autopush", &self.autopush())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 16 - Push automatically when the input shift register is filled, i.e. on an IN instruction which causes the input shift counter to reach or exceed PUSH_THRESH."]
     #[inline(always)]

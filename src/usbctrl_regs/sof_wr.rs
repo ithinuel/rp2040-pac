@@ -2,6 +2,11 @@
 pub type W = crate::W<SOF_WR_SPEC>;
 #[doc = "Field `COUNT` writer - "]
 pub type COUNT_W<'a, REG> = crate::FieldWriter<'a, REG, 11, u16>;
+impl core::fmt::Debug for crate::generic::Reg<SOF_WR_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:10"]
     #[inline(always)]

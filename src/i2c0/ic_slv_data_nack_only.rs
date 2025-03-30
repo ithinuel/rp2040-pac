@@ -7,6 +7,7 @@ pub type W = crate::W<IC_SLV_DATA_NACK_ONLY_SPEC>;
  When the register is set to a value of 0, it generates NACK/ACK, depending on normal criteria. - 1: generate NACK after data byte received - 0: generate NACK/ACK normally Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum NACK_A {
     #[doc = "0: Slave receiver generates NACK normally"]
@@ -70,6 +71,13 @@ impl R {
     #[inline(always)]
     pub fn nack(&self) -> NACK_R {
         NACK_R::new((self.bits & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_SLV_DATA_NACK_ONLY")
+            .field("nack", &self.nack())
+            .finish()
     }
 }
 impl W {

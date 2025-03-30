@@ -5,6 +5,7 @@ pub type W = crate::W<IC_ACK_GENERAL_CALL_SPEC>;
 #[doc = "ACK General Call. When set to 1, DW_apb_i2c responds with a ACK (by asserting ic_data_oe) when it receives a General Call. Otherwise, DW_apb_i2c responds with a NACK (by negating ic_data_oe).  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum ACK_GEN_CALL_A {
     #[doc = "0: Generate NACK for a General Call"]
@@ -62,6 +63,13 @@ impl R {
     #[inline(always)]
     pub fn ack_gen_call(&self) -> ACK_GEN_CALL_R {
         ACK_GEN_CALL_R::new((self.bits & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_ACK_GENERAL_CALL")
+            .field("ack_gen_call", &self.ack_gen_call())
+            .finish()
     }
 }
 impl W {

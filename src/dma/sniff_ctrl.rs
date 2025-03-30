@@ -13,6 +13,7 @@ pub type DMACH_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CALC_A {
@@ -172,6 +173,18 @@ impl R {
     #[inline(always)]
     pub fn out_inv(&self) -> OUT_INV_R {
         OUT_INV_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SNIFF_CTRL")
+            .field("out_inv", &self.out_inv())
+            .field("out_rev", &self.out_rev())
+            .field("bswap", &self.bswap())
+            .field("calc", &self.calc())
+            .field("dmach", &self.dmach())
+            .field("en", &self.en())
+            .finish()
     }
 }
 impl W {

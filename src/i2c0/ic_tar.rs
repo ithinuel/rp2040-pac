@@ -13,6 +13,7 @@ pub type IC_TAR_W<'a, REG> = crate::FieldWriter<'a, REG, 10, u16>;
 #[doc = "If bit 11 (SPECIAL) is set to 1 and bit 13(Device-ID) is set to 0, then this bit indicates whether a General Call or START byte command is to be performed by the DW_apb_i2c. - 0: General Call Address - after issuing a General Call, only writes may be performed. Attempting to issue a read command results in setting bit 6 (TX_ABRT) of the IC_RAW_INTR_STAT register. The DW_apb_i2c remains in General Call mode until the SPECIAL bit value (bit 11) is cleared. - 1: START BYTE Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum GC_OR_START_A {
     #[doc = "0: GENERAL_CALL byte transmission"]
@@ -68,6 +69,7 @@ where
 #[doc = "This bit indicates whether software performs a Device-ID or General Call or START BYTE command. - 0: ignore bit 10 GC_OR_START and use IC_TAR normally - 1: perform special I2C command as specified in Device_ID or GC_OR_START bit Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum SPECIAL_A {
     #[doc = "0: Disables programming of GENERAL_CALL or START_BYTE transmission"]
@@ -137,6 +139,15 @@ impl R {
     #[inline(always)]
     pub fn special(&self) -> SPECIAL_R {
         SPECIAL_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_TAR")
+            .field("special", &self.special())
+            .field("gc_or_start", &self.gc_or_start())
+            .field("ic_tar", &self.ic_tar())
+            .finish()
     }
 }
 impl W {

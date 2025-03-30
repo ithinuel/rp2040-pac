@@ -9,6 +9,13 @@ impl R {
         UARTPCELLID3_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("UARTPCELLID3")
+            .field("uartpcellid3", &self.uartpcellid3())
+            .finish()
+    }
+}
 #[doc = "UARTPCellID3 Register  
 
 You can [`read`](crate::Reg::read) this register and get [`uartpcellid3::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

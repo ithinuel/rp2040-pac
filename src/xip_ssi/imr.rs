@@ -58,6 +58,18 @@ impl R {
         MSTIM_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IMR")
+            .field("mstim", &self.mstim())
+            .field("rxfim", &self.rxfim())
+            .field("rxoim", &self.rxoim())
+            .field("rxuim", &self.rxuim())
+            .field("txoim", &self.txoim())
+            .field("txeim", &self.txeim())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - Transmit FIFO empty interrupt mask"]
     #[inline(always)]

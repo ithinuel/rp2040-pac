@@ -5,6 +5,7 @@ pub type W = crate::W<VOLTAGE_SELECT_SPEC>;
 #[doc = "  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum VOLTAGE_SELECT_A {
     #[doc = "0: Set voltage to 3.3V (DVDD >= 2V5)"]
@@ -62,6 +63,13 @@ impl R {
     #[inline(always)]
     pub fn voltage_select(&self) -> VOLTAGE_SELECT_R {
         VOLTAGE_SELECT_R::new((self.bits & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("VOLTAGE_SELECT")
+            .field("voltage_select", &self.voltage_select())
+            .finish()
     }
 }
 impl W {

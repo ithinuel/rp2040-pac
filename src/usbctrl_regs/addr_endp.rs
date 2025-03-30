@@ -22,6 +22,14 @@ impl R {
         ENDPOINT_R::new(((self.bits >> 16) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADDR_ENDP")
+            .field("endpoint", &self.endpoint())
+            .field("address", &self.address())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6 - In device mode, the address that the device should respond to. Set in response to a SET_ADDR setup packet from the host. In host mode set to the address of the device to communicate with."]
     #[inline(always)]

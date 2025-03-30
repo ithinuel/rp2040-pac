@@ -9,7 +9,14 @@ impl R {
         RESUSSED_R::new((self.bits & 1) != 0)
     }
 }
-#[doc = "  
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_SYS_RESUS_STATUS")
+            .field("resussed", &self.resussed())
+            .finish()
+    }
+}
+#[doc = "Status for the system clock resuscitator.  
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_status::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLK_SYS_RESUS_STATUS_SPEC;

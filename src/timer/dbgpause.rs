@@ -22,6 +22,14 @@ impl R {
         DBG1_R::new(((self.bits >> 2) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBGPAUSE")
+            .field("dbg1", &self.dbg1())
+            .field("dbg0", &self.dbg0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1 - Pause when processor 0 is in debug mode"]
     #[inline(always)]

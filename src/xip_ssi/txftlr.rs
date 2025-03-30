@@ -13,6 +13,11 @@ impl R {
         TFT_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TXFTLR").field("tft", &self.tft()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Transmit FIFO threshold"]
     #[inline(always)]

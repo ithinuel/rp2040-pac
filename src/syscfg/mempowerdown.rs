@@ -76,6 +76,20 @@ impl R {
         ROM_R::new(((self.bits >> 7) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MEMPOWERDOWN")
+            .field("rom", &self.rom())
+            .field("usb", &self.usb())
+            .field("sram5", &self.sram5())
+            .field("sram4", &self.sram4())
+            .field("sram3", &self.sram3())
+            .field("sram2", &self.sram2())
+            .field("sram1", &self.sram1())
+            .field("sram0", &self.sram0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

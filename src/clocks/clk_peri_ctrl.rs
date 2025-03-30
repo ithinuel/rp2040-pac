@@ -5,6 +5,7 @@ pub type W = crate::W<CLK_PERI_CTRL_SPEC>;
 #[doc = "Selects the auxiliary clock source, will glitch when switching  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AUXSRC_A {
@@ -152,6 +153,15 @@ impl R {
     #[inline(always)]
     pub fn enable(&self) -> ENABLE_R {
         ENABLE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_PERI_CTRL")
+            .field("enable", &self.enable())
+            .field("kill", &self.kill())
+            .field("auxsrc", &self.auxsrc())
+            .finish()
     }
 }
 impl W {

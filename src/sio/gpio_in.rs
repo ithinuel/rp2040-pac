@@ -9,6 +9,13 @@ impl R {
         GPIO_IN_R::new(self.bits & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_IN")
+            .field("gpio_in", &self.gpio_in())
+            .finish()
+    }
+}
 #[doc = "Input value for GPIO pins  
 
 You can [`read`](crate::Reg::read) this register and get [`gpio_in::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

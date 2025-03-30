@@ -220,6 +220,39 @@ impl R {
         GPIO_QSPI_SD3_EDGE_HIGH_R::new(((self.bits >> 23) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PROC1_INTF")
+            .field("gpio_qspi_sd3_edge_high", &self.gpio_qspi_sd3_edge_high())
+            .field("gpio_qspi_sd3_edge_low", &self.gpio_qspi_sd3_edge_low())
+            .field("gpio_qspi_sd3_level_high", &self.gpio_qspi_sd3_level_high())
+            .field("gpio_qspi_sd3_level_low", &self.gpio_qspi_sd3_level_low())
+            .field("gpio_qspi_sd2_edge_high", &self.gpio_qspi_sd2_edge_high())
+            .field("gpio_qspi_sd2_edge_low", &self.gpio_qspi_sd2_edge_low())
+            .field("gpio_qspi_sd2_level_high", &self.gpio_qspi_sd2_level_high())
+            .field("gpio_qspi_sd2_level_low", &self.gpio_qspi_sd2_level_low())
+            .field("gpio_qspi_sd1_edge_high", &self.gpio_qspi_sd1_edge_high())
+            .field("gpio_qspi_sd1_edge_low", &self.gpio_qspi_sd1_edge_low())
+            .field("gpio_qspi_sd1_level_high", &self.gpio_qspi_sd1_level_high())
+            .field("gpio_qspi_sd1_level_low", &self.gpio_qspi_sd1_level_low())
+            .field("gpio_qspi_sd0_edge_high", &self.gpio_qspi_sd0_edge_high())
+            .field("gpio_qspi_sd0_edge_low", &self.gpio_qspi_sd0_edge_low())
+            .field("gpio_qspi_sd0_level_high", &self.gpio_qspi_sd0_level_high())
+            .field("gpio_qspi_sd0_level_low", &self.gpio_qspi_sd0_level_low())
+            .field("gpio_qspi_ss_edge_high", &self.gpio_qspi_ss_edge_high())
+            .field("gpio_qspi_ss_edge_low", &self.gpio_qspi_ss_edge_low())
+            .field("gpio_qspi_ss_level_high", &self.gpio_qspi_ss_level_high())
+            .field("gpio_qspi_ss_level_low", &self.gpio_qspi_ss_level_low())
+            .field("gpio_qspi_sclk_edge_high", &self.gpio_qspi_sclk_edge_high())
+            .field("gpio_qspi_sclk_edge_low", &self.gpio_qspi_sclk_edge_low())
+            .field(
+                "gpio_qspi_sclk_level_high",
+                &self.gpio_qspi_sclk_level_high(),
+            )
+            .field("gpio_qspi_sclk_level_low", &self.gpio_qspi_sclk_level_low())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

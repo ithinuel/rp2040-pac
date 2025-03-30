@@ -5,6 +5,7 @@ pub type W = crate::W<PERFSEL0_SPEC>;
 #[doc = "Select an event for PERFCTR0. Count either contested accesses, or all accesses, on a downstream port of the main crossbar.  
 
 Value on reset: 31"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PERFSEL0_A {
@@ -303,6 +304,13 @@ impl R {
     #[inline(always)]
     pub fn perfsel0(&self) -> PERFSEL0_R {
         PERFSEL0_R::new((self.bits & 0x1f) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PERFSEL0")
+            .field("perfsel0", &self.perfsel0())
+            .finish()
     }
 }
 impl W {

@@ -58,6 +58,18 @@ impl R {
         OVERCURR_DETECT_EN_R::new(((self.bits >> 5) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("USB_PWR")
+            .field("overcurr_detect_en", &self.overcurr_detect_en())
+            .field("overcurr_detect", &self.overcurr_detect())
+            .field("vbus_detect_override_en", &self.vbus_detect_override_en())
+            .field("vbus_detect", &self.vbus_detect())
+            .field("vbus_en_override_en", &self.vbus_en_override_en())
+            .field("vbus_en", &self.vbus_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

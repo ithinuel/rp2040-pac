@@ -58,6 +58,20 @@ impl R {
         RX3_R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLEVEL")
+            .field("rx3", &self.rx3())
+            .field("tx3", &self.tx3())
+            .field("rx2", &self.rx2())
+            .field("tx2", &self.tx2())
+            .field("rx1", &self.rx1())
+            .field("tx1", &self.tx1())
+            .field("rx0", &self.rx0())
+            .field("tx0", &self.tx0())
+            .finish()
+    }
+}
 #[doc = "FIFO levels  
 
 You can [`read`](crate::Reg::read) this register and get [`flevel::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

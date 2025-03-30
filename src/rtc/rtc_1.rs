@@ -23,6 +23,15 @@ impl R {
         YEAR_R::new(((self.bits >> 12) & 0x0fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RTC_1")
+            .field("year", &self.year())
+            .field("month", &self.month())
+            .field("day", &self.day())
+            .finish()
+    }
+}
 #[doc = "RTC register 1.  
 
 You can [`read`](crate::Reg::read) this register and get [`rtc_1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

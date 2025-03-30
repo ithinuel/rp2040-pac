@@ -22,6 +22,14 @@ impl R {
         X_R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TIMER3")
+            .field("x", &self.x())
+            .field("y", &self.y())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Pacing Timer Divisor. Specifies the Y value for the (X/Y) fractional timer."]
     #[inline(always)]

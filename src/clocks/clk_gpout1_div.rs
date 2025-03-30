@@ -22,6 +22,14 @@ impl R {
         INT_R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_GPOUT1_DIV")
+            .field("int", &self.int())
+            .field("frac", &self.frac())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Fractional component of the divisor"]
     #[inline(always)]

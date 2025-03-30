@@ -13,6 +13,13 @@ impl R {
         SSI_EN_R::new((self.bits & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSIENR")
+            .field("ssi_en", &self.ssi_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - SSI enable"]
     #[inline(always)]

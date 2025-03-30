@@ -22,6 +22,7 @@ pub type DS7_W<'a, REG> = crate::FieldWriter<'a, REG, 3>;
  Any other value in this field will set all drive strengths to 0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum PASSWD_A {
@@ -96,6 +97,17 @@ impl R {
     #[inline(always)]
     pub fn passwd(&self) -> PASSWD_R {
         PASSWD_R::new(((self.bits >> 16) & 0xffff) as u16)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FREQB")
+            .field("passwd", &self.passwd())
+            .field("ds7", &self.ds7())
+            .field("ds6", &self.ds6())
+            .field("ds5", &self.ds5())
+            .field("ds4", &self.ds4())
+            .finish()
     }
 }
 impl W {

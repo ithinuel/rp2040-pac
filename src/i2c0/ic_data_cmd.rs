@@ -19,6 +19,7 @@ pub type DAT_W<'a, REG> = crate::FieldWriter<'a, REG, 8>;
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum CMD_A {
     #[doc = "0: Master Write Command"]
@@ -60,6 +61,7 @@ where
  - 1 - STOP is issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master immediately tries to start a new transfer by issuing a START and arbitrating for the bus. - 0 - STOP is not issued after this byte, regardless of whether or not the Tx FIFO is empty. If the Tx FIFO is not empty, the master continues the current transfer by sending/receiving data bytes according to the value of the CMD bit. If the Tx FIFO is empty, the master holds the SCL line low and stalls the bus until a new command is available in the Tx FIFO. Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum STOP_A {
     #[doc = "0: Don't Issue STOP after this command"]
@@ -101,6 +103,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum RESTART_A {
     #[doc = "0: Don't Issue RESTART before this command"]
@@ -150,6 +153,7 @@ where
  3. The 11th bit is an optional read field, user can ignore 2nd byte read \\[15:8\\] (offset 0x11) if not interested in FIRST_DATA_BYTE status.  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum FIRST_DATA_BYTE_A {
     #[doc = "0: Sequential data byte received"]
@@ -217,6 +221,14 @@ impl R {
     #[inline(always)]
     pub fn first_data_byte(&self) -> FIRST_DATA_BYTE_R {
         FIRST_DATA_BYTE_R::new(((self.bits >> 11) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_DATA_CMD")
+            .field("first_data_byte", &self.first_data_byte())
+            .field("dat", &self.dat())
+            .finish()
     }
 }
 impl W {

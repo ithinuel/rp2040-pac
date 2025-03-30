@@ -7,6 +7,7 @@ pub type W = crate::W<IC_INTR_MASK_SPEC>;
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RX_UNDER_A {
     #[doc = "0: RX_UNDER interrupt is masked"]
@@ -68,6 +69,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RX_OVER_A {
     #[doc = "0: RX_OVER interrupt is masked"]
@@ -129,6 +131,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RX_FULL_A {
     #[doc = "0: RX_FULL interrupt is masked"]
@@ -190,6 +193,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_TX_OVER_A {
     #[doc = "0: TX_OVER interrupt is masked"]
@@ -251,6 +255,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_TX_EMPTY_A {
     #[doc = "0: TX_EMPTY interrupt is masked"]
@@ -312,6 +317,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RD_REQ_A {
     #[doc = "0: RD_REQ interrupt is masked"]
@@ -373,6 +379,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_TX_ABRT_A {
     #[doc = "0: TX_ABORT interrupt is masked"]
@@ -434,6 +441,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RX_DONE_A {
     #[doc = "0: RX_DONE interrupt is masked"]
@@ -495,6 +503,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_ACTIVITY_A {
     #[doc = "0: ACTIVITY interrupt is masked"]
@@ -556,6 +565,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_STOP_DET_A {
     #[doc = "0: STOP_DET interrupt is masked"]
@@ -617,6 +627,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_START_DET_A {
     #[doc = "0: START_DET interrupt is masked"]
@@ -678,6 +689,7 @@ where
  Reset value: 0x1  
 
 Value on reset: 1"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_GEN_CALL_A {
     #[doc = "0: GEN_CALL interrupt is masked"]
@@ -739,6 +751,7 @@ where
  Reset value: 0x0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum M_RESTART_DET_A {
     #[doc = "0: RESTART_DET interrupt is masked"]
@@ -886,6 +899,25 @@ impl R {
     #[inline(always)]
     pub fn m_restart_det(&self) -> M_RESTART_DET_R {
         M_RESTART_DET_R::new(((self.bits >> 12) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_INTR_MASK")
+            .field("m_restart_det", &self.m_restart_det())
+            .field("m_gen_call", &self.m_gen_call())
+            .field("m_start_det", &self.m_start_det())
+            .field("m_stop_det", &self.m_stop_det())
+            .field("m_activity", &self.m_activity())
+            .field("m_rx_done", &self.m_rx_done())
+            .field("m_tx_abrt", &self.m_tx_abrt())
+            .field("m_rd_req", &self.m_rd_req())
+            .field("m_tx_empty", &self.m_tx_empty())
+            .field("m_tx_over", &self.m_tx_over())
+            .field("m_rx_full", &self.m_rx_full())
+            .field("m_rx_over", &self.m_rx_over())
+            .field("m_rx_under", &self.m_rx_under())
+            .finish()
     }
 }
 impl W {

@@ -9,6 +9,13 @@ impl R {
         SSI_COMP_VERSION_R::new(self.bits)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSI_VERSION_ID")
+            .field("ssi_comp_version", &self.ssi_comp_version())
+            .finish()
+    }
+}
 #[doc = "Version ID  
 
 You can [`read`](crate::Reg::read) this register and get [`ssi_version_id::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

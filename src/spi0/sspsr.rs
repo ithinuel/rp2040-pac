@@ -37,6 +37,17 @@ impl R {
         BSY_R::new(((self.bits >> 4) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SSPSR")
+            .field("bsy", &self.bsy())
+            .field("rff", &self.rff())
+            .field("rne", &self.rne())
+            .field("tnf", &self.tnf())
+            .field("tfe", &self.tfe())
+            .finish()
+    }
+}
 #[doc = "Status register, SSPSR on page 3-7  
 
 You can [`read`](crate::Reg::read) this register and get [`sspsr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

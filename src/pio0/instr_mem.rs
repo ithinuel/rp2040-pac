@@ -2,6 +2,11 @@
 pub type W = crate::W<INSTR_MEM_SPEC>;
 #[doc = "Field `INSTR_MEM0` writer - "]
 pub type INSTR_MEM0_W<'a, REG> = crate::FieldWriter<'a, REG, 16, u16>;
+impl core::fmt::Debug for crate::generic::Reg<INSTR_MEM_SPEC> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]

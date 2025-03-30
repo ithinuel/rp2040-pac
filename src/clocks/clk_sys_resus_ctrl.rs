@@ -43,6 +43,16 @@ impl R {
         CLEAR_R::new(((self.bits >> 16) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CLK_SYS_RESUS_CTRL")
+            .field("clear", &self.clear())
+            .field("frce", &self.frce())
+            .field("enable", &self.enable())
+            .field("timeout", &self.timeout())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - This is expressed as a number of clk_ref cycles  
  and must be >= 2x clk_ref_freq/min_clk_tst_freq"]
@@ -66,7 +76,7 @@ impl W {
         CLEAR_W::new(self, 16)
     }
 }
-#[doc = "  
+#[doc = "Control for the system clock resuscitator.  
 
 You can [`read`](crate::Reg::read) this register and get [`clk_sys_resus_ctrl::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`clk_sys_resus_ctrl::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CLK_SYS_RESUS_CTRL_SPEC;

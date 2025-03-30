@@ -19,6 +19,13 @@ impl R {
         RX_TL_R::new((self.bits & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IC_RX_TL")
+            .field("rx_tl", &self.rx_tl())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7 - Receive FIFO Threshold Level.  
 

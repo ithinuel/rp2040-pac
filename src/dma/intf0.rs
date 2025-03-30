@@ -13,6 +13,13 @@ impl R {
         INTF0_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("INTF0")
+            .field("intf0", &self.intf0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Write 1s to force the corresponding bits in INTE0. The interrupt remains asserted until INTF0 is cleared."]
     #[inline(always)]

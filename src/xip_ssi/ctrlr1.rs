@@ -13,6 +13,11 @@ impl R {
         NDF_R::new((self.bits & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CTRLR1").field("ndf", &self.ndf()).finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15 - Number of data frames"]
     #[inline(always)]

@@ -5,6 +5,7 @@ pub type W = crate::W<SPI_CTRLR0_SPEC>;
 #[doc = "Address and instruction transfer format  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TRANS_TYPE_A {
@@ -84,6 +85,7 @@ pub type ADDR_L_W<'a, REG> = crate::FieldWriter<'a, REG, 4>;
 #[doc = "Instruction length (0/4/8/16b)  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INST_L_A {
@@ -229,6 +231,20 @@ impl R {
     #[inline(always)]
     pub fn xip_cmd(&self) -> XIP_CMD_R {
         XIP_CMD_R::new(((self.bits >> 24) & 0xff) as u8)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SPI_CTRLR0")
+            .field("xip_cmd", &self.xip_cmd())
+            .field("spi_rxds_en", &self.spi_rxds_en())
+            .field("inst_ddr_en", &self.inst_ddr_en())
+            .field("spi_ddr_en", &self.spi_ddr_en())
+            .field("wait_cycles", &self.wait_cycles())
+            .field("inst_l", &self.inst_l())
+            .field("addr_l", &self.addr_l())
+            .field("trans_type", &self.trans_type())
+            .finish()
     }
 }
 impl W {

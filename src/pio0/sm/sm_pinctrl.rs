@@ -67,6 +67,19 @@ impl R {
         SIDESET_COUNT_R::new(((self.bits >> 29) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SM_PINCTRL")
+            .field("sideset_count", &self.sideset_count())
+            .field("set_count", &self.set_count())
+            .field("out_count", &self.out_count())
+            .field("in_base", &self.in_base())
+            .field("sideset_base", &self.sideset_base())
+            .field("set_base", &self.set_base())
+            .field("out_base", &self.out_base())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - The lowest-numbered pin that will be affected by an OUT PINS, OUT PINDIRS or MOV PINS instruction. The data written to this pin will always be the least-significant bit of the OUT or MOV data."]
     #[inline(always)]

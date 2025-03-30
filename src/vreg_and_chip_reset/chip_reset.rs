@@ -40,6 +40,16 @@ impl R {
         PSM_RESTART_FLAG_R::new(((self.bits >> 24) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CHIP_RESET")
+            .field("psm_restart_flag", &self.psm_restart_flag())
+            .field("had_psm_restart", &self.had_psm_restart())
+            .field("had_run", &self.had_run())
+            .field("had_por", &self.had_por())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 24 - This is set by psm_restart from the debugger.  
  Its purpose is to branch bootcode to a safe mode when the debugger has issued a psm_restart in order to recover from a boot lock-up.  

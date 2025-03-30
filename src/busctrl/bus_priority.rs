@@ -40,6 +40,16 @@ impl R {
         DMA_W_R::new(((self.bits >> 12) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("BUS_PRIORITY")
+            .field("dma_w", &self.dma_w())
+            .field("dma_r", &self.dma_r())
+            .field("proc1", &self.proc1())
+            .field("proc0", &self.proc0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0 - 0 - low priority, 1 - high priority"]
     #[inline(always)]

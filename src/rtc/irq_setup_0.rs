@@ -74,6 +74,20 @@ impl R {
         MATCH_ACTIVE_R::new(((self.bits >> 29) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IRQ_SETUP_0")
+            .field("match_active", &self.match_active())
+            .field("match_ena", &self.match_ena())
+            .field("year_ena", &self.year_ena())
+            .field("month_ena", &self.month_ena())
+            .field("day_ena", &self.day_ena())
+            .field("year", &self.year())
+            .field("month", &self.month())
+            .field("day", &self.day())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:4 - Day of the month (1..31)"]
     #[inline(always)]

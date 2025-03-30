@@ -25,6 +25,13 @@ impl R {
         GPIO_OE_R::new(self.bits & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIO_OE")
+            .field("gpio_oe", &self.gpio_oe())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:29 - Set output enable (1/0 -> output/input) for GPIO0...29.  
  Reading back gives the last value written.  

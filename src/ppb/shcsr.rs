@@ -13,6 +13,13 @@ impl R {
         SVCALLPENDED_R::new(((self.bits >> 15) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SHCSR")
+            .field("svcallpended", &self.svcallpended())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 15 - Reads as 1 if SVCall is Pending. Write 1 to set pending SVCall, write 0 to clear pending SVCall."]
     #[inline(always)]

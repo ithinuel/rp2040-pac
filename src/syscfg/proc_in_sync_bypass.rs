@@ -13,6 +13,13 @@ impl R {
         PROC_IN_SYNC_BYPASS_R::new(self.bits & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PROC_IN_SYNC_BYPASS")
+            .field("proc_in_sync_bypass", &self.proc_in_sync_bypass())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:29"]
     #[inline(always)]

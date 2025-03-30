@@ -112,6 +112,24 @@ impl R {
         SM3_R::new(((self.bits >> 11) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IRQ_INTE")
+            .field("sm3", &self.sm3())
+            .field("sm2", &self.sm2())
+            .field("sm1", &self.sm1())
+            .field("sm0", &self.sm0())
+            .field("sm3_txnfull", &self.sm3_txnfull())
+            .field("sm2_txnfull", &self.sm2_txnfull())
+            .field("sm1_txnfull", &self.sm1_txnfull())
+            .field("sm0_txnfull", &self.sm0_txnfull())
+            .field("sm3_rxnempty", &self.sm3_rxnempty())
+            .field("sm2_rxnempty", &self.sm2_rxnempty())
+            .field("sm1_rxnempty", &self.sm1_rxnempty())
+            .field("sm0_rxnempty", &self.sm0_rxnempty())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

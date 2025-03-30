@@ -5,6 +5,7 @@ pub type W = crate::W<STATUS_SPEC>;
 #[doc = "The current frequency range setting, always reads 0  
 
 Value on reset: 0"]
+#[cfg_attr(feature = "defmt", derive(defmt::Format))]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum FREQ_RANGE_A {
@@ -90,6 +91,16 @@ impl R {
     #[inline(always)]
     pub fn stable(&self) -> STABLE_R {
         STABLE_R::new(((self.bits >> 31) & 1) != 0)
+    }
+}
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("STATUS")
+            .field("stable", &self.stable())
+            .field("badwrite", &self.badwrite())
+            .field("enabled", &self.enabled())
+            .field("freq_range", &self.freq_range())
+            .finish()
     }
 }
 impl W {
