@@ -33,20 +33,20 @@ fi
 generate() {
     local svd=$1
     local target=$2
-    svd2rust -i $svd -c ${SCRIPT_DIR}/svd2rust.toml --target $target
-    form -i $3.rs -o src
+    svd2rust -i "$svd" -c "${SCRIPT_DIR}/svd2rust.toml" --target "$target"
+    form -i "$3.rs" -o src
 }
 
 # Most of the code is from Cortex-M mode
 tmp_dir=$(mktemp -d -t svd2rust-XXXX)
-pushd ${tmp_dir}
-generate ${SCRIPT_DIR}/svd/rp2040.svd.patched cortex-m lib
+pushd "${tmp_dir}"
+generate "${SCRIPT_DIR}/svd/rp2040.svd.patched" cortex-m lib
 
-rm -rf ${SCRIPT_DIR}/src
-mv {src,device.x} ${SCRIPT_DIR}
+rm -rf "${SCRIPT_DIR}/src"
+mv {src,device.x} "${SCRIPT_DIR}"
 
 popd
-rm -rf ${tmp_dir}
+rm -rf "${tmp_dir}"
 
 cargo fmt
 
